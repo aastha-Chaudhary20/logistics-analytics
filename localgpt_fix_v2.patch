@@ -1,0 +1,76 @@
+diff --git a/rag_system/agent/loop.py b/rag_system/agent/loop.py
+index b7da704..edd20ac 100644
+--- a/rag_system/agent/loop.py
++++ b/rag_system/agent/loop.py
+@@ -200,6 +200,8 @@ Choose **exactly one** category:
+ 
+ 3. "graph_query" – Specific factual relations for knowledge-graph lookup (currently limited use)
+ 
++4. "task_query" – Requests to PRODUCE a deliverable or take an action, not just answer. Examples: "Draft a purchase order", "Raise a PO for the top vendor", "Generate the order document". Look for verbs like draft/create/generate/raise/prepare + a document/action.
++
+ IMPORTANT: For general world knowledge about well-known companies, people, or facts NOT related to uploaded documents, choose "direct_answer".
+ 
+ User query: "{query}"
+@@ -282,6 +284,16 @@ Respond with JSON: {{"category": "<your_choice>"}}
+         query_type = await self._triage_query_async(query, history)
+         print(f"🎯 ROUTING DEBUG: Final triage decision: '{query_type}'")
+         print(f"Agent Triage Decision: '{query_type}'")
++
++        # --- TASK route: produce a deliverable (e.g. draft a PO) instead of answering ---
++        if query_type == "task_query":
++            try:
++                from rag_system.skills.purchase_order import handle_task
++                result = await asyncio.to_thread(handle_task, query)
++            except Exception as e:
++                result = {"answer": f"Task skill failed: {e}"}
++            result.setdefault("source_documents", [])
++            return result
+         
+         # Create a contextual query that includes history for most operations
+         contextual_query = self._format_query_with_history(query, history)
+@@ -659,9 +671,11 @@ Is this query asking about:
+ A) Greetings/social: "Hi", "Hello", "Thanks", "What's up", "How are you"
+ B) General knowledge: "CEO of Tesla", "capital of France", "what is 2+2"  
+ C) Document content: invoice amounts, DeepSeek-V3 details, companies mentioned
++D) Produce a deliverable / take an action: "draft a purchase order", "raise a PO", "generate the order"
+ 
+ If A or B → {{"category": "direct_answer"}}
+ If C → {{"category": "rag_query"}}
++If D → {{"category": "task_query"}}
+ 
+ Response:"""
+         
+diff --git a/rag_system/pipelines/indexing_pipeline.py b/rag_system/pipelines/indexing_pipeline.py
+index 9fc61e7..b7c8e6c 100644
+--- a/rag_system/pipelines/indexing_pipeline.py
++++ b/rag_system/pipelines/indexing_pipeline.py
+@@ -2,6 +2,7 @@ from typing import List, Dict, Any
+ import os
+ import networkx as nx
+ from rag_system.ingestion.document_converter import DocumentConverter
++from rag_system.ingestion.file_router import FileRouter
+ from rag_system.ingestion.chunking import MarkdownRecursiveChunker
+ from rag_system.indexing.representations import EmbeddingGenerator, select_embedder
+ from rag_system.indexing.embedders import LanceDBManager, VectorIndexer
+@@ -16,6 +17,12 @@ class IndexingPipeline:
+         self.llm_client = ollama_client
+         self.ollama_config = ollama_config
+         self.document_converter = DocumentConverter()
++        # Route files by shape: structured (xlsx/csv/json) -> DuckDB warehouse + a
++        # searchable card; everything else -> the existing converter (docling/text fallback).
++        self.file_router = FileRouter(
++            document_converter=self.document_converter,
++            db_path=config.get("structured_db_path", "./index_store/structured.duckdb"),
++        )
+         # Chunker selection: docling (token-based) or legacy (character-based)
+         chunker_mode = config.get("chunker_mode", "docling")
+         
+@@ -157,7 +164,7 @@ class IndexingPipeline:
+                         document_id = os.path.basename(file_path)
+                         print(f"Processing: {document_id}")
+                         
+-                        pages_data = self.document_converter.convert_to_markdown(file_path)
++                        pages_data = self.file_router.to_pages(file_path)
+                         file_chunks = []
+                         
+                         for tpl in pages_data:

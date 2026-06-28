@@ -1,0 +1,14 @@
+node_modules/
+shared_uploads/
+index_store/
+lancedb/
+.next/
+*.duckdb
+*.db
+*.xlsx
+*.xls
+*.csv
+__pycache__/
+*.pyc
+.DS_Store
+.env
