@@ -74,7 +74,7 @@ function StepIcon({ status }: { status: 'pending' | 'active' | 'done' | 'error' 
     case 'active':
       return <Loader2 className="w-4 h-4 text-blue-400 animate-spin" />
     case 'done':
-      return <CheckCircle className="w-4 h-4 text-green-400" />
+      return <CheckCircle className="w-4 h-4 text-blue-400" />
     case 'error':
       return <XOctagon className="w-4 h-4 text-red-400" />
     default:
@@ -85,7 +85,7 @@ function StepIcon({ status }: { status: 'pending' | 'active' | 'done' | 'error' 
 const statusBorder: Record<string, string> = {
   pending: 'border-neutral-800',
   active: 'border-blue-400 animate-pulse',
-  done: 'border-green-400',
+  done: 'border-blue-400',
   error: 'border-red-400'
 }
 
@@ -366,7 +366,7 @@ export function ConversationPage({
                   {isUser && (
                     <ChatBubbleAvatar 
                       className="mt-1 flex-shrink-0 text-black"
-                      src="https://i.pravatar.cc/40?u=user"
+                      src="/forum-user.png"
                       fallback="User"
                     />
                   )}

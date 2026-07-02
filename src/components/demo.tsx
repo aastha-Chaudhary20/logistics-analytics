@@ -93,7 +93,7 @@ export function Demo() {
                     {sidebarOpen ? <span className="text-xl leading-none">◀</span> : <span className="text-xl leading-none">▶</span>}
                 </button>
                 {homeMode !== 'HOME' && (
-                    <h1 className="text-lg font-semibold text-white">localGPT</h1>
+                    <img src="/stellarkeep_logo_white.png" className="h-10" alt="logo" />
                 )}
             </header>
             {/* Main content row */}
@@ -112,9 +112,9 @@ export function Demo() {
                 <main className="flex flex-1 flex-col transition-all duration-200 bg-black min-h-0 overflow-hidden">
                     {homeMode === 'HOME' ? (
                         <div className="flex items-center justify-center h-full">
-                            <div className="space-y-8">
+                            <div className="space-y-4">
                                 <div className="text-center space-y-2">
-                                    <h1 className="text-4xl font-bold text-white">LocalGPT</h1>
+                                    <img src="/stellarkeep_logo_white.png" className="h-22 mx-auto" alt="logo" />
                                     <p className="text-lg text-gray-400">What can I help you find today?</p>
                                 </div>
 
@@ -136,8 +136,8 @@ export function Demo() {
                                             </div>
                                         )}
                                         {backendStatus === 'connected' && (
-                                            <div className="flex items-center gap-2 text-green-400">
-                                                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                                            <div className="flex items-center gap-2 text-blue-400">
+                                                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                                                 Backend connected • Session-based chat ready
                                             </div>
                                         )}

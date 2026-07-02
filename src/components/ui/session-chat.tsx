@@ -612,7 +612,7 @@ export const SessionChat = forwardRef<SessionChatRef, SessionChatProps>(({
             <ChatInput
               onSendMessage={sendMessage}
               disabled={isLoading || (uploadedFiles.length > 0 && !isIndexed)}
-              placeholder="Message localGPT..."
+              placeholder="Message StellarKeep AI..."
               onOpenSettings={()=>setShowSettings(true)}
               onAddIndex={()=>setShowIndexForm(true)}
               leftExtras={currentIndexId && currentIndexName ? (

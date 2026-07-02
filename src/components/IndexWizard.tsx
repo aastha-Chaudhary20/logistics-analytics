@@ -61,7 +61,7 @@ export function IndexWizard({ onClose }: Props) {
           </button>
           <button
             disabled={!files || !embeddingModel}
-            className="px-4 py-2 bg-green-600 rounded disabled:opacity-40 text-sm"
+            className="px-4 py-2 bg-[#2563eb] rounded disabled:opacity-40 text-sm"
           >
             Start indexing
           </button>

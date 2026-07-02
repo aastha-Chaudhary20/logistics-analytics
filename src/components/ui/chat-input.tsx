@@ -19,7 +19,7 @@ interface ChatInputProps {
 export function ChatInput({ 
   onSendMessage, 
   disabled = false,
-  placeholder = "Message localGPT...",
+  placeholder = "Message...",
   className = "",
   onOpenSettings,
   onAddIndex,

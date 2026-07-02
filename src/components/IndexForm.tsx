@@ -101,7 +101,7 @@ export function IndexForm({ onClose, onIndexed }: Props) {
             <span className="text-xs text-gray-400">Drag & Drop documents here or click to browse</span>
             <input id="file-upload" type="file" accept="application/pdf,.docx,.doc,.html,.htm,.md,.txt,.xlsx,.xls,.csv" multiple className="hidden" onChange={(e)=>setFiles(e.target.files)} />
           </label>
-          {files && <p className="mt-1 text-xs text-green-400">{files.length} file(s) selected</p>}
+          {files && <p className="mt-1 text-xs text-blue-400">{files.length} file(s) selected</p>}
         </div>
 
         {/* Retrieval mode & Late-chunk toggle */}
@@ -213,7 +213,7 @@ export function IndexForm({ onClose, onIndexed }: Props) {
         <button
           disabled={loading || !files || !indexName.trim()}
           onClick={handleSubmit}
-          className="px-4 py-2 bg-green-600 rounded disabled:opacity-40 text-sm"
+          className="px-4 py-2 bg-[#2563eb] rounded disabled:opacity-40 text-sm"
         >
           {loading ? 'Indexing…' : 'Start indexing'}
         </button>

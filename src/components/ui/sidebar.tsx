@@ -116,9 +116,7 @@ export function SessionNavBar() {
                       >
                         {!isCollapsed && (
                           <>
-                            <p className="text-sm font-medium text-white">
-                              localGPT
-                            </p>
+                            <img src="/stellarkeep_logo_white.png" className="h-5" alt="logo" />
                             <ChevronsUpDown className="h-4 w-4 text-neutral-400" />
                           </>
                         )}

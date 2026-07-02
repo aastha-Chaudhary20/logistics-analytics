@@ -148,7 +148,7 @@ class ServiceManager:
             ),
             'frontend': ServiceConfig(
                 name='frontend',
-                command=['npm', 'run', 'dev' if self.mode == 'dev' else 'start'],
+                command=['npm.cmd' if sys.platform == 'win32' else 'npm', 'run', 'dev' if self.mode == 'dev' else 'start'],
                 port=3000,
                 startup_delay=5,
                 required=False  # Optional in case Node.js not available
@@ -158,7 +158,7 @@ class ServiceManager:
         # Production mode adjustments
         if self.mode == 'prod':
             # Use production build for frontend
-            base_configs['frontend'].command = ['npm', 'run', 'start']
+            base_configs['frontend'].command = ['npm.cmd' if sys.platform == 'win32' else 'npm', 'run', 'start']
             # Add production environment variables
             base_configs['rag-api'].env = {'NODE_ENV': 'production'}
             base_configs['backend'].env = {'NODE_ENV': 'production'}
@@ -213,9 +213,21 @@ class ServiceManager:
     def _command_exists(self, command: str) -> bool:
         """Check if a command exists in PATH."""
         try:
-            subprocess.run([command, '--version'], 
-                         capture_output=True, check=True, timeout=5)
-            return True
+            # On Windows, commands like npm are .cmd files, not .exe
+            # subprocess.run without shell=True can't find them directly
+            if sys.platform == "win32":
+                commands_to_try = [command, f"{command}.cmd", f"{command}.exe"]
+            else:
+                commands_to_try = [command]
+            
+            for cmd in commands_to_try:
+                try:
+                    subprocess.run([cmd, '--version'], 
+                                 capture_output=True, check=True, timeout=5)
+                    return True
+                except (subprocess.CalledProcessError, FileNotFoundError):
+                    continue
+            return False
         except (subprocess.CalledProcessError, subprocess.TimeoutExpired, FileNotFoundError):
             return False
     
