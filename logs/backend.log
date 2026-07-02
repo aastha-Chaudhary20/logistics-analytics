@@ -120,3 +120,5 @@
 2026-06-28 17:11:37,954 import cgi
 2026-06-28 17:43:23,713 /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
 2026-06-28 17:43:23,713 import cgi
+2026-07-02 22:34:25,173 /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-02 22:34:25,173 import cgi

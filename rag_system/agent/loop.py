@@ -663,10 +663,10 @@ FINAL ANSWER:
         # Keep prompt concise: if more than 40 overviews, take first 40
         overviews_snip = self.doc_overviews[:40]
         overviews_block = "\n".join(f"[{i+1}] {ov}" for i, ov in enumerate(overviews_snip))
-
+        doc_line = "; ".join(ov.split("\n")[0][:80] for ov in overviews_snip) or "user documents"
         router_prompt = f"""Task: Route query to correct system.
 
-Documents available: Invoices, DeepSeek-V3 research papers
+Documents available: {doc_line}
 
 Query: "{query}"
 

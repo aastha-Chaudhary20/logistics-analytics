@@ -325,22 +325,21 @@ class IndexingPipeline:
 
                             print(f"✅ Late-chunk vectors indexed: {total_lc_vecs}")
                 
-            # Step 6: Knowledge Graph Extraction (Optional)
+            # Step 6: Knowledge Graph Extraction (cumulative, open knowledge format)
             if hasattr(self, 'graph_extractor'):
                 with timer("Knowledge Graph Extraction"):
+                    from rag_system.indexing.knowledge_store import KnowledgeStore
                     graph_path = retriever_configs.get("graph", {}).get("graph_path", "./index_store/graph/default_graph.gml")
-                    print(f"\n--- Building and saving knowledge graph to: {graph_path} ---")
-                    
+                    index_id = self.config.get("index_id") or \
+                        os.path.splitext(os.path.basename(graph_path))[0]
+                    print(f"\n--- Merging knowledge into store '{index_id}' (graph: {graph_path}) ---")
+
                     graph_data = self.graph_extractor.extract(all_chunks)
-                    G = nx.DiGraph()
-                    for entity in graph_data['entities']:
-                        G.add_node(entity['id'], type=entity.get('type', 'Unknown'), properties=entity.get('properties', {}))
-                    for rel in graph_data['relationships']:
-                        G.add_edge(rel['source'], rel['target'], label=rel['label'])
-                    
-                    os.makedirs(os.path.dirname(graph_path), exist_ok=True)
-                    nx.write_gml(G, graph_path)
-                    print(f"✅ Knowledge graph saved successfully.")
+                    ks = KnowledgeStore(base_dir="./index_store/knowledge", index_id=index_id)
+                    stats = ks.merge(graph_data, source_docs=[os.path.basename(p) for p in file_paths])
+                    ks.export_gml(graph_path)      # merged old+new — GraphRetriever unchanged
+                    ks.export_jsonld()             # open, portable format
+                    print(f"✅ Knowledge graph merged & saved. Totals: {stats}")
                     
         print("\n--- ✅ Indexing Complete ---")
         self._print_final_statistics(len(file_paths), len(all_chunks))

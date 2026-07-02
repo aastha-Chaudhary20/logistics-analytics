@@ -220,3 +220,87 @@
 2026-06-28 18:05:18,946 GET / 200 in 13ms
 2026-06-28 18:06:18,559 ✓ Compiled in 799ms (658 modules)
 2026-06-28 18:06:18,574 GET / 200 in 10ms
+2026-07-02 22:34:27,259 > multimodal_rag@0.1.0 dev
+2026-07-02 22:34:27,259 > next dev
+2026-07-02 22:34:27,991 ▲ Next.js 15.3.3
+2026-07-02 22:34:27,991 - Local:        http://localhost:3000
+2026-07-02 22:34:27,991 - Network:      http://192.168.1.5:3000
+2026-07-02 22:34:27,991 ✓ Starting...
+2026-07-02 22:34:28,935 ✓ Ready in 1057ms
+2026-07-02 22:34:46,997 ○ Compiling / ...
+2026-07-02 22:34:47,533 ✓ Compiled / in 1038ms (1383 modules)
+2026-07-02 22:34:47,686 Demo component rendering...
+2026-07-02 22:34:47,709 GET / 200 in 1222ms
+2026-07-02 22:34:47,793 ✓ Compiled in 254ms (658 modules)
+2026-07-02 22:34:47,926 ⚠ Cross origin request detected from 192.168.1.5 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+2026-07-02 22:34:47,926 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+2026-07-02 22:40:04,858 ✓ Compiled in 160ms (658 modules)
+2026-07-02 22:40:04,871 GET / 200 in 9ms
+2026-07-02 22:40:04,949 ✓ Compiled in 89ms (658 modules)
+2026-07-02 22:40:04,961 GET / 200 in 7ms
+2026-07-02 22:40:28,666 ✓ Compiled in 122ms (658 modules)
+2026-07-02 22:40:28,686 GET / 200 in 16ms
+2026-07-02 22:41:59,782 ✓ Compiled in 145ms (658 modules)
+2026-07-02 22:41:59,798 GET / 200 in 13ms
+2026-07-02 22:41:59,879 ✓ Compiled in 95ms (658 modules)
+2026-07-02 22:41:59,891 GET / 200 in 9ms
+2026-07-02 22:42:57,047 ✓ Compiled in 137ms (658 modules)
+2026-07-02 22:42:57,060 GET / 200 in 9ms
+2026-07-02 22:43:50,447 ✓ Compiled in 110ms (658 modules)
+2026-07-02 22:43:50,465 GET / 200 in 14ms
+2026-07-02 22:44:23,795 ✓ Compiled in 159ms (658 modules)
+2026-07-02 22:44:23,818 GET / 200 in 20ms
+2026-07-02 22:45:21,926 ✓ Compiled in 113ms (658 modules)
+2026-07-02 22:45:21,937 GET / 200 in 9ms
+2026-07-02 22:47:11,264 ✓ Compiled in 204ms (658 modules)
+2026-07-02 22:47:11,276 GET / 200 in 9ms
+2026-07-02 22:49:41,541 ✓ Compiled in 164ms (658 modules)
+2026-07-02 22:49:41,553 GET / 200 in 8ms
+2026-07-02 22:54:08,264 ✓ Compiled in 145ms (658 modules)
+2026-07-02 22:54:08,276 GET / 200 in 9ms
+2026-07-02 22:55:17,124 ✓ Compiled in 242ms (658 modules)
+2026-07-02 22:55:17,142 GET / 200 in 12ms
+2026-07-02 22:57:45,700 ✓ Compiled in 243ms (658 modules)
+2026-07-02 22:57:45,714 GET / 200 in 11ms
+2026-07-02 22:58:58,442 ✓ Compiled in 190ms (658 modules)
+2026-07-02 22:58:58,454 GET / 200 in 8ms
+2026-07-02 23:00:18,280 ✓ Compiled in 181ms (658 modules)
+2026-07-02 23:00:18,351 GET / 200 in 63ms
+2026-07-02 23:00:18,374 ✓ Compiled in 92ms (658 modules)
+2026-07-02 23:00:18,387 GET / 200 in 10ms
+2026-07-02 23:00:28,265 ✓ Compiled in 281ms (658 modules)
+2026-07-02 23:00:28,348 GET / 200 in 38ms
+2026-07-02 23:01:58,489 ✓ Compiled in 499ms (658 modules)
+2026-07-02 23:01:58,563 GET / 200 in 66ms
+2026-07-02 23:01:58,595 ✓ Compiled in 101ms (658 modules)
+2026-07-02 23:01:58,604 GET / 200 in 6ms
+2026-07-02 23:02:45,501 ✓ Compiled in 185ms (658 modules)
+2026-07-02 23:02:45,513 GET / 200 in 9ms
+2026-07-02 23:04:02,500 ✓ Compiled in 201ms (658 modules)
+2026-07-02 23:04:02,578 GET / 200 in 69ms
+2026-07-02 23:04:02,616 ✓ Compiled in 110ms (658 modules)
+2026-07-02 23:04:02,661 GET / 200 in 12ms
+2026-07-02 23:08:56,738 ✓ Compiled in 208ms (658 modules)
+2026-07-02 23:08:56,765 GET / 200 in 16ms
+2026-07-02 23:15:19,340 ✓ Compiled in 305ms (658 modules)
+2026-07-02 23:15:19,441 GET / 200 in 94ms
+2026-07-02 23:15:19,498 ✓ Compiled in 152ms (658 modules)
+2026-07-02 23:15:19,523 GET / 200 in 18ms
+2026-07-02 23:19:04,590 ✓ Compiled in 217ms (658 modules)
+2026-07-02 23:19:04,609 GET / 200 in 13ms
+2026-07-02 23:19:06,321 ✓ Compiled in 93ms (658 modules)
+2026-07-02 23:19:06,334 GET / 200 in 9ms
+2026-07-02 23:19:06,414 ✓ Compiled in 91ms (658 modules)
+2026-07-02 23:19:06,424 GET / 200 in 9ms
+2026-07-02 23:19:51,983 ✓ Compiled in 158ms (658 modules)
+2026-07-02 23:19:51,995 GET / 200 in 8ms
+2026-07-02 23:20:11,240 ✓ Compiled in 122ms (658 modules)
+2026-07-02 23:20:11,252 GET / 200 in 9ms
+2026-07-02 23:22:38,515 ✓ Compiled in 212ms (658 modules)
+2026-07-02 23:22:38,534 GET / 200 in 16ms
+2026-07-02 23:22:49,850 ✓ Compiled in 132ms (658 modules)
+2026-07-02 23:22:49,860 GET / 200 in 8ms
+2026-07-02 23:23:54,175 ✓ Compiled in 164ms (658 modules)
+2026-07-02 23:23:54,197 GET / 200 in 19ms
+2026-07-02 23:23:55,453 ✓ Compiled in 138ms (658 modules)
+2026-07-02 23:23:55,463 GET / 200 in 8ms
