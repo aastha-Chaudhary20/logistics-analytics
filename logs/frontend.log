@@ -1,0 +1,687 @@
+2026-06-27 19:33:25,434 > multimodal_rag@0.1.0 dev
+2026-06-27 19:33:25,435 > next dev
+2026-06-27 19:33:28,470 ▲ Next.js 15.3.3
+2026-06-27 19:33:28,470 - Local:        http://localhost:3000
+2026-06-27 19:33:28,470 - Network:      http://172.20.10.9:3000
+2026-06-27 19:33:28,470 ✓ Starting...
+2026-06-27 19:33:28,500 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+2026-06-27 19:33:28,501 This information is used to shape Next.js' roadmap and prioritize features.
+2026-06-27 19:33:28,501 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+2026-06-27 19:33:28,501 https://nextjs.org/telemetry
+2026-06-27 19:33:31,977 ✓ Ready in 3.6s
+2026-06-27 19:46:19,406 ○ Compiling / ...
+2026-06-27 19:46:24,797 ✓ Compiled / in 5.9s (1401 modules)
+2026-06-27 19:46:24,954 Demo component rendering...
+2026-06-27 19:46:24,967 GET / 200 in 6072ms
+2026-06-27 19:46:25,579 ✓ Compiled /favicon.ico in 332ms (741 modules)
+2026-06-27 19:46:25,624 GET /favicon.ico 200 in 382ms
+2026-06-27 19:46:41,453 ✓ Compiled in 163ms (658 modules)
+2026-06-27 19:46:41,554 GET / 200 in 37ms
+2026-06-27 19:46:41,581 ✓ Compiled in 125ms (658 modules)
+2026-06-27 19:46:41,605 GET / 200 in 15ms
+2026-06-27 19:46:52,340 Demo component rendering...
+2026-06-27 19:46:52,350 GET / 200 in 104ms
+2026-06-27 19:46:52,494 ✓ Compiled /_not-found in 129ms (1389 modules)
+2026-06-27 19:46:52,531 GET /apple-touch-icon-precomposed.png 404 in 168ms
+2026-06-27 19:46:52,605 GET /apple-touch-icon.png 404 in 12ms
+2026-06-27 19:46:52,657 GET /favicon.ico 200 in 8ms
+2026-06-27 19:46:52,709 Demo component rendering...
+2026-06-27 19:46:52,718 GET / 200 in 44ms
+2026-06-27 19:46:52,735 GET /apple-touch-icon-precomposed.png 404 in 13ms
+2026-06-27 19:46:52,751 GET /apple-touch-icon.png 404 in 11ms
+2026-06-27 19:46:52,797 GET /favicon.ico 200 in 3ms
+2026-06-27 19:51:52,118 ✓ Compiled in 224ms (658 modules)
+2026-06-27 19:51:52,149 GET / 200 in 26ms
+2026-06-27 19:51:52,218 ✓ Compiled in 98ms (658 modules)
+2026-06-27 19:51:52,229 GET / 200 in 9ms
+2026-06-27 19:51:54,539 ✓ Compiled in 64ms (658 modules)
+2026-06-27 19:51:54,548 GET / 200 in 5ms
+2026-06-27 19:51:56,425 ✓ Compiled in 71ms (658 modules)
+2026-06-27 19:51:56,433 GET / 200 in 6ms
+2026-06-27 19:52:58,336 ✓ Compiled in 124ms (658 modules)
+2026-06-27 19:52:58,354 GET / 200 in 10ms
+2026-06-27 19:53:36,310 ✓ Compiled in 119ms (658 modules)
+2026-06-27 19:53:36,323 GET / 200 in 8ms
+2026-06-27 19:54:55,429 ✓ Compiled in 183ms (658 modules)
+2026-06-27 19:54:55,499 GET / 200 in 59ms
+2026-06-27 19:54:55,525 ✓ Compiled in 93ms (658 modules)
+2026-06-27 19:54:55,543 GET / 200 in 6ms
+2026-06-27 20:02:44,393 ✓ Compiled in 182ms (658 modules)
+2026-06-27 20:02:44,466 GET / 200 in 60ms
+2026-06-27 20:02:44,489 ✓ Compiled in 95ms (658 modules)
+2026-06-27 20:02:44,499 GET / 200 in 7ms
+2026-06-27 20:02:51,700 ✓ Compiled in 81ms (658 modules)
+2026-06-27 20:02:51,712 GET / 200 in 8ms
+2026-06-27 20:02:51,773 ✓ Compiled in 71ms (658 modules)
+2026-06-27 20:02:51,782 GET / 200 in 7ms
+2026-06-27 20:03:44,618 ✓ Compiled in 90ms (658 modules)
+2026-06-27 20:03:44,630 GET / 200 in 10ms
+2026-06-27 20:04:00,925 ✓ Compiled in 143ms (658 modules)
+2026-06-27 20:04:01,002 GET / 200 in 72ms
+2026-06-27 20:04:01,039 ✓ Compiled in 111ms (658 modules)
+2026-06-27 20:04:01,050 GET / 200 in 7ms
+2026-06-27 20:04:40,032 ✓ Compiled in 92ms (658 modules)
+2026-06-27 20:04:40,041 GET / 200 in 7ms
+2026-06-27 20:04:50,872 ✓ Compiled in 88ms (658 modules)
+2026-06-27 20:04:50,886 GET / 200 in 11ms
+2026-06-27 20:12:03,289 ✓ Compiled in 196ms (658 modules)
+2026-06-27 20:12:03,359 GET / 200 in 59ms
+2026-06-27 20:12:03,382 ✓ Compiled in 91ms (658 modules)
+2026-06-27 20:12:03,391 GET / 200 in 8ms
+2026-06-27 20:12:42,994 ✓ Compiled in 105ms (658 modules)
+2026-06-27 20:12:43,003 GET / 200 in 7ms
+2026-06-27 20:14:07,414 ✓ Compiled in 132ms (658 modules)
+2026-06-27 20:14:07,436 GET / 200 in 17ms
+2026-06-27 20:16:14,594 ✓ Compiled in 292ms (658 modules)
+2026-06-27 20:16:14,617 GET / 200 in 18ms
+2026-06-27 20:16:45,453 ✓ Compiled in 194ms (658 modules)
+2026-06-27 20:16:45,513 GET / 200 in 6ms
+2026-06-27 20:16:47,077 ✓ Compiled in 81ms (658 modules)
+2026-06-27 20:16:47,148 GET / 200 in 8ms
+2026-06-27 20:17:02,479 ✓ Compiled in 93ms (658 modules)
+2026-06-27 20:17:02,498 GET / 200 in 8ms
+2026-06-27 20:17:19,573 ✓ Compiled in 101ms (658 modules)
+2026-06-27 20:17:19,581 GET / 200 in 5ms
+2026-06-27 20:17:29,972 ✓ Compiled in 110ms (658 modules)
+2026-06-27 20:17:30,021 GET / 200 in 27ms
+2026-06-27 20:17:44,532 ✓ Compiled in 136ms (658 modules)
+2026-06-27 20:17:44,590 GET / 200 in 8ms
+2026-06-27 20:18:42,599 ✓ Compiled in 132ms (658 modules)
+2026-06-27 20:18:42,617 GET / 200 in 12ms
+2026-06-27 20:18:42,704 ✓ Compiled in 102ms (658 modules)
+2026-06-27 20:18:42,718 GET / 200 in 12ms
+2026-06-27 20:19:26,056 ✓ Compiled in 525ms (658 modules)
+2026-06-27 20:19:26,143 GET / 200 in 75ms
+2026-06-27 20:19:26,164 ✓ Compiled in 104ms (658 modules)
+2026-06-27 20:19:26,175 GET / 200 in 10ms
+2026-06-27 20:19:36,071 ✓ Compiled in 138ms (658 modules)
+2026-06-27 20:19:36,082 GET / 200 in 8ms
+2026-06-27 20:20:04,774 ✓ Compiled in 111ms (658 modules)
+2026-06-27 20:20:04,782 GET / 200 in 6ms
+2026-06-27 20:21:24,356 ✓ Compiled in 144ms (658 modules)
+2026-06-27 20:21:24,383 GET / 200 in 20ms
+2026-06-27 20:22:03,908 ✓ Compiled in 184ms (658 modules)
+2026-06-27 20:22:03,917 GET / 200 in 7ms
+2026-06-27 20:22:49,426 ✓ Compiled in 131ms (658 modules)
+2026-06-27 20:22:49,437 GET / 200 in 7ms
+2026-06-27 20:23:15,636 ✓ Compiled in 244ms (658 modules)
+2026-06-27 20:23:15,659 GET / 200 in 18ms
+2026-06-27 20:24:02,985 ✓ Compiled in 105ms (658 modules)
+2026-06-27 20:24:02,998 GET / 200 in 9ms
+2026-06-27 20:24:44,606 ✓ Compiled in 159ms (658 modules)
+2026-06-27 20:24:44,631 GET / 200 in 17ms
+2026-06-27 20:24:59,561 ✓ Compiled in 137ms (658 modules)
+2026-06-27 20:24:59,607 GET / 200 in 13ms
+2026-06-27 20:25:01,252 ✓ Compiled in 86ms (658 modules)
+2026-06-27 20:25:01,318 GET / 200 in 18ms
+2026-06-27 20:25:01,337 ✓ Compiled in 83ms (658 modules)
+2026-06-27 20:25:01,364 GET / 200 in 5ms
+2026-06-27 20:25:15,216 ✓ Compiled in 106ms (658 modules)
+2026-06-27 20:25:15,242 GET / 200 in 20ms
+2026-06-27 20:25:40,551 ✓ Compiled in 148ms (658 modules)
+2026-06-27 20:25:40,571 GET / 200 in 8ms
+2026-06-27 20:25:51,518 ✓ Compiled in 102ms (658 modules)
+2026-06-27 20:25:51,551 GET / 200 in 12ms
+2026-06-27 20:26:16,725 ✓ Compiled in 120ms (658 modules)
+2026-06-27 20:26:16,752 GET / 200 in 11ms
+2026-06-27 20:26:42,029 ✓ Compiled in 105ms (658 modules)
+2026-06-27 20:26:42,076 GET / 200 in 9ms
+2026-06-27 20:26:54,841 ✓ Compiled in 155ms (658 modules)
+2026-06-27 20:26:54,876 GET / 200 in 7ms
+2026-06-27 20:27:30,548 ✓ Compiled in 146ms (658 modules)
+2026-06-27 20:27:30,560 GET / 200 in 8ms
+2026-06-27 20:28:03,132 ✓ Compiled in 158ms (658 modules)
+2026-06-27 20:28:03,199 GET / 200 in 8ms
+2026-06-27 20:28:37,624 ✓ Compiled in 118ms (658 modules)
+2026-06-27 20:28:37,718 GET / 200 in 10ms
+2026-06-27 20:29:06,050 ✓ Compiled in 172ms (658 modules)
+2026-06-27 20:29:06,625 GET / 200 in 25ms
+2026-06-27 20:31:48,164 ✓ Compiled in 233ms (658 modules)
+2026-06-27 20:31:48,186 GET / 200 in 17ms
+2026-06-27 20:32:01,942 ✓ Compiled in 126ms (658 modules)
+2026-06-27 20:32:01,954 GET / 200 in 7ms
+2026-06-28 17:11:40,040 > multimodal_rag@0.1.0 dev
+2026-06-28 17:11:40,041 > next dev
+2026-06-28 17:11:40,774 ▲ Next.js 15.3.3
+2026-06-28 17:11:40,775 - Local:        http://localhost:3000
+2026-06-28 17:11:40,775 - Network:      http://192.168.1.5:3000
+2026-06-28 17:11:40,775 ✓ Starting...
+2026-06-28 17:11:41,958 ✓ Ready in 1297ms
+2026-06-28 17:12:02,102 ○ Compiling / ...
+2026-06-28 17:12:02,594 ✓ Compiled / in 996ms (1383 modules)
+2026-06-28 17:12:02,746 Demo component rendering...
+2026-06-28 17:12:02,759 GET / 200 in 1170ms
+2026-06-28 17:12:03,018 ✓ Compiled /favicon.ico in 91ms (741 modules)
+2026-06-28 17:12:03,062 GET /favicon.ico 200 in 136ms
+2026-06-28 17:19:55,727 ✓ Compiled in 167ms (658 modules)
+2026-06-28 17:19:55,764 GET / 200 in 34ms
+2026-06-28 17:19:55,845 ✓ Compiled in 116ms (658 modules)
+2026-06-28 17:19:55,854 GET / 200 in 7ms
+2026-06-28 17:22:06,654 ✓ Compiled in 176ms (658 modules)
+2026-06-28 17:22:06,671 GET / 200 in 13ms
+2026-06-28 17:22:06,758 ✓ Compiled in 101ms (658 modules)
+2026-06-28 17:22:06,768 GET / 200 in 7ms
+2026-06-28 17:24:06,836 ✓ Compiled in 163ms (658 modules)
+2026-06-28 17:24:06,852 GET / 200 in 12ms
+2026-06-28 17:24:06,946 ✓ Compiled in 107ms (658 modules)
+2026-06-28 17:24:06,958 GET / 200 in 7ms
+2026-06-28 17:31:09,049 ✓ Compiled in 712ms (658 modules)
+2026-06-28 17:31:09,085 GET / 200 in 24ms
+2026-06-28 17:35:21,022 ✓ Compiled in 601ms (1383 modules)
+2026-06-28 17:35:21,114 GET / 200 in 87ms
+2026-06-28 17:35:35,769 ✓ Compiled in 252ms (1383 modules)
+2026-06-28 17:35:35,802 GET / 200 in 31ms
+2026-06-28 17:43:25,792 > multimodal_rag@0.1.0 dev
+2026-06-28 17:43:25,792 > next dev
+2026-06-28 17:43:26,502 ▲ Next.js 15.3.3
+2026-06-28 17:43:26,503 - Local:        http://localhost:3000
+2026-06-28 17:43:26,503 - Network:      http://192.168.1.5:3000
+2026-06-28 17:43:26,503 ✓ Starting...
+2026-06-28 17:43:27,501 ✓ Ready in 1116ms
+2026-06-28 17:43:43,318 ○ Compiling / ...
+2026-06-28 17:43:43,776 ✓ Compiled / in 957ms (1383 modules)
+2026-06-28 17:43:43,930 Demo component rendering...
+2026-06-28 17:43:43,943 GET / 200 in 1139ms
+2026-06-28 17:43:44,114 ⚠ Cross origin request detected from 192.168.1.5 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+2026-06-28 17:43:44,114 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+2026-06-28 17:43:44,213 ✓ Compiled /favicon.ico in 98ms (741 modules)
+2026-06-28 17:43:44,258 GET /favicon.ico 200 in 145ms
+2026-06-28 17:45:05,404 ✓ Compiled in 184ms (658 modules)
+2026-06-28 17:45:05,502 GET / 200 in 95ms
+2026-06-28 17:45:05,542 ✓ Compiled in 137ms (658 modules)
+2026-06-28 17:45:05,553 GET / 200 in 9ms
+2026-06-28 17:51:23,300 ✓ Compiled in 566ms (658 modules)
+2026-06-28 17:51:23,331 GET / 200 in 25ms
+2026-06-28 17:51:23,416 ✓ Compiled in 113ms (658 modules)
+2026-06-28 17:51:23,430 GET / 200 in 8ms
+2026-06-28 17:53:58,413 ✓ Compiled in 208ms (658 modules)
+2026-06-28 17:53:58,431 GET / 200 in 13ms
+2026-06-28 17:54:52,059 ✓ Compiled in 224ms (658 modules)
+2026-06-28 17:54:52,076 GET / 200 in 12ms
+2026-06-28 17:56:32,244 ✓ Compiled in 317ms (658 modules)
+2026-06-28 17:56:32,264 GET / 200 in 15ms
+2026-06-28 17:56:33,820 ✓ Compiled in 92ms (658 modules)
+2026-06-28 17:56:33,832 GET / 200 in 11ms
+2026-06-28 17:56:33,920 ✓ Compiled in 99ms (658 modules)
+2026-06-28 17:56:33,933 GET / 200 in 10ms
+2026-06-28 17:59:43,004 ✓ Compiled in 162ms (658 modules)
+2026-06-28 17:59:43,021 GET / 200 in 14ms
+2026-06-28 18:00:27,543 ✓ Compiled in 185ms (658 modules)
+2026-06-28 18:00:27,554 GET / 200 in 8ms
+2026-06-28 18:02:08,167 ✓ Compiled in 156ms (658 modules)
+2026-06-28 18:02:08,185 GET / 200 in 15ms
+2026-06-28 18:03:39,225 ✓ Compiled in 237ms (658 modules)
+2026-06-28 18:03:39,236 GET / 200 in 8ms
+2026-06-28 18:04:07,583 ✓ Compiled in 98ms (658 modules)
+2026-06-28 18:04:07,595 GET / 200 in 10ms
+2026-06-28 18:04:31,947 ✓ Compiled in 133ms (658 modules)
+2026-06-28 18:04:31,965 GET / 200 in 15ms
+2026-06-28 18:05:18,924 ✓ Compiled in 133ms (658 modules)
+2026-06-28 18:05:18,946 GET / 200 in 13ms
+2026-06-28 18:06:18,559 ✓ Compiled in 799ms (658 modules)
+2026-06-28 18:06:18,574 GET / 200 in 10ms
+2026-07-02 22:34:27,259 > multimodal_rag@0.1.0 dev
+2026-07-02 22:34:27,259 > next dev
+2026-07-02 22:34:27,991 ▲ Next.js 15.3.3
+2026-07-02 22:34:27,991 - Local:        http://localhost:3000
+2026-07-02 22:34:27,991 - Network:      http://192.168.1.5:3000
+2026-07-02 22:34:27,991 ✓ Starting...
+2026-07-02 22:34:28,935 ✓ Ready in 1057ms
+2026-07-02 22:34:46,997 ○ Compiling / ...
+2026-07-02 22:34:47,533 ✓ Compiled / in 1038ms (1383 modules)
+2026-07-02 22:34:47,686 Demo component rendering...
+2026-07-02 22:34:47,709 GET / 200 in 1222ms
+2026-07-02 22:34:47,793 ✓ Compiled in 254ms (658 modules)
+2026-07-02 22:34:47,926 ⚠ Cross origin request detected from 192.168.1.5 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+2026-07-02 22:34:47,926 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+2026-07-02 22:40:04,858 ✓ Compiled in 160ms (658 modules)
+2026-07-02 22:40:04,871 GET / 200 in 9ms
+2026-07-02 22:40:04,949 ✓ Compiled in 89ms (658 modules)
+2026-07-02 22:40:04,961 GET / 200 in 7ms
+2026-07-02 22:40:28,666 ✓ Compiled in 122ms (658 modules)
+2026-07-02 22:40:28,686 GET / 200 in 16ms
+2026-07-02 22:41:59,782 ✓ Compiled in 145ms (658 modules)
+2026-07-02 22:41:59,798 GET / 200 in 13ms
+2026-07-02 22:41:59,879 ✓ Compiled in 95ms (658 modules)
+2026-07-02 22:41:59,891 GET / 200 in 9ms
+2026-07-02 22:42:57,047 ✓ Compiled in 137ms (658 modules)
+2026-07-02 22:42:57,060 GET / 200 in 9ms
+2026-07-02 22:43:50,447 ✓ Compiled in 110ms (658 modules)
+2026-07-02 22:43:50,465 GET / 200 in 14ms
+2026-07-02 22:44:23,795 ✓ Compiled in 159ms (658 modules)
+2026-07-02 22:44:23,818 GET / 200 in 20ms
+2026-07-02 22:45:21,926 ✓ Compiled in 113ms (658 modules)
+2026-07-02 22:45:21,937 GET / 200 in 9ms
+2026-07-02 22:47:11,264 ✓ Compiled in 204ms (658 modules)
+2026-07-02 22:47:11,276 GET / 200 in 9ms
+2026-07-02 22:49:41,541 ✓ Compiled in 164ms (658 modules)
+2026-07-02 22:49:41,553 GET / 200 in 8ms
+2026-07-02 22:54:08,264 ✓ Compiled in 145ms (658 modules)
+2026-07-02 22:54:08,276 GET / 200 in 9ms
+2026-07-02 22:55:17,124 ✓ Compiled in 242ms (658 modules)
+2026-07-02 22:55:17,142 GET / 200 in 12ms
+2026-07-02 22:57:45,700 ✓ Compiled in 243ms (658 modules)
+2026-07-02 22:57:45,714 GET / 200 in 11ms
+2026-07-02 22:58:58,442 ✓ Compiled in 190ms (658 modules)
+2026-07-02 22:58:58,454 GET / 200 in 8ms
+2026-07-02 23:00:18,280 ✓ Compiled in 181ms (658 modules)
+2026-07-02 23:00:18,351 GET / 200 in 63ms
+2026-07-02 23:00:18,374 ✓ Compiled in 92ms (658 modules)
+2026-07-02 23:00:18,387 GET / 200 in 10ms
+2026-07-02 23:00:28,265 ✓ Compiled in 281ms (658 modules)
+2026-07-02 23:00:28,348 GET / 200 in 38ms
+2026-07-02 23:01:58,489 ✓ Compiled in 499ms (658 modules)
+2026-07-02 23:01:58,563 GET / 200 in 66ms
+2026-07-02 23:01:58,595 ✓ Compiled in 101ms (658 modules)
+2026-07-02 23:01:58,604 GET / 200 in 6ms
+2026-07-02 23:02:45,501 ✓ Compiled in 185ms (658 modules)
+2026-07-02 23:02:45,513 GET / 200 in 9ms
+2026-07-02 23:04:02,500 ✓ Compiled in 201ms (658 modules)
+2026-07-02 23:04:02,578 GET / 200 in 69ms
+2026-07-02 23:04:02,616 ✓ Compiled in 110ms (658 modules)
+2026-07-02 23:04:02,661 GET / 200 in 12ms
+2026-07-02 23:08:56,738 ✓ Compiled in 208ms (658 modules)
+2026-07-02 23:08:56,765 GET / 200 in 16ms
+2026-07-02 23:15:19,340 ✓ Compiled in 305ms (658 modules)
+2026-07-02 23:15:19,441 GET / 200 in 94ms
+2026-07-02 23:15:19,498 ✓ Compiled in 152ms (658 modules)
+2026-07-02 23:15:19,523 GET / 200 in 18ms
+2026-07-02 23:19:04,590 ✓ Compiled in 217ms (658 modules)
+2026-07-02 23:19:04,609 GET / 200 in 13ms
+2026-07-02 23:19:06,321 ✓ Compiled in 93ms (658 modules)
+2026-07-02 23:19:06,334 GET / 200 in 9ms
+2026-07-02 23:19:06,414 ✓ Compiled in 91ms (658 modules)
+2026-07-02 23:19:06,424 GET / 200 in 9ms
+2026-07-02 23:19:51,983 ✓ Compiled in 158ms (658 modules)
+2026-07-02 23:19:51,995 GET / 200 in 8ms
+2026-07-02 23:20:11,240 ✓ Compiled in 122ms (658 modules)
+2026-07-02 23:20:11,252 GET / 200 in 9ms
+2026-07-02 23:22:38,515 ✓ Compiled in 212ms (658 modules)
+2026-07-02 23:22:38,534 GET / 200 in 16ms
+2026-07-02 23:22:49,850 ✓ Compiled in 132ms (658 modules)
+2026-07-02 23:22:49,860 GET / 200 in 8ms
+2026-07-02 23:23:54,175 ✓ Compiled in 164ms (658 modules)
+2026-07-02 23:23:54,197 GET / 200 in 19ms
+2026-07-02 23:23:55,453 ✓ Compiled in 138ms (658 modules)
+2026-07-02 23:23:55,463 GET / 200 in 8ms
+2026-07-02 23:51:12,762 > multimodal_rag@0.1.0 dev
+2026-07-02 23:51:12,762 > next dev
+2026-07-02 23:51:13,485 ▲ Next.js 15.3.3
+2026-07-02 23:51:13,485 - Local:        http://localhost:3000
+2026-07-02 23:51:13,485 - Network:      http://192.168.1.5:3000
+2026-07-02 23:51:13,485 ✓ Starting...
+2026-07-02 23:51:14,469 ✓ Ready in 1109ms
+2026-07-02 23:51:40,959 ○ Compiling / ...
+2026-07-02 23:51:41,454 ✓ Compiled / in 1001ms (1383 modules)
+2026-07-02 23:51:41,607 Demo component rendering...
+2026-07-02 23:51:41,668 GET / 200 in 1228ms
+2026-07-02 23:51:41,713 ✓ Compiled in 253ms (658 modules)
+2026-07-02 23:51:41,851 ⚠ Cross origin request detected from 192.168.1.5 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+2026-07-02 23:51:41,851 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+2026-07-02 23:51:51,087 ✓ Compiled in 135ms (658 modules)
+2026-07-02 23:51:51,096 GET / 200 in 7ms
+2026-07-05 12:57:30,600 > multimodal_rag@0.1.0 dev
+2026-07-05 12:57:30,600 > next dev
+2026-07-05 12:57:31,307 ▲ Next.js 15.3.3
+2026-07-05 12:57:31,307 - Local:        http://localhost:3000
+2026-07-05 12:57:31,307 - Network:      http://192.168.1.5:3000
+2026-07-05 12:57:31,307 ✓ Starting...
+2026-07-05 12:57:32,221 ✓ Ready in 1024ms
+2026-07-05 12:57:54,050 ○ Compiling / ...
+2026-07-05 12:57:54,544 ✓ Compiled / in 997ms (1383 modules)
+2026-07-05 12:57:54,692 Demo component rendering...
+2026-07-05 12:57:54,767 GET / 200 in 1229ms
+2026-07-05 12:57:54,799 ✓ Compiled in 247ms (658 modules)
+2026-07-05 12:57:54,940 ⚠ Cross origin request detected from 192.168.1.5 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+2026-07-05 12:57:54,940 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+2026-07-05 12:58:54,070 ✓ Compiled in 151ms (658 modules)
+2026-07-05 12:58:54,083 GET / 200 in 9ms
+2026-07-05 12:58:54,159 ✓ Compiled in 87ms (658 modules)
+2026-07-05 12:58:54,171 GET / 200 in 8ms
+2026-07-05 12:59:50,299 ✓ Compiled in 134ms (658 modules)
+2026-07-05 12:59:50,310 GET / 200 in 8ms
+2026-07-05 13:00:46,147 ✓ Compiled in 135ms (658 modules)
+2026-07-05 13:00:46,170 GET / 200 in 13ms
+2026-07-05 13:01:43,968 ✓ Compiled in 224ms (658 modules)
+2026-07-05 13:01:43,978 GET / 200 in 7ms
+2026-07-05 13:34:42,761 ✓ Compiled in 140ms (658 modules)
+2026-07-05 13:34:42,770 GET / 200 in 6ms
+2026-07-05 13:35:13,202 ✓ Compiled in 141ms (658 modules)
+2026-07-05 13:35:13,211 GET / 200 in 7ms
+2026-07-05 13:35:17,061 ✓ Compiled in 145ms (658 modules)
+2026-07-05 13:35:17,074 GET / 200 in 11ms
+2026-07-05 13:35:17,144 ✓ Compiled in 81ms (658 modules)
+2026-07-05 13:35:17,156 GET / 200 in 8ms
+2026-07-05 13:35:17,232 ✓ Compiled in 71ms (658 modules)
+2026-07-05 13:35:17,250 GET / 200 in 13ms
+2026-07-05 13:38:36,514 ✓ Compiled in 117ms (658 modules)
+2026-07-05 13:38:36,522 GET / 200 in 6ms
+2026-07-05 13:51:27,859 ✓ Compiled in 135ms (658 modules)
+2026-07-05 13:51:27,924 ✓ Compiled in 64ms (658 modules)
+2026-07-05 13:57:09,600 > multimodal_rag@0.1.0 dev
+2026-07-05 13:57:09,600 > next dev
+2026-07-05 13:57:10,274 ▲ Next.js 15.3.3
+2026-07-05 13:57:10,274 - Local:        http://localhost:3000
+2026-07-05 13:57:10,274 - Network:      http://192.168.1.5:3000
+2026-07-05 13:57:10,274 ✓ Starting...
+2026-07-05 13:57:11,306 ✓ Ready in 1151ms
+2026-07-05 13:57:36,131 ○ Compiling / ...
+2026-07-05 13:57:36,587 ✓ Compiled / in 958ms (1383 modules)
+2026-07-05 13:57:36,737 Demo component rendering...
+2026-07-05 13:57:36,818 GET / 200 in 1196ms
+2026-07-05 13:57:36,853 ✓ Compiled in 260ms (658 modules)
+2026-07-05 13:57:36,987 ⚠ Cross origin request detected from 192.168.1.5 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+2026-07-05 13:57:36,987 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+2026-07-05 13:59:23,084 ✓ Compiled in 155ms (658 modules)
+2026-07-05 13:59:23,097 GET / 200 in 10ms
+2026-07-05 13:59:23,173 ✓ Compiled in 87ms (658 modules)
+2026-07-05 13:59:23,184 GET / 200 in 7ms
+2026-07-05 14:00:24,588 ✓ Compiled in 160ms (658 modules)
+2026-07-05 14:00:24,602 GET / 200 in 12ms
+2026-07-05 14:01:06,410 ✓ Compiled in 127ms (658 modules)
+2026-07-05 14:01:06,418 GET / 200 in 6ms
+2026-07-05 14:01:46,865 ✓ Compiled in 121ms (658 modules)
+2026-07-05 14:01:46,878 GET / 200 in 10ms
+2026-07-05 14:02:06,794 ✓ Compiled in 173ms (658 modules)
+2026-07-05 14:02:06,859 GET / 200 in 54ms
+2026-07-05 14:02:06,881 ✓ Compiled in 84ms (658 modules)
+2026-07-05 14:02:06,893 GET / 200 in 9ms
+2026-07-05 14:02:53,151 ✓ Compiled in 152ms (658 modules)
+2026-07-05 14:02:53,161 GET / 200 in 7ms
+2026-07-05 14:04:02,713 ✓ Compiled in 161ms (658 modules)
+2026-07-05 14:04:02,726 GET / 200 in 10ms
+2026-07-05 21:58:37,698 > multimodal_rag@0.1.0 dev
+2026-07-05 21:58:37,699 > next dev
+2026-07-05 21:58:38,457 ▲ Next.js 15.3.3
+2026-07-05 21:58:38,457 - Local:        http://localhost:3000
+2026-07-05 21:58:38,457 - Network:      http://192.168.1.5:3000
+2026-07-05 21:58:38,457 ✓ Starting...
+2026-07-05 21:58:39,497 ✓ Ready in 1159ms
+2026-07-05 22:06:09,563 ○ Compiling / ...
+2026-07-05 22:06:10,038 ✓ Compiled / in 976ms (1383 modules)
+2026-07-05 22:06:10,180 Demo component rendering...
+2026-07-05 22:06:10,242 GET / 200 in 1190ms
+2026-07-05 22:06:10,280 ✓ Compiled in 236ms (658 modules)
+2026-07-05 22:06:10,416 ⚠ Cross origin request detected from 192.168.1.5 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+2026-07-05 22:06:10,416 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+2026-07-05 22:06:10,509 ✓ Compiled /favicon.ico in 91ms (741 modules)
+2026-07-05 22:06:10,554 GET /favicon.ico 200 in 139ms
+2026-07-05 22:07:00,626 ✓ Compiled in 159ms (658 modules)
+2026-07-05 22:07:00,661 GET / 200 in 31ms
+2026-07-05 22:07:00,733 ✓ Compiled in 106ms (658 modules)
+2026-07-05 22:07:00,744 GET / 200 in 9ms
+2026-07-05 22:07:00,763 GET /favicon.ico 200 in 3ms
+2026-07-05 22:09:12,216 ✓ Compiled in 313ms (658 modules)
+2026-07-05 22:09:12,320 GET / 200 in 33ms
+2026-07-05 22:09:12,343 ✓ Compiled in 125ms (658 modules)
+2026-07-05 22:09:12,357 GET / 200 in 13ms
+2026-07-05 22:09:12,433 ✓ Compiled in 90ms (658 modules)
+2026-07-05 22:09:12,442 GET /favicon.ico 200 in 12ms
+2026-07-05 22:09:12,449 GET / 200 in 11ms
+2026-07-05 22:11:19,984 ✓ Compiled in 159ms (658 modules)
+2026-07-05 22:11:20,000 GET / 200 in 11ms
+2026-07-05 22:11:20,082 ✓ Compiled in 95ms (658 modules)
+2026-07-05 22:11:20,094 GET / 200 in 10ms
+2026-07-05 22:12:29,373 ✓ Compiled in 171ms (658 modules)
+2026-07-05 22:12:29,386 GET / 200 in 8ms
+2026-07-05 22:13:19,180 ✓ Compiled in 144ms (658 modules)
+2026-07-05 22:13:19,200 GET / 200 in 12ms
+2026-07-05 22:13:20,621 ✓ Compiled in 105ms (658 modules)
+2026-07-05 22:13:20,635 GET / 200 in 10ms
+2026-07-05 22:13:20,715 ✓ Compiled in 91ms (658 modules)
+2026-07-05 22:13:20,725 GET / 200 in 7ms
+2026-07-05 22:30:31,415 ✓ Compiled in 177ms (658 modules)
+2026-07-05 22:30:31,429 GET / 200 in 9ms
+2026-07-05 22:30:57,811 > multimodal_rag@0.1.0 dev
+2026-07-05 22:30:57,812 > next dev
+2026-07-05 22:30:58,564 ▲ Next.js 15.3.3
+2026-07-05 22:30:58,564 - Local:        http://localhost:3000
+2026-07-05 22:30:58,564 - Network:      http://192.168.1.5:3000
+2026-07-05 22:30:58,565 ✓ Starting...
+2026-07-05 22:30:59,580 ✓ Ready in 1135ms
+2026-07-05 22:31:38,720 ○ Compiling / ...
+2026-07-05 22:31:39,208 ✓ Compiled / in 1029ms (1383 modules)
+2026-07-05 22:31:39,356 Demo component rendering...
+2026-07-05 22:31:39,390 GET / 200 in 1220ms
+2026-07-05 22:31:39,472 ✓ Compiled in 258ms (658 modules)
+2026-07-05 22:31:39,602 ⚠ Cross origin request detected from 192.168.1.5 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+2026-07-05 22:31:39,602 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+2026-07-05 22:32:06,218 ✓ Compiled in 153ms (658 modules)
+2026-07-05 22:32:06,231 GET / 200 in 9ms
+2026-07-05 22:32:06,304 ✓ Compiled in 84ms (658 modules)
+2026-07-05 22:34:30,499 ✓ Compiled in 219ms (658 modules)
+2026-07-05 22:34:30,586 ✓ Compiled in 83ms (658 modules)
+2026-07-05 22:35:52,471 ✓ Compiled in 165ms (658 modules)
+2026-07-05 22:37:17,425 ✓ Compiled in 183ms (658 modules)
+2026-07-05 22:41:22,888 ✓ Compiled in 155ms (658 modules)
+2026-07-05 22:52:28,570 ✓ Compiled in 180ms (658 modules)
+2026-07-05 23:19:42,257 > multimodal_rag@0.1.0 dev
+2026-07-05 23:19:42,257 > next dev
+2026-07-05 23:19:42,913 ▲ Next.js 15.3.3
+2026-07-05 23:19:42,914 - Local:        http://localhost:3000
+2026-07-05 23:19:42,914 - Network:      http://192.168.1.5:3000
+2026-07-05 23:19:42,914 ✓ Starting...
+2026-07-05 23:19:43,881 ✓ Ready in 1072ms
+2026-07-05 23:21:10,873 ○ Compiling / ...
+2026-07-05 23:21:11,335 ✓ Compiled / in 963ms (1383 modules)
+2026-07-05 23:21:11,483 Demo component rendering...
+2026-07-05 23:21:11,516 GET / 200 in 1151ms
+2026-07-05 23:21:11,590 ✓ Compiled in 248ms (658 modules)
+2026-07-05 23:21:11,727 ⚠ Cross origin request detected from 192.168.1.5 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+2026-07-05 23:21:11,727 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+2026-07-05 23:21:37,366 ✓ Compiled in 159ms (658 modules)
+2026-07-05 23:21:37,446 ✓ Compiled in 77ms (658 modules)
+2026-07-05 23:21:41,196 GET / 200 in 41ms
+2026-07-05 23:21:41,212 GET / 200 in 15ms
+2026-07-06 21:33:53,316 > multimodal_rag@0.1.0 dev
+2026-07-06 21:33:53,316 > next dev
+2026-07-06 21:33:53,861 ▲ Next.js 15.3.3
+2026-07-06 21:33:53,861 - Local:        http://localhost:3000
+2026-07-06 21:33:53,861 - Network:      http://192.168.1.7:3000
+2026-07-06 21:33:53,861 ✓ Starting...
+2026-07-06 21:33:54,914 ✓ Ready in 1154ms
+2026-07-06 21:33:58,280 [?25h
+2026-07-06 21:38:50,907 > multimodal_rag@0.1.0 dev
+2026-07-06 21:38:50,907 > next dev
+2026-07-06 21:38:51,493 ▲ Next.js 15.3.3
+2026-07-06 21:38:51,493 - Local:        http://localhost:3000
+2026-07-06 21:38:51,493 - Network:      http://192.168.1.7:3000
+2026-07-06 21:38:51,493 ✓ Starting...
+2026-07-06 21:38:53,208 ✓ Ready in 1838ms
+2026-07-06 21:39:17,316 ○ Compiling / ...
+2026-07-06 21:39:17,784 ✓ Compiled / in 969ms (1383 modules)
+2026-07-06 21:39:17,932 Demo component rendering...
+2026-07-06 21:39:17,998 GET / 200 in 1195ms
+2026-07-06 21:39:18,031 ✓ Compiled in 242ms (658 modules)
+2026-07-06 21:39:18,266 ✓ Compiled /favicon.ico in 91ms (741 modules)
+2026-07-06 21:39:18,312 GET /favicon.ico 200 in 141ms
+2026-07-06 21:40:30,028 ✓ Compiled in 147ms (658 modules)
+2026-07-06 21:40:30,060 GET / 200 in 28ms
+2026-07-06 21:40:30,129 ✓ Compiled in 100ms (658 modules)
+2026-07-06 21:40:30,138 GET / 200 in 7ms
+2026-07-06 21:40:30,156 GET /favicon.ico 200 in 2ms
+2026-07-06 21:40:32,406 ✓ Compiled in 128ms (658 modules)
+2026-07-06 21:40:32,426 GET / 200 in 10ms
+2026-07-06 21:40:32,450 GET /favicon.ico 200 in 5ms
+2026-07-06 21:43:47,920 ✓ Compiled in 926ms (658 modules)
+2026-07-06 21:43:48,013 GET / 200 in 93ms
+2026-07-06 21:43:48,042 ✓ Compiled in 125ms (658 modules)
+2026-07-06 21:43:48,054 GET / 200 in 10ms
+2026-07-06 21:44:24,076 ✓ Compiled in 141ms (658 modules)
+2026-07-06 21:44:24,090 GET / 200 in 11ms
+2026-07-06 21:46:56,030 ✓ Compiled in 191ms (658 modules)
+2026-07-06 21:46:56,052 GET / 200 in 12ms
+2026-07-06 21:50:36,825 ✓ Compiled in 271ms (658 modules)
+2026-07-06 21:50:36,841 GET / 200 in 11ms
+2026-07-06 21:52:41,503 ✓ Compiled in 220ms (658 modules)
+2026-07-06 21:52:41,522 GET / 200 in 14ms
+2026-07-06 21:58:42,468 ✓ Compiled in 170ms (658 modules)
+2026-07-06 21:58:42,483 GET / 200 in 9ms
+2026-07-06 21:58:48,632 ✓ Compiled in 141ms (658 modules)
+2026-07-06 21:58:48,639 GET / 200 in 5ms
+2026-07-06 21:59:14,309 ✓ Compiled in 124ms (658 modules)
+2026-07-06 21:59:14,318 GET / 200 in 7ms
+2026-07-06 22:00:24,339 ✓ Compiled in 172ms (658 modules)
+2026-07-06 22:00:24,358 GET / 200 in 12ms
+2026-07-06 22:01:25,305 > multimodal_rag@0.1.0 dev
+2026-07-06 22:01:25,305 > next dev
+2026-07-06 22:01:26,080 ▲ Next.js 15.3.3
+2026-07-06 22:01:26,080 - Local:        http://localhost:3000
+2026-07-06 22:01:26,080 - Network:      http://192.168.1.7:3000
+2026-07-06 22:01:26,080 ✓ Starting...
+2026-07-06 22:01:27,119 ✓ Ready in 1172ms
+2026-07-06 22:02:16,422 ○ Compiling / ...
+2026-07-06 22:02:16,900 ✓ Compiled / in 1015ms (1383 modules)
+2026-07-06 22:02:17,056 Demo component rendering...
+2026-07-06 22:02:17,125 GET / 200 in 1251ms
+2026-07-06 22:02:17,164 ✓ Compiled in 258ms (658 modules)
+2026-07-06 22:02:17,302 ⚠ Cross origin request detected from 192.168.1.7 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+2026-07-06 22:02:17,302 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+2026-07-06 22:02:17,377 ✓ Compiled /favicon.ico in 73ms (741 modules)
+2026-07-06 22:02:17,423 GET /favicon.ico 200 in 123ms
+2026-07-06 22:02:44,616 ✓ Compiled in 162ms (658 modules)
+2026-07-06 22:02:44,651 GET / 200 in 30ms
+2026-07-06 22:02:44,726 ✓ Compiled in 106ms (658 modules)
+2026-07-06 22:02:44,734 GET / 200 in 6ms
+2026-07-06 22:02:49,747 ✓ Compiled in 140ms (658 modules)
+2026-07-06 22:02:49,769 GET / 200 in 17ms
+2026-07-06 22:06:29,840 ✓ Compiled in 423ms (658 modules)
+2026-07-06 22:06:29,920 GET / 200 in 74ms
+2026-07-06 22:06:29,960 ✓ Compiled in 117ms (658 modules)
+2026-07-06 22:06:29,969 GET / 200 in 6ms
+2026-07-06 22:09:51,958 ✓ Compiled in 149ms (658 modules)
+2026-07-06 22:09:51,965 GET / 200 in 5ms
+2026-07-06 22:12:32,589 ✓ Compiled in 230ms (658 modules)
+2026-07-06 22:12:32,613 GET / 200 in 17ms
+2026-07-06 22:18:25,771 ✓ Compiled in 172ms (658 modules)
+2026-07-06 22:18:25,786 GET / 200 in 10ms
+2026-07-06 22:18:29,513 ✓ Compiled in 130ms (658 modules)
+2026-07-06 22:18:29,525 GET / 200 in 8ms
+2026-07-06 22:21:09,921 ✓ Compiled in 150ms (658 modules)
+2026-07-06 22:21:09,942 GET / 200 in 8ms
+2026-07-06 22:21:11,643 ✓ Compiled in 167ms (658 modules)
+2026-07-06 22:21:11,654 GET / 200 in 8ms
+2026-07-06 22:21:33,103 ✓ Compiled in 133ms (658 modules)
+2026-07-06 22:21:33,125 GET / 200 in 19ms
+2026-07-06 22:21:34,678 ✓ Compiled in 144ms (658 modules)
+2026-07-06 22:21:34,688 GET / 200 in 6ms
+2026-07-06 22:21:43,808 ✓ Compiled in 139ms (658 modules)
+2026-07-06 22:21:43,818 GET / 200 in 8ms
+2026-07-06 22:21:45,031 ✓ Compiled in 117ms (658 modules)
+2026-07-06 22:21:45,040 GET / 200 in 7ms
+2026-07-06 23:03:41,011 ✓ Compiled in 157ms (658 modules)
+2026-07-06 23:03:41,022 GET / 200 in 7ms
+2026-07-06 23:06:20,847 ✓ Compiled in 171ms (658 modules)
+2026-07-06 23:06:20,860 GET / 200 in 11ms
+2026-07-06 23:06:55,756 ✓ Compiled in 161ms (658 modules)
+2026-07-06 23:06:55,767 GET / 200 in 8ms
+2026-07-06 23:06:57,502 ✓ Compiled in 158ms (658 modules)
+2026-07-06 23:06:57,517 GET / 200 in 12ms
+2026-07-06 23:06:57,636 ✓ Compiled in 131ms (658 modules)
+2026-07-06 23:06:57,650 GET / 200 in 9ms
+2026-07-06 23:07:54,222 ✓ Compiled in 175ms (658 modules)
+2026-07-06 23:07:54,243 GET / 200 in 8ms
+2026-07-06 23:07:55,991 ✓ Compiled in 160ms (658 modules)
+2026-07-06 23:07:56,012 GET / 200 in 7ms
+2026-07-06 23:08:55,698 ✓ Compiled in 212ms (658 modules)
+2026-07-06 23:08:55,714 GET / 200 in 12ms
+2026-07-06 23:09:21,744 ✓ Compiled in 145ms (658 modules)
+2026-07-06 23:09:21,757 GET / 200 in 10ms
+2026-07-06 23:09:21,834 ✓ Compiled in 88ms (658 modules)
+2026-07-06 23:09:21,843 GET / 200 in 8ms
+2026-07-06 23:09:21,935 ✓ Compiled in 90ms (658 modules)
+2026-07-06 23:09:22,000 GET / 200 in 59ms
+2026-07-06 23:09:22,025 ✓ Compiled in 88ms (658 modules)
+2026-07-06 23:09:22,087 GET / 200 in 57ms
+2026-07-06 23:09:22,116 ✓ Compiled in 90ms (658 modules)
+2026-07-06 23:09:22,125 GET / 200 in 8ms
+2026-07-06 23:09:22,198 ✓ Compiled in 81ms (658 modules)
+2026-07-06 23:09:22,208 GET / 200 in 8ms
+2026-07-06 23:09:22,276 ✓ Compiled in 76ms (658 modules)
+2026-07-06 23:09:22,285 GET / 200 in 7ms
+2026-07-06 23:09:53,541 ✓ Compiled in 147ms (658 modules)
+2026-07-06 23:09:53,553 GET / 200 in 9ms
+2026-07-06 23:09:54,332 ✓ Compiled in 102ms (658 modules)
+2026-07-06 23:09:54,361 GET / 200 in 10ms
+2026-07-06 23:10:29,806 > multimodal_rag@0.1.0 dev
+2026-07-06 23:10:29,807 > next dev
+2026-07-06 23:10:30,571 ▲ Next.js 15.3.3
+2026-07-06 23:10:30,571 - Local:        http://localhost:3000
+2026-07-06 23:10:30,571 - Network:      http://192.168.1.7:3000
+2026-07-06 23:10:30,571 ✓ Starting...
+2026-07-06 23:10:31,612 ✓ Ready in 1168ms
+2026-07-06 23:11:59,337 ○ Compiling / ...
+2026-07-06 23:11:59,874 ✓ Compiled / in 1037ms (1383 modules)
+2026-07-06 23:12:00,027 Demo component rendering...
+2026-07-06 23:12:00,096 GET / 200 in 1272ms
+2026-07-06 23:12:00,135 ✓ Compiled in 255ms (658 modules)
+2026-07-06 23:12:00,278 ⚠ Cross origin request detected from 192.168.1.7 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+2026-07-06 23:12:00,278 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+2026-07-06 23:12:34,786 ✓ Compiled in 156ms (658 modules)
+2026-07-06 23:12:34,798 GET / 200 in 9ms
+2026-07-06 23:12:34,874 ✓ Compiled in 86ms (658 modules)
+2026-07-06 23:12:34,884 GET / 200 in 7ms
+2026-07-06 23:15:51,420 ✓ Compiled in 500ms (658 modules)
+2026-07-06 23:15:51,444 GET / 200 in 20ms
+2026-07-06 23:15:51,512 ✓ Compiled in 91ms (658 modules)
+2026-07-06 23:15:51,523 GET / 200 in 8ms
+2026-07-06 23:18:21,479 ✓ Compiled in 236ms (658 modules)
+2026-07-06 23:18:21,492 GET / 200 in 10ms
+2026-07-06 23:22:09,581 ✓ Compiled in 164ms (658 modules)
+2026-07-06 23:22:09,590 GET / 200 in 6ms
+2026-07-06 23:22:47,838 ✓ Compiled in 189ms (658 modules)
+2026-07-06 23:22:47,849 GET / 200 in 7ms
+2026-07-06 23:28:20,883 ✓ Compiled in 165ms (658 modules)
+2026-07-06 23:28:20,901 GET / 200 in 16ms
+2026-07-06 23:28:21,011 ✓ Compiled in 77ms (658 modules)
+2026-07-06 23:28:21,023 GET / 200 in 9ms
+2026-07-06 23:28:21,085 ✓ Compiled in 73ms (658 modules)
+2026-07-06 23:28:21,095 GET / 200 in 8ms
+2026-07-06 23:28:21,161 ✓ Compiled in 75ms (658 modules)
+2026-07-06 23:28:21,168 GET / 200 in 6ms
+2026-07-06 23:29:15,965 ✓ Compiled in 138ms (658 modules)
+2026-07-06 23:29:15,975 GET / 200 in 9ms
+2026-07-06 23:29:20,971 ✓ Compiled in 141ms (658 modules)
+2026-07-06 23:29:20,978 GET / 200 in 5ms
+2026-07-06 23:29:29,209 ✓ Compiled in 131ms (658 modules)
+2026-07-06 23:29:29,217 GET / 200 in 5ms
+2026-07-06 23:29:40,667 ✓ Compiled in 152ms (658 modules)
+2026-07-06 23:29:40,684 GET / 200 in 14ms
+2026-07-06 23:29:40,769 ✓ Compiled in 100ms (658 modules)
+2026-07-06 23:29:40,782 GET / 200 in 10ms
+2026-07-06 23:29:40,847 ✓ Compiled in 77ms (658 modules)
+2026-07-06 23:29:40,857 GET / 200 in 9ms
+2026-07-06 23:29:40,918 ✓ Compiled in 70ms (658 modules)
+2026-07-06 23:29:40,924 GET / 200 in 4ms
+2026-07-06 23:32:41,835 ✓ Compiled in 156ms (658 modules)
+2026-07-06 23:32:41,847 GET / 200 in 6ms
+2026-07-06 23:35:16,540 ✓ Compiled in 152ms (658 modules)
+2026-07-06 23:35:16,548 GET / 200 in 5ms
+2026-07-06 23:35:16,611 ✓ Compiled in 68ms (658 modules)
+2026-07-06 23:36:51,676 > multimodal_rag@0.1.0 dev
+2026-07-06 23:36:51,676 > next dev
+2026-07-06 23:36:52,371 ▲ Next.js 15.3.3
+2026-07-06 23:36:52,371 - Local:        http://localhost:3000
+2026-07-06 23:36:52,372 - Network:      http://192.168.1.7:3000
+2026-07-06 23:36:52,372 ✓ Starting...
+2026-07-06 23:36:53,458 ✓ Ready in 1207ms
+2026-07-06 23:37:04,781 ○ Compiling / ...
+2026-07-06 23:37:05,252 ✓ Compiled / in 972ms (1383 modules)
+2026-07-06 23:37:05,407 Demo component rendering...
+2026-07-06 23:37:05,472 GET / 200 in 1205ms
+2026-07-06 23:37:05,513 ✓ Compiled in 254ms (658 modules)
+2026-07-06 23:37:05,644 ⚠ Cross origin request detected from 192.168.1.7 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+2026-07-06 23:37:05,644 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+2026-07-06 23:37:42,834 ✓ Compiled in 162ms (658 modules)
+2026-07-06 23:37:42,845 GET / 200 in 8ms
+2026-07-06 23:37:42,920 ✓ Compiled in 85ms (658 modules)
+2026-07-06 23:40:28,211 ✓ Compiled in 648ms (658 modules)
+2026-07-06 23:40:28,307 ✓ Compiled in 93ms (658 modules)
+2026-07-06 23:41:39,423 ✓ Compiled in 166ms (658 modules)
+2026-07-06 23:41:39,505 ✓ Compiled in 78ms (658 modules)
+2026-07-06 23:47:02,835 ✓ Compiled in 144ms (658 modules)
+2026-07-06 23:47:02,919 ✓ Compiled in 81ms (658 modules)
+2026-07-06 23:47:46,122 Demo component rendering...
+2026-07-06 23:47:46,150 GET / 200 in 87ms
+2026-07-06 23:47:51,003 ✓ Compiled in 165ms (658 modules)
+2026-07-06 23:47:51,016 GET / 200 in 9ms

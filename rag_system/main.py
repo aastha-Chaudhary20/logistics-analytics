@@ -151,35 +151,41 @@ PIPELINE_CONFIGS = {
             "enable_progress_tracking": False
         }
     },
+    
     "cpu_fast": {
-    "description": "CPU-optimized: hybrid search kept, LLM-heavy stages off",
-    "storage": {
-        "lancedb_uri": "./lancedb",
-        "text_table_name": "text_pages_v3",
-        "image_table_name": "image_pages_v3",
-        "bm25_path": "./index_store/bm25",
+        "description": "CPU-optimized: hybrid search kept (cheap + finds exact Excel rows), all LLM-heavy stages off",
+        "storage": {
+            "lancedb_uri": "./lancedb",
+            "text_table_name": "text_pages_v3",
+            "image_table_name": "image_pages_v3",
+            "bm25_path": "./index_store/bm25",
+        },
+        "retrieval": {
+            "retriever": "multivector",
+            "search_type": "hybrid",          # KEEP: BM25 is cheap and crucial for exact lookups
+            "late_chunking": {"enabled": False},  # avoids a second embedding pass at index time
+            "dense": {"enabled": True, "weight": 0.6},
+            "bm25": {"enabled": True, "index_name": "rag_bm25_index"},
+        },
+        "embedding_model_name": "Qwen/Qwen3-Embedding-0.6B",
+        "reranker": {"enabled": False},           # ColBERT rerank = biggest CPU cost -> OFF
+        "query_decomposition": {"enabled": False}, # multiplies LLM calls -> OFF
+        "verification": {"enabled": False},        # one more LLM call per answer -> OFF
+        "retrieval_k": 12,                         # enough recall without rerank
+        "reranker_top_k": 12,
+        "context_window_size": 0,                  # skip neighbor-chunk expansion
+        "contextual_enricher": {
+            "enabled": False,                      # per-chunk LLM calls at INDEX time -> OFF
+            "window_size": 1,
+        },
+        "indexing": {
+            "embedding_batch_size": 32,            # smaller batches = steadier CPU RAM
+            "enrichment_batch_size": 16,
+            "enable_progress_tracking": True,
+        },
     },
-    "retrieval": {
-        "retriever": "multivector",
-        "search_type": "hybrid",
-        "late_chunking": {"enabled": False},
-        "dense": {"enabled": True, "weight": 0.6},
-        "bm25": {"enabled": True, "index_name": "rag_bm25_index"},
-    },
-    "embedding_model_name": EXTERNAL_MODELS["embedding_model"],
-    "reranker": {"enabled": False},
-    "query_decomposition": {"enabled": False},
-    "verification": {"enabled": False},
-    "retrieval_k": 12,
-    "reranker_top_k": 12,
-    "context_window_size": 0,
-    "contextual_enricher": {"enabled": False, "window_size": 1},
-    "indexing": {
-        "embedding_batch_size": 32,
-        "enrichment_batch_size": 16,
-        "enable_progress_tracking": True,
-    },
-},
+
+ 
     "bm25": {
         "enabled": True,
         "index_name": "rag_bm25_index"

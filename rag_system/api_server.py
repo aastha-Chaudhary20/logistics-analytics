@@ -16,6 +16,14 @@ from backend.database import ChatDatabase, generate_session_title
 from rag_system.main import get_agent
 from rag_system.factory import get_indexing_pipeline
 
+# --- Analytics lane imports ---
+from rag_system.analytics.router import route as analytics_route
+from rag_system.analytics.engine import AnalyticsEngine
+from rag_system.analytics.po_generator import draft_purchase_order
+# --- Incremental indexing + stop/cancel ---
+from rag_system.ingestion.indexed_ledger import IndexedLedger
+from rag_system.utils import cancellation as cancel_registry
+
 # Initialize database connection once at module level
 # Use auto-detection for environment-appropriate path
 db = ChatDatabase()
@@ -34,6 +42,25 @@ if RAG_AGENT is None:
     print("❌ Critical error: RAG Agent could not be initialized. Exiting.")
     exit(1)
 print("✅ RAG Agent initialized successfully with MAXIMUM ACCURACY.")
+# ---
+
+# --- Analytics engine (spend / vendors / lanes / history over procurement_events) ---
+# Defined AFTER RAG_AGENT exists so the adapter can reuse the agent's LLM client.
+def _analytics_llm(prompt: str) -> str:
+    """Adapter so AnalyticsEngine (which wants a str->str function) can use the
+    agent's Ollama client, which returns a dict like {'response': '...'}."""
+    try:
+        out = RAG_AGENT.llm_client.generate_completion(
+            model=RAG_AGENT.ollama_config["generation_model"],
+            prompt=prompt,
+            enable_thinking=False,
+        )
+        return (out or {}).get("response", "")
+    except Exception:
+        return ""
+
+ANALYTICS = AnalyticsEngine("./index_store/structured.duckdb", llm_fn=_analytics_llm)
+print("✅ Analytics engine ready (procurement_events).")
 # ---
 
 # Add helper near top after db & agent init
@@ -112,6 +139,44 @@ def _get_table_name_for_session(session_id):
         logger.info(f"📊 Using default table '{default_table}' for session {session_id[:8]}...")
         return default_table
 
+def _try_analytics(query):
+    """Route a query to the analytics or document lane. Returns an answer string
+    if handled (spend/vendor/lane/history/report, or PO/purchase-document
+    drafting), else None so the caller falls through to the normal RAG pipeline."""
+    try:
+        lane = analytics_route(query)
+    except Exception:
+        lane = "rag"
+
+    # ---- document lane: draft a grounded purchase order ----
+    if lane == "document":
+        try:
+            return draft_purchase_order(query, ANALYTICS, llm_fn=_analytics_llm)
+        except Exception as e:
+            return f"Could not draft the document: {e}"
+
+    if lane != "analytics":
+        return None
+    ql = query.lower()
+    if any(k in ql for k in ("spend report", "complete analysis", "full analysis")):
+        return ANALYTICS.spend_report(out_path="reports/spend_report.md")
+    res = ANALYTICS.ask(query)
+    if res.get("error"):
+        return f"Analytics query couldn't run: {res['error']}"
+    if not res.get("rows"):
+        return "No matching records in the indexed data."
+    # Local model ONLY phrases the already-computed rows; on any failure fall
+    # back to a plain table so a number is always returned.
+    try:
+        narrated = _analytics_llm(ANALYTICS.narration_prompt(query, res))
+        if narrated.strip():
+            return narrated
+    except Exception:
+        pass
+    cols = res["columns"]
+    return " | ".join(cols) + "\n" + "\n".join(
+        " | ".join(str(x) for x in r) for r in res["rows"][:20])
+
 class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
     def do_OPTIONS(self):
         """Handle CORS preflight requests for frontend integration."""
@@ -129,6 +194,8 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
             self.handle_chat()
         elif parsed_path.path == '/chat/stream':
             self.handle_chat_stream()
+        elif parsed_path.path == '/chat/cancel':
+            self.handle_cancel()
         elif parsed_path.path == '/index':
             self.handle_index()
         else:
@@ -141,6 +208,21 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
             self.handle_models()
         else:
             self.send_json_response({"error": "Not Found"}, status_code=404)
+
+    def handle_cancel(self):
+        """Stop an in-progress streaming query for a session (the 'stop' button)."""
+        try:
+            content_length = int(self.headers.get('Content-Length', 0))
+            data = json.loads(self.rfile.read(content_length).decode('utf-8')) if content_length else {}
+            session_id = data.get('session_id')
+            stopped = cancel_registry.request_cancel(session_id)
+            self.send_json_response({
+                "cancelled": stopped,
+                "message": ("Stop signal sent; the query will halt at the next step."
+                            if stopped else "No active query found for this session."),
+            })
+        except Exception as e:
+            self.send_json_response({"error": f"Cancel failed: {str(e)}"}, status_code=500)
 
     def handle_chat(self):
         """Handles a chat query by calling the agentic RAG pipeline."""
@@ -179,6 +261,26 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
             if not query:
                 self.send_json_response({"error": "Query is required"}, status_code=400)
                 return
+
+            # ---- ANALYTICS LANE: spend / vendors / lanes / history / report ----
+            # Unless the user forced RAG, try the SQL analytics lane first. If it
+            # handles the question, answer from computed rows and skip retrieval.
+            if not force_rag:
+                analytics_answer = _try_analytics(query)
+                if analytics_answer is not None:
+                    self.send_json_response({
+                        "answer": analytics_answer,
+                        "source_documents": [],
+                        "reasoning": "analytics",
+                        "confidence": 1.0,
+                    })
+                    if session_id:
+                        try:
+                            db.add_message(session_id, analytics_answer, "assistant")
+                        except Exception as e:
+                            print(f"⚠️ Failed to store analytics answer: {e}")
+                    return
+            # ---- otherwise fall through to the normal RAG pipeline below ----
 
             # 🔄 UPDATE SESSION TITLE: If this is the first message in the session, update the title
             if session_id:
@@ -339,6 +441,36 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
                 self.send_json_response({"error": "Query is required"}, status_code=400)
                 return
 
+            # ---- ANALYTICS LANE (streaming): answer as a single SSE event ----
+            if not force_rag:
+                analytics_answer = _try_analytics(query)
+                if analytics_answer is not None:
+                    self.send_response(200)
+                    self.send_header('Content-Type', 'text/event-stream')
+                    self.send_header('Cache-Control', 'no-cache')
+                    self.send_header('Connection', 'keep-alive')
+                    self.send_header('Access-Control-Allow-Origin', '*')
+                    self.end_headers()
+                    result_payload = {
+                        "answer": analytics_answer,
+                        "source_documents": [],
+                        "reasoning": "analytics",
+                        "confidence": 1.0,
+                    }
+                    try:
+                        self.wfile.write(
+                            f"data: {json.dumps({'type': 'complete', 'data': result_payload})}\n\n".encode('utf-8'))
+                        self.wfile.flush()
+                    except BrokenPipeError:
+                        return
+                    if session_id:
+                        try:
+                            db.add_message(session_id, analytics_answer, "assistant")
+                        except Exception as e:
+                            print(f"⚠️ Failed to store analytics answer: {e}")
+                    return
+            # ---- otherwise fall through to the normal streaming RAG pipeline ----
+
             # 🔄 UPDATE SESSION TITLE: If this is the first message in the session, update the title
             if session_id:
                 try:
@@ -384,8 +516,21 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
             self.send_header('Access-Control-Allow-Origin', '*')
             self.end_headers()
 
+            # Register this streaming query so it can be cancelled mid-flight.
+            cancel_registry.begin(session_id)
+
             def emit(event_type: str, payload):
-                """Send a single SSE event."""
+                """Send a single SSE event; abort if a stop was requested."""
+                if cancel_registry.is_cancelled(session_id):
+                    # tell the client we're stopping, then break the pipeline
+                    try:
+                        stop_msg = json.dumps({"type": "cancelled",
+                                               "data": {"message": "Query stopped by user."}})
+                        self.wfile.write(f"data: {stop_msg}\n\n".encode('utf-8'))
+                        self.wfile.flush()
+                    except BrokenPipeError:
+                        pass
+                    raise cancel_registry.CancelledQuery()
                 try:
                     data_str = json.dumps({"type": event_type, "data": payload})
                     self.wfile.write(f"data: {data_str}\n\n".encode('utf-8'))
@@ -485,6 +630,8 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
                         # Continue even if storage fails
             except BrokenPipeError:
                 print("🔌 Client disconnected from SSE stream.")
+            except cancel_registry.CancelledQuery:
+                print("🛑 Query cancelled by user.")
             except Exception as e:
                 # Send error event then close
                 error_payload = {"error": str(e)}
@@ -492,6 +639,8 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
                     emit("error", error_payload)
                 finally:
                     print(f"❌ Stream error: {e}")
+            finally:
+                cancel_registry.finish(session_id)
 
         except json.JSONDecodeError:
             self.send_json_response({"error": "Invalid JSON"}, status_code=400)
@@ -536,6 +685,28 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
             table_name = data.get('table_name')
             if not table_name and session_id:
                 table_name = _get_table_name_for_session(session_id)
+
+            # ---- INCREMENTAL ADD: skip files already indexed into this table ----
+            # Re-sending the whole file list is safe: only NEW files are processed,
+            # so adding 10 files to an existing 400-file index costs ~10 files, not
+            # 410. Pass {"reindex_all": true} to force a full re-index.
+            reindex_all = bool(data.get("reindex_all", False))
+            ledger = IndexedLedger(table_name or "default")
+            requested_count = len(file_paths)
+            if not reindex_all:
+                new_paths = ledger.filter_new(file_paths)
+                skipped = requested_count - len(new_paths)
+                if skipped:
+                    print(f"🧾 Incremental add: {len(new_paths)} new file(s), "
+                          f"{skipped} already indexed (skipped).")
+                if not new_paths:
+                    self.send_json_response({
+                        "message": "All files were already indexed; nothing to add.",
+                        "table_name": table_name or "default_text_table",
+                        "indexed_new": 0, "skipped_existing": skipped,
+                    })
+                    return
+                file_paths = new_paths
 
             # The INDEXING_PIPELINE is already initialized. We just need to use it.
             # If a session-specific table is needed, we can override the config for this run.
@@ -660,9 +831,16 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
                 )
                 temp_pipeline.run(file_paths)
 
+            # Record the newly indexed files so a later "add" skips them.
+            try:
+                ledger.mark_indexed(file_paths)
+            except Exception as e:
+                print(f"⚠️ Could not update indexed ledger: {e}")
+
             self.send_json_response({
                 "message": f"Indexing process for {len(file_paths)} file(s) completed successfully.",
                 "table_name": table_name or "default_text_table",
+                "indexed_new": len(file_paths),
                 "latechunk": enable_latechunk,
                 "docling_chunk": enable_docling_chunk,
                 "indexing_config": {
@@ -754,4 +932,4 @@ def start_server(port=8001):
 
 if __name__ == "__main__":
     # To run this server: python -m rag_system.api_server
-    start_server() 
+    start_server()

@@ -77,17 +77,27 @@ def _duckdb_or_none():
 # --------------------------------------------------------------------------- #
 def _coerce(col):
     pd = _pandas()
-    cleaned = col.astype(str).str.replace(r"[,\u20b9$%\s]", "", regex=True).str.strip()
-    num = pd.to_numeric(cleaned, errors="coerce")
-    nn = col.notna().sum()
-    if nn and num.notna().sum() / nn >= 0.8:
-        return num, "number"
+    # Convert to plain Python-object strings FIRST. This avoids pandas
+    # dispatching str.replace to the pyarrow RE2 engine, which rejects Python
+    # "\u...." escapes (the "ArrowInvalid: invalid escape sequence: \u" crash).
+    # The character class also uses the literal ₹ glyph, not \u20b9, for the
+    # same reason. Whole thing is guarded so one messy column can never abort
+    # the entire file's parsing.
     try:
-        dt = pd.to_datetime(col, errors="coerce", format="mixed")
-        if nn and dt.notna().sum() / nn >= 0.8:
-            return dt, "date"
-    except Exception:
-        pass
+        as_str = col.astype("object").map(lambda v: "" if v is None else str(v))
+        cleaned = as_str.str.replace(r"[,₹$%\s]", "", regex=True).str.strip()
+        num = pd.to_numeric(cleaned, errors="coerce")
+        nn = int(col.notna().sum())
+        if nn and num.notna().sum() / nn >= 0.8:
+            return num, "number"
+        try:
+            dt = pd.to_datetime(col, errors="coerce", format="mixed")
+            if nn and dt.notna().sum() / nn >= 0.8:
+                return dt, "date"
+        except Exception:
+            pass
+    except Exception as e:
+        print(f"    · column '{getattr(col, 'name', '?')}' kept as text ({type(e).__name__})")
     return col.astype("object"), "text"
 
 
@@ -194,6 +204,39 @@ def _fmt_cell(v: Any) -> str:
 # --------------------------------------------------------------------------- #
 # Page builders
 # --------------------------------------------------------------------------- #
+def _context_banner(meta_lines, source: str) -> str:
+    """Compact, retrieval-friendly context line stamped onto every chunk.
+    Pulls the Event ID, event name/route, and participant count out of the
+    report metadata so each row page carries its own identifying context.
+    Also emits a natural-language 'price' synonym line so vocabulary-mismatched
+    queries ('L1 price' vs the column 'L1 Rate') still match."""
+    if not meta_lines:
+        return ""
+    ev_id = ev_name = participants = ""
+    for l in meta_lines:
+        low = l.lower()
+        if low.startswith("event id"):
+            ev_id = l.split(":", 1)[-1].strip()
+        elif low.startswith("event name"):
+            ev_name = l.split(":", 1)[-1].strip()
+        elif low.startswith("no. of participants") or low.startswith("participants"):
+            participants = l.split(":", 1)[-1].strip()
+    bits = []
+    if ev_id:
+        bits.append(f"Event {ev_id}")
+    if ev_name:
+        bits.append(ev_name)
+    if not bits:
+        return ""
+    banner = "Context — " + " · ".join(bits)
+    if participants:
+        banner += f" · {participants} participants"
+    banner += (f"\n(This record is part of {('event ' + ev_id) if ev_id else 'the report'} "
+               f"from file {source}. Figures below such as L1 Rate are the L1 price / "
+               f"lowest quoted freight cost for this event.)")
+    return banner
+
+
 def _table_card(name: str, df, source: str, truncated: bool) -> str:
     out = [
         f"# Data table: {name} (from file: {source})",
@@ -213,7 +256,7 @@ def _table_card(name: str, df, source: str, truncated: bool) -> str:
     return "\n".join(out)
 
 
-def _row_pages(name: str, df, source: str) -> List[Tuple[str, Dict[str, Any]]]:
+def _row_pages(name: str, df, source: str, banner: str = "") -> List[Tuple[str, Dict[str, Any]]]:
     """Every row rendered as 'Column: value'. This is what makes exact lookups
     ('price of 14ft truck') retrievable by BM25 + vectors."""
     pages: List[Tuple[str, Dict[str, Any]]] = []
@@ -223,7 +266,10 @@ def _row_pages(name: str, df, source: str) -> List[Tuple[str, Dict[str, Any]]]:
         if len(pages) >= MAX_ROW_PAGES_PER_TABLE:
             break
         batch = records[start:start + ROWS_PER_PAGE]
-        lines = [f"## Rows {start + 1}-{start + len(batch)} of data table '{name}' (file: {source})", ""]
+        lines = []
+        if banner:
+            lines += [banner, ""]
+        lines += [f"## Rows {start + 1}-{start + len(batch)} of data table '{name}' (file: {source})", ""]
         for i, rec in enumerate(batch):
             lines.append(f"### Row {start + i + 1}")
             for c in cols:
@@ -349,10 +395,29 @@ class FileRouter:
                 con.register("t", df)
                 con.execute(f'CREATE OR REPLACE TABLE "{name}" AS SELECT * FROM t')
                 con.unregister("t")
+                # Feed the canonical analytics table (cross-file spend/vendor/
+                # cost-per-kg queries). Pure parsing — no LLM, no embeddings.
+                try:
+                    from rag_system.analytics.normalizer import normalize_frame, upsert_rows
+                    n = upsert_rows(con, normalize_frame(df, meta_lines, source), source)
+                    if n:
+                        print(f"  📈 procurement_events: +{n} normalized row(s) from {source}")
+                except Exception as e:
+                    print(f"  ⚠️  analytics normalization skipped: {type(e).__name__}: {e}")
+
+            # Build a one-line context banner from the report metadata (Event ID,
+            # Event Name / route, participants). Stamping this onto the table card
+            # AND every row page makes each chunk self-contained: a query like
+            # "L1 price of EVN 3356" can now match a single chunk that holds both
+            # the Event ID and the rate. Without this, the ID and the numbers live
+            # in different chunks and retrieval can never ground the answer.
+            banner = _context_banner(meta_lines, source)
 
             truncated = len(df) > ROWS_PER_PAGE * MAX_ROW_PAGES_PER_TABLE
             card = _table_card(name, df, source, truncated)
-            rows = _row_pages(name, df, source)
+            if banner:
+                card = banner + "\n\n" + card
+            rows = _row_pages(name, df, source, banner)
             pages.append((card, {"source": source, "kind": "table_card", "table": name}))
             pages.extend(rows)
             info_parts = [p for p, m in pages if m.get("kind") == "report_info" and m.get("table") == name]
