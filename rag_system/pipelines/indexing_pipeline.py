@@ -1,7 +1,9 @@
+
 from typing import List, Dict, Any
 import os
 import networkx as nx
 from rag_system.ingestion.document_converter import DocumentConverter
+from rag_system.ingestion.file_router import FileRouter
 from rag_system.ingestion.chunking import MarkdownRecursiveChunker
 from rag_system.indexing.representations import EmbeddingGenerator, select_embedder
 from rag_system.indexing.embedders import LanceDBManager, VectorIndexer
@@ -16,6 +18,12 @@ class IndexingPipeline:
         self.llm_client = ollama_client
         self.ollama_config = ollama_config
         self.document_converter = DocumentConverter()
+        # Route files by shape: structured -> DuckDB warehouse + searchable card;
+        # everything else -> existing converter (docling/text fallback).
+        self.file_router = FileRouter(
+            document_converter=self.document_converter,
+            db_path=self.config.get('structured_db_path', './index_store/structured.duckdb'),
+        )
         # Chunker selection: docling (token-based) or legacy (character-based)
         chunker_mode = config.get("chunker_mode", "docling")
         
@@ -128,7 +136,8 @@ class IndexingPipeline:
                 print(f"⚠️  Failed to initialise LateChunkEncoder: {e}. Disabling latechunk retrieval.")
                 self.latechunk_enabled = False
 
-    def run(self, file_paths: List[str] | None = None, *, documents: List[str] | None = None):
+    def run(self, file_paths: List[str] | None = None, *, documents: List[str] | None = None,
+            session_id: str | None = None):
         """
         Processes and indexes documents based on the pipeline's configuration.
         Accepts legacy keyword *documents* as an alias for *file_paths* so that
@@ -144,6 +153,8 @@ class IndexingPipeline:
         
         # Import progress tracking utilities
         from rag_system.utils.batch_processor import timer, ProgressTracker, estimate_memory_usage
+        from rag_system.utils.index_progress import progress as _idx_progress
+        _idx_progress.start(session_id, total_files=len(file_paths))
         
         with timer("Complete Indexing Pipeline"):
             # Step 1: Document Processing and Chunking
@@ -157,7 +168,7 @@ class IndexingPipeline:
                         document_id = os.path.basename(file_path)
                         print(f"Processing: {document_id}")
                         
-                        pages_data = self.document_converter.convert_to_markdown(file_path)
+                        pages_data = self.file_router.to_pages(file_path)
                         file_chunks = []
                         
                         for tpl in pages_data:
@@ -188,6 +199,7 @@ class IndexingPipeline:
                         doc_chunks_map[document_id] = file_chunks  # save for late-chunk step
                         print(f"  Generated {len(file_chunks)} chunks from {document_id}")
                         file_tracker.update(1)
+                        _idx_progress.file_done(session_id, os.path.basename(str(document_id)))
                         
                     except Exception as e:
                         print(f"  ❌ Error processing {file_path}: {e}")
@@ -198,9 +210,25 @@ class IndexingPipeline:
 
             if not all_chunks:
                 print("No text chunks were generated. Skipping indexing.")
+                _idx_progress.finish(session_id, "No indexable content found in these files.")
                 return
 
             print(f"\n✅ Generated {len(all_chunks)} text chunks total.")
+
+            # ---- Chunk-level SHA-256 dedup (before any LLM/embedding cost) ----
+            # Skips content already indexed into this table — catches the same
+            # report re-uploaded under a new UUID-prefixed name, and boilerplate
+            # shared between files. Committed only after vectors index cleanly.
+            from rag_system.ingestion.chunk_dedup import ChunkDedup
+            _dedup_table = self.config["storage"].get("text_table_name") or \
+                (self.config.get("retrievers", {}) or {}).get("dense", {}).get("lancedb_table_name", "default_text_table")
+            _chunk_dedup = ChunkDedup(_dedup_table)
+            all_chunks, _n_dupes = _chunk_dedup.filter_new(all_chunks)
+            if not all_chunks:
+                print("All chunks were duplicates of already-indexed content. Nothing new to index.")
+                _idx_progress.finish(session_id, "All content was already indexed — nothing new to add.")
+                return
+
             memory_mb = estimate_memory_usage(all_chunks)
             print(f"📊 Estimated memory usage: {memory_mb:.1f}MB")
 
@@ -229,6 +257,8 @@ class IndexingPipeline:
                         print(f"   Example BEFORE: '{all_chunks[0]['text'][:100]}...'")
                     
                     # This modifies the 'text' field in each chunk dictionary
+                    _idx_progress.stage(session_id, "enriching", 0, len(all_chunks),
+                                        message=f"Contextual enrichment ON — {len(all_chunks)} LLM calls, this is slow…")
                     all_chunks = self.contextual_enricher.enrich_chunks(all_chunks, window_size=window_size)
                     
                     if all_chunks:
@@ -248,12 +278,17 @@ class IndexingPipeline:
                 with timer("Vector Embedding & Indexing"):
                     table_name = self.config["storage"].get("text_table_name") or retriever_configs.get("dense", {}).get("lancedb_table_name", "default_text_table")
                     print(f"\n--- Generating embeddings with {self.config.get('embedding_model_name')} ---")
-                    
+                    _idx_progress.stage(session_id, "embedding", 0, len(all_chunks),
+                                        message=f"Embedding {len(all_chunks)} chunks (slowest step on CPU)…")
                     embeddings = self.embedding_generator.generate(all_chunks)
+                    _idx_progress.stage(session_id, "embedding", len(all_chunks), len(all_chunks))
                     
                     print(f"\n--- Indexing {len(embeddings)} vectors into LanceDB table: {table_name} ---")
+                    _idx_progress.stage(session_id, "storing", 1, 2, message="Writing vector index…")
                     self.vector_indexer.index(table_name, all_chunks, embeddings)
                     print("✅ Vector embeddings indexed successfully")
+                    _chunk_dedup.commit()  # persist hashes only after a clean index
+                    _idx_progress.finish(session_id)
 
                     # Create FTS index on the 'text' field after adding data
                     print(f"\n--- Ensuring Full-Text Search (FTS) index on table '{table_name}' ---")
@@ -318,22 +353,21 @@ class IndexingPipeline:
 
                             print(f"✅ Late-chunk vectors indexed: {total_lc_vecs}")
                 
-            # Step 6: Knowledge Graph Extraction (Optional)
+            # Step 6: Knowledge Graph Extraction (cumulative, open knowledge format)
             if hasattr(self, 'graph_extractor'):
                 with timer("Knowledge Graph Extraction"):
+                    from rag_system.indexing.knowledge_store import KnowledgeStore
                     graph_path = retriever_configs.get("graph", {}).get("graph_path", "./index_store/graph/default_graph.gml")
-                    print(f"\n--- Building and saving knowledge graph to: {graph_path} ---")
-                    
+                    index_id = self.config.get("index_id") or \
+                        os.path.splitext(os.path.basename(graph_path))[0]
+                    print(f"\n--- Merging knowledge into store '{index_id}' (graph: {graph_path}) ---")
+
                     graph_data = self.graph_extractor.extract(all_chunks)
-                    G = nx.DiGraph()
-                    for entity in graph_data['entities']:
-                        G.add_node(entity['id'], type=entity.get('type', 'Unknown'), properties=entity.get('properties', {}))
-                    for rel in graph_data['relationships']:
-                        G.add_edge(rel['source'], rel['target'], label=rel['label'])
-                    
-                    os.makedirs(os.path.dirname(graph_path), exist_ok=True)
-                    nx.write_gml(G, graph_path)
-                    print(f"✅ Knowledge graph saved successfully.")
+                    ks = KnowledgeStore(base_dir="./index_store/knowledge", index_id=index_id)
+                    stats = ks.merge(graph_data, source_docs=[os.path.basename(p) for p in file_paths])
+                    ks.export_gml(graph_path)      # merged old+new — GraphRetriever unchanged
+                    ks.export_jsonld()             # open, portable format
+                    print(f"✅ Knowledge graph merged & saved. Totals: {stats}")
                     
         print("\n--- ✅ Indexing Complete ---")
         self._print_final_statistics(len(file_paths), len(all_chunks))

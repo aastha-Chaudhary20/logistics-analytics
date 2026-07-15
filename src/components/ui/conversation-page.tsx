@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -10,6 +11,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { ChatMessage } from "@/lib/api"
 import { cn } from "@/lib/utils"
 import Markdown from "@/components/Markdown"
+import GeneratedFiles from "@/components/ui/generated-files"
 import { normalizeWhitespace } from "@/utils/textNormalization"
 
 interface ConversationPageProps {
@@ -74,7 +76,7 @@ function StepIcon({ status }: { status: 'pending' | 'active' | 'done' | 'error' 
     case 'active':
       return <Loader2 className="w-4 h-4 text-blue-400 animate-spin" />
     case 'done':
-      return <CheckCircle className="w-4 h-4 text-green-400" />
+      return <CheckCircle className="w-4 h-4 text-blue-400" />
     case 'error':
       return <XOctagon className="w-4 h-4 text-red-400" />
     default:
@@ -85,7 +87,7 @@ function StepIcon({ status }: { status: 'pending' | 'active' | 'done' | 'error' 
 const statusBorder: Record<string, string> = {
   pending: 'border-neutral-800',
   active: 'border-blue-400 animate-pulse',
-  done: 'border-green-400',
+  done: 'border-blue-400',
   error: 'border-red-400'
 }
 
@@ -361,12 +363,19 @@ export function ConversationPage({
                       (message as any).metadata.source_documents.length > 0) && (
                         <CitationsBlock docs={(message as any).metadata.source_documents} />
                     )}
+
+                    {/* Download buttons for generated PDFs / reports */}
+                    {(!isUser && !message.isLoading &&
+                      Array.isArray((message as any).metadata?.files) &&
+                      (message as any).metadata.files.length > 0) && (
+                        <GeneratedFiles files={(message as any).metadata.files} />
+                    )}
                   </div>
 
                   {isUser && (
                     <ChatBubbleAvatar 
                       className="mt-1 flex-shrink-0 text-black"
-                      src="https://i.pravatar.cc/40?u=user"
+                      src="/forum-user.png"
                       fallback="User"
                     />
                   )}

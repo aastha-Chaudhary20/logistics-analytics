@@ -1,3 +1,4 @@
+
 "use client";
 import { useState } from 'react';
 import { GlassInput } from '@/components/ui/GlassInput';
@@ -6,6 +7,7 @@ import { AccordionGroup } from '@/components/ui/AccordionGroup';
 import { ModelSelect } from '@/components/ModelSelect';
 import { chatAPI, ChatSession } from '@/lib/api';
 import { InfoTooltip } from '@/components/ui/InfoTooltip';
+import IndexingProgress from '@/components/ui/indexing-progress';
 
 interface Props {
   onClose: () => void;
@@ -18,7 +20,7 @@ export function IndexForm({ onClose, onIndexed }: Props) {
   const [chunkSize, setChunkSize] = useState(512);
   const [chunkOverlap, setChunkOverlap] = useState(64);
   const [windowSize, setWindowSize] = useState(5);
-  const [enableEnrich, setEnableEnrich] = useState(true);
+  const [enableEnrich, setEnableEnrich] = useState(false); // off by default: big CPU indexing cost
   const [retrievalMode, setRetrievalMode] = useState<'hybrid' | 'vector' | 'fts'>('hybrid');
   const [embeddingModel, setEmbeddingModel] = useState<string>();
   const DEFAULT_LLM = 'qwen3:0.6b';
@@ -27,6 +29,9 @@ export function IndexForm({ onClose, onIndexed }: Props) {
   const [batchSizeEmbed, setBatchSizeEmbed] = useState(64);
   const [batchSizeEnrich, setBatchSizeEnrich] = useState(64);
   const [loading, setLoading] = useState(false);
+  // The index_id doubles as the progress key: the backend forwards it to the
+  // RAG API as session_id, so GET /index/progress?session_id=<index_id> works.
+  const [progressKey, setProgressKey] = useState<string | undefined>();
   const [enableLateChunk, setEnableLateChunk] = useState(false);
   const [enableDoclingChunk, setEnableDoclingChunk] = useState(true);
 
@@ -36,6 +41,9 @@ export function IndexForm({ onClose, onIndexed }: Props) {
     try {
       // 1. create index record
       const { index_id } = await chatAPI.createIndex(indexName);
+      // Start polling progress immediately — buildIndex() below blocks for the
+      // whole run, so the bar must be live before we await it.
+      setProgressKey(index_id);
 
       // 2. upload files to index
       await chatAPI.uploadFilesToIndex(index_id, Array.from(files));
@@ -65,17 +73,29 @@ export function IndexForm({ onClose, onIndexed }: Props) {
     } catch (e) {
       console.error('Indexing failed', e);
       setLoading(false);
+      setProgressKey(undefined);
       alert('Indexing failed. See console for details.');
     }
   };
 
   return (
     <div className="relative bg-white/5 backdrop-blur rounded-xl p-6 w-[640px] text-white space-y-6">
-      {/* Loading overlay */}
+      {/* Indexing overlay with REAL progress (polls GET /index/progress) */}
       {loading && (
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex flex-col items-center justify-center rounded-xl z-20">
-          <div className="w-10 h-10 border-4 border-white/30 border-t-transparent rounded-full animate-spin"></div>
-          <p className="mt-4 text-sm text-gray-200">Indexing… this may take a moment</p>
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-sm flex flex-col items-center justify-center rounded-xl z-20 px-8">
+          {progressKey ? (
+            <div className="w-full max-w-md">
+              <IndexingProgress sessionId={progressKey} active={loading} />
+              <p className="mt-3 text-center text-xs text-gray-400">
+                You can leave this open — indexing continues in the background.
+              </p>
+            </div>
+          ) : (
+            <>
+              <div className="w-10 h-10 border-4 border-white/30 border-t-transparent rounded-full animate-spin" />
+              <p className="mt-4 text-sm text-gray-200">Preparing index…</p>
+            </>
+          )}
         </div>
       )}
 
@@ -99,9 +119,9 @@ export function IndexForm({ onClose, onIndexed }: Props) {
           >
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-2 text-white/80"><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/><polyline points="7 10 12 5 17 10"/><line x1="12" y1="5" x2="12" y2="16"/></svg>
             <span className="text-xs text-gray-400">Drag & Drop documents here or click to browse</span>
-            <input id="file-upload" type="file" accept="application/pdf,.docx,.doc,.html,.htm,.md,.txt" multiple className="hidden" onChange={(e)=>setFiles(e.target.files)} />
+            <input id="file-upload" type="file" accept="application/pdf,.docx,.doc,.html,.htm,.md,.txt,.xlsx,.xls,.csv" multiple className="hidden" onChange={(e)=>setFiles(e.target.files)} />
           </label>
-          {files && <p className="mt-1 text-xs text-green-400">{files.length} file(s) selected</p>}
+          {files && <p className="mt-1 text-xs text-blue-400">{files.length} file(s) selected</p>}
         </div>
 
         {/* Retrieval mode & Late-chunk toggle */}
@@ -213,7 +233,7 @@ export function IndexForm({ onClose, onIndexed }: Props) {
         <button
           disabled={loading || !files || !indexName.trim()}
           onClick={handleSubmit}
-          className="px-4 py-2 bg-green-600 rounded disabled:opacity-40 text-sm"
+          className="px-4 py-2 bg-[#2563eb] rounded disabled:opacity-40 text-sm"
         >
           {loading ? 'Indexing…' : 'Start indexing'}
         </button>

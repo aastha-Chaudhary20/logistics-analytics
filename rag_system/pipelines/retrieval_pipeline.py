@@ -1,3 +1,4 @@
+
 import pymupdf
 from typing import List, Dict, Any, Tuple, Optional
 from PIL import Image
@@ -150,6 +151,12 @@ class RetrievalPipeline:
                             print(f"🔧 Initialising Answer.AI ColBERT reranker ({model_name}) via rerankers lib…")
                             from rerankers import Reranker
                             self.ai_reranker = Reranker(model_name, model_type="colbert")
+                        elif strategy == "minilm":
+                            # CPU-cheap cross-encoder (~80MB): ~100-300ms for 12 docs,
+                            # vs seconds for ColBERT/Qwen — safe to keep ON in cpu_fast.
+                            from rag_system.rerankers.minilm_reranker import MiniLMReranker
+                            self.ai_reranker = MiniLMReranker(
+                                model_name=model_name or "cross-encoder/ms-marco-MiniLM-L-6-v2")
                         else:
                             print(f"🔧 Lazily initializing Qwen reranker ({model_name})…")
                             self.ai_reranker = QwenReranker(model_name=model_name)

@@ -1,3 +1,4 @@
+
 import json
 import http.server
 import socketserver
@@ -16,11 +17,11 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 try:
     from rag_system.main import PIPELINE_CONFIGS
     RAG_SYSTEM_AVAILABLE = True
-    print("RAG system modules accessible from backend")
+    print("✅ RAG system modules accessible from backend")
 except ImportError as e:
     PIPELINE_CONFIGS = {}
     RAG_SYSTEM_AVAILABLE = False
-    print(f"RAG system modules not available: {e}")
+    print(f"⚠️ RAG system modules not available: {e}")
 
 from ollama_client import OllamaClient
 from database import db, generate_session_title
@@ -303,11 +304,11 @@ class ChatHandler(http.server.BaseHTTPRequestHandler):
             
             if use_rag:
                 # 🔍 --- Use RAG Pipeline for Document-Related Queries ---
-                print(f"Using RAG pipeline for document query: '{message[:50]}...'")
+                print(f"🔍 Using RAG pipeline for document query: '{message[:50]}...'")
                 response_text, source_docs = self._handle_rag_query(session_id, message, data, idx_ids)
             else:
                 # ⚡ --- Use Direct LLM for General Queries (FAST) ---
-                print(f"Using direct LLM for general query: '{message[:50]}...'")
+                print(f"⚡ Using direct LLM for general query: '{message[:50]}...'")
                 response_text, source_docs = self._handle_direct_llm_query(session_id, message, session)
 
             # Add AI response to database
@@ -325,19 +326,19 @@ class ChatHandler(http.server.BaseHTTPRequestHandler):
             
         except BrokenPipeError:
             # Client disconnected - this is normal for long queries, just log it
-            print(f"Client disconnected during RAG processing for query: '{message[:30]}...'")
+            print(f"⚠️  Client disconnected during RAG processing for query: '{message[:30]}...'")
         except json.JSONDecodeError:
             self.send_json_response({
                 "error": "Invalid JSON"
             }, status_code=400)
         except Exception as e:
-            print(f"Server error in session chat: {str(e)}")
+            print(f"❌ Server error in session chat: {str(e)}")
             try:
                 self.send_json_response({
                     "error": f"Server error: {str(e)}"
                 }, status_code=500)
             except BrokenPipeError:
-                print(f"Client disconnected during error response")
+                print(f"⚠️  Client disconnected during error response")
     
     def _should_use_rag(self, message: str, idx_ids: List[str]) -> bool:
         """
@@ -360,7 +361,7 @@ class ChatHandler(http.server.BaseHTTPRequestHandler):
             if doc_overviews:
                 return self._route_using_overviews(message, doc_overviews)
         except Exception as e:
-            print(f"Overview-based routing failed, falling back to simple routing: {e}")
+            print(f"⚠️ Overview-based routing failed, falling back to simple routing: {e}")
         
         # Fallback to simple pattern matching if overviews unavailable
         return self._simple_pattern_routing(message, idx_ids)
@@ -386,7 +387,7 @@ class ChatHandler(http.server.BaseHTTPRequestHandler):
             ]
             for p in candidate_paths:
                 if os.path.exists(p):
-                    print(f"Loading overviews from: {p}")
+                    print(f"📖 Loading overviews from: {p}")
                     try:
                         with open(p, "r", encoding="utf-8") as f:
                             for line in f:
@@ -401,7 +402,7 @@ class ChatHandler(http.server.BaseHTTPRequestHandler):
                                     continue  # skip malformed lines
                         break  # Stop after the first existing path for this idx
                     except Exception as e:
-                        print(f"Error reading {p}: {e}")
+                        print(f"⚠️ Error reading {p}: {e}")
                         break  # Don't keep trying other paths for this idx if read failed
 
         # 2️⃣  Fall back to legacy global file if no per-index overviews found
@@ -413,7 +414,7 @@ class ChatHandler(http.server.BaseHTTPRequestHandler):
             ]
             for p in legacy_paths:
                 if os.path.exists(p):
-                    print(f"Falling back to legacy overviews file: {p}")
+                    print(f"⚠️ Falling back to legacy overviews file: {p}")
                     try:
                         with open(p, "r", encoding="utf-8") as f:
                             for line in f:
@@ -427,14 +428,14 @@ class ChatHandler(http.server.BaseHTTPRequestHandler):
                                 except json.JSONDecodeError:
                                     continue
                     except Exception as e:
-                        print(f"Error reading legacy overviews file {p}: {e}")
+                        print(f"⚠️ Error reading legacy overviews file {p}: {e}")
                     break
 
         # Limit for performance
         if aggregated:
-            print(f"Loaded {len(aggregated)} document overviews from {len(idx_ids)} index(es)")
+            print(f"✅ Loaded {len(aggregated)} document overviews from {len(idx_ids)} index(es)")
         else:
-            print(f"No overviews found for indices {idx_ids}")
+            print(f"⚠️ No overviews found for indices {idx_ids}")
         return aggregated[:40]
 
     def _route_using_overviews(self, query: str, overviews: List[str]) -> bool:
@@ -490,17 +491,17 @@ Respond with exactly one word: USE_RAG or DIRECT_LLM"""
             
             # Parse decision
             if "USE_RAG" in decision:
-                print(f"Overview-based routing: USE_RAG for query: '{query[:50]}...'")
+                print(f"🎯 Overview-based routing: USE_RAG for query: '{query[:50]}...'")
                 return True
             elif "DIRECT_LLM" in decision:
-                print(f"Overview-based routing: DIRECT_LLM for query: '{query[:50]}...'")
+                print(f"⚡ Overview-based routing: DIRECT_LLM for query: '{query[:50]}...'")
                 return False
             else:
-                print(f"Unclear routing decision '{decision}', defaulting to RAG")
+                print(f"⚠️ Unclear routing decision '{decision}', defaulting to RAG")
                 return True  # Default to RAG when uncertain
                 
         except Exception as e:
-            print(f"LLM routing failed: {e}, falling back to pattern matching")
+            print(f"❌ LLM routing failed: {e}, falling back to pattern matching")
             return self._simple_pattern_routing(query, [])
 
     def _simple_pattern_routing(self, message: str, idx_ids: List[str]) -> bool:
@@ -576,7 +577,7 @@ Respond with exactly one word: USE_RAG or DIRECT_LLM"""
             return response_text, []  # No source docs for direct LLM
             
         except Exception as e:
-            print(f"Direct LLM error: {e}")
+            print(f"❌ Direct LLM error: {e}")
             return f"Error processing query: {str(e)}", []
     
     def _handle_rag_query(self, session_id: str, message: str, data: dict, idx_ids: List[str]):
@@ -631,15 +632,15 @@ Respond with exactly one word: USE_RAG or DIRECT_LLM"""
                 source_docs = rag_data.get("source_documents", [])
             else:
                 response_text = f"Error from RAG API ({rag_response.status_code}): {rag_response.text}"
-                print(f"RAG API error: {response_text}")
+                print(f"❌ RAG API error: {response_text}")
         except requests.exceptions.ConnectionError:
             response_text = "Could not connect to the RAG API server. Please ensure it is running."
-            print("Connection to RAG API failed (port 8001).")
+            print("❌ Connection to RAG API failed (port 8001).")
         except Exception as e:
             response_text = f"Error processing RAG query: {str(e)}"
-            print(f"RAG processing error: {e}")
+            print(f"❌ RAG processing error: {e}")
 
-        # Strip any  thinking/<thinking> tags that might slip through
+        # Strip any <think>/<thinking> tags that might slip through
         response_text = re.sub(r'<(think|thinking)>.*?</\\1>', '', response_text, flags=re.DOTALL | re.IGNORECASE).strip()
 
         return response_text, source_docs
@@ -696,87 +697,38 @@ Respond with exactly one word: USE_RAG or DIRECT_LLM"""
         })
 
     def handle_index_documents(self, session_id: str):
-        """
-        Triggers indexing for all documents in a session.
-        This now properly:
-        1. Creates an index record in the database
-        2. Sends documents to the RAG API for indexing
-        3. Links the index to the session so RAG queries work
-        """
-        print(f"=== handle_index_documents called for session {session_id[:8]}... ===")
+        """Triggers indexing for all documents in a session."""
+        print(f"🔥 Received request to index documents for session {session_id[:8]}...")
         try:
             file_paths = db.get_documents_for_session(session_id)
             if not file_paths:
                 self.send_json_response({"message": "No documents to index for this session."}, status_code=200)
                 return
 
-            print(f"Found {len(file_paths)} documents to index.")
+            print(f"Found {len(file_paths)} documents to index. Sending to RAG API...")
             
-            # 1️⃣ Create an index record in the database
-            idx_metadata = {
-                "status": "indexing",
-                "session_linked": True,
-                "retrieval_mode": "hybrid",
-                "source": f"session_{session_id[:8]}",
-                "created_at": datetime.now().isoformat()
-            }
-            index_name = f"Session {session_id[:8]}"
-            idx_id = db.create_index(name=index_name, description=f"Auto-indexed documents for session {session_id}", metadata=idx_metadata)
-            print(f"✅ Created index: {idx_id[:8]}...")
-            
-            # 2️⃣ Get the vector table name for this index
-            table_name = f"text_pages_{idx_id}"
-            print(f"📊 Using table name: {table_name}")
-            
-            # 3️⃣ Send to RAG API for indexing with the correct table_name
             rag_api_url = "http://localhost:8001/index"
-            payload = {
-                "file_paths": file_paths, 
-                "session_id": session_id,
-                "table_name": table_name
-            }
-            print(f"📤 Sending to RAG API: {rag_api_url}")
-            rag_response = requests.post(rag_api_url, json=payload)
+            rag_response = requests.post(rag_api_url, json={"file_paths": file_paths, "session_id": session_id})
 
             if rag_response.status_code == 200:
-                print("✅ RAG API indexing completed successfully.")
-                
-                # 4️⃣ Update index metadata with success
+                print("✅ RAG API successfully indexed documents.")
+                # Merge key config values into index metadata
                 idx_meta = {
-                    "status": "functional",
                     "session_linked": True,
                     "retrieval_mode": "hybrid",
-                    "table_name": table_name,
-                    "indexed_at": datetime.now().isoformat()
                 }
-                db.update_index_metadata(idx_id, idx_meta)
-                
-                # 5️⃣ Link the index to the session (THIS WAS THE MISSING STEP)
-                db.link_index_to_session(session_id, idx_id)
-                print(f"🔗 Linked index {idx_id[:8]}... to session {session_id[:8]}...")
-                
-                # 6️⃣ Also update the session_documents to mark them as indexed
-                # (existing documents already stored, no further action needed)
-                
-                self.send_json_response({
-                    "message": f"Indexing complete. {len(file_paths)} file(s) indexed.",
-                    "index_id": idx_id,
-                    "table_name": table_name
-                })
+                try:
+                    db.update_index_metadata(session_id, idx_meta)  # session_id used as index_id in text table naming
+                except Exception as e:
+                    print(f"⚠️ Failed to update index metadata for session index: {e}")
+                self.send_json_response(rag_response.json())
             else:
                 error_info = rag_response.text
                 print(f"❌ RAG API indexing failed ({rag_response.status_code}): {error_info}")
-                
-                # Create a partial/errored index entry so the user can retry later
-                try:
-                    db.update_index_metadata(idx_id, {"status": "error", "error": error_info})
-                except Exception as meta_err:
-                    print(f"Failed to update error metadata: {meta_err}")
-                    
                 self.send_json_response({"error": f"Indexing failed: {error_info}"}, status_code=500)
 
         except Exception as e:
-            print(f"Exception during indexing: {str(e)}")
+            print(f"❌ Exception during indexing: {str(e)}")
             self.send_json_response({"error": f"An unexpected error occurred: {str(e)}"}, status_code=500)
             
     def handle_pdf_upload(self, session_id: str):
@@ -874,7 +826,7 @@ Respond with exactly one word: USE_RAG or DIRECT_LLM"""
                     'embedding_model': 'Qwen/Qwen3-Embedding-0.6B',  # From default config
                     'enrich_model': 'qwen3:0.6b',  # From default config
                     'overview_model': 'qwen3:0.6b',  # From default config
-                    'enable_enrich': True,  # From default config
+                    'enable_enrich': False,  # OFF by default (LLM call per chunk = slow CPU indexing)
                     'latechunk': True,  # From default config
                     'docling_chunk': True,  # From default config
                     'note': 'Default configuration from RAG system'
@@ -925,7 +877,7 @@ Respond with exactly one word: USE_RAG or DIRECT_LLM"""
             chunk_overlap = 64
             retrieval_mode = 'hybrid'
             window_size = 2
-            enable_enrich = True
+            enable_enrich = False  # OFF by default for CPU speed
             embedding_model = None
             enrich_model = None
             batch_size_embed = 50
@@ -943,7 +895,7 @@ Respond with exactly one word: USE_RAG or DIRECT_LLM"""
                     chunk_overlap = int(opts.get('chunkOverlap', 64))
                     retrieval_mode = str(opts.get('retrievalMode', 'hybrid'))
                     window_size = int(opts.get('windowSize', 2))
-                    enable_enrich = bool(opts.get('enableEnrich', True))
+                    enable_enrich = bool(opts.get('enableEnrich', False))
                     embedding_model = opts.get('embeddingModel')
                     enrich_model = opts.get('enrichModel')
                     batch_size_embed = int(opts.get('batchSizeEmbed', 50))
@@ -1010,7 +962,7 @@ Respond with exactly one word: USE_RAG or DIRECT_LLM"""
                 try:
                     db.update_index_metadata(index_id, meta_updates)
                 except Exception as e:
-                    print(f"Failed to update index metadata: {e}")
+                    print(f"⚠️ Failed to update index metadata: {e}")
 
                 self.send_json_response({
                     "response": rag_resp.json(),
@@ -1050,7 +1002,7 @@ Respond with exactly one word: USE_RAG or DIRECT_LLM"""
                 if idx:
                     # Try to populate metadata for older indexes that have empty metadata
                     if not idx.get('metadata') or len(idx['metadata']) == 0:
-                        print(f"Attempting to infer metadata for index {idx_id[:8]}...")
+                        print(f"🔍 Attempting to infer metadata for index {idx_id[:8]}...")
                         inferred_metadata = db.inspect_and_populate_index_metadata(idx_id)
                         if inferred_metadata:
                             # Refresh the index data with the new metadata
@@ -1120,9 +1072,9 @@ Respond with exactly one word: USE_RAG or DIRECT_LLM"""
             self.wfile.write(response_bytes)
         except BrokenPipeError:
             # Client disconnected before we could finish sending
-            print("Client disconnected during response – ignoring.")
+            print("⚠️  Client disconnected during response – ignoring.")
         except Exception as e:
-            print(f"Error sending response: {e}")
+            print(f"❌ Error sending response: {e}")
     
     def log_message(self, format, *args):
         """Custom log format"""
@@ -1133,59 +1085,59 @@ def main():
     PORT = 8000  # 🆕 Define port
     try:
         # Initialize the database
-        print("Database initialized successfully")
+        print("✅ Database initialized successfully")
 
         # Initialize the PDF processor
         try:
             pdf_module.initialize_simple_pdf_processor()
-            print("Initializing simple PDF processing...")
+            print("📄 Initializing simple PDF processing...")
             if pdf_module.simple_pdf_processor:
-                print("Simple PDF processor initialized")
+                print("✅ Simple PDF processor initialized")
             else:
-                print("PDF processing could not be initialized.")
+                print("⚠️ PDF processing could not be initialized.")
         except Exception as e:
-            print(f"Error initializing PDF processor: {e}")
-            print("PDF processing disabled - server will run without RAG functionality")
+            print(f"❌ Error initializing PDF processor: {e}")
+            print("⚠️ PDF processing disabled - server will run without RAG functionality")
 
         # Set a global reference to the initialized processor if needed elsewhere
         global pdf_processor
         pdf_processor = pdf_module.simple_pdf_processor
         if pdf_processor:
-            print("Global PDF processor initialized")
+            print("✅ Global PDF processor initialized")
         else:
-            print("PDF processing disabled - server will run without RAG functionality")
+            print("⚠️ PDF processing disabled - server will run without RAG functionality")
         
         # Cleanup empty sessions on startup
         print("🧹 Cleaning up empty sessions...")
         cleanup_count = db.cleanup_empty_sessions()
         if cleanup_count > 0:
-            print(f"Cleaned up {cleanup_count} empty sessions")
+            print(f"✨ Cleaned up {cleanup_count} empty sessions")
         else:
-            print("No empty sessions to clean up")
+            print("✨ No empty sessions to clean up")
 
         # Start the server
         with ReusableTCPServer(("", PORT), ChatHandler) as httpd:
-            print(f"Starting localGPT backend server on port {PORT}")
-            print(f"Chat endpoint: http://localhost:{PORT}/chat")
-            print(f"Health check: http://localhost:{PORT}/health")
+            print(f"🚀 Starting localGPT backend server on port {PORT}")
+            print(f"📍 Chat endpoint: http://localhost:{PORT}/chat")
+            print(f"🔍 Health check: http://localhost:{PORT}/health")
             
             # Test Ollama connection
             client = OllamaClient()
             if client.is_ollama_running():
                 models = client.list_models()
-                print(f"Ollama is running with {len(models)} models")
-                print(f"Available models: {', '.join(models[:3])}{'...' if len(models) > 3 else ''}")
+                print(f"✅ Ollama is running with {len(models)} models")
+                print(f"📋 Available models: {', '.join(models[:3])}{'...' if len(models) > 3 else ''}")
             else:
-                print("Ollama is not running. Please start Ollama:")
+                print("⚠️  Ollama is not running. Please start Ollama:")
                 print("   Install: https://ollama.ai")
                 print("   Run: ollama serve")
             
-            print(f"\nFrontend should connect to: http://localhost:{PORT}")
-            print("Ready to chat!\n")
+            print(f"\n🌐 Frontend should connect to: http://localhost:{PORT}")
+            print("💬 Ready to chat!\n")
             
             httpd.serve_forever()
     except KeyboardInterrupt:
-        print("\nServer stopped")
+        print("\n🛑 Server stopped")
 
 if __name__ == "__main__":
-    main()
+    main() 

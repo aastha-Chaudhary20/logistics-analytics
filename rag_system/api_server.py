@@ -16,6 +16,18 @@ from backend.database import ChatDatabase, generate_session_title
 from rag_system.main import get_agent
 from rag_system.factory import get_indexing_pipeline
 
+# --- Analytics lane imports ---
+from rag_system.analytics.router import route as analytics_route
+from rag_system.analytics.engine import AnalyticsEngine
+from rag_system.analytics.po_generator import draft_purchase_order
+from rag_system.analytics.drafting_backend import DraftingBackend
+from rag_system.analytics.po_pdf import purchase_order_pdf
+from rag_system.utils.query_log import log_query
+from rag_system.utils.index_progress import progress as index_progress
+# --- Incremental indexing + stop/cancel ---
+from rag_system.ingestion.indexed_ledger import IndexedLedger
+from rag_system.utils import cancellation as cancel_registry
+
 # Initialize database connection once at module level
 # Use auto-detection for environment-appropriate path
 db = ChatDatabase()
@@ -34,6 +46,42 @@ if RAG_AGENT is None:
     print("❌ Critical error: RAG Agent could not be initialized. Exiting.")
     exit(1)
 print("✅ RAG Agent initialized successfully with MAXIMUM ACCURACY.")
+# ---
+
+# --- Analytics engine (spend / vendors / lanes / history over procurement_events) ---
+# Defined AFTER RAG_AGENT exists so the adapter can reuse the agent's LLM client.
+def _analytics_llm(prompt: str) -> str:
+    """Adapter so AnalyticsEngine (which wants a str->str function) can use the
+    agent's Ollama client, which returns a dict like {'response': '...'}."""
+    try:
+        out = RAG_AGENT.llm_client.generate_completion(
+            model=RAG_AGENT.ollama_config["generation_model"],
+            prompt=prompt,
+            enable_thinking=False,
+        )
+        return (out or {}).get("response", "")
+    except Exception:
+        return ""
+
+ANALYTICS = AnalyticsEngine("./index_store/structured.duckdb", llm_fn=_analytics_llm)
+
+# --- Drafting backend: local (air-gapped default) or Claude (explicit opt-in) ---
+# Config lives in config/drafting.json, e.g.:
+#   {"drafting": {"backend": "claude", "claude_model": "claude-sonnet-4-6"}}
+# Air-gapped stays the default if this file is absent, empty, or backend != "claude".
+# Cloud additionally requires ANTHROPIC_API_KEY in the environment (never in the file).
+def _load_drafting_config() -> dict:
+    import json
+    path = os.getenv("DRAFTING_CONFIG_PATH", "config/drafting.json")
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+DRAFTING_BACKEND = DraftingBackend(config=_load_drafting_config(), local_llm_fn=_analytics_llm)
+print(f"✅ Drafting backend ready: {DRAFTING_BACKEND.status()}")
+print("✅ Analytics engine ready (procurement_events).")
 # ---
 
 # Add helper near top after db & agent init
@@ -112,6 +160,97 @@ def _get_table_name_for_session(session_id):
         logger.info(f"📊 Using default table '{default_table}' for session {session_id[:8]}...")
         return default_table
 
+def _report_file(name):
+    """File metadata for a generated report, if it exists on disk."""
+    path = os.path.join("reports", name)
+    if not os.path.exists(path):
+        return []
+    return [{"name": name, "url": f"/files/{name}", "type": "markdown",
+             "size_bytes": os.path.getsize(path)}]
+
+
+def _try_analytics(query, drafting_backend_override=None, session_id=None):
+    """Route a query to the analytics or document lane. Returns an answer string
+    if handled (spend/vendor/lane/history/report, or PO/purchase-document
+    drafting), else None so the caller falls through to the normal RAG pipeline."""
+    import time as _t
+    _t0 = _t.time()
+    try:
+        lane = analytics_route(query)
+    except Exception:
+        lane = "rag"
+
+    # ---- document lane: draft a grounded purchase order ----
+    if lane == "document":
+        files = []
+        try:
+            ans = draft_purchase_order(query, ANALYTICS, drafting_backend=DRAFTING_BACKEND,
+                                       backend_override=drafting_backend_override)
+            # Also render a PDF when the PO was actually grounded (not a refusal).
+            if "PURCHASE ORDER" in ans:
+                try:
+                    pdf_path, _msg = purchase_order_pdf(query, ANALYTICS, out_dir="reports")
+                    if pdf_path:
+                        name = os.path.basename(pdf_path)
+                        files.append({
+                            "name": name,
+                            "url": f"/files/{name}",
+                            "type": "pdf",
+                            "size_bytes": os.path.getsize(pdf_path),
+                        })
+                except Exception as e:
+                    ans += f"\n\n_(PDF generation unavailable: {e})_"
+        except Exception as e:
+            ans = f"Could not draft the document: {e}"
+        log_query(query, lane="document", mode="po", session_id=session_id,
+                  answer=ans, latency_ms=(_t.time()-_t0)*1000)
+        return {"answer": ans, "files": files}
+    if lane != "analytics":
+        return None
+    ql = query.lower()
+    if any(k in ql for k in ("consolidat", "analysis report", "analyse all", "analyze all",
+                             "complete analysis", "full analysis", "event analysis",
+                             "spend analytic", "report for spend", "analytics report")):
+        # Gemini/Claude-style consolidated report — all figures SQL-computed,
+        # optional local-LLM prose for the observations section.
+        return ANALYTICS.event_analysis_report(out_path="reports/consolidated_analysis.md",
+                                               llm_fn=_analytics_llm)
+    if "spend report" in ql:
+        return ANALYTICS.spend_report(out_path="reports/spend_report.md")
+    res = ANALYTICS.ask(query)
+    mode = res.get("mode")
+    # menu-picker resolved to a whole-report intent from an unusual phrasing
+    if mode == "menu" and res.get("report"):
+        if res["report"] == "consolidated_report":
+            ans = ANALYTICS.event_analysis_report(out_path="reports/consolidated_analysis.md",
+                                                  llm_fn=_analytics_llm)
+        else:
+            ans = ANALYTICS.spend_report(out_path="reports/spend_report.md")
+        log_query(query, lane="analytics", mode="report", session_id=session_id,
+                  answer=ans, latency_ms=(_t.time()-_t0)*1000)
+        return ans
+    if res.get("error"):
+        ans = f"Analytics query couldn't run: {res['error']}"
+    elif not res.get("rows"):
+        ans = "No matching records in the indexed data."
+    else:
+        ans = None
+        # Local model ONLY phrases the already-computed rows; on any failure
+        # fall back to a plain table so a number is always returned.
+        try:
+            narrated = _analytics_llm(ANALYTICS.narration_prompt(query, res))
+            if narrated.strip():
+                ans = narrated
+        except Exception:
+            pass
+        if ans is None:
+            cols = res["columns"]
+            ans = " | ".join(cols) + "\n" + "\n".join(
+                " | ".join(str(x) for x in r) for r in res["rows"][:20])
+    log_query(query, lane="analytics", mode=mode, session_id=session_id,
+              answer=ans, latency_ms=(_t.time()-_t0)*1000)
+    return {"answer": ans, "files": []}
+
 class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
     def do_OPTIONS(self):
         """Handle CORS preflight requests for frontend integration."""
@@ -129,6 +268,8 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
             self.handle_chat()
         elif parsed_path.path == '/chat/stream':
             self.handle_chat_stream()
+        elif parsed_path.path == '/chat/cancel':
+            self.handle_cancel()
         elif parsed_path.path == '/index':
             self.handle_index()
         else:
@@ -139,8 +280,56 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
 
         if parsed_path.path == '/models':
             self.handle_models()
+        elif parsed_path.path == '/drafting/status':
+            self.handle_drafting_status()
+        elif parsed_path.path.startswith('/files/'):
+            self.handle_file_download(parsed_path.path[len('/files/'):])
+        elif parsed_path.path == '/index/progress':
+            qs = parse_qs(parsed_path.query)
+            sid = (qs.get('session_id') or [None])[0]
+            self.send_json_response(index_progress.get(sid))
         else:
             self.send_json_response({"error": "Not Found"}, status_code=404)
+
+    def handle_file_download(self, filename):
+        """Serve a generated report/PO from the reports/ directory."""
+        safe = os.path.basename(filename)  # no path traversal
+        path = os.path.join("reports", safe)
+        if not os.path.exists(path):
+            self.send_json_response({"error": "File not found"}, status_code=404)
+            return
+        ctype = "application/pdf" if safe.lower().endswith(".pdf") else "text/markdown"
+        try:
+            with open(path, "rb") as f:
+                data = f.read()
+            self.send_response(200)
+            self.send_header("Content-Type", ctype)
+            self.send_header("Content-Disposition", f'attachment; filename="{safe}"')
+            self.send_header("Content-Length", str(len(data)))
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(data)
+        except Exception as e:
+            self.send_json_response({"error": f"Could not send file: {e}"}, status_code=500)
+
+    def handle_drafting_status(self):
+        """Lets the frontend show whether PO drafting is air-gapped or cloud-enabled."""
+        self.send_json_response(DRAFTING_BACKEND.status())
+
+    def handle_cancel(self):
+        """Stop an in-progress streaming query for a session (the 'stop' button)."""
+        try:
+            content_length = int(self.headers.get('Content-Length', 0))
+            data = json.loads(self.rfile.read(content_length).decode('utf-8')) if content_length else {}
+            session_id = data.get('session_id')
+            stopped = cancel_registry.request_cancel(session_id)
+            self.send_json_response({
+                "cancelled": stopped,
+                "message": ("Stop signal sent; the query will halt at the next step."
+                            if stopped else "No active query found for this session."),
+            })
+        except Exception as e:
+            self.send_json_response({"error": f"Cancel failed: {str(e)}"}, status_code=500)
 
     def handle_chat(self):
         """Handles a chat query by calling the agentic RAG pipeline."""
@@ -179,6 +368,28 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
             if not query:
                 self.send_json_response({"error": "Query is required"}, status_code=400)
                 return
+
+            # ---- ANALYTICS LANE: spend / vendors / lanes / history / report ----
+            # Unless the user forced RAG, try the SQL analytics lane first. If it
+            # handles the question, answer from computed rows and skip retrieval.
+            if not force_rag:
+                analytics_result = _try_analytics(query, drafting_backend_override=data.get('drafting_backend'), session_id=session_id)
+                if analytics_result is not None:
+                    analytics_answer = analytics_result["answer"]
+                    self.send_json_response({
+                        "answer": analytics_answer,
+                        "source_documents": [],
+                        "files": analytics_result.get("files", []),
+                        "reasoning": "analytics",
+                        "confidence": 1.0,
+                    })
+                    if session_id:
+                        try:
+                            db.add_message(session_id, analytics_answer, "assistant")
+                        except Exception as e:
+                            print(f"⚠️ Failed to store analytics answer: {e}")
+                    return
+            # ---- otherwise fall through to the normal RAG pipeline below ----
 
             # 🔄 UPDATE SESSION TITLE: If this is the first message in the session, update the title
             if session_id:
@@ -286,6 +497,8 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
             
             # The result is a dict, so we need to dump it to a JSON string
             self.send_json_response(result)
+            log_query(query, lane="rag", mode="agent" if not force_rag else "force_rag",
+                      session_id=session_id, answer=(result or {}).get("answer"))
             
             # 💾 STORE AI RESPONSE: Add the AI response to the database
             if session_id and result and result.get("answer"):
@@ -339,6 +552,38 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
                 self.send_json_response({"error": "Query is required"}, status_code=400)
                 return
 
+            # ---- ANALYTICS LANE (streaming): answer as a single SSE event ----
+            if not force_rag:
+                analytics_result = _try_analytics(query, drafting_backend_override=data.get('drafting_backend'), session_id=session_id)
+                if analytics_result is not None:
+                    analytics_answer = analytics_result["answer"]
+                    self.send_response(200)
+                    self.send_header('Content-Type', 'text/event-stream')
+                    self.send_header('Cache-Control', 'no-cache')
+                    self.send_header('Connection', 'keep-alive')
+                    self.send_header('Access-Control-Allow-Origin', '*')
+                    self.end_headers()
+                    result_payload = {
+                        "answer": analytics_answer,
+                        "source_documents": [],
+                        "files": analytics_result.get("files", []),
+                        "reasoning": "analytics",
+                        "confidence": 1.0,
+                    }
+                    try:
+                        self.wfile.write(
+                            f"data: {json.dumps({'type': 'complete', 'data': result_payload})}\n\n".encode('utf-8'))
+                        self.wfile.flush()
+                    except BrokenPipeError:
+                        return
+                    if session_id:
+                        try:
+                            db.add_message(session_id, analytics_answer, "assistant")
+                        except Exception as e:
+                            print(f"⚠️ Failed to store analytics answer: {e}")
+                    return
+            # ---- otherwise fall through to the normal streaming RAG pipeline ----
+
             # 🔄 UPDATE SESSION TITLE: If this is the first message in the session, update the title
             if session_id:
                 try:
@@ -384,8 +629,21 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
             self.send_header('Access-Control-Allow-Origin', '*')
             self.end_headers()
 
+            # Register this streaming query so it can be cancelled mid-flight.
+            cancel_registry.begin(session_id)
+
             def emit(event_type: str, payload):
-                """Send a single SSE event."""
+                """Send a single SSE event; abort if a stop was requested."""
+                if cancel_registry.is_cancelled(session_id):
+                    # tell the client we're stopping, then break the pipeline
+                    try:
+                        stop_msg = json.dumps({"type": "cancelled",
+                                               "data": {"message": "Query stopped by user."}})
+                        self.wfile.write(f"data: {stop_msg}\n\n".encode('utf-8'))
+                        self.wfile.flush()
+                    except BrokenPipeError:
+                        pass
+                    raise cancel_registry.CancelledQuery()
                 try:
                     data_str = json.dumps({"type": event_type, "data": payload})
                     self.wfile.write(f"data: {data_str}\n\n".encode('utf-8'))
@@ -474,6 +732,8 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
 
                 # Ensure the final answer is sent (in case callback missed it)
                 emit("complete", final_result)
+                log_query(query, lane="rag", mode="agent" if not force_rag else "force_rag",
+                          session_id=session_id, answer=(final_result or {}).get("answer"))
                 
                 # 💾 STORE AI RESPONSE: Add the AI response to the database
                 if session_id and final_result and final_result.get("answer"):
@@ -485,6 +745,8 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
                         # Continue even if storage fails
             except BrokenPipeError:
                 print("🔌 Client disconnected from SSE stream.")
+            except cancel_registry.CancelledQuery:
+                print("🛑 Query cancelled by user.")
             except Exception as e:
                 # Send error event then close
                 error_payload = {"error": str(e)}
@@ -492,6 +754,8 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
                     emit("error", error_payload)
                 finally:
                     print(f"❌ Stream error: {e}")
+            finally:
+                cancel_registry.finish(session_id)
 
         except json.JSONDecodeError:
             self.send_json_response({"error": "Invalid JSON"}, status_code=400)
@@ -536,6 +800,28 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
             table_name = data.get('table_name')
             if not table_name and session_id:
                 table_name = _get_table_name_for_session(session_id)
+
+            # ---- INCREMENTAL ADD: skip files already indexed into this table ----
+            # Re-sending the whole file list is safe: only NEW files are processed,
+            # so adding 10 files to an existing 400-file index costs ~10 files, not
+            # 410. Pass {"reindex_all": true} to force a full re-index.
+            reindex_all = bool(data.get("reindex_all", False))
+            ledger = IndexedLedger(table_name or "default")
+            requested_count = len(file_paths)
+            if not reindex_all:
+                new_paths = ledger.filter_new(file_paths)
+                skipped = requested_count - len(new_paths)
+                if skipped:
+                    print(f"🧾 Incremental add: {len(new_paths)} new file(s), "
+                          f"{skipped} already indexed (skipped).")
+                if not new_paths:
+                    self.send_json_response({
+                        "message": "All files were already indexed; nothing to add.",
+                        "table_name": table_name or "default_text_table",
+                        "indexed_new": 0, "skipped_existing": skipped,
+                    })
+                    return
+                file_paths = new_paths
 
             # The INDEXING_PIPELINE is already initialized. We just need to use it.
             # If a session-specific table is needed, we can override the config for this run.
@@ -600,7 +886,7 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
                     INDEXING_PIPELINE.llm_client, 
                     INDEXING_PIPELINE.ollama_config
                 )
-                temp_pipeline.run(file_paths)
+                temp_pipeline.run(file_paths, session_id=session_id)
             else:
                 # Use the default pipeline with overrides
                 import copy
@@ -658,11 +944,18 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
                     INDEXING_PIPELINE.llm_client, 
                     INDEXING_PIPELINE.ollama_config
                 )
-                temp_pipeline.run(file_paths)
+                temp_pipeline.run(file_paths, session_id=session_id)
+
+            # Record the newly indexed files so a later "add" skips them.
+            try:
+                ledger.mark_indexed(file_paths)
+            except Exception as e:
+                print(f"⚠️ Could not update indexed ledger: {e}")
 
             self.send_json_response({
                 "message": f"Indexing process for {len(file_paths)} file(s) completed successfully.",
                 "table_name": table_name or "default_text_table",
+                "indexed_new": len(file_paths),
                 "latechunk": enable_latechunk,
                 "docling_chunk": enable_docling_chunk,
                 "indexing_config": {
@@ -687,6 +980,10 @@ class AdvancedRagApiHandler(http.server.BaseHTTPRequestHandler):
         except json.JSONDecodeError:
             self.send_json_response({"error": "Invalid JSON"}, status_code=400)
         except Exception as e:
+            try:
+                index_progress.fail(locals().get("session_id"), str(e))
+            except Exception:
+                pass
             self.send_json_response({"error": f"Failed to start indexing: {str(e)}"}, status_code=500)
 
     def handle_models(self):
@@ -754,4 +1051,4 @@ def start_server(port=8001):
 
 if __name__ == "__main__":
     # To run this server: python -m rag_system.api_server
-    start_server() 
+    start_server()

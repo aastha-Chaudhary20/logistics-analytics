@@ -1,0 +1,3 @@
+{
+  "drafting": { "backend": "claude", "claude_model": "claude-sonnet-4-6" }
+}
