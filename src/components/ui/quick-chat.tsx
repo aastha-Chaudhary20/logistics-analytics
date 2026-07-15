@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -23,7 +24,13 @@ export function QuickChat({ sessionId: externalSessionId, onSessionChange, class
 
   // 🔄 Sync prop -> state: when sidebar selects a different session, update local session and reset chat window
   useEffect(() => {
-    if (externalSessionId && externalSessionId !== sessionId) {
+    if (!externalSessionId) {
+      // Switched to "New Chat": clear the previous chat's messages
+      setSessionId(undefined);
+      setMessages([]);
+      return;
+    }
+    if (externalSessionId !== sessionId) {
       setSessionId(externalSessionId);
       // Fetch existing messages for the selected session
       (async () => {

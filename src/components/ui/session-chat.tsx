@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -6,7 +7,7 @@ import { ChatInput } from "./chat-input"
 import { EmptyChatState } from "./empty-chat-state"
 import { ChatMessage, ChatSession, chatAPI, generateUUID } from "@/lib/api"
 import { AttachedFile } from "@/lib/types"
-import { useEffect, useState, forwardRef, useImperativeHandle, useCallback } from "react"
+import { useEffect, useState, useRef, forwardRef, useImperativeHandle, useCallback } from "react"
 import { normalizeStreamingToken } from "@/utils/textNormalization"
 import { Button } from "./button"
 import type { Step } from '@/lib/api'
@@ -38,6 +39,10 @@ export const SessionChat = forwardRef<SessionChatRef, SessionChatProps>(({
   className = ""
 }, ref) => {
   const [messages, setMessages] = useState<ChatMessage[]>([])
+  // Tracks which session the message list on screen belongs to. Streaming
+  // callbacks compare against this so a query started in chat A can never
+  // write its progress/answer into chat B after the user switches chats.
+  const displayedSessionRef = useRef<string | undefined>(undefined)
   const [isLoading, setIsLoading] = useState(false)
   const [currentSession, setCurrentSession] = useState<ChatSession | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -101,6 +106,7 @@ export const SessionChat = forwardRef<SessionChatRef, SessionChatProps>(({
 
   // Load session when sessionId changes
   useEffect(() => {
+    displayedSessionRef.current = sessionId
     if (sessionId) {
       // Only load session if we don't already have the current session
       // This prevents overriding messages when a new session is created
@@ -147,6 +153,7 @@ export const SessionChat = forwardRef<SessionChatRef, SessionChatProps>(({
           const newSession = await apiService.createSession()
           activeSessionId = newSession.id
           setCurrentSession(newSession)
+          displayedSessionRef.current = newSession.id
           if (onSessionChange) {
             onSessionChange(newSession)
           }
@@ -155,6 +162,15 @@ export const SessionChat = forwardRef<SessionChatRef, SessionChatProps>(({
           setError('Failed to create session')
           return
         }
+      }
+
+      // Session-safe message setter: drop any update whose originating query
+      // belongs to a session that is no longer on screen. Fixes queries from
+      // the current chat "bleeding" into older chats opened mid-stream.
+      const requestSessionId = activeSessionId
+      const guardedSetMessages: typeof setMessages = (updater) => {
+        if (displayedSessionRef.current !== requestSessionId) return
+        setMessages(updater as any)
       }
 
       // --- Action Router: Decide if this is an upload or a chat message ---
@@ -174,11 +190,11 @@ export const SessionChat = forwardRef<SessionChatRef, SessionChatProps>(({
             `📎 Uploaded ${uploadResult.uploaded_files.length} file(s): ${uploadResult.uploaded_files.map(f => f.filename).join(', ')}. Please click 'Index Documents' to chat with them.`,
             'assistant'
           )
-          setMessages(prev => [...prev, uploadMessage])
+          guardedSetMessages(prev => [...prev, uploadMessage])
         } catch (error) {
           console.error('❌ Failed to upload files:', error)
           const errorMessage = apiService.createMessage('❌ Failed to upload files. Please try again.', 'assistant')
-          setMessages(prev => [...prev, errorMessage])
+          guardedSetMessages(prev => [...prev, errorMessage])
         } finally {
           setIsLoading(false)
         }
@@ -189,7 +205,7 @@ export const SessionChat = forwardRef<SessionChatRef, SessionChatProps>(({
       if (!content.trim()) return;
 
       const userMessage = apiService.createMessage(content, 'user')
-      setMessages(prev => [...prev, userMessage])
+      guardedSetMessages(prev => [...prev, userMessage])
       if (onNewMessage) onNewMessage(userMessage)
 
       setIsLoading(true)
@@ -228,7 +244,7 @@ export const SessionChat = forwardRef<SessionChatRef, SessionChatProps>(({
           isLoading: false,
           metadata: { message_type: 'in_progress' }
         }
-        setMessages(prev => {
+        guardedSetMessages(prev => {
           const withoutLoaders = prev.filter(m => m.metadata?.message_type !== 'in_progress' && !m.isLoading)
           return [...withoutLoaders, placeholder]
         })
@@ -255,7 +271,7 @@ export const SessionChat = forwardRef<SessionChatRef, SessionChatProps>(({
           },
           (evt) => {
             console.log('STREAM EVENT:', evt.type, evt.data); // Debug log for SSE events
-            setMessages(prev => prev.map(m => {
+            guardedSetMessages(prev => prev.map(m => {
               if (m.id !== placeholder.id) return m;
               const steps = [...(m.content as any).steps];
               if (evt.type === 'analyze') {
@@ -440,7 +456,7 @@ export const SessionChat = forwardRef<SessionChatRef, SessionChatProps>(({
                   }, 100); // Small delay to ensure backend has processed the title update
                 }
                 
-                return { ...m, content: { steps }, metadata: { message_type: 'complete' } };
+                return { ...m, content: { steps }, metadata: { message_type: 'complete', files: evt.data.files || [] } };
               }
               if (evt.type === 'direct_answer') {
                 const stepsDir: Step[] = [
@@ -476,10 +492,11 @@ export const SessionChat = forwardRef<SessionChatRef, SessionChatProps>(({
         timestamp: new Date().toISOString(),
           metadata: { 
             message_type: 'sub_answer',
-            source_documents: (response as any).source_documents || [] 
+            source_documents: (response as any).source_documents || [],
+            files: (response as any).files || []
           }
       }
-      setMessages(prev => [...prev, aiMessage])
+      guardedSetMessages(prev => [...prev, aiMessage])
       
         if ((response as any).session) {
           const sess = (response as any).session as ChatSession

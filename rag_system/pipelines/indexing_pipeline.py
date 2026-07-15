@@ -135,7 +135,8 @@ class IndexingPipeline:
                 print(f"⚠️  Failed to initialise LateChunkEncoder: {e}. Disabling latechunk retrieval.")
                 self.latechunk_enabled = False
 
-    def run(self, file_paths: List[str] | None = None, *, documents: List[str] | None = None):
+    def run(self, file_paths: List[str] | None = None, *, documents: List[str] | None = None,
+            session_id: str | None = None):
         """
         Processes and indexes documents based on the pipeline's configuration.
         Accepts legacy keyword *documents* as an alias for *file_paths* so that
@@ -151,6 +152,8 @@ class IndexingPipeline:
         
         # Import progress tracking utilities
         from rag_system.utils.batch_processor import timer, ProgressTracker, estimate_memory_usage
+        from rag_system.utils.index_progress import progress as _idx_progress
+        _idx_progress.start(session_id, total_files=len(file_paths))
         
         with timer("Complete Indexing Pipeline"):
             # Step 1: Document Processing and Chunking
@@ -195,6 +198,7 @@ class IndexingPipeline:
                         doc_chunks_map[document_id] = file_chunks  # save for late-chunk step
                         print(f"  Generated {len(file_chunks)} chunks from {document_id}")
                         file_tracker.update(1)
+                        _idx_progress.file_done(session_id, os.path.basename(str(document_id)))
                         
                     except Exception as e:
                         print(f"  ❌ Error processing {file_path}: {e}")
@@ -205,9 +209,25 @@ class IndexingPipeline:
 
             if not all_chunks:
                 print("No text chunks were generated. Skipping indexing.")
+                _idx_progress.finish(session_id, "No indexable content found in these files.")
                 return
 
             print(f"\n✅ Generated {len(all_chunks)} text chunks total.")
+
+            # ---- Chunk-level SHA-256 dedup (before any LLM/embedding cost) ----
+            # Skips content already indexed into this table — catches the same
+            # report re-uploaded under a new UUID-prefixed name, and boilerplate
+            # shared between files. Committed only after vectors index cleanly.
+            from rag_system.ingestion.chunk_dedup import ChunkDedup
+            _dedup_table = self.config["storage"].get("text_table_name") or \
+                (self.config.get("retrievers", {}) or {}).get("dense", {}).get("lancedb_table_name", "default_text_table")
+            _chunk_dedup = ChunkDedup(_dedup_table)
+            all_chunks, _n_dupes = _chunk_dedup.filter_new(all_chunks)
+            if not all_chunks:
+                print("All chunks were duplicates of already-indexed content. Nothing new to index.")
+                _idx_progress.finish(session_id, "All content was already indexed — nothing new to add.")
+                return
+
             memory_mb = estimate_memory_usage(all_chunks)
             print(f"📊 Estimated memory usage: {memory_mb:.1f}MB")
 
@@ -236,6 +256,8 @@ class IndexingPipeline:
                         print(f"   Example BEFORE: '{all_chunks[0]['text'][:100]}...'")
                     
                     # This modifies the 'text' field in each chunk dictionary
+                    _idx_progress.stage(session_id, "enriching", 0, len(all_chunks),
+                                        message=f"Contextual enrichment ON — {len(all_chunks)} LLM calls, this is slow…")
                     all_chunks = self.contextual_enricher.enrich_chunks(all_chunks, window_size=window_size)
                     
                     if all_chunks:
@@ -255,12 +277,17 @@ class IndexingPipeline:
                 with timer("Vector Embedding & Indexing"):
                     table_name = self.config["storage"].get("text_table_name") or retriever_configs.get("dense", {}).get("lancedb_table_name", "default_text_table")
                     print(f"\n--- Generating embeddings with {self.config.get('embedding_model_name')} ---")
-                    
+                    _idx_progress.stage(session_id, "embedding", 0, len(all_chunks),
+                                        message=f"Embedding {len(all_chunks)} chunks (slowest step on CPU)…")
                     embeddings = self.embedding_generator.generate(all_chunks)
+                    _idx_progress.stage(session_id, "embedding", len(all_chunks), len(all_chunks))
                     
                     print(f"\n--- Indexing {len(embeddings)} vectors into LanceDB table: {table_name} ---")
+                    _idx_progress.stage(session_id, "storing", 1, 2, message="Writing vector index…")
                     self.vector_indexer.index(table_name, all_chunks, embeddings)
                     print("✅ Vector embeddings indexed successfully")
+                    _chunk_dedup.commit()  # persist hashes only after a clean index
+                    _idx_progress.finish(session_id)
 
                     # Create FTS index on the 'text' field after adding data
                     print(f"\n--- Ensuring Full-Text Search (FTS) index on table '{table_name}' ---")

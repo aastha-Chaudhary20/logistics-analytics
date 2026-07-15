@@ -254,6 +254,117 @@ class AnalyticsEngine:
                 f.write(report)
         return report
 
+    # ------------------------------------------------- consolidated analysis
+    def event_analysis_report(self, out_path: Optional[str] = None,
+                              llm_fn=None) -> str:
+        """Gemini/Claude-style consolidated analysis across ALL indexed events —
+        but with every figure computed by SQL, so the totals can never
+        contradict the tables. Optional llm_fn writes the 'Strategic
+        Observations' prose from a facts sheet of computed values only."""
+        def q(sql):
+            r = self._run(sql)
+            return r["rows"]
+
+        rows = q(f"""
+            SELECT event_id, event_name, origin, destination, l1_transporter,
+                   vehicle_qty, l1_rate, l2_rate, n_bids, route_total,
+                   participants, start_time
+            FROM {TABLE}
+            WHERE l1_rate IS NOT NULL OR final_price IS NOT NULL
+            ORDER BY start_time NULLS LAST, event_id""")
+        if not rows:
+            return "No awarded line items indexed yet — index the report files first."
+
+        DASH, ARROW = "\u2014", "\u2192"   # hoisted: py<3.12 forbids backslashes inside f-string expressions
+        def inr(v):
+            return f"\u20b9{float(v):,.0f}" if v is not None else DASH
+
+        def _n(v):  # NaN-safe number
+            return v if isinstance(v, (int, float)) and v == v and v is not None else None
+        total_spend = sum(_n(r[9]) or 0 for r in rows)
+        total_vehicles = sum(int(_n(r[5]) or 0) for r in rows)
+        n_events = len({r[0] for r in rows})
+
+        # per-event table
+        ev_lines = ["| Event | Route | Qty | Winning Vendor (L1) | L1 Rate | Route Total |",
+                    "|---|---|---|---|---|---|"]
+        for r in rows:
+            route = f"{r[2] or DASH} {ARROW} {r[3] or DASH}"
+            ev_lines.append(f"| {r[0]} | {route} | {int(_n(r[5]) or 1)} | "
+                            f"{r[4] or DASH} | {inr(r[6])} | {inr(r[9])} |")
+
+        # vendor share + wins (percentages against the REAL total)
+        vend = {}
+        for r in rows:
+            v = r[4] or "(unknown)"
+            d = vend.setdefault(v, {"spend": 0.0, "wins": 0})
+            d["spend"] += _n(r[9]) or 0; d["wins"] += 1
+        share_lines = ["| Vendor | Awarded Spend | % of Total | L1 Wins |", "|---|---|---|---|"]
+        for v, d in sorted(vend.items(), key=lambda kv: -kv[1]["spend"]):
+            pct = 100.0 * d["spend"] / total_spend if total_spend else 0
+            share_lines.append(f"| {v} | {inr(d['spend'])} | {pct:.1f}% | {d['wins']} |")
+
+        # computed insights
+        insights = []
+        big = max(rows, key=lambda r: _n(r[9]) or 0)
+        insights.append(f"Largest corridor by spend: {big[0]} ({big[2]} \u2192 {big[3]}) at "
+                        f"{inr(big[9])} \u2014 {100.0*(big[9] or 0)/total_spend:.1f}% of total.")
+        margins = [(r, 100.0*(r[7]-r[6])/r[6]) for r in rows if _n(r[6]) and _n(r[7])]
+        if margins:
+            tight = min(margins, key=lambda x: x[1])
+            insights.append(f"Most contested award: {tight[0][0]} \u2014 L2 missed L1 by only "
+                            f"{tight[1]:.1f}% ({inr(tight[0][7])} vs {inr(tight[0][6])}).")
+        # repeated routes: same origin+destination in different events
+        by_route = {}
+        for r in rows:
+            by_route.setdefault((str(r[2]).strip().lower(), str(r[3]).strip().lower()), []).append(r)
+        for (o, d), rs in by_route.items():
+            evs = sorted({x[0] for x in rs})
+            if len(evs) > 1:
+                rates = sorted([(x[11], x[0], x[6]) for x in rs if x[6]],
+                               key=lambda t: (t[0] is None, t[0]))
+                if len(rates) >= 2 and rates[0][2] and rates[-1][2]:
+                    delta = rates[0][2] - rates[-1][2]
+                    word = "saving" if delta > 0 else "increase"
+                    insights.append(
+                        f"Repeated lane {rs[0][2]} \u2192 {rs[0][3]}: negotiated in {', '.join(evs)}; "
+                        f"rate moved {inr(rates[0][2])} \u2192 {inr(rates[-1][2])} "
+                        f"({word} of {inr(abs(delta))} on the same requirement).")
+        low_comp = [r for r in rows if (r[10] or 0) <= 1]
+        if low_comp:
+            insights.append(f"{len(low_comp)} award(s) had a single participant \u2014 no price "
+                            f"competition: {', '.join(sorted({r[0] for r in low_comp}))}.")
+
+        parts = [
+            "# Consolidated Procurement Analysis",
+            f"_Basis: {n_events} events \u00b7 {len(rows)} awarded line items \u00b7 "
+            f"{total_vehicles} vehicles. Every figure computed from indexed data._",
+            f"\n**Total awarded logistics cost: {inr(total_spend)}**\n",
+            "## Event-by-event awards\n" + "\n".join(ev_lines),
+            "\n## Vendor share & standings\n" + "\n".join(share_lines),
+            "\n## Computed insights\n" + "\n".join(f"- {i}" for i in insights),
+        ]
+
+        # optional LLM narrative — facts in, prose out, numbers verbatim
+        if llm_fn:
+            facts = "\n".join(insights)
+            try:
+                prose = llm_fn(
+                    "You are a procurement analyst. Using ONLY these computed facts, "
+                    "write a short 'Strategic Observations' section (3-5 sentences, "
+                    "professional, no new numbers):\n" + facts)
+                if prose and prose.strip():
+                    parts.append("\n## Strategic observations\n" + prose.strip())
+            except Exception:
+                pass
+
+        report = "\n".join(parts)
+        if out_path:
+            os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
+            with open(out_path, "w", encoding="utf-8") as f:
+                f.write(report)
+        return report
+
     # ------------------------------------------------------------- narration
     def narration_prompt(self, question: str, result: Dict[str, Any]) -> str:
         """Feed this to the local LLM to phrase the answer. All numbers are in

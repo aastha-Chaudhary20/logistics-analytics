@@ -39,6 +39,9 @@ CREATE TABLE IF NOT EXISTS {TABLE} (
     l1_rate DOUBLE,
     l1_transporter VARCHAR,
     final_price DOUBLE,
+    l2_rate DOUBLE,
+    n_bids INTEGER,
+    route_total DOUBLE,
     material_weight_kg DOUBLE,
     cost_per_kg DOUBLE,
     source_file VARCHAR,
@@ -86,7 +89,7 @@ def _num(v) -> Optional[float]:
     s = re.sub(r"[,₹$%\s]", "", str(v))
     try:
         f = float(s)
-        return f
+        return None if f != f else f  # NaN -> None (NaN passes 'is not None')
     except ValueError:
         return None
 
@@ -132,6 +135,8 @@ def normalize_frame(df, meta_lines: List[str], source: str) -> List[Dict[str, An
     c_rate = _pick_col(cols, "l1", "rate") or _pick_col(cols, "rate", forbid=("rank",))
     c_vendor = _pick_col(cols, "transporter") or _pick_col(cols, "vendor") or _pick_col(cols, "supplier")
     c_final = _pick_col(cols, "final", "price") or _pick_col(cols, "final")
+    # ALL ranked bid columns (header dedup names them Final Price, Final Price_1, ...)
+    c_bids = [c for c in cols if "final" in str(c).lower() and "price" in str(c).lower()]
 
     now = datetime.now(timezone.utc).replace(tzinfo=None)
     rows: List[Dict[str, Any]] = []
@@ -141,6 +146,15 @@ def normalize_frame(df, meta_lines: List[str], source: str) -> List[Dict[str, An
         final = _num(rec.get(c_final)) if c_final else None
         wt = _weight_kg(desc)
         price_for_kg = final if final is not None else l1
+        # ranked bid ladder: sorted bid values across all Final Price columns
+        bids = sorted([b for b in (_num(rec.get(c)) for c in c_bids) if b is not None])
+        l2 = None
+        if len(bids) >= 2:
+            higher = [b for b in bids if l1 is None or b > l1]
+            l2 = higher[0] if higher else bids[1]
+        qty_val = _num(rec.get(c_qty)) if c_qty else None
+        unit_price = final if final is not None else l1
+        route_total = (unit_price * qty_val) if (unit_price is not None and qty_val) else unit_price
         rows.append({
             "event_id": event_id, "event_name": event_name,
             "origin": origin, "destination": dest,
@@ -149,8 +163,13 @@ def normalize_frame(df, meta_lines: List[str], source: str) -> List[Dict[str, An
             "item_description": desc[:2000] or None,
             "vehicle_qty": _num(rec.get(c_qty)) if c_qty else None,
             "l1_rate": l1,
-            "l1_transporter": (str(rec.get(c_vendor)).strip() or None) if c_vendor else None,
+            "l1_transporter": (lambda v: None if v is None or (isinstance(v, float) and v != v)
+                               or str(v).strip().lower() in ("", "nan", "none")
+                               else str(v).strip())(rec.get(c_vendor)) if c_vendor else None,
             "final_price": final,
+            "l2_rate": l2,
+            "n_bids": len(bids) if bids else None,
+            "route_total": route_total,
             "material_weight_kg": wt,
             "cost_per_kg": round(price_for_kg / wt, 4) if (price_for_kg and wt) else None,
             "source_file": source,
@@ -175,6 +194,11 @@ def upsert_rows(con, rows: List[Dict[str, Any]], source: str):
     if not rows:
         return 0
     con.execute(DDL)
+    for coldef in ("l2_rate DOUBLE", "n_bids INTEGER", "route_total DOUBLE"):
+        try:
+            con.execute(f"ALTER TABLE {TABLE} ADD COLUMN IF NOT EXISTS {coldef}")
+        except Exception:
+            pass
     con.execute(f"DELETE FROM {TABLE} WHERE source_file = ?", [source])
     keys = list(rows[0].keys())
     placeholders = ", ".join(["?"] * len(keys))

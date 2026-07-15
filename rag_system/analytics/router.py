@@ -30,16 +30,26 @@ _DOCUMENT = re.compile(
 
 _LOOKUP_HINT = re.compile(r"\bEVN[\s_-]?\d{3,5}\b", re.I)
 
+# Fields the canonical procurement_events table answers EXACTLY. If the user
+# names an event AND one of these, SQL is strictly better than fuzzy retrieval:
+# instant, and immune to the "retrieved the wrong event's chunks" failure mode.
+_STRUCTURED_FIELD = re.compile(
+    r"\b(l1|l2|l3|price|rate|cost|freight|amount|vendor|transporter|supplier|"
+    r"winner|awarded|quantity|qty|weight|participants?|timeline|route|origin|"
+    r"destination)\b", re.I)
+
 
 def route(question: str, llm_fn: Optional[Callable[[str], str]] = None) -> str:
     q = question.strip()
     if _DOCUMENT.search(q):
         return "document"
     if _ANALYTIC.search(q):
-        # "L1 price of EVN 3356" contains no aggregate words -> stays RAG;
-        # "compare EVN 3356 and EVN 3821 cost per kg" hits ANALYTIC -> SQL.
         return "analytics"
     if _LOOKUP_HINT.search(q):
+        # "L1 price of EVN 3503" -> analytics (exact SQL row lookup).
+        # "what does the note in EVN 3503 say" -> rag (prose question).
+        if _STRUCTURED_FIELD.search(q):
+            return "analytics"
         return "rag"
     if llm_fn:
         out = (llm_fn(

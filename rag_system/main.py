@@ -168,7 +168,9 @@ PIPELINE_CONFIGS = {
             "bm25": {"enabled": True, "index_name": "rag_bm25_index"},
         },
         "embedding_model_name": "Qwen/Qwen3-Embedding-0.6B",
-        "reranker": {"enabled": False},           # ColBERT rerank = biggest CPU cost -> OFF
+        "reranker": {"enabled": True, "strategy": "minilm",
+                     "model_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+                     "top_k": 8},  # MiniLM ~100-300ms on CPU; heavy ColBERT/Qwen stay off
         "query_decomposition": {"enabled": False}, # multiplies LLM calls -> OFF
         "verification": {"enabled": False},        # one more LLM call per answer -> OFF
         "retrieval_k": 12,                         # enough recall without rerank

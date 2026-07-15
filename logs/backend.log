@@ -144,3 +144,31 @@
 2026-07-06 23:10:27,747 import cgi
 2026-07-06 23:36:49,614 /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
 2026-07-06 23:36:49,614 import cgi
+2026-07-07 07:14:50,827 /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-07 07:14:50,828 import cgi
+2026-07-07 21:01:06,937 /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-07 21:01:06,937 import cgi
+2026-07-08 18:28:54,863 /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-08 18:28:54,863 import cgi
+2026-07-08 18:58:01,543 /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-08 18:58:01,543 import cgi
+2026-07-08 19:53:05,293 /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-08 19:53:05,294 import cgi
+2026-07-10 19:01:34,253 /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-10 19:01:34,253 import cgi
+2026-07-10 19:20:50,326 /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-10 19:20:50,326 import cgi
+2026-07-10 19:26:31,902 /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-10 19:26:31,902 import cgi
+2026-07-11 15:36:39,294 /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-11 15:36:39,294 import cgi
+2026-07-11 16:42:34,430 /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-11 16:42:34,430 import cgi
+2026-07-11 17:07:46,480 /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-11 17:07:46,481 import cgi
+2026-07-11 17:19:23,852 /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-11 17:19:23,852 import cgi
+2026-07-11 17:44:34,790 /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-11 17:44:34,791 import cgi
+2026-07-11 17:58:08,193 /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-11 17:58:08,194 import cgi

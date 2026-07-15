@@ -825,7 +825,7 @@ Respond with exactly one word: USE_RAG or DIRECT_LLM"""
                     'embedding_model': 'Qwen/Qwen3-Embedding-0.6B',  # From default config
                     'enrich_model': 'qwen3:0.6b',  # From default config
                     'overview_model': 'qwen3:0.6b',  # From default config
-                    'enable_enrich': True,  # From default config
+                    'enable_enrich': False,  # OFF by default (LLM call per chunk = slow CPU indexing)
                     'latechunk': True,  # From default config
                     'docling_chunk': True,  # From default config
                     'note': 'Default configuration from RAG system'
@@ -876,7 +876,7 @@ Respond with exactly one word: USE_RAG or DIRECT_LLM"""
             chunk_overlap = 64
             retrieval_mode = 'hybrid'
             window_size = 2
-            enable_enrich = True
+            enable_enrich = False  # OFF by default for CPU speed
             embedding_model = None
             enrich_model = None
             batch_size_embed = 50
@@ -894,7 +894,7 @@ Respond with exactly one word: USE_RAG or DIRECT_LLM"""
                     chunk_overlap = int(opts.get('chunkOverlap', 64))
                     retrieval_mode = str(opts.get('retrievalMode', 'hybrid'))
                     window_size = int(opts.get('windowSize', 2))
-                    enable_enrich = bool(opts.get('enableEnrich', True))
+                    enable_enrich = bool(opts.get('enableEnrich', False))
                     embedding_model = opts.get('embeddingModel')
                     enrich_model = opts.get('enrichModel')
                     batch_size_embed = int(opts.get('batchSizeEmbed', 50))
@@ -1139,4 +1139,4 @@ def main():
         print("\n🛑 Server stopped")
 
 if __name__ == "__main__":
-    main() 
+    main()

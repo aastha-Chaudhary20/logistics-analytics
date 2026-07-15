@@ -13,4 +13,13 @@ __pycache__/
 .DS_Store
 .env
 venv/
+logs/lancedb/
+index_store/
 logs/
+reports/
+shared_uploads/
+backend/chat_data.db*
+__pycache__/
+*.pyc
+node_modules/
+.next/

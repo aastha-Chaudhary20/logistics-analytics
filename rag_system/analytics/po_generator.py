@@ -46,8 +46,17 @@ def _fmt_inr(v) -> str:
 
 def draft_purchase_order(query: str, engine, *,
                          buyer: str = "Escorts Kubota Limited",
-                         llm_fn=None) -> str:
-    """Return a grounded PO, or a helpful 'not found' listing real events."""
+                         llm_fn=None, drafting_backend=None,
+                         backend_override: Optional[str] = None) -> str:
+    """Return a grounded PO, or a helpful 'not found' listing real events.
+
+    drafting_backend: a DraftingBackend instance controlling who writes the
+        cover note (local model, air-gapped default, or Claude if the
+        deployment has explicitly opted in). If omitted, falls back to the
+        legacy llm_fn (local-only, unchanged behavior).
+    backend_override: per-request choice ("local"/"claude"); still bounded by
+        the deployment's configured backend — see drafting_backend.py.
+    """
     evid = _extract_event_id(query)
     if not evid:
         events = _available_events(engine)
@@ -125,8 +134,24 @@ Authorised by: ____________________        Date: __________
 (Generated from indexed award data. Every figure above is taken directly from
 event {event_id}; none are estimated.)"""
 
-    # Optional: a short cover note from the local model. Numbers stay verbatim.
-    if llm_fn:
+    # Cover note: written by whichever backend this deployment allows.
+    # Only the whitelisted fields below are ever eligible to leave the
+    # machine, and only if drafting_backend resolves to "claude".
+    footer_note = None
+    if drafting_backend is not None:
+        from rag_system.analytics.drafting_backend import build_cover_note_prompt
+        prompt = build_cover_note_prompt({
+            "event_id": event_id, "vendor": vendor, "route": route,
+            "quantity": qty_n, "buyer": buyer,
+        })
+        result = drafting_backend.generate(prompt, backend=backend_override)
+        if result["text"]:
+            doc = result["text"] + "\n\n" + doc
+        footer_note = f"(Cover note drafted by: {result['backend']})"
+        if result.get("downgraded"):
+            footer_note += f" — {result['downgrade_reason']}"
+    elif llm_fn:
+        # Legacy path: unchanged local-only behavior for existing callers.
         try:
             note = llm_fn(
                 "Write ONE short professional sentence to accompany this purchase "
@@ -136,4 +161,7 @@ event {event_id}; none are estimated.)"""
                 doc = note.strip() + "\n\n" + doc
         except Exception:
             pass
+
+    if footer_note:
+        doc = doc + "\n" + footer_note
     return doc
