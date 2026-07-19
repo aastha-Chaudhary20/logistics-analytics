@@ -1,19 +1,85 @@
-node_modules/
-shared_uploads/
-index_store/
-lancedb/
-.next/
-*.duckdb
-*.db
-*.xlsx
-*.xls
-*.csv
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Python
 __pycache__/
 *.pyc
-.DS_Store
-.env
+
+# Local Data
+/index_store
+/shared_uploads
+chat_history.db
+*.pkl
+
+# Backend generated files
+backend/shared_uploads/
+
+# Vector DB artefacts
+lancedb/
+index_store/overviews/
+
+# Logs and runtime output
+logs/
+*.log
+
+# SQLite or other database files
+*.db
+#backend/*.db
+# backend/chat_history.db
+backend/chroma_db/
+backend/chroma_db/**
+
+# Document and user-uploaded files (PDFs, images, etc.)
+rag_system/documents/
+*.pdf
+
+# Ensure docker.env remains tracked
+!docker.env
+!backend/chat_data.db
+
+# Virtual Environment
 venv/
-logs/lancedb/
+# Runtime data — never commit
+lancedb/
 index_store/
 logs/
 reports/
@@ -21,5 +87,11 @@ shared_uploads/
 backend/chat_data.db*
 __pycache__/
 *.pyc
+
+# Personal artifacts
+localGPT_codebase.txt
+*.patch
+
+# Node/Next
 node_modules/
 .next/
