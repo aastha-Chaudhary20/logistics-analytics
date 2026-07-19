@@ -1,0 +1,12 @@
+node_modules
+.next
+__pycache__
+*.pyc
+lancedb
+index_store
+logs
+reports
+shared_uploads
+backend/chat_data.db*
+.git
+*.zip

@@ -15152,3 +15152,1397 @@
 2026-07-11 17:58:25,348 [INFO] ✓ Compiled / in 1082ms (1387 modules)
 2026-07-11 17:58:25,504 [INFO] Demo component rendering...
 2026-07-11 17:58:25,522 [INFO] GET / 200 in 1265ms
+2026-07-15 18:36:22,370 [INFO] 🚀 Starting RAG System Components...
+2026-07-15 18:36:22,370 [INFO] 🔍 Checking prerequisites...
+2026-07-15 18:36:22,598 [INFO] ✅ All prerequisites satisfied
+2026-07-15 18:36:22,599 [INFO] ✅ Ollama already running
+2026-07-15 18:36:22,599 [INFO] 📥 Checking required models...
+2026-07-15 18:36:22,615 [INFO] ✅ qwen3:8b already available
+2026-07-15 18:36:22,615 [INFO] ✅ qwen3:0.6b already available
+2026-07-15 18:36:22,616 [INFO] 🔄 Starting rag-api on port 8001...
+2026-07-15 18:36:25,622 [INFO] ✅ rag-api started successfully (PID: 1924)
+2026-07-15 18:36:25,623 [INFO] 🔄 Starting backend on port 8000...
+2026-07-15 18:36:25,661 [INFO] /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-15 18:36:25,661 [INFO] import cgi
+2026-07-15 18:36:27,630 [INFO] ✅ backend started successfully (PID: 1928)
+2026-07-15 18:36:27,631 [INFO] 🔄 Starting frontend on port 3000...
+2026-07-15 18:36:27,883 [INFO] > multimodal_rag@0.1.0 dev
+2026-07-15 18:36:27,884 [INFO] > next dev
+2026-07-15 18:36:28,619 [INFO] ▲ Next.js 15.3.3
+2026-07-15 18:36:28,619 [INFO] - Local:        http://localhost:3000
+2026-07-15 18:36:28,619 [INFO] - Network:      http://192.168.1.7:3000
+2026-07-15 18:36:28,619 [INFO] ✓ Starting...
+2026-07-15 18:36:29,578 [INFO] ✓ Ready in 1069ms
+2026-07-15 18:36:32,638 [INFO] ✅ frontend started successfully (PID: 1935)
+2026-07-15 18:36:32,639 [INFO] 
+2026-07-15 18:36:32,639 [INFO] 🎉 RAG System Started!
+2026-07-15 18:36:32,639 [INFO] 📊 Services Status:
+2026-07-15 18:36:32,642 [INFO]    • Ollama    : ✅ Running  http://localhost:11434
+2026-07-15 18:36:32,642 [INFO]    • Rag-api   : ✅ Running  http://localhost:8001
+2026-07-15 18:36:32,642 [INFO]    • Backend   : ✅ Running  http://localhost:8000
+2026-07-15 18:36:32,642 [INFO]    • Frontend  : ✅ Running  http://localhost:3000
+2026-07-15 18:36:32,642 [INFO] 
+2026-07-15 18:36:32,642 [INFO] 🌐 Access your RAG system at: http://localhost:3000
+2026-07-15 18:36:32,642 [INFO] 
+2026-07-15 18:36:32,642 [INFO] 📋 Useful commands:
+2026-07-15 18:36:32,642 [INFO]    • Stop system:  Ctrl+C
+2026-07-15 18:36:32,642 [INFO]    • Check logs:   tail -f logs/*.log
+2026-07-15 18:36:32,642 [INFO]    • Health check: python run_system.py --health
+2026-07-15 18:36:32,643 [INFO] 👁️  Monitoring services... (Press Ctrl+C to stop)
+2026-07-15 18:37:36,384 [INFO] ○ Compiling / ...
+2026-07-15 18:37:37,230 [INFO] ✓ Compiled / in 1345ms (1387 modules)
+2026-07-15 18:37:37,381 [INFO] Demo component rendering...
+2026-07-15 18:37:37,397 [INFO] GET / 200 in 1523ms
+2026-07-15 18:37:37,732 [INFO] ✓ Compiled /favicon.ico in 174ms (743 modules)
+2026-07-15 18:37:37,778 [INFO] GET /favicon.ico 200 in 224ms
+2026-07-15 18:37:53,000 [INFO] ✓ Compiled in 165ms (660 modules)
+2026-07-15 18:37:53,031 [INFO] GET / 200 in 28ms
+2026-07-15 18:37:53,105 [INFO] ✓ Compiled in 103ms (660 modules)
+2026-07-15 18:37:53,110 [INFO] GET /favicon.ico 200 in 6ms
+2026-07-15 18:37:53,118 [INFO] GET / 200 in 10ms
+2026-07-15 18:37:53,132 [INFO] GET /favicon.ico 200 in 5ms
+2026-07-15 18:38:04,755 [INFO] 127.0.0.1 - - [15/Jul/2026 18:38:04] "OPTIONS /chat/stream HTTP/1.1" 200 -
+2026-07-15 18:38:04,772 [INFO] 127.0.0.1 - - [15/Jul/2026 18:38:04] "POST /chat/stream HTTP/1.1" 200 -
+2026-07-15 18:38:04,955 [INFO] ✓ Compiled in 138ms (660 modules)
+2026-07-15 18:38:04,970 [INFO] GET / 200 in 10ms
+2026-07-15 18:38:19,825 [INFO] ✓ Compiled in 133ms (660 modules)
+2026-07-15 18:38:19,844 [INFO] GET / 200 in 12ms
+2026-07-15 18:38:20,558 [INFO] 2026-07-15 18:38:20,558 | INFO     | sentence_transformers.base.model | No modules.json found for cross-encoder/ms-marco-MiniLM-L-6-v2, initializing a new CrossEncoder model.
+2026-07-15 18:38:25,884 [INFO] ✓ Compiled in 139ms (660 modules)
+2026-07-15 18:38:25,899 [INFO] GET / 200 in 10ms
+2026-07-15 18:38:25,980 [INFO] ✓ Compiled in 93ms (660 modules)
+2026-07-15 18:38:25,991 [INFO] GET / 200 in 8ms
+2026-07-15 18:38:26,058 [INFO] ✓ Compiled in 76ms (660 modules)
+2026-07-15 18:38:26,072 [INFO] GET / 200 in 12ms
+2026-07-15 18:38:40,805 [INFO] 127.0.0.1 - - [15/Jul/2026 18:38:40] "OPTIONS /chat/stream HTTP/1.1" 200 -
+2026-07-15 18:38:40,816 [INFO] 127.0.0.1 - - [15/Jul/2026 18:38:40] "POST /chat/stream HTTP/1.1" 200 -
+2026-07-15 18:38:40,997 [INFO] ✓ Compiled in 150ms (660 modules)
+2026-07-15 18:38:41,011 [INFO] GET / 200 in 10ms
+2026-07-15 18:38:43,726 [INFO] ✓ Compiled in 139ms (660 modules)
+2026-07-15 18:38:43,786 [INFO] GET / 200 in 55ms
+2026-07-15 18:38:43,818 [INFO] ✓ Compiled in 90ms (660 modules)
+2026-07-15 18:38:43,830 [INFO] GET / 200 in 10ms
+2026-07-15 18:38:43,897 [INFO] ✓ Compiled in 77ms (660 modules)
+2026-07-15 18:38:43,906 [INFO] GET / 200 in 7ms
+2026-07-15 18:39:31,127 [INFO] 127.0.0.1 - - [15/Jul/2026 18:39:31] "OPTIONS /chat/stream HTTP/1.1" 200 -
+2026-07-15 18:40:12,726 [INFO] 127.0.0.1 - - [15/Jul/2026 18:40:12] "POST /chat/stream HTTP/1.1" 200 -
+2026-07-15 18:40:12,927 [INFO] ✓ Compiled in 189ms (660 modules)
+2026-07-15 18:40:12,940 [INFO] GET / 200 in 10ms
+2026-07-15 18:40:13,017 [INFO] ✓ Compiled in 87ms (660 modules)
+2026-07-15 18:40:13,025 [INFO] GET / 200 in 6ms
+2026-07-15 18:43:12,445 [INFO] 127.0.0.1 - - [15/Jul/2026 18:43:12] "GET /index/progress?session_id=2010e86c-4e99-487a-9e82-086ee41a92a8 HTTP/1.1" 200 -
+2026-07-15 18:43:12,446 [INFO] 127.0.0.1 - - [15/Jul/2026 18:43:12] "GET /index/progress?session_id=2010e86c-4e99-487a-9e82-086ee41a92a8 HTTP/1.1" 200 -
+2026-07-15 18:43:12,620 [INFO] ✓ Compiled in 176ms (660 modules)
+2026-07-15 18:43:12,630 [INFO] GET / 200 in 7ms
+2026-07-15 18:43:12,697 [INFO] ✓ Compiled in 75ms (660 modules)
+2026-07-15 18:43:12,706 [INFO] GET / 200 in 8ms
+2026-07-15 18:43:17,663 [INFO] ✓ Compiled in 186ms (660 modules)
+2026-07-15 18:43:17,684 [INFO] GET / 200 in 11ms
+2026-07-15 18:43:30,017 [INFO] 2026-07-15 18:43:30,015 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 79d07a68-351e-4e7e-81df-51e4f61b5016_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx (stored in index_store/overviews/2010e86c-4e99-487a-9e82-086ee41a92a8.jsonl)
+2026-07-15 18:43:30,018 [INFO] 2026-07-15 18:43:30,016 | INFO     | rag_system.utils.batch_processor | Document Processing: 1/5 (20.0%) - 0.08 items/sec - ETA: 0.9min - Errors: 0
+2026-07-15 18:43:34,053 [INFO] 2026-07-15 18:43:34,053 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 4a62007b-94f0-40c3-8ab0-f612cb5c90bc_EVN 3456 Report for Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations.xlsx (stored in index_store/overviews/2010e86c-4e99-487a-9e82-086ee41a92a8.jsonl)
+2026-07-15 18:43:38,165 [INFO] 2026-07-15 18:43:38,164 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 516e8dda-02a2-41da-a2c7-5cd914750635_EVN 3503 Report for Transportation from ETDC Bangalore to Hubli Depot.xlsx (stored in index_store/overviews/2010e86c-4e99-487a-9e82-086ee41a92a8.jsonl)
+2026-07-15 18:43:42,439 [INFO] 2026-07-15 18:43:42,438 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 13be7184-12ab-49d9-8623-3f947d2591f5_EVN 3517 Report for Transportation from FBD to Spiti, HP.xlsx (stored in index_store/overviews/2010e86c-4e99-487a-9e82-086ee41a92a8.jsonl)
+2026-07-15 18:43:42,439 [INFO] 2026-07-15 18:43:42,438 | INFO     | rag_system.utils.batch_processor | Document Processing: 4/5 (80.0%) - 0.16 items/sec - ETA: 0.1min - Errors: 0
+2026-07-15 18:43:46,583 [INFO] 2026-07-15 18:43:46,583 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 60f7c446-7980-45ac-8d88-f5c515ccf109_EVN 3536 Report for Transportation from Rapar, Kutch GJ to Ahmedabad GJ.xlsx (stored in index_store/overviews/2010e86c-4e99-487a-9e82-086ee41a92a8.jsonl)
+2026-07-15 18:43:46,584 [INFO] 2026-07-15 18:43:46,584 | INFO     | rag_system.utils.batch_processor | Document Processing completed: 5/5 items in 29.44s (0.17 items/sec) - 0 errors
+2026-07-15 18:43:46,584 [INFO] 2026-07-15 18:43:46,584 | INFO     | rag_system.utils.batch_processor | Document Processing & Chunking completed in 29.44s
+2026-07-15 18:43:46,592 [INFO] 2026-07-15 18:43:46,592 | INFO     | rag_system.utils.batch_processor | Starting Embedding Generation for 20 items in batches of 64
+2026-07-15 18:43:46,807 [INFO] ✓ Compiled in 207ms (660 modules)
+2026-07-15 18:43:46,832 [INFO] GET / 200 in 21ms
+2026-07-15 18:43:54,526 [INFO] 2026-07-15 18:43:54,524 | INFO     | rag_system.utils.batch_processor | Batch 1/1 completed in 7.93s
+2026-07-15 18:43:54,528 [INFO] 2026-07-15 18:43:54,524 | INFO     | rag_system.utils.batch_processor | Embedding Generation (total) completed in 7.93s
+2026-07-15 18:43:54,528 [INFO] 2026-07-15 18:43:54,524 | INFO     | rag_system.utils.batch_processor | Embedding Generation completed: 20/20 items in 7.93s (2.52 items/sec) - 0 errors
+2026-07-15 18:44:09,160 [INFO] 2026-07-15 18:44:09,159 | INFO     | rag_system.utils.batch_processor | Late-Chunk Embedding & Indexing completed in 14.37s
+2026-07-15 18:44:09,161 [INFO] 2026-07-15 18:44:09,159 | INFO     | rag_system.utils.batch_processor | Vector Embedding & Indexing completed in 22.57s
+2026-07-15 18:44:09,161 [INFO] 2026-07-15 18:44:09,159 | INFO     | rag_system.utils.batch_processor | Complete Indexing Pipeline completed in 52.02s
+2026-07-15 18:44:09,167 [INFO] 127.0.0.1 - - [15/Jul/2026 18:44:09] "POST /index HTTP/1.1" 200 -
+2026-07-15 18:44:09,633 [INFO] ✓ Compiled in 189ms (660 modules)
+2026-07-15 18:44:09,645 [INFO] GET / 200 in 9ms
+2026-07-15 18:44:09,725 [INFO] ✓ Compiled in 90ms (660 modules)
+2026-07-15 18:44:09,734 [INFO] GET / 200 in 8ms
+2026-07-15 18:44:27,161 [INFO] 127.0.0.1 - - [15/Jul/2026 18:44:27] "OPTIONS /chat/stream HTTP/1.1" 200 -
+2026-07-15 18:44:27,190 [INFO] 127.0.0.1 - - [15/Jul/2026 18:44:27] "POST /chat/stream HTTP/1.1" 200 -
+2026-07-15 18:44:27,321 [INFO] ✓ Compiled in 134ms (660 modules)
+2026-07-15 18:44:27,387 [INFO] GET / 200 in 60ms
+2026-07-15 18:44:27,407 [INFO] ✓ Compiled in 84ms (660 modules)
+2026-07-15 18:44:27,417 [INFO] GET / 200 in 8ms
+2026-07-15 18:44:32,605 [INFO] 2026-07-15 18:44:32,601 | INFO     | rag-system | Top 10 results:
+2026-07-15 18:44:32,605 [INFO] 2026-07-15 18:44:32,605 | INFO     | rag-system | chunk_id       score   preview
+2026-07-15 18:44:32,605 [INFO] 2026-07-15 18:44:32,605 | INFO     | rag-system | ------------------------------
+2026-07-15 18:44:32,605 [INFO] 2026-07-15 18:44:32,605 | INFO     | rag-system | 13be7184-12a 0.000   Context — Event EVN 3517 · Online negotiation of…
+2026-07-15 18:44:32,606 [INFO] 2026-07-15 18:44:32,606 | INFO     | rag-system | 60f7c446-798 0.000   Context — Event EVN 3536 · Online negotiation of…
+2026-07-15 18:44:32,606 [INFO] 2026-07-15 18:44:32,606 | INFO     | rag-system | 516e8dda-02a 0.000   Context — Event EVN 3503 · Online negotiation of…
+2026-07-15 18:44:32,606 [INFO] 2026-07-15 18:44:32,606 | INFO     | rag-system | 60f7c446-798 9997.602 Total Cost NaN NaN NaN 29000.0 43000.0 45000.0 Rates are…
+2026-07-15 18:44:32,607 [INFO] 2026-07-15 18:44:32,606 | INFO     | rag-system | 4a62007b-94f 10634.889 # Report information (file:…
+2026-07-15 18:44:32,607 [INFO] 2026-07-15 18:44:32,606 | INFO     | rag-system | 79d07a68-351 12066.961 Context — Event EVN 3356 · Online negotiation of…
+2026-07-15 18:44:32,607 [INFO] 2026-07-15 18:44:32,606 | INFO     | rag-system | 516e8dda-02a 14225.786 Qty L1 Rate Final Price Final Price_1 Final Price_2 min 2.0…
+2026-07-15 18:44:32,608 [INFO] 2026-07-15 18:44:32,606 | INFO     | rag-system | 4a62007b-94f 16284.580 mean 2.0 122500.0 122500.0 max 2.0 122500.0 122500.0
+2026-07-15 18:44:32,608 [INFO] 2026-07-15 18:44:32,606 | INFO     | rag-system | 79d07a68-351 16332.438 1 85000 \tATUL LOGISTICS 85000 92000 94000 Numeric summary…
+2026-07-15 18:44:32,608 [INFO] 2026-07-15 18:44:32,606 | INFO     | rag-system | 13be7184-12a 17061.227 mean 1.0 95000.0 95000.0 max 1.0 95000.0 95000.0
+2026-07-15 18:44:32,846 [INFO] huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+2026-07-15 18:44:32,846 [INFO] To disable this warning, you can either:
+2026-07-15 18:44:32,846 [INFO] - Avoid using `tokenizers` before the fork if possible
+2026-07-15 18:44:32,846 [INFO] - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2026-07-15 18:44:33,066 [INFO] ✅ Database initialized successfully
+2026-07-15 18:44:33,066 [INFO] ✅ Database initialized successfully
+2026-07-15 18:44:33,066 [INFO] 🔧 Using Ollama backend
+2026-07-15 18:44:33,067 [INFO] Initialized Verifier with Ollama model 'qwen3:8b'.
+2026-07-15 18:44:33,067 [INFO] Agent initialized (GraphRAG disabled).
+2026-07-15 18:44:33,067 [INFO] docling DocumentConverter(s) initialized (OCR + no-OCR + general).
+2026-07-15 18:44:33,067 [INFO] 🔧 CHUNKING CONFIG: Size: 1500, Overlap: 200, Mode: docling
+2026-07-15 18:44:33,068 [INFO] 🪄 Using DoclingChunker for high-recall sentence packing.
+2026-07-15 18:44:33,068 [INFO] LanceDB connection established at: ./lancedb
+2026-07-15 18:44:33,068 [INFO] Initializing HF Embedder with model 'Qwen/Qwen3-Embedding-0.6B' on device 'mps'. (first load)
+2026-07-15 18:44:33,068 [INFO] QwenEmbedder weights loaded and cached for Qwen/Qwen3-Embedding-0.6B.
+2026-07-15 18:44:33,068 [INFO] 🧠 Initializing RAG Agent with MAXIMUM ACCURACY... (This may take a moment)
+2026-07-15 18:44:33,068 [INFO] ✅ RAG Agent initialized successfully with MAXIMUM ACCURACY.
+2026-07-15 18:44:33,068 [INFO] ✅ Drafting backend ready: {'configured_backend': 'local', 'cloud_available': False, 'note': 'Fully air-gapped: drafting uses the local model only.'}
+2026-07-15 18:44:33,069 [INFO] ✅ Analytics engine ready (procurement_events).
+2026-07-15 18:44:33,069 [INFO] 🚀 Starting Advanced RAG API server on port 8001
+2026-07-15 18:44:33,069 [INFO] 💬 Chat endpoint: http://localhost:8001/chat
+2026-07-15 18:44:33,069 [INFO] ✨ Indexing endpoint: http://localhost:8001/index
+2026-07-15 18:44:33,069 [INFO] 📝 Updated session title to: Tell me analysis of the files
+2026-07-15 18:44:33,069 [INFO] 💾 Stored user message: 426f54f0-9b33-428b-8b0a-88463c1d1529
+2026-07-15 18:44:33,069 [INFO] ⚠️  No per-index overviews found for ['cecdf9c4-7603-4c14-bf66-175f5b10a81a']. Using global overview file.
+2026-07-15 18:44:33,069 [INFO] 🔍 ROUTING DEBUG: Starting triage for query: 'tell me analysis of the files...'
+2026-07-15 18:44:33,069 [INFO] 📖 ROUTING DEBUG: Attempting overview-based routing...
+2026-07-15 18:44:33,069 [INFO] 📖 ROUTING DEBUG: No document overviews available, returning None
+2026-07-15 18:44:33,069 [INFO] ❌ ROUTING DEBUG: Overview routing returned None, falling back to LLM triage
+2026-07-15 18:44:33,069 [INFO] 🤖 ROUTING DEBUG: No history, using LLM fallback triage...
+2026-07-15 18:44:33,069 [INFO] 🤖 ROUTING DEBUG: LLM fallback triage decided: 'rag_query'
+2026-07-15 18:44:33,069 [INFO] 🎯 ROUTING DEBUG: Final triage decision: 'rag_query'
+2026-07-15 18:44:33,069 [INFO] Agent Triage Decision: 'rag_query'
+2026-07-15 18:44:33,069 [INFO] 🔍 Retrieval K set to: 20
+2026-07-15 18:44:33,069 [INFO] 🔍 Context window size set to: 1
+2026-07-15 18:44:33,069 [INFO] 🔍 Reranker top K set to: 10
+2026-07-15 18:44:33,069 [INFO] 🔍 Search type set to: hybrid
+2026-07-15 18:44:33,069 [INFO] 🔍 Dense search weight set to: 0.7
+2026-07-15 18:44:33,069 [INFO] Reusing cached QwenEmbedder weights for Qwen/Qwen3-Embedding-0.6B.
+2026-07-15 18:44:33,069 [INFO] Generating 1 embeddings with Qwen/Qwen3-Embedding-0.6B model...
+2026-07-15 18:44:33,069 [INFO] ✅ ROUTING DEBUG: Executing RAG_QUERY path (query_type='rag_query')
+2026-07-15 18:44:33,069 [INFO] --- Query Decomposition Enabled ---
+2026-07-15 18:44:33,069 [INFO] Query Decomposition Reasoning: Ambiguous reference; cannot resolve safely.
+2026-07-15 18:44:33,069 [INFO] Original query: 'tell me analysis of the files' (Contextual: 'tell me analysis of the files')
+2026-07-15 18:44:33,069 [INFO] Decomposed into 1 sub-queries: ['tell me analysis of the files']
+2026-07-15 18:44:33,069 [INFO] --- Only one sub-query after decomposition; using direct retrieval path ---
+2026-07-15 18:44:33,069 [INFO] LanceDB connection established at: ./lancedb
+2026-07-15 18:44:33,069 [INFO] --- Performing Retrieval for query: 'tell me analysis of the files' on table 'text_pages_cecdf9c4-7603-4c14-bf66-175f5b10a81a' ---
+2026-07-15 18:44:33,069 [INFO] Could not search table 'text_pages_cecdf9c4-7603-4c14-bf66-175f5b10a81a': Table 'text_pages_cecdf9c4-7603-4c14-bf66-175f5b10a81a' was not found
+2026-07-15 18:44:33,069 [INFO] ✅ MiniLM cross-encoder reranker ready (cross-encoder/ms-marco-MiniLM-L-6-v2, CPU)
+2026-07-15 18:44:33,069 [INFO] ✅ AI reranker initialized successfully.
+2026-07-15 18:44:33,069 [INFO] --- Final Documents for Synthesis ---
+2026-07-15 18:44:33,069 [INFO] No documents to synthesize.
+2026-07-15 18:44:33,069 [INFO] ------------------------------------
+2026-07-15 18:44:33,069 [INFO] 🚀 Skipping verification for speed or lack of sources
+2026-07-15 18:44:33,069 [INFO] 🚀 Total query processing time: 20.95s
+2026-07-15 18:44:33,069 [INFO] 💾 Stored AI response: e17882b5-c128-4ffb-9cb4-77d47274d65c
+2026-07-15 18:44:33,069 [INFO] 💾 Stored user message: ee6fe80e-0c6c-4bc9-9770-865fc70bdbe9
+2026-07-15 18:44:33,069 [INFO] ⚠️  No per-index overviews found for ['cecdf9c4-7603-4c14-bf66-175f5b10a81a']. Using global overview file.
+2026-07-15 18:44:33,069 [INFO] 🔍 ROUTING DEBUG: Starting triage for query: 'what are these files about...'
+2026-07-15 18:44:33,069 [INFO] 📖 ROUTING DEBUG: Attempting overview-based routing...
+2026-07-15 18:44:33,069 [INFO] 📖 ROUTING DEBUG: No document overviews available, returning None
+2026-07-15 18:44:33,069 [INFO] ❌ ROUTING DEBUG: Overview routing returned None, falling back to LLM triage
+2026-07-15 18:44:33,070 [INFO] 📜 ROUTING DEBUG: History exists, defaulting to 'rag_query'
+2026-07-15 18:44:33,070 [INFO] 🎯 ROUTING DEBUG: Final triage decision: 'rag_query'
+2026-07-15 18:44:33,070 [INFO] Agent Triage Decision: 'rag_query'
+2026-07-15 18:44:33,070 [INFO] 🔍 Retrieval K set to: 20
+2026-07-15 18:44:33,070 [INFO] 🔍 Context window size set to: 1
+2026-07-15 18:44:33,070 [INFO] 🔍 Reranker top K set to: 10
+2026-07-15 18:44:33,070 [INFO] 🔍 Search type set to: hybrid
+2026-07-15 18:44:33,070 [INFO] 🔍 Dense search weight set to: 0.7
+2026-07-15 18:44:33,070 [INFO] Generating 1 embeddings with Qwen/Qwen3-Embedding-0.6B model...
+2026-07-15 18:44:33,070 [INFO] ✅ ROUTING DEBUG: Executing RAG_QUERY path (query_type='rag_query')
+2026-07-15 18:44:33,070 [INFO] --- Query Decomposition Enabled ---
+2026-07-15 18:44:33,070 [INFO] Query Decomposition Reasoning: Pronoun resolved; single information need.
+2026-07-15 18:44:33,073 [INFO] Original query: 'what are these files about' (Contextual: '
+2026-07-15 18:44:33,073 [INFO] Given the following conversation history, answer the user's latest query. The history provides context for resolving pronouns or follow-up questions.
+2026-07-15 18:44:33,073 [INFO] --- Conversation History ---
+2026-07-15 18:44:33,073 [INFO] User: tell me analysis of the files
+2026-07-15 18:44:33,073 [INFO] Assistant: I could not find an answer in the documents.
+2026-07-15 18:44:33,073 [INFO] ---
+2026-07-15 18:44:33,073 [INFO] Latest User Query: "what are these files about"
+2026-07-15 18:44:33,073 [INFO] ')
+2026-07-15 18:44:33,073 [INFO] Decomposed into 1 sub-queries: ['what are these files about']
+2026-07-15 18:44:33,073 [INFO] --- Only one sub-query after decomposition; using direct retrieval path ---
+2026-07-15 18:44:33,073 [INFO] --- Performing Retrieval for query: 'what are these files about' on table 'text_pages_cecdf9c4-7603-4c14-bf66-175f5b10a81a' ---
+2026-07-15 18:44:33,073 [INFO] Could not search table 'text_pages_cecdf9c4-7603-4c14-bf66-175f5b10a81a': Table 'text_pages_cecdf9c4-7603-4c14-bf66-175f5b10a81a' was not found
+2026-07-15 18:44:33,073 [INFO] --- Final Documents for Synthesis ---
+2026-07-15 18:44:33,073 [INFO] No documents to synthesize.
+2026-07-15 18:44:33,073 [INFO] ------------------------------------
+2026-07-15 18:44:33,073 [INFO] 🚀 Skipping verification for speed or lack of sources
+2026-07-15 18:44:33,073 [INFO] 🚀 Total query processing time: 2.75s
+2026-07-15 18:44:33,073 [INFO] 💾 Stored AI response: 25d4f5c7-a4d1-452c-a979-10d0a4f55d3d
+2026-07-15 18:44:33,073 [INFO] 🔧 INDEXING CONFIG: Contextual Enrichment: False, Window Size: 5
+2026-07-15 18:44:33,073 [INFO] 🔧 CHUNKING CONFIG: Size: 512, Overlap: 64
+2026-07-15 18:44:33,073 [INFO] 🔧 MODEL CONFIG: Embedding: default, Enrichment: default
+2026-07-15 18:44:33,073 [INFO] docling DocumentConverter(s) initialized (OCR + no-OCR + general).
+2026-07-15 18:44:33,073 [INFO] 🔧 CHUNKING CONFIG: Size: 512, Overlap: 64, Mode: docling
+2026-07-15 18:44:33,073 [INFO] 🪄 Using DoclingChunker for high-recall sentence packing.
+2026-07-15 18:44:33,073 [INFO] LanceDB connection established at: ./lancedb
+2026-07-15 18:44:33,073 [INFO] Reusing cached QwenEmbedder weights for Qwen/Qwen3-Embedding-0.6B.
+2026-07-15 18:44:33,074 [INFO] --- Starting indexing process for 5 files. ---
+2026-07-15 18:44:33,074 [INFO] Processing: 79d07a68-351e-4e7e-81df-51e4f61b5016_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx
+2026-07-15 18:44:33,074 [INFO] ✅ Sheet 'REPORT ': header row 8, 1 rows x 7 cols (confidence 0.8), 7 report-info lines
+2026-07-15 18:44:33,074 [INFO] 📈 procurement_events: +1 normalized row(s) from 79d07a68-351e-4e7e-81df-51e4f61b5016_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx
+2026-07-15 18:44:33,075 [INFO] 📝 Parsed output written: ./index_store/parsed/79d07a68_351e_4e7e_81df_51e4f61b5016_evn_3356_report_for_tra.md and ./index_store/parsed/79d07a68_351e_4e7e_81df_51e4f61b5016_evn_3356_report_for_tra.json
+2026-07-15 18:44:33,075 [INFO] ✅ 79d07a68-351e-4e7e-81df-51e4f61b5016_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 18:44:33,076 [INFO] Generated 4 chunks from 79d07a68-351e-4e7e-81df-51e4f61b5016_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx
+2026-07-15 18:44:33,076 [INFO] Processing: 4a62007b-94f0-40c3-8ab0-f612cb5c90bc_EVN 3456 Report for Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations.xlsx
+2026-07-15 18:44:33,076 [INFO] ✅ Sheet 'REPORT ': header row 8, 1 rows x 5 cols (confidence 0.8), 7 report-info lines
+2026-07-15 18:44:33,076 [INFO] 📈 procurement_events: +1 normalized row(s) from 4a62007b-94f0-40c3-8ab0-f612cb5c90bc_EVN 3456 Report for Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations.xlsx
+2026-07-15 18:44:33,076 [INFO] 📝 Parsed output written: ./index_store/parsed/4a62007b_94f0_40c3_8ab0_f612cb5c90bc_evn_3456_report_for_tra.md and ./index_store/parsed/4a62007b_94f0_40c3_8ab0_f612cb5c90bc_evn_3456_report_for_tra.json
+2026-07-15 18:44:33,076 [INFO] ✅ 4a62007b-94f0-40c3-8ab0-f612cb5c90bc_EVN 3456 Report for Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 18:44:33,076 [INFO] Generated 4 chunks from 4a62007b-94f0-40c3-8ab0-f612cb5c90bc_EVN 3456 Report for Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations.xlsx
+2026-07-15 18:44:33,076 [INFO] Processing: 516e8dda-02a2-41da-a2c7-5cd914750635_EVN 3503 Report for Transportation from ETDC Bangalore to Hubli Depot.xlsx
+2026-07-15 18:44:33,076 [INFO] ✅ Sheet 'REPORT': header row 8, 3 rows x 7 cols (confidence 0.61), 7 report-info lines
+2026-07-15 18:44:33,076 [INFO] 📈 procurement_events: +1 normalized row(s) from 516e8dda-02a2-41da-a2c7-5cd914750635_EVN 3503 Report for Transportation from ETDC Bangalore to Hubli Depot.xlsx
+2026-07-15 18:45:17,271 [INFO] 📝 Parsed output written: ./index_store/parsed/516e8dda_02a2_41da_a2c7_5cd914750635_evn_3503_report_for_tra.md and ./index_store/parsed/516e8dda_02a2_41da_a2c7_5cd914750635_evn_3503_report_for_tra.json2026-07-15 18:45:17,271 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-07-15 18:45:17,456 [INFO] ✓ Compiled in 166ms (660 modules)
+2026-07-15 18:45:17,521 [INFO] GET / 200 in 59ms
+2026-07-15 18:45:17,560 [INFO] ✓ Compiled in 101ms (660 modules)
+2026-07-15 18:45:17,572 [INFO] GET / 200 in 10ms
+2026-07-15 21:27:42,687 [INFO] 🚀 Starting RAG System Components...
+2026-07-15 21:27:42,688 [INFO] 🔍 Checking prerequisites...
+2026-07-15 21:27:42,888 [INFO] ✅ All prerequisites satisfied
+2026-07-15 21:27:42,889 [INFO] ✅ Ollama already running
+2026-07-15 21:27:42,889 [INFO] 📥 Checking required models...
+2026-07-15 21:27:42,903 [INFO] ✅ qwen3:8b already available
+2026-07-15 21:27:42,903 [INFO] ✅ qwen3:0.6b already available
+2026-07-15 21:27:42,904 [INFO] 🔄 Starting rag-api on port 8001...
+2026-07-15 21:27:45,911 [INFO] ✅ rag-api started successfully (PID: 3009)
+2026-07-15 21:27:45,912 [INFO] 🔄 Starting backend on port 8000...
+2026-07-15 21:27:45,943 [INFO] /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-15 21:27:45,944 [INFO] import cgi
+2026-07-15 21:27:47,919 [INFO] ✅ backend started successfully (PID: 3011)
+2026-07-15 21:27:47,920 [INFO] 🔄 Starting frontend on port 3000...
+2026-07-15 21:27:48,009 [INFO] > multimodal_rag@0.1.0 dev
+2026-07-15 21:27:48,009 [INFO] > next dev
+2026-07-15 21:27:48,740 [INFO] ▲ Next.js 15.3.3
+2026-07-15 21:27:48,740 [INFO] - Local:        http://localhost:3000
+2026-07-15 21:27:48,740 [INFO] - Network:      http://192.168.1.7:3000
+2026-07-15 21:27:48,740 [INFO] ✓ Starting...
+2026-07-15 21:27:49,819 [INFO] ✓ Ready in 1216ms
+2026-07-15 21:27:52,927 [INFO] ✅ frontend started successfully (PID: 3014)
+2026-07-15 21:27:52,928 [INFO] 
+2026-07-15 21:27:52,928 [INFO] 🎉 RAG System Started!
+2026-07-15 21:27:52,928 [INFO] 📊 Services Status:
+2026-07-15 21:27:52,929 [INFO]    • Ollama    : ✅ Running  http://localhost:11434
+2026-07-15 21:27:52,929 [INFO]    • Rag-api   : ✅ Running  http://localhost:8001
+2026-07-15 21:27:52,929 [INFO]    • Backend   : ✅ Running  http://localhost:8000
+2026-07-15 21:27:52,929 [INFO]    • Frontend  : ✅ Running  http://localhost:3000
+2026-07-15 21:27:52,929 [INFO] 
+2026-07-15 21:27:52,929 [INFO] 🌐 Access your RAG system at: http://localhost:3000
+2026-07-15 21:27:52,929 [INFO] 
+2026-07-15 21:27:52,929 [INFO] 📋 Useful commands:
+2026-07-15 21:27:52,929 [INFO]    • Stop system:  Ctrl+C
+2026-07-15 21:27:52,929 [INFO]    • Check logs:   tail -f logs/*.log
+2026-07-15 21:27:52,929 [INFO]    • Health check: python run_system.py --health
+2026-07-15 21:27:52,929 [INFO] 👁️  Monitoring services... (Press Ctrl+C to stop)
+2026-07-15 21:28:02,153 [INFO] ○ Compiling / ...
+2026-07-15 21:28:02,556 [INFO] ✓ Compiled / in 907ms (1373 modules)
+2026-07-15 21:28:02,724 [INFO] Demo component rendering...
+2026-07-15 21:28:02,739 [INFO] GET / 200 in 1102ms
+2026-07-15 21:29:53,267 [INFO] 127.0.0.1 - - [15/Jul/2026 21:29:53] "GET /index/progress?session_id=0a6ce348-969d-4ca5-abc6-d19ac38f1684 HTTP/1.1" 200 -
+2026-07-15 21:29:53,268 [INFO] 127.0.0.1 - - [15/Jul/2026 21:29:53] "GET /index/progress?session_id=0a6ce348-969d-4ca5-abc6-d19ac38f1684 HTTP/1.1" 200 -
+2026-07-15 21:29:53,765 [INFO] ✓ Compiled in 512ms (660 modules)
+2026-07-15 21:29:53,789 [INFO] GET / 200 in 20ms
+2026-07-15 21:29:53,876 [INFO] ✓ Compiled in 108ms (660 modules)
+2026-07-15 21:29:53,889 [INFO] GET / 200 in 11ms
+2026-07-15 21:30:02,251 [INFO] 2026-07-15 21:30:02,251 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 41ecf3c0-e44d-41d6-8232-eb6e77f3c1bb_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:30:06,593 [INFO] 2026-07-15 21:30:06,593 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 99bb4e95-4483-46e2-b96d-4059aa6bce2c_EVN 3456 Report for Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:30:06,593 [INFO] 2026-07-15 21:30:06,593 | INFO     | rag_system.utils.batch_processor | Document Processing: 2/24 (8.3%) - 0.19 items/sec - ETA: 1.9min - Errors: 0
+2026-07-15 21:30:12,634 [INFO] 2026-07-15 21:30:12,633 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for c1f4f6bb-784d-44bf-b7bc-457b4c4fb500_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 24 ft.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:30:18,912 [INFO] 2026-07-15 21:30:18,912 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for fc01b30b-3416-4776-8f21-0af70668759c_EVN 3577 Report for Transportation from FBD to Mizoram.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:30:18,912 [INFO] 2026-07-15 21:30:18,912 | INFO     | rag_system.utils.batch_processor | Document Processing: 4/24 (16.7%) - 0.18 items/sec - ETA: 1.9min - Errors: 0
+2026-07-15 21:30:23,927 [INFO] 2026-07-15 21:30:23,926 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 61a51493-694a-40c9-8a1e-1daf2b75adc4_EVN 3456 Report for Transportation of Tractors from Pune Chakan Depot to Karera, MP- 474001.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:30:28,834 [INFO] 2026-07-15 21:30:28,834 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for aa7c2999-0099-4d5b-ab75-64dc78273505_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 40 ft.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:30:33,626 [INFO] 2026-07-15 21:30:33,625 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for dc5292b7-94e8-4953-b247-ddbec1e5863e_EVN 3610 Report for Transportation of Machines from Khordha to Pune.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:30:33,626 [INFO] 2026-07-15 21:30:33,626 | INFO     | rag_system.utils.batch_processor | Document Processing: 7/24 (29.2%) - 0.19 items/sec - ETA: 1.5min - Errors: 0
+2026-07-15 21:30:38,836 [INFO] 2026-07-15 21:30:38,836 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 13ec1d9d-c8e8-4fd3-b163-bc7383c64e94_EVN 3503 Report for Transportation from ETDC Bangalore to Hubli Depot.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:30:43,383 [INFO] 2026-07-15 21:30:43,383 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 5d2a9bcf-162c-4871-886d-1392adc3ed7c_EVN 3517 Report for Transportation from FBD to Spiti, HP.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:30:47,653 [INFO] 2026-07-15 21:30:47,652 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for f13129e9-f168-426c-964c-1c80ef7dbfb4_EVN 3628 Report for Transportation of Machine from FBD to Thiruvarur.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:30:47,653 [INFO] 2026-07-15 21:30:47,653 | INFO     | rag_system.utils.batch_processor | Document Processing: 10/24 (41.7%) - 0.19 items/sec - ETA: 1.2min - Errors: 0
+2026-07-15 21:30:52,074 [INFO] 2026-07-15 21:30:52,074 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for da61e052-01f3-4ada-b53e-b35abbca4ce9_EVN 3634 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:30:57,466 [INFO] 2026-07-15 21:30:57,466 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 3c4f6297-f097-4021-954b-c316b6872c8c_EVN 3517 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:31:03,128 [INFO] 2026-07-15 21:31:03,127 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for faadc225-b4af-41bd-bf4e-393f23e6b91a_EVN 3536 Report for Transportation from Rapar, Kutch GJ to Ahmedabad GJ.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:31:03,129 [INFO] 2026-07-15 21:31:03,128 | INFO     | rag_system.utils.batch_processor | Document Processing: 13/24 (54.2%) - 0.19 items/sec - ETA: 0.9min - Errors: 0
+2026-07-15 21:31:08,262 [INFO] 2026-07-15 21:31:08,262 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 5fe0100a-455e-4ad4-b2dd-e2a23efddcea_EVN 3648 Report for Transportation from FBD to Singrauli, MP.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:31:14,640 [INFO] 2026-07-15 21:31:14,640 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 28e79ed3-b406-441f-a498-94ea4a2c41f5_EVN 3649 Report for Transportation of materials from Villupuram to Thiruvallur.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:31:14,641 [INFO] 2026-07-15 21:31:14,640 | INFO     | rag_system.utils.batch_processor | Document Processing: 15/24 (62.5%) - 0.19 items/sec - ETA: 0.8min - Errors: 0
+2026-07-15 21:31:19,178 [INFO] 2026-07-15 21:31:19,177 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 126fa940-5ebc-4d23-9adf-98787702f64c_EVN 3569 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:31:19,251 [INFO] ✅ Database initialized successfully
+2026-07-15 21:31:19,251 [INFO] ✅ Database initialized successfully
+2026-07-15 21:31:19,251 [INFO] 🔧 Using Ollama backend
+2026-07-15 21:31:19,251 [INFO] Initialized Verifier with Ollama model 'qwen3:8b'.
+2026-07-15 21:31:19,251 [INFO] Agent initialized (GraphRAG disabled).
+2026-07-15 21:31:19,251 [INFO] docling DocumentConverter(s) initialized (OCR + no-OCR + general).
+2026-07-15 21:31:19,251 [INFO] 🔧 CHUNKING CONFIG: Size: 1500, Overlap: 200, Mode: docling
+2026-07-15 21:31:19,251 [INFO] 🪄 Using DoclingChunker for high-recall sentence packing.
+2026-07-15 21:31:19,251 [INFO] LanceDB connection established at: ./lancedb
+2026-07-15 21:31:19,251 [INFO] Initializing HF Embedder with model 'Qwen/Qwen3-Embedding-0.6B' on device 'mps'. (first load)
+2026-07-15 21:31:19,251 [INFO] QwenEmbedder weights loaded and cached for Qwen/Qwen3-Embedding-0.6B.
+2026-07-15 21:31:19,251 [INFO] 🧠 Initializing RAG Agent with MAXIMUM ACCURACY... (This may take a moment)
+2026-07-15 21:31:19,251 [INFO] ✅ RAG Agent initialized successfully with MAXIMUM ACCURACY.
+2026-07-15 21:31:19,251 [INFO] ✅ Drafting backend ready: {'configured_backend': 'local', 'cloud_available': False, 'note': 'Fully air-gapped: drafting uses the local model only.'}
+2026-07-15 21:31:19,251 [INFO] ✅ Analytics engine ready (procurement_events).
+2026-07-15 21:31:19,251 [INFO] 🚀 Starting Advanced RAG API server on port 8001
+2026-07-15 21:31:19,251 [INFO] 💬 Chat endpoint: http://localhost:8001/chat
+2026-07-15 21:31:19,251 [INFO] ✨ Indexing endpoint: http://localhost:8001/index
+2026-07-15 21:31:19,251 [INFO] 🔧 INDEXING CONFIG: Contextual Enrichment: False, Window Size: 5
+2026-07-15 21:31:19,251 [INFO] 🔧 CHUNKING CONFIG: Size: 512, Overlap: 64
+2026-07-15 21:31:19,251 [INFO] 🔧 MODEL CONFIG: Embedding: default, Enrichment: default
+2026-07-15 21:31:19,251 [INFO] docling DocumentConverter(s) initialized (OCR + no-OCR + general).
+2026-07-15 21:31:19,252 [INFO] 🔧 CHUNKING CONFIG: Size: 512, Overlap: 64, Mode: docling
+2026-07-15 21:31:19,252 [INFO] 🪄 Using DoclingChunker for high-recall sentence packing.
+2026-07-15 21:31:19,252 [INFO] LanceDB connection established at: ./lancedb
+2026-07-15 21:31:19,252 [INFO] Reusing cached QwenEmbedder weights for Qwen/Qwen3-Embedding-0.6B.
+2026-07-15 21:31:19,252 [INFO] --- Starting indexing process for 24 files. ---
+2026-07-15 21:31:19,252 [INFO] Processing: 41ecf3c0-e44d-41d6-8232-eb6e77f3c1bb_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx
+2026-07-15 21:31:19,252 [INFO] ✅ Sheet 'REPORT ': header row 8, 1 rows x 7 cols (confidence 0.8), 7 report-info lines
+2026-07-15 21:31:19,252 [INFO] 📈 procurement_events: +1 normalized row(s) from 41ecf3c0-e44d-41d6-8232-eb6e77f3c1bb_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx
+2026-07-15 21:31:19,252 [INFO] 📝 Parsed output written: ./index_store/parsed/41ecf3c0_e44d_41d6_8232_eb6e77f3c1bb_evn_3356_report_for_tra.md and ./index_store/parsed/41ecf3c0_e44d_41d6_8232_eb6e77f3c1bb_evn_3356_report_for_tra.json
+2026-07-15 21:31:19,252 [INFO] ✅ 41ecf3c0-e44d-41d6-8232-eb6e77f3c1bb_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:31:19,252 [INFO] Generated 4 chunks from 41ecf3c0-e44d-41d6-8232-eb6e77f3c1bb_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx
+2026-07-15 21:31:19,252 [INFO] Processing: 99bb4e95-4483-46e2-b96d-4059aa6bce2c_EVN 3456 Report for Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations.xlsx
+2026-07-15 21:31:19,252 [INFO] ✅ Sheet 'REPORT ': header row 8, 1 rows x 5 cols (confidence 0.8), 7 report-info lines
+2026-07-15 21:31:19,252 [INFO] 📈 procurement_events: +1 normalized row(s) from 99bb4e95-4483-46e2-b96d-4059aa6bce2c_EVN 3456 Report for Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations.xlsx
+2026-07-15 21:31:19,252 [INFO] 📝 Parsed output written: ./index_store/parsed/99bb4e95_4483_46e2_b96d_4059aa6bce2c_evn_3456_report_for_tra.md and ./index_store/parsed/99bb4e95_4483_46e2_b96d_4059aa6bce2c_evn_3456_report_for_tra.json
+2026-07-15 21:31:19,252 [INFO] ✅ 99bb4e95-4483-46e2-b96d-4059aa6bce2c_EVN 3456 Report for Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:31:19,252 [INFO] Generated 4 chunks from 99bb4e95-4483-46e2-b96d-4059aa6bce2c_EVN 3456 Report for Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations.xlsx
+2026-07-15 21:31:19,252 [INFO] Processing: c1f4f6bb-784d-44bf-b7bc-457b4c4fb500_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 24 ft.xlsx
+2026-07-15 21:31:19,252 [INFO] ✅ Sheet 'REPORT': header row 8, 3 rows x 10 cols (confidence 0.62), 6 report-info lines
+2026-07-15 21:31:19,252 [INFO] 📈 procurement_events: +1 normalized row(s) from c1f4f6bb-784d-44bf-b7bc-457b4c4fb500_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 24 ft.xlsx
+2026-07-15 21:31:19,252 [INFO] 📝 Parsed output written: ./index_store/parsed/c1f4f6bb_784d_44bf_b7bc_457b4c4fb500_evn_3610_report_for_tra.md and ./index_store/parsed/c1f4f6bb_784d_44bf_b7bc_457b4c4fb500_evn_3610_report_for_tra.json
+2026-07-15 21:31:19,252 [INFO] ✅ c1f4f6bb-784d-44bf-b7bc-457b4c4fb500_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 24 ft.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:31:19,252 [INFO] Generated 5 chunks from c1f4f6bb-784d-44bf-b7bc-457b4c4fb500_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 24 ft.xlsx
+2026-07-15 21:31:19,252 [INFO] Processing: fc01b30b-3416-4776-8f21-0af70668759c_EVN 3577 Report for Transportation from FBD to Mizoram.xlsx
+2026-07-15 21:31:19,252 [INFO] ✅ Sheet 'REPORT': header row 8, 3 rows x 8 cols (confidence 0.61), 6 report-info lines
+2026-07-15 21:31:19,252 [INFO] 📈 procurement_events: +1 normalized row(s) from fc01b30b-3416-4776-8f21-0af70668759c_EVN 3577 Report for Transportation from FBD to Mizoram.xlsx
+2026-07-15 21:31:19,252 [INFO] 📝 Parsed output written: ./index_store/parsed/fc01b30b_3416_4776_8f21_0af70668759c_evn_3577_report_for_tra.md and ./index_store/parsed/fc01b30b_3416_4776_8f21_0af70668759c_evn_3577_report_for_tra.json
+2026-07-15 21:31:19,252 [INFO] ✅ fc01b30b-3416-4776-8f21-0af70668759c_EVN 3577 Report for Transportation from FBD to Mizoram.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:31:19,252 [INFO] Generated 5 chunks from fc01b30b-3416-4776-8f21-0af70668759c_EVN 3577 Report for Transportation from FBD to Mizoram.xlsx
+2026-07-15 21:31:19,252 [INFO] Processing: 61a51493-694a-40c9-8a1e-1daf2b75adc4_EVN 3456 Report for Transportation of Tractors from Pune Chakan Depot to Karera, MP- 474001.xlsx
+2026-07-15 21:31:19,252 [INFO] ✅ Sheet 'REPORT ': header row 8, 1 rows x 7 cols (confidence 0.8), 7 report-info lines
+2026-07-15 21:31:19,252 [INFO] 📈 procurement_events: +1 normalized row(s) from 61a51493-694a-40c9-8a1e-1daf2b75adc4_EVN 3456 Report for Transportation of Tractors from Pune Chakan Depot to Karera, MP- 474001.xlsx
+2026-07-15 21:31:19,253 [INFO] 📝 Parsed output written: ./index_store/parsed/61a51493_694a_40c9_8a1e_1daf2b75adc4_evn_3456_report_for_tra.md and ./index_store/parsed/61a51493_694a_40c9_8a1e_1daf2b75adc4_evn_3456_report_for_tra.json
+2026-07-15 21:31:19,253 [INFO] ✅ 61a51493-694a-40c9-8a1e-1daf2b75adc4_EVN 3456 Report for Transportation of Tractors from Pune Chakan Depot to Karera, MP- 474001.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:31:19,253 [INFO] Generated 4 chunks from 61a51493-694a-40c9-8a1e-1daf2b75adc4_EVN 3456 Report for Transportation of Tractors from Pune Chakan Depot to Karera, MP- 474001.xlsx
+2026-07-15 21:31:19,253 [INFO] Processing: aa7c2999-0099-4d5b-ab75-64dc78273505_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 40 ft.xlsx
+2026-07-15 21:31:19,253 [INFO] ✅ Sheet 'REPORT': header row 8, 3 rows x 10 cols (confidence 0.62), 6 report-info lines
+2026-07-15 21:31:19,253 [INFO] 📈 procurement_events: +1 normalized row(s) from aa7c2999-0099-4d5b-ab75-64dc78273505_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 40 ft.xlsx
+2026-07-15 21:31:19,253 [INFO] 📝 Parsed output written: ./index_store/parsed/aa7c2999_0099_4d5b_ab75_64dc78273505_evn_3610_report_for_tra.md and ./index_store/parsed/aa7c2999_0099_4d5b_ab75_64dc78273505_evn_3610_report_for_tra.json
+2026-07-15 21:31:19,253 [INFO] ✅ aa7c2999-0099-4d5b-ab75-64dc78273505_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 40 ft.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:31:19,253 [INFO] Generated 5 chunks from aa7c2999-0099-4d5b-ab75-64dc78273505_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 40 ft.xlsx
+2026-07-15 21:31:19,253 [INFO] Processing: dc5292b7-94e8-4953-b247-ddbec1e5863e_EVN 3610 Report for Transportation of Machines from Khordha to Pune.xlsx
+2026-07-15 21:31:19,253 [INFO] ✅ Sheet 'REPORT ': header row 8, 1 rows x 8 cols (confidence 0.8), 6 report-info lines
+2026-07-15 21:31:19,253 [INFO] 📈 procurement_events: +1 normalized row(s) from dc5292b7-94e8-4953-b247-ddbec1e5863e_EVN 3610 Report for Transportation of Machines from Khordha to Pune.xlsx
+2026-07-15 21:31:19,253 [INFO] 📝 Parsed output written: ./index_store/parsed/dc5292b7_94e8_4953_b247_ddbec1e5863e_evn_3610_report_for_tra.md and ./index_store/parsed/dc5292b7_94e8_4953_b247_ddbec1e5863e_evn_3610_report_for_tra.json
+2026-07-15 21:31:19,253 [INFO] ✅ dc5292b7-94e8-4953-b247-ddbec1e5863e_EVN 3610 Report for Transportation of Machines from Khordha to Pune.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:31:19,253 [INFO] Generated 4 chunks from dc5292b7-94e8-4953-b247-ddbec1e5863e_EVN 3610 Report for Transportation of Machines from Khordha to Pune.xlsx
+2026-07-15 21:31:19,253 [INFO] Processing: 13ec1d9d-c8e8-4fd3-b163-bc7383c64e94_EVN 3503 Report for Transportation from ETDC Bangalore to Hubli Depot.xlsx
+2026-07-15 21:31:24,135 [INFO] ✅ Sheet 'REPORT': header row 8, 3 rows x 7 cols (confidence 0.61), 7 report-info lines2026-07-15 21:31:24,135 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for b270e9f1-38d9-4c6d-a5de-839584f9cad1_EVN 3679 Report for Transportation of tractor from FBD to Jammu.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:31:28,592 [INFO] 2026-07-15 21:31:28,592 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 254c48c6-6126-48c9-a679-6a9b080bf4c2_EVN 3691 Report for Transportation from Satara to FBD.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:31:28,593 [INFO] 2026-07-15 21:31:28,592 | INFO     | rag_system.utils.batch_processor | Document Processing: 18/24 (75.0%) - 0.19 items/sec - ETA: 0.5min - Errors: 0
+2026-07-15 21:31:33,997 [INFO] 2026-07-15 21:31:33,997 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 7ea6d481-e11c-4194-9d6b-0bd786425477_EVN 3694 Report for Transportation of F23 from ECE Faridabad - 121004 to LOWER DIBANG VALLEY ARUNACHAL PRADESH 792110.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:31:38,487 [INFO] 2026-07-15 21:31:38,487 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for ee0f1314-99d5-4397-9ae5-998c8b02bebf_EVN 3846 Report for Transportation from Polivakkam to Bangalore.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:31:49,368 [INFO] 2026-07-15 21:31:49,367 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 9fc1e722-9a64-4682-86cc-c7e5f9f99637_EVN 3855 Report for Transportation from Polivakkam to Visakhapatnam.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:31:49,368 [INFO] 2026-07-15 21:31:49,368 | INFO     | rag_system.utils.batch_processor | Document Processing: 21/24 (87.5%) - 0.19 items/sec - ETA: 0.3min - Errors: 0
+2026-07-15 21:31:53,624 [INFO] 2026-07-15 21:31:53,624 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 8f2c15aa-d64d-4d07-bfee-b6f150a3ea15_EVN 3871 Report for Transportation from Pune depot to Nagpur depot.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:31:58,513 [INFO] 2026-07-15 21:31:58,513 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 73fab6d3-0323-42c3-909a-56002738a3c3_EVN 3886 Report for Transportation from Hyderabad depot to Bilaspur depot.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:32:02,616 [INFO] 2026-07-15 21:32:02,616 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 31175e1d-c65c-44ea-91b1-d0c5782f40a5_EVN 3886 Report for Transportation from Indore depot to Bharatpur,RJ.xlsx (stored in index_store/overviews/0a6ce348-969d-4ca5-abc6-d19ac38f1684.jsonl)
+2026-07-15 21:32:02,617 [INFO] 2026-07-15 21:32:02,616 | INFO     | rag_system.utils.batch_processor | Document Processing: 24/24 (100.0%) - 0.19 items/sec - ETA: 0.0min - Errors: 0
+2026-07-15 21:32:02,617 [INFO] 2026-07-15 21:32:02,616 | INFO     | rag_system.utils.batch_processor | Document Processing completed: 24/24 items in 126.35s (0.19 items/sec) - 0 errors
+2026-07-15 21:32:02,617 [INFO] 2026-07-15 21:32:02,616 | INFO     | rag_system.utils.batch_processor | Document Processing & Chunking completed in 126.35s
+2026-07-15 21:32:02,626 [INFO] 2026-07-15 21:32:02,626 | INFO     | rag_system.utils.batch_processor | Starting Embedding Generation for 103 items in batches of 64
+2026-07-15 21:32:30,217 [INFO] 2026-07-15 21:32:30,207 | INFO     | rag_system.utils.batch_processor | Batch 1/2 completed in 27.58s
+2026-07-15 21:32:30,222 [INFO] 2026-07-15 21:32:30,213 | INFO     | rag_system.utils.batch_processor | Embedding Generation: 64/103 (62.1%) - 2.32 items/sec - ETA: 0.3min - Errors: 0
+2026-07-15 21:32:46,442 [INFO] 2026-07-15 21:32:46,441 | INFO     | rag_system.utils.batch_processor | Batch 2/2 completed in 16.23s
+2026-07-15 21:32:46,444 [INFO] 2026-07-15 21:32:46,441 | INFO     | rag_system.utils.batch_processor | Embedding Generation: 103/103 (100.0%) - 2.35 items/sec - ETA: 0.0min - Errors: 0
+2026-07-15 21:32:46,444 [INFO] 2026-07-15 21:32:46,441 | INFO     | rag_system.utils.batch_processor | Embedding Generation (total) completed in 43.81s
+2026-07-15 21:32:46,444 [INFO] 2026-07-15 21:32:46,441 | INFO     | rag_system.utils.batch_processor | Embedding Generation completed: 103/103 items in 43.81s (2.35 items/sec) - 0 errors
+2026-07-15 21:32:57,648 [INFO] 📈 procurement_events: +1 normalized row(s) from 13ec1d9d-c8e8-4fd3-b163-bc7383c64e94_EVN 3503 Report for Transportation from ETDC Bangalore to Hubli Depot.xlsx
+2026-07-15 21:32:57,652 [INFO] 📝 Parsed output written: ./index_store/parsed/13ec1d9d_c8e8_4fd3_b163_bc7383c64e94_evn_3503_report_for_tra.md and ./index_store/parsed/13ec1d9d_c8e8_4fd3_b163_bc7383c64e94_evn_3503_report_for_tra.json
+2026-07-15 21:32:57,653 [INFO] ✅ 13ec1d9d-c8e8-4fd3-b163-bc7383c64e94_EVN 3503 Report for Transportation from ETDC Bangalore to Hubli Depot.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:32:57,654 [INFO] Generated 4 chunks from 13ec1d9d-c8e8-4fd3-b163-bc7383c64e94_EVN 3503 Report for Transportation from ETDC Bangalore to Hubli Depot.xlsx
+2026-07-15 21:32:57,654 [INFO] Processing: 5d2a9bcf-162c-4871-886d-1392adc3ed7c_EVN 3517 Report for Transportation from FBD to Spiti, HP.xlsx
+2026-07-15 21:32:57,655 [INFO] ✅ Sheet 'REPORT': header row 8, 3 rows x 5 cols (confidence 0.59), 7 report-info lines
+2026-07-15 21:32:57,656 [INFO] 📈 procurement_events: +1 normalized row(s) from 5d2a9bcf-162c-4871-886d-1392adc3ed7c_EVN 3517 Report for Transportation from FBD to Spiti, HP.xlsx
+2026-07-15 21:32:57,657 [INFO] 📝 Parsed output written: ./index_store/parsed/5d2a9bcf_162c_4871_886d_1392adc3ed7c_evn_3517_report_for_tra.md and ./index_store/parsed/5d2a9bcf_162c_4871_886d_1392adc3ed7c_evn_3517_report_for_tra.json
+2026-07-15 21:32:57,659 [INFO] ✅ 5d2a9bcf-162c-4871-886d-1392adc3ed7c_EVN 3517 Report for Transportation from FBD to Spiti, HP.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:32:57,659 [INFO] Generated 4 chunks from 5d2a9bcf-162c-4871-886d-1392adc3ed7c_EVN 3517 Report for Transportation from FBD to Spiti, HP.xlsx
+2026-07-15 21:32:57,659 [INFO] Processing: f13129e9-f168-426c-964c-1c80ef7dbfb4_EVN 3628 Report for Transportation of Machine from FBD to Thiruvarur.xlsx
+2026-07-15 21:32:57,659 [INFO] ✅ Sheet 'REPORT ': header row 8, 1 rows x 10 cols (confidence 0.8), 6 report-info lines
+2026-07-15 21:32:57,659 [INFO] 📈 procurement_events: +1 normalized row(s) from f13129e9-f168-426c-964c-1c80ef7dbfb4_EVN 3628 Report for Transportation of Machine from FBD to Thiruvarur.xlsx
+2026-07-15 21:32:57,659 [INFO] 📝 Parsed output written: ./index_store/parsed/f13129e9_f168_426c_964c_1c80ef7dbfb4_evn_3628_report_for_tra.md and ./index_store/parsed/f13129e9_f168_426c_964c_1c80ef7dbfb4_evn_3628_report_for_tra.json
+2026-07-15 21:32:57,659 [INFO] ✅ f13129e9-f168-426c-964c-1c80ef7dbfb4_EVN 3628 Report for Transportation of Machine from FBD to Thiruvarur.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:32:57,659 [INFO] Generated 4 chunks from f13129e9-f168-426c-964c-1c80ef7dbfb4_EVN 3628 Report for Transportation of Machine from FBD to Thiruvarur.xlsx
+2026-07-15 21:32:57,659 [INFO] Processing: da61e052-01f3-4ada-b53e-b35abbca4ce9_EVN 3634 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx
+2026-07-15 21:32:57,660 [INFO] ✅ Sheet 'REPORT': header row 8, 3 rows x 7 cols (confidence 0.61), 7 report-info lines
+2026-07-15 21:32:57,660 [INFO] 📈 procurement_events: +1 normalized row(s) from da61e052-01f3-4ada-b53e-b35abbca4ce9_EVN 3634 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx
+2026-07-15 21:32:57,660 [INFO] 📝 Parsed output written: ./index_store/parsed/da61e052_01f3_4ada_b53e_b35abbca4ce9_evn_3634_report_for_tra.md and ./index_store/parsed/da61e052_01f3_4ada_b53e_b35abbca4ce9_evn_3634_report_for_tra.json
+2026-07-15 21:32:57,660 [INFO] ✅ da61e052-01f3-4ada-b53e-b35abbca4ce9_EVN 3634 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:32:57,660 [INFO] Generated 4 chunks from da61e052-01f3-4ada-b53e-b35abbca4ce9_EVN 3634 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx
+2026-07-15 21:32:57,660 [INFO] Processing: 3c4f6297-f097-4021-954b-c316b6872c8c_EVN 3517 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx
+2026-07-15 21:32:57,660 [INFO] ✅ Sheet 'REPORT': header row 8, 3 rows x 6 cols (confidence 0.6), 7 report-info lines
+2026-07-15 21:32:57,660 [INFO] 📈 procurement_events: +1 normalized row(s) from 3c4f6297-f097-4021-954b-c316b6872c8c_EVN 3517 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx
+2026-07-15 21:32:57,660 [INFO] 📝 Parsed output written: ./index_store/parsed/3c4f6297_f097_4021_954b_c316b6872c8c_evn_3517_report_for_tra.md and ./index_store/parsed/3c4f6297_f097_4021_954b_c316b6872c8c_evn_3517_report_for_tra.json
+2026-07-15 21:32:57,660 [INFO] ✅ 3c4f6297-f097-4021-954b-c316b6872c8c_EVN 3517 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:32:57,660 [INFO] Generated 4 chunks from 3c4f6297-f097-4021-954b-c316b6872c8c_EVN 3517 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx
+2026-07-15 21:32:57,660 [INFO] Processing: faadc225-b4af-41bd-bf4e-393f23e6b91a_EVN 3536 Report for Transportation from Rapar, Kutch GJ to Ahmedabad GJ.xlsx
+2026-07-15 21:32:57,660 [INFO] ✅ Sheet 'REPORT': header row 8, 3 rows x 7 cols (confidence 0.61), 7 report-info lines
+2026-07-15 21:32:57,660 [INFO] 📈 procurement_events: +1 normalized row(s) from faadc225-b4af-41bd-bf4e-393f23e6b91a_EVN 3536 Report for Transportation from Rapar, Kutch GJ to Ahmedabad GJ.xlsx
+2026-07-15 21:32:57,660 [INFO] 📝 Parsed output written: ./index_store/parsed/faadc225_b4af_41bd_bf4e_393f23e6b91a_evn_3536_report_for_tra.md and ./index_store/parsed/faadc225_b4af_41bd_bf4e_393f23e6b91a_evn_3536_report_for_tra.json
+2026-07-15 21:32:57,661 [INFO] ✅ faadc225-b4af-41bd-bf4e-393f23e6b91a_EVN 3536 Report for Transportation from Rapar, Kutch GJ to Ahmedabad GJ.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:32:57,661 [INFO] Generated 4 chunks from faadc225-b4af-41bd-bf4e-393f23e6b91a_EVN 3536 Report for Transportation from Rapar, Kutch GJ to Ahmedabad GJ.xlsx
+2026-07-15 21:32:57,661 [INFO] Processing: 5fe0100a-455e-4ad4-b2dd-e2a23efddcea_EVN 3648 Report for Transportation from FBD to Singrauli, MP.xlsx
+2026-07-15 21:32:57,661 [INFO] ✅ Sheet 'REPORT': header row 8, 3 rows x 8 cols (confidence 0.61), 6 report-info lines
+2026-07-15 21:32:57,661 [INFO] 📈 procurement_events: +1 normalized row(s) from 5fe0100a-455e-4ad4-b2dd-e2a23efddcea_EVN 3648 Report for Transportation from FBD to Singrauli, MP.xlsx
+2026-07-15 21:32:57,661 [INFO] 📝 Parsed output written: ./index_store/parsed/5fe0100a_455e_4ad4_b2dd_e2a23efddcea_evn_3648_report_for_tra.md and ./index_store/parsed/5fe0100a_455e_4ad4_b2dd_e2a23efddcea_evn_3648_report_for_tra.json
+2026-07-15 21:32:57,661 [INFO] ✅ 5fe0100a-455e-4ad4-b2dd-e2a23efddcea_EVN 3648 Report for Transportation from FBD to Singrauli, MP.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:32:57,661 [INFO] Generated 5 chunks from 5fe0100a-455e-4ad4-b2dd-e2a23efddcea_EVN 3648 Report for Transportation from FBD to Singrauli, MP.xlsx
+2026-07-15 21:32:57,661 [INFO] Processing: 28e79ed3-b406-441f-a498-94ea4a2c41f5_EVN 3649 Report for Transportation of materials from Villupuram to Thiruvallur.xlsx
+2026-07-15 21:32:57,662 [INFO] ✅ Sheet 'REPORT ': header row 8, 1 rows x 6 cols (confidence 0.8), 7 report-info lines
+2026-07-15 21:32:57,662 [INFO] 📈 procurement_events: +1 normalized row(s) from 28e79ed3-b406-441f-a498-94ea4a2c41f5_EVN 3649 Report for Transportation of materials from Villupuram to Thiruvallur.xlsx
+2026-07-15 21:32:57,662 [INFO] 📝 Parsed output written: ./index_store/parsed/28e79ed3_b406_441f_a498_94ea4a2c41f5_evn_3649_report_for_tra.md and ./index_store/parsed/28e79ed3_b406_441f_a498_94ea4a2c41f5_evn_3649_report_for_tra.json
+2026-07-15 21:32:57,664 [INFO] ✅ 28e79ed3-b406-441f-a498-94ea4a2c41f5_EVN 3649 Report for Transportation of materials from Villupuram to Thiruvallur.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:32:57,664 [INFO] Generated 4 chunks from 28e79ed3-b406-441f-a498-94ea4a2c41f5_EVN 3649 Report for Transportation of materials from Villupuram to Thiruvallur.xlsx
+2026-07-15 21:32:57,664 [INFO] Processing: 126fa940-5ebc-4d23-9adf-98787702f64c_EVN 3569 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx
+2026-07-15 21:32:57,664 [INFO] ✅ Sheet 'REPORT': header row 8, 3 rows x 6 cols (confidence 0.6), 7 report-info lines
+2026-07-15 21:32:57,664 [INFO] 📈 procurement_events: +1 normalized row(s) from 126fa940-5ebc-4d23-9adf-98787702f64c_EVN 3569 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx
+2026-07-15 21:32:57,664 [INFO] 📝 Parsed output written: ./index_store/parsed/126fa940_5ebc_4d23_9adf_98787702f64c_evn_3569_report_for_tra.md and ./index_store/parsed/126fa940_5ebc_4d23_9adf_98787702f64c_evn_3569_report_for_tra.json
+2026-07-15 21:32:57,665 [INFO] ✅ 126fa940-5ebc-4d23-9adf-98787702f64c_EVN 3569 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:32:57,665 [INFO] Generated 4 chunks from 126fa940-5ebc-4d23-9adf-98787702f64c_EVN 3569 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx
+2026-07-15 21:32:57,665 [INFO] Processing: b270e9f1-38d9-4c6d-a5de-839584f9cad1_EVN 3679 Report for Transportation of tractor from FBD to Jammu.xlsx
+2026-07-15 21:32:57,666 [INFO] ✅ Sheet 'REPORT ': header row 8, 1 rows x 7 cols (confidence 0.8), 7 report-info lines
+2026-07-15 21:32:57,666 [INFO] 📈 procurement_events: +1 normalized row(s) from b270e9f1-38d9-4c6d-a5de-839584f9cad1_EVN 3679 Report for Transportation of tractor from FBD to Jammu.xlsx
+2026-07-15 21:33:51,276 [INFO] 📝 Parsed output written: ./index_store/parsed/b270e9f1_38d9_4c6d_a5de_839584f9cad1_evn_3679_report_for_tra.md and ./index_store/parsed/b270e9f1_38d9_4c6d_a5de_839584f9cad1_evn_3679_report_for_tra.json2026-07-15 21:33:51,275 | INFO     | rag_system.utils.batch_processor | Late-Chunk Embedding & Indexing completed in 64.51s
+2026-07-15 21:33:51,278 [INFO] 2026-07-15 21:33:51,276 | INFO     | rag_system.utils.batch_processor | Vector Embedding & Indexing completed in 108.65s
+2026-07-15 21:33:51,278 [INFO] 2026-07-15 21:33:51,276 | INFO     | rag_system.utils.batch_processor | Complete Indexing Pipeline completed in 235.01s
+2026-07-15 21:33:51,291 [INFO] 127.0.0.1 - - [15/Jul/2026 21:33:51] "POST /index HTTP/1.1" 200 -
+2026-07-15 21:33:52,404 [INFO] ✓ Compiled in 602ms (660 modules)
+2026-07-15 21:33:52,491 [INFO] GET / 200 in 72ms
+2026-07-15 21:33:52,519 [INFO] ✓ Compiled in 111ms (660 modules)
+2026-07-15 21:33:52,531 [INFO] GET / 200 in 8ms
+2026-07-15 21:34:26,532 [INFO] 127.0.0.1 - - [15/Jul/2026 21:34:26] "OPTIONS /chat/stream HTTP/1.1" 200 -
+2026-07-15 21:34:26,574 [INFO] 127.0.0.1 - - [15/Jul/2026 21:34:26] "POST /chat/stream HTTP/1.1" 200 -
+2026-07-15 21:34:26,817 [INFO] ✓ Compiled in 221ms (660 modules)
+2026-07-15 21:34:26,831 [INFO] GET / 200 in 10ms
+2026-07-15 21:34:55,314 [INFO] 2026-07-15 21:34:55,295 | INFO     | rag-system | Top 20 results:
+2026-07-15 21:34:55,316 [INFO] 2026-07-15 21:34:55,314 | INFO     | rag-system | chunk_id       score   preview
+2026-07-15 21:34:55,316 [INFO] 2026-07-15 21:34:55,314 | INFO     | rag-system | ------------------------------
+2026-07-15 21:34:55,316 [INFO] 2026-07-15 21:34:55,315 | INFO     | rag-system | 73fab6d3-032 0.000   Context — Event EVN 3886 · Online negotiation of…
+2026-07-15 21:34:55,316 [INFO] 2026-07-15 21:34:55,315 | INFO     | rag-system | 31175e1d-c65 0.000   Context — Event EVN 3886 · Online negotiation of…
+2026-07-15 21:34:55,316 [INFO] 2026-07-15 21:34:55,315 | INFO     | rag-system | 9fc1e722-9a6 0.000   Context — Event EVN 3855 · Online negotiation of…
+2026-07-15 21:34:55,317 [INFO] 2026-07-15 21:34:55,315 | INFO     | rag-system | 5fe0100a-455 0.000   Context — Event EVN 3648 · Online negotiation of…
+2026-07-15 21:34:55,317 [INFO] 2026-07-15 21:34:55,315 | INFO     | rag-system | fc01b30b-341 0.000   Context — Event EVN 3577 · Online negotiation of…
+2026-07-15 21:34:55,317 [INFO] 2026-07-15 21:34:55,316 | INFO     | rag-system | da61e052-01f 0.000   Context — Event EVN 3634 · Online negotiation of…
+2026-07-15 21:34:55,317 [INFO] 2026-07-15 21:34:55,316 | INFO     | rag-system | 254c48c6-612 0.000   Context — Event EVN 3691 · Online negotiation of…
+2026-07-15 21:34:55,317 [INFO] 2026-07-15 21:34:55,316 | INFO     | rag-system | 126fa940-5eb 0.000   Context — Event EVN 3569 · Online negotiation of…
+2026-07-15 21:34:55,317 [INFO] 2026-07-15 21:34:55,316 | INFO     | rag-system | 3c4f6297-f09 0.000   Context — Event EVN 3517 · Online negotiation of…
+2026-07-15 21:34:55,317 [INFO] 2026-07-15 21:34:55,316 | INFO     | rag-system | 8f2c15aa-d64 8990.774 # Report information (file:…
+2026-07-15 21:34:55,317 [INFO] 2026-07-15 21:34:55,316 | INFO     | rag-system | faadc225-b4a 9144.547 # Report information (file: faadc225-b4af-41bd-…
+2026-07-15 21:34:55,317 [INFO] 2026-07-15 21:34:55,316 | INFO     | rag-system | 28e79ed3-b40 9239.724 # Report information (file:…
+2026-07-15 21:34:55,317 [INFO] 2026-07-15 21:34:55,316 | INFO     | rag-system | 13ec1d9d-c8e 9307.512 Context — Event EVN 3503 · Online negotiation of…
+2026-07-15 21:34:55,318 [INFO] 2026-07-15 21:34:55,316 | INFO     | rag-system | da61e052-01f 9488.023 Total Cost NaN NaN NaN 55000.0 59500.0 64000.0 Rates are…
+2026-07-15 21:34:55,318 [INFO] 2026-07-15 21:34:55,316 | INFO     | rag-system | b270e9f1-38d 9516.104 # Report information (file:…
+2026-07-15 21:34:55,318 [INFO] 2026-07-15 21:34:55,316 | INFO     | rag-system | faadc225-b4a 9642.497 Total Cost NaN NaN NaN 29000.0 43000.0 45000.0 Rates are…
+2026-07-15 21:34:55,318 [INFO] 2026-07-15 21:34:55,316 | INFO     | rag-system | 99bb4e95-448 10237.604 # Report information (file:…
+2026-07-15 21:34:55,318 [INFO] 2026-07-15 21:34:55,316 | INFO     | rag-system | ee0f1314-99d 10334.679 Total basic value NaN NaN NaN 29750.0 30250.0 40000.0 Rates…
+2026-07-15 21:34:55,318 [INFO] 2026-07-15 21:34:55,316 | INFO     | rag-system | 31175e1d-c65 10534.561 Total basic value NaN NaN NaN 58500.0 59000.0 75000.0…
+2026-07-15 21:34:55,318 [INFO] 2026-07-15 21:34:55,317 | INFO     | rag-system | 41ecf3c0-e44 10558.577 Context — Event EVN 3356 · Online negotiation of…
+2026-07-15 21:34:57,156 [INFO] 2026-07-15 21:34:57,156 | INFO     | sentence_transformers.base.model | No modules.json found for cross-encoder/ms-marco-MiniLM-L-6-v2, initializing a new CrossEncoder model.
+2026-07-15 21:35:01,902 [INFO] python(3176) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+2026-07-15 21:35:02,087 [INFO] huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+2026-07-15 21:35:02,087 [INFO] To disable this warning, you can either:
+2026-07-15 21:35:02,087 [INFO] - Avoid using `tokenizers` before the fork if possible
+2026-07-15 21:35:02,087 [INFO] - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2026-07-15 21:35:02,500 [INFO] ✅ b270e9f1-38d9-4c6d-a5de-839584f9cad1_EVN 3679 Report for Transportation of tractor from FBD to Jammu.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:35:02,500 [INFO] Generated 4 chunks from b270e9f1-38d9-4c6d-a5de-839584f9cad1_EVN 3679 Report for Transportation of tractor from FBD to Jammu.xlsx
+2026-07-15 21:35:02,500 [INFO] Processing: 254c48c6-6126-48c9-a679-6a9b080bf4c2_EVN 3691 Report for Transportation from Satara to FBD.xlsx
+2026-07-15 21:35:02,500 [INFO] ✅ Sheet 'REPORT': header row 8, 3 rows x 9 cols (confidence 0.62), 6 report-info lines
+2026-07-15 21:35:02,500 [INFO] 📈 procurement_events: +1 normalized row(s) from 254c48c6-6126-48c9-a679-6a9b080bf4c2_EVN 3691 Report for Transportation from Satara to FBD.xlsx
+2026-07-15 21:35:02,500 [INFO] 📝 Parsed output written: ./index_store/parsed/254c48c6_6126_48c9_a679_6a9b080bf4c2_evn_3691_report_for_tra.md and ./index_store/parsed/254c48c6_6126_48c9_a679_6a9b080bf4c2_evn_3691_report_for_tra.json
+2026-07-15 21:35:02,500 [INFO] ✅ 254c48c6-6126-48c9-a679-6a9b080bf4c2_EVN 3691 Report for Transportation from Satara to FBD.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:35:02,500 [INFO] Generated 5 chunks from 254c48c6-6126-48c9-a679-6a9b080bf4c2_EVN 3691 Report for Transportation from Satara to FBD.xlsx
+2026-07-15 21:35:02,500 [INFO] Processing: 7ea6d481-e11c-4194-9d6b-0bd786425477_EVN 3694 Report for Transportation of F23 from ECE Faridabad - 121004 to LOWER DIBANG VALLEY ARUNACHAL PRADESH 792110.xlsx
+2026-07-15 21:35:02,500 [INFO] ✅ Sheet 'REPORT': header row 8, 2 rows x 6 cols (confidence 0.72), 7 report-info lines
+2026-07-15 21:35:02,500 [INFO] 📈 procurement_events: +1 normalized row(s) from 7ea6d481-e11c-4194-9d6b-0bd786425477_EVN 3694 Report for Transportation of F23 from ECE Faridabad - 121004 to LOWER DIBANG VALLEY ARUNACHAL PRADESH 792110.xlsx
+2026-07-15 21:35:02,500 [INFO] 📝 Parsed output written: ./index_store/parsed/7ea6d481_e11c_4194_9d6b_0bd786425477_evn_3694_report_for_tra.md and ./index_store/parsed/7ea6d481_e11c_4194_9d6b_0bd786425477_evn_3694_report_for_tra.json
+2026-07-15 21:35:02,500 [INFO] ✅ 7ea6d481-e11c-4194-9d6b-0bd786425477_EVN 3694 Report for Transportation of F23 from ECE Faridabad - 121004 to LOWER DIBANG VALLEY ARUNACHAL PRADESH 792110.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:35:02,500 [INFO] Generated 5 chunks from 7ea6d481-e11c-4194-9d6b-0bd786425477_EVN 3694 Report for Transportation of F23 from ECE Faridabad - 121004 to LOWER DIBANG VALLEY ARUNACHAL PRADESH 792110.xlsx
+2026-07-15 21:35:02,500 [INFO] Processing: ee0f1314-99d5-4397-9ae5-998c8b02bebf_EVN 3846 Report for Transportation from Polivakkam to Bangalore.xlsx
+2026-07-15 21:35:02,500 [INFO] ✅ Sheet 'REPORT': header row 8, 3 rows x 7 cols (confidence 0.61), 7 report-info lines
+2026-07-15 21:35:02,500 [INFO] 📈 procurement_events: +1 normalized row(s) from ee0f1314-99d5-4397-9ae5-998c8b02bebf_EVN 3846 Report for Transportation from Polivakkam to Bangalore.xlsx
+2026-07-15 21:35:02,500 [INFO] 📝 Parsed output written: ./index_store/parsed/ee0f1314_99d5_4397_9ae5_998c8b02bebf_evn_3846_report_for_tra.md and ./index_store/parsed/ee0f1314_99d5_4397_9ae5_998c8b02bebf_evn_3846_report_for_tra.json
+2026-07-15 21:35:02,500 [INFO] ✅ ee0f1314-99d5-4397-9ae5-998c8b02bebf_EVN 3846 Report for Transportation from Polivakkam to Bangalore.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:35:02,500 [INFO] Generated 4 chunks from ee0f1314-99d5-4397-9ae5-998c8b02bebf_EVN 3846 Report for Transportation from Polivakkam to Bangalore.xlsx
+2026-07-15 21:35:02,500 [INFO] Processing: 9fc1e722-9a64-4682-86cc-c7e5f9f99637_EVN 3855 Report for Transportation from Polivakkam to Visakhapatnam.xlsx
+2026-07-15 21:35:02,500 [INFO] ✅ Sheet 'REPORT': header row 8, 3 rows x 9 cols (confidence 0.62), 6 report-info lines
+2026-07-15 21:35:02,500 [INFO] 📈 procurement_events: +1 normalized row(s) from 9fc1e722-9a64-4682-86cc-c7e5f9f99637_EVN 3855 Report for Transportation from Polivakkam to Visakhapatnam.xlsx
+2026-07-15 21:35:02,500 [INFO] 📝 Parsed output written: ./index_store/parsed/9fc1e722_9a64_4682_86cc_c7e5f9f99637_evn_3855_report_for_tra.md and ./index_store/parsed/9fc1e722_9a64_4682_86cc_c7e5f9f99637_evn_3855_report_for_tra.json
+2026-07-15 21:35:02,500 [INFO] ✅ 9fc1e722-9a64-4682-86cc-c7e5f9f99637_EVN 3855 Report for Transportation from Polivakkam to Visakhapatnam.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:35:02,501 [INFO] Generated 5 chunks from 9fc1e722-9a64-4682-86cc-c7e5f9f99637_EVN 3855 Report for Transportation from Polivakkam to Visakhapatnam.xlsx
+2026-07-15 21:35:02,501 [INFO] Processing: 8f2c15aa-d64d-4d07-bfee-b6f150a3ea15_EVN 3871 Report for Transportation from Pune depot to Nagpur depot.xlsx
+2026-07-15 21:35:02,501 [INFO] ✅ Sheet 'REPORT': header row 8, 3 rows x 7 cols (confidence 0.61), 7 report-info lines
+2026-07-15 21:35:02,501 [INFO] 📈 procurement_events: +1 normalized row(s) from 8f2c15aa-d64d-4d07-bfee-b6f150a3ea15_EVN 3871 Report for Transportation from Pune depot to Nagpur depot.xlsx
+2026-07-15 21:35:02,501 [INFO] 📝 Parsed output written: ./index_store/parsed/8f2c15aa_d64d_4d07_bfee_b6f150a3ea15_evn_3871_report_for_tra.md and ./index_store/parsed/8f2c15aa_d64d_4d07_bfee_b6f150a3ea15_evn_3871_report_for_tra.json
+2026-07-15 21:35:02,501 [INFO] ✅ 8f2c15aa-d64d-4d07-bfee-b6f150a3ea15_EVN 3871 Report for Transportation from Pune depot to Nagpur depot.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:35:02,501 [INFO] Generated 4 chunks from 8f2c15aa-d64d-4d07-bfee-b6f150a3ea15_EVN 3871 Report for Transportation from Pune depot to Nagpur depot.xlsx
+2026-07-15 21:35:02,501 [INFO] Processing: 73fab6d3-0323-42c3-909a-56002738a3c3_EVN 3886 Report for Transportation from Hyderabad depot to Bilaspur depot.xlsx
+2026-07-15 21:35:02,501 [INFO] ✅ Sheet 'REPORT': header row 8, 3 rows x 7 cols (confidence 0.61), 7 report-info lines
+2026-07-15 21:35:02,501 [INFO] 📈 procurement_events: +1 normalized row(s) from 73fab6d3-0323-42c3-909a-56002738a3c3_EVN 3886 Report for Transportation from Hyderabad depot to Bilaspur depot.xlsx
+2026-07-15 21:35:02,501 [INFO] 📝 Parsed output written: ./index_store/parsed/73fab6d3_0323_42c3_909a_56002738a3c3_evn_3886_report_for_tra.md and ./index_store/parsed/73fab6d3_0323_42c3_909a_56002738a3c3_evn_3886_report_for_tra.json
+2026-07-15 21:35:02,501 [INFO] ✅ 73fab6d3-0323-42c3-909a-56002738a3c3_EVN 3886 Report for Transportation from Hyderabad depot to Bilaspur depot.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:35:02,501 [INFO] Generated 4 chunks from 73fab6d3-0323-42c3-909a-56002738a3c3_EVN 3886 Report for Transportation from Hyderabad depot to Bilaspur depot.xlsx
+2026-07-15 21:35:02,501 [INFO] Processing: 31175e1d-c65c-44ea-91b1-d0c5782f40a5_EVN 3886 Report for Transportation from Indore depot to Bharatpur,RJ.xlsx
+2026-07-15 21:35:02,501 [INFO] ✅ Sheet 'REPORT': header row 8, 3 rows x 8 cols (confidence 0.61), 6 report-info lines
+2026-07-15 21:35:02,501 [INFO] 📈 procurement_events: +1 normalized row(s) from 31175e1d-c65c-44ea-91b1-d0c5782f40a5_EVN 3886 Report for Transportation from Indore depot to Bharatpur,RJ.xlsx
+2026-07-15 21:35:02,501 [INFO] 📝 Parsed output written: ./index_store/parsed/31175e1d_c65c_44ea_91b1_d0c5782f40a5_evn_3886_report_for_tra.md and ./index_store/parsed/31175e1d_c65c_44ea_91b1_d0c5782f40a5_evn_3886_report_for_tra.json
+2026-07-15 21:35:02,501 [INFO] ✅ 31175e1d-c65c-44ea-91b1-d0c5782f40a5_EVN 3886 Report for Transportation from Indore depot to Bharatpur,RJ.xlsx: 3 indexable pages (1 row pages)
+2026-07-15 21:35:02,501 [INFO] Generated 4 chunks from 31175e1d-c65c-44ea-91b1-d0c5782f40a5_EVN 3886 Report for Transportation from Indore depot to Bharatpur,RJ.xlsx
+2026-07-15 21:35:02,501 [INFO] ✅ Generated 103 text chunks total.
+2026-07-15 21:35:02,501 [INFO] 📊 Estimated memory usage: 0.2MB
+2026-07-15 21:35:02,501 [INFO] 🔍 CONTEXTUAL ENRICHMENT DEBUG:
+2026-07-15 21:35:02,501 [INFO] Config present: True
+2026-07-15 21:35:02,501 [INFO] Enabled: False
+2026-07-15 21:35:02,501 [INFO] Has enricher object: False
+2026-07-15 21:35:02,501 [INFO] ⚠️  CONTEXTUAL ENRICHMENT SKIPPED:
+2026-07-15 21:35:02,501 [INFO] Reason: No enricher object (config enabled=False)
+2026-07-15 21:35:02,501 [INFO] Chunks will be indexed without contextual enrichment.
+2026-07-15 21:35:02,501 [INFO] --- Generating embeddings with Qwen/Qwen3-Embedding-0.6B ---
+2026-07-15 21:35:02,501 [INFO] Estimated memory usage for 103 chunks: 0.2MB
+2026-07-15 21:35:02,501 [INFO] Generating 64 embeddings with Qwen/Qwen3-Embedding-0.6B model...
+2026-07-15 21:35:02,501 [INFO] Generating 39 embeddings with Qwen/Qwen3-Embedding-0.6B model...
+2026-07-15 21:35:02,501 [INFO] --- Indexing 103 vectors into LanceDB table: text_pages_0a6ce348-969d-4ca5-abc6-d19ac38f1684 ---
+2026-07-15 21:35:02,501 [INFO] Creating table 'text_pages_0a6ce348-969d-4ca5-abc6-d19ac38f1684' (new) and adding 103 vectors...
+2026-07-15 21:35:02,501 [INFO] Creating table 'text_pages_0a6ce348-969d-4ca5-abc6-d19ac38f1684' with mode 'create'...
+2026-07-15 21:35:02,501 [INFO] ✅ Indexed 103 vectors into table 'text_pages_0a6ce348-969d-4ca5-abc6-d19ac38f1684'.
+2026-07-15 21:35:02,501 [INFO] ✅ Vector embeddings indexed successfully
+2026-07-15 21:35:02,501 [INFO] --- Ensuring Full-Text Search (FTS) index on table 'text_pages_0a6ce348-969d-4ca5-abc6-d19ac38f1684' ---
+2026-07-15 21:35:02,502 [INFO] ✅ FTS index created successfully (using Lance native FTS).
+2026-07-15 21:35:02,502 [INFO] --- Generating late-chunk embeddings (table=text_pages_0a6ce348-969d-4ca5-abc6-d19ac38f1684_lc) ---
+2026-07-15 21:35:02,502 [INFO] Creating table 'text_pages_0a6ce348-969d-4ca5-abc6-d19ac38f1684_lc' (new) and adding 4 vectors...
+2026-07-15 21:35:02,502 [INFO] Creating table 'text_pages_0a6ce348-969d-4ca5-abc6-d19ac38f1684_lc' with mode 'create'...
+2026-07-15 21:35:02,502 [INFO] ✅ Indexed 4 vectors into table 'text_pages_0a6ce348-969d-4ca5-abc6-d19ac38f1684_lc'.
+2026-07-15 21:35:02,502 [INFO] Appending 4 vectors to existing table 'text_pages_0a6ce348-969d-4ca5-abc6-d19ac38f1684_lc'.
+2026-07-15 21:37:21,630 [INFO] ✅ Indexed 4 vectors into table 'text_pages_0a6ce348-969d-4ca5-abc6-d19ac38f1684_lc'.2026-07-15 21:37:21,629 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-07-15 21:37:21,875 [INFO] ✓ Compiled in 222ms (660 modules)
+2026-07-15 21:37:21,894 [INFO] GET / 200 in 14ms
+2026-07-15 21:37:21,983 [INFO] ✓ Compiled in 104ms (660 modules)
+2026-07-15 21:37:22,002 [INFO] GET / 200 in 14ms
+2026-07-15 21:37:22,093 [INFO] ✓ Compiled in 108ms (660 modules)
+2026-07-15 21:37:22,108 [INFO] GET / 200 in 9ms
+2026-07-15 21:39:23,032 [INFO] 127.0.0.1 - - [15/Jul/2026 21:39:23] "OPTIONS /chat/stream HTTP/1.1" 200 -
+2026-07-15 21:40:09,860 [INFO] 127.0.0.1 - - [15/Jul/2026 21:40:09] "POST /chat/stream HTTP/1.1" 200 -
+2026-07-15 21:40:10,080 [INFO] ✓ Compiled in 209ms (660 modules)
+2026-07-15 21:40:10,161 [INFO] GET / 200 in 75ms
+2026-07-15 21:40:10,214 [INFO] ✓ Compiled in 130ms (660 modules)
+2026-07-15 21:40:10,230 [INFO] GET / 200 in 12ms
+2026-07-15 21:40:10,319 [INFO] ✓ Compiled in 102ms (660 modules)
+2026-07-15 21:40:10,331 [INFO] GET / 200 in 9ms
+2026-07-15 21:40:27,501 [INFO] 127.0.0.1 - - [15/Jul/2026 21:40:27] "GET /files/PO-EVN3503-20260715.pdf HTTP/1.1" 200 -
+2026-07-18 12:39:26,570 [INFO] 🚀 Starting RAG System Components...
+2026-07-18 12:39:26,570 [INFO] 🔍 Checking prerequisites...
+2026-07-18 12:39:27,524 [INFO] ✅ All prerequisites satisfied
+2026-07-18 12:39:27,525 [INFO] ✅ Ollama already running
+2026-07-18 12:39:27,525 [INFO] 📥 Checking required models...
+2026-07-18 12:39:27,542 [INFO] ✅ qwen3:8b already available
+2026-07-18 12:39:27,542 [INFO] ✅ qwen3:0.6b already available
+2026-07-18 12:39:27,542 [INFO] 🔄 Starting rag-api on port 8001...
+2026-07-18 12:39:30,549 [INFO] ✅ rag-api started successfully (PID: 7650)
+2026-07-18 12:39:30,550 [INFO] 🔄 Starting backend on port 8000...
+2026-07-18 12:39:30,579 [INFO] /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-18 12:39:30,580 [INFO] import cgi
+2026-07-18 12:39:32,556 [INFO] ✅ backend started successfully (PID: 7652)
+2026-07-18 12:39:32,558 [INFO] 🔄 Starting frontend on port 3000...
+2026-07-18 12:39:32,639 [INFO] > multimodal_rag@0.1.0 dev
+2026-07-18 12:39:32,639 [INFO] > next dev
+2026-07-18 12:39:34,119 [INFO] ▲ Next.js 15.3.3
+2026-07-18 12:39:34,119 [INFO] - Local:        http://localhost:3000
+2026-07-18 12:39:34,119 [INFO] - Network:      http://192.168.1.7:3000
+2026-07-18 12:39:34,119 [INFO] ✓ Starting...
+2026-07-18 12:39:35,179 [INFO] ✓ Ready in 1175ms
+2026-07-18 12:39:37,567 [INFO] ✅ frontend started successfully (PID: 7653)
+2026-07-18 12:39:37,568 [INFO] 
+2026-07-18 12:39:37,568 [INFO] 🎉 RAG System Started!
+2026-07-18 12:39:37,568 [INFO] 📊 Services Status:
+2026-07-18 12:39:37,570 [INFO]    • Ollama    : ✅ Running  http://localhost:11434
+2026-07-18 12:39:37,570 [INFO]    • Rag-api   : ✅ Running  http://localhost:8001
+2026-07-18 12:39:37,570 [INFO]    • Backend   : ✅ Running  http://localhost:8000
+2026-07-18 12:39:37,570 [INFO]    • Frontend  : ✅ Running  http://localhost:3000
+2026-07-18 12:39:37,570 [INFO] 
+2026-07-18 12:39:37,570 [INFO] 🌐 Access your RAG system at: http://localhost:3000
+2026-07-18 12:39:37,570 [INFO] 
+2026-07-18 12:39:37,570 [INFO] 📋 Useful commands:
+2026-07-18 12:39:37,571 [INFO]    • Stop system:  Ctrl+C
+2026-07-18 12:39:37,571 [INFO]    • Check logs:   tail -f logs/*.log
+2026-07-18 12:39:37,571 [INFO]    • Health check: python run_system.py --health
+2026-07-18 12:39:37,571 [INFO] 👁️  Monitoring services... (Press Ctrl+C to stop)
+2026-07-18 12:39:43,971 [INFO] ○ Compiling / ...
+2026-07-18 12:39:44,682 [INFO] ✓ Compiled / in 1212ms (1387 modules)
+2026-07-18 12:39:44,832 [INFO] Demo component rendering...
+2026-07-18 12:39:44,845 [INFO] GET / 200 in 1385ms
+2026-07-18 12:39:49,569 [INFO] ✓ Compiled in 158ms (660 modules)
+2026-07-18 12:39:49,586 [INFO] GET / 200 in 13ms
+2026-07-18 12:39:49,663 [INFO] ✓ Compiled in 92ms (660 modules)
+2026-07-18 12:39:49,671 [INFO] GET / 200 in 6ms
+2026-07-18 12:40:02,460 [INFO] 127.0.0.1 - - [18/Jul/2026 12:40:02] "OPTIONS /chat/stream HTTP/1.1" 200 -
+2026-07-18 12:40:02,474 [INFO] 127.0.0.1 - - [18/Jul/2026 12:40:02] "POST /chat/stream HTTP/1.1" 200 -
+2026-07-18 12:40:02,625 [INFO] ✓ Compiled in 155ms (660 modules)
+2026-07-18 12:40:02,639 [INFO] GET / 200 in 11ms
+2026-07-18 12:40:02,726 [INFO] ✓ Compiled in 99ms (660 modules)
+2026-07-18 12:40:02,737 [INFO] GET / 200 in 8ms
+2026-07-18 12:40:18,784 [INFO] 2026-07-18 12:40:18,782 | INFO     | rag-system | Top 20 results:
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,783 | INFO     | rag-system | chunk_id       score   preview
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,783 | INFO     | rag-system | ------------------------------
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,784 | INFO     | rag-system | 73fab6d3-032 0.000   Context — Event EVN 3886 · Online negotiation of…
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,784 | INFO     | rag-system | 31175e1d-c65 0.000   Context — Event EVN 3886 · Online negotiation of…
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,784 | INFO     | rag-system | 9fc1e722-9a6 0.000   Context — Event EVN 3855 · Online negotiation of…
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,784 | INFO     | rag-system | 5fe0100a-455 0.000   Context — Event EVN 3648 · Online negotiation of…
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,784 | INFO     | rag-system | fc01b30b-341 0.000   Context — Event EVN 3577 · Online negotiation of…
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,784 | INFO     | rag-system | da61e052-01f 0.000   Context — Event EVN 3634 · Online negotiation of…
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,784 | INFO     | rag-system | 254c48c6-612 0.000   Context — Event EVN 3691 · Online negotiation of…
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,784 | INFO     | rag-system | 126fa940-5eb 0.000   Context — Event EVN 3569 · Online negotiation of…
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,784 | INFO     | rag-system | 3c4f6297-f09 0.000   Context — Event EVN 3517 · Online negotiation of…
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,785 | INFO     | rag-system | 13ec1d9d-c8e 8759.870 Context — Event EVN 3503 · Online negotiation of…
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,785 | INFO     | rag-system | 8f2c15aa-d64 9017.311 # Report information (file:…
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,785 | INFO     | rag-system | faadc225-b4a 9200.636 # Report information (file: faadc225-b4af-41bd-…
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,785 | INFO     | rag-system | 28e79ed3-b40 9272.218 # Report information (file:…
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,785 | INFO     | rag-system | b270e9f1-38d 9418.453 # Report information (file:…
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,785 | INFO     | rag-system | da61e052-01f 9510.732 Total Cost NaN NaN NaN 55000.0 59500.0 64000.0 Rates are…
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,785 | INFO     | rag-system | faadc225-b4a 9633.447 Total Cost NaN NaN NaN 29000.0 43000.0 45000.0 Rates are…
+2026-07-18 12:40:18,785 [INFO] 2026-07-18 12:40:18,785 | INFO     | rag-system | 31175e1d-c65 10264.712 Total basic value NaN NaN NaN 58500.0 59000.0 75000.0…
+2026-07-18 12:40:18,786 [INFO] 2026-07-18 12:40:18,785 | INFO     | rag-system | ee0f1314-99d 10292.722 Total basic value NaN NaN NaN 29750.0 30250.0 40000.0 Rates…
+2026-07-18 12:40:18,786 [INFO] 2026-07-18 12:40:18,785 | INFO     | rag-system | 41ecf3c0-e44 10330.121 Context — Event EVN 3356 · Online negotiation of…
+2026-07-18 12:40:18,786 [INFO] 2026-07-18 12:40:18,785 | INFO     | rag-system | 99bb4e95-448 10360.167 # Report information (file:…
+2026-07-18 12:40:19,625 [INFO] 2026-07-18 12:40:19,625 | INFO     | sentence_transformers.base.model | No modules.json found for cross-encoder/ms-marco-MiniLM-L-6-v2, initializing a new CrossEncoder model.
+2026-07-18 12:40:25,071 [INFO] huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+2026-07-18 12:40:25,072 [INFO] To disable this warning, you can either:
+2026-07-18 12:40:25,072 [INFO] - Avoid using `tokenizers` before the fork if possible
+2026-07-18 12:40:25,072 [INFO] - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2026-07-18 12:42:08,699 [INFO] 2026-07-18 12:42:08,698 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-07-18 12:42:09,016 [INFO] ✓ Compiled in 292ms (660 modules)
+2026-07-18 12:42:09,098 [INFO] GET / 200 in 76ms
+2026-07-18 12:42:09,138 [INFO] ✓ Compiled in 120ms (660 modules)
+2026-07-18 12:42:09,218 [INFO] GET / 200 in 76ms
+2026-07-18 12:42:09,249 [INFO] ✓ Compiled in 109ms (660 modules)
+2026-07-18 12:42:09,261 [INFO] GET / 200 in 8ms
+2026-07-18 12:42:42,597 [INFO] 127.0.0.1 - - [18/Jul/2026 12:42:42] "OPTIONS /chat/stream HTTP/1.1" 200 -
+2026-07-18 12:43:51,070 [INFO] 127.0.0.1 - - [18/Jul/2026 12:43:51] "POST /chat/stream HTTP/1.1" 200 -
+2026-07-18 12:43:51,321 [INFO] ✓ Compiled in 236ms (660 modules)
+2026-07-18 12:43:51,343 [INFO] GET / 200 in 13ms
+2026-07-18 12:43:52,258 [INFO] ✓ Compiled in 112ms (660 modules)
+2026-07-18 12:43:52,270 [INFO] GET / 200 in 10ms
+2026-07-18 12:43:52,340 [INFO] ✓ Compiled in 81ms (660 modules)
+2026-07-18 12:43:52,348 [INFO] GET / 200 in 7ms
+2026-07-18 12:47:42,783 [INFO] ✓ Compiled in 278ms (660 modules)
+2026-07-18 12:47:42,902 [INFO] GET / 200 in 107ms
+2026-07-18 12:47:42,928 [INFO] ✓ Compiled in 144ms (660 modules)
+2026-07-18 12:47:42,939 [INFO] GET / 200 in 7ms
+2026-07-18 12:47:52,736 [INFO] ✓ Compiled in 120ms (660 modules)
+2026-07-18 12:47:52,749 [INFO] GET / 200 in 8ms
+2026-07-18 12:52:18,555 [INFO] ✓ Compiled in 148ms (660 modules)
+2026-07-18 12:52:18,567 [INFO] GET / 200 in 10ms
+2026-07-18 12:52:18,639 [INFO] ✓ Compiled in 82ms (660 modules)
+2026-07-18 12:52:18,649 [INFO] GET / 200 in 6ms
+2026-07-18 12:52:21,290 [INFO] ✓ Compiled in 133ms (660 modules)
+2026-07-18 12:52:21,301 [INFO] GET / 200 in 9ms
+2026-07-18 12:52:21,373 [INFO] ✓ Compiled in 81ms (660 modules)
+2026-07-18 12:52:21,381 [INFO] GET / 200 in 6ms
+2026-07-18 12:52:23,572 [INFO] ✓ Compiled in 156ms (660 modules)
+2026-07-18 12:52:23,587 [INFO] GET / 200 in 11ms
+2026-07-18 12:52:23,656 [INFO] ✓ Compiled in 80ms (660 modules)
+2026-07-18 12:52:23,665 [INFO] GET / 200 in 6ms
+2026-07-18 12:53:12,744 [INFO] 127.0.0.1 - - [18/Jul/2026 12:53:12] "OPTIONS /chat/stream HTTP/1.1" 200 -
+2026-07-18 12:54:53,803 [INFO] 127.0.0.1 - - [18/Jul/2026 12:54:53] "POST /chat/stream HTTP/1.1" 200 -
+2026-07-18 12:54:53,978 [INFO] ✓ Compiled in 163ms (660 modules)
+2026-07-18 12:54:53,997 [INFO] GET / 200 in 16ms
+2026-07-18 13:00:05,767 [INFO] 127.0.0.1 - - [18/Jul/2026 13:00:05] "GET /index/progress?session_id=2d0592cb-ba2f-4b98-bf6a-cd247eff9c76 HTTP/1.1" 200 -
+2026-07-18 13:00:05,769 [INFO] 127.0.0.1 - - [18/Jul/2026 13:00:05] "GET /index/progress?session_id=2d0592cb-ba2f-4b98-bf6a-cd247eff9c76 HTTP/1.1" 200 -
+2026-07-18 13:00:05,978 [INFO] ✓ Compiled in 211ms (660 modules)
+2026-07-18 13:00:06,040 [INFO] GET / 200 in 57ms
+2026-07-18 13:00:06,077 [INFO] ✓ Compiled in 96ms (660 modules)
+2026-07-18 13:00:06,087 [INFO] GET / 200 in 7ms
+2026-07-18 13:00:14,864 [INFO] 2026-07-18 13:00:14,864 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 9945d6a0-89fa-44fd-9267-8332aa1b547a_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx (stored in index_store/overviews/2d0592cb-ba2f-4b98-bf6a-cd247eff9c76.jsonl)
+2026-07-18 13:00:19,826 [INFO] 2026-07-18 13:00:19,826 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for b0fb3ecc-3038-4bee-9e3c-81abfd12ac79_EVN 3456 Report for Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations.xlsx (stored in index_store/overviews/2d0592cb-ba2f-4b98-bf6a-cd247eff9c76.jsonl)
+2026-07-18 13:00:19,826 [INFO] 2026-07-18 13:00:19,826 | INFO     | rag_system.utils.batch_processor | Document Processing: 2/32 (6.2%) - 0.19 items/sec - ETA: 2.6min - Errors: 0
+2026-07-18 13:00:24,935 [INFO] 2026-07-18 13:00:24,935 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 918932e7-cad1-480c-86ce-b396606fb458_EVN 3456 Report for Transportation of Tractors from Pune Chakan Depot to Karera, MP- 474001.xlsx (stored in index_store/overviews/2d0592cb-ba2f-4b98-bf6a-cd247eff9c76.jsonl)
+2026-07-18 13:00:25,014 [INFO] ✅ Database initialized successfully
+2026-07-18 13:00:25,014 [INFO] ✅ Database initialized successfully
+2026-07-18 13:00:25,014 [INFO] 🔧 Using Ollama backend
+2026-07-18 13:00:25,014 [INFO] Initialized Verifier with Ollama model 'qwen3:8b'.
+2026-07-18 13:00:25,014 [INFO] Agent initialized (GraphRAG disabled).
+2026-07-18 13:00:25,014 [INFO] docling DocumentConverter(s) initialized (OCR + no-OCR + general).
+2026-07-18 13:00:25,014 [INFO] 🔧 CHUNKING CONFIG: Size: 1500, Overlap: 200, Mode: docling
+2026-07-18 13:00:25,014 [INFO] 🪄 Using DoclingChunker for high-recall sentence packing.
+2026-07-18 13:00:25,014 [INFO] LanceDB connection established at: ./lancedb
+2026-07-18 13:00:25,014 [INFO] Initializing HF Embedder with model 'Qwen/Qwen3-Embedding-0.6B' on device 'mps'. (first load)
+2026-07-18 13:00:25,014 [INFO] QwenEmbedder weights loaded and cached for Qwen/Qwen3-Embedding-0.6B.
+2026-07-18 13:00:25,014 [INFO] 🧠 Initializing RAG Agent with MAXIMUM ACCURACY... (This may take a moment)
+2026-07-18 13:00:25,014 [INFO] ✅ RAG Agent initialized successfully with MAXIMUM ACCURACY.
+2026-07-18 13:00:25,014 [INFO] ✅ Drafting backend ready: {'configured_backend': 'local', 'cloud_available': False, 'note': 'Fully air-gapped: drafting uses the local model only.'}
+2026-07-18 13:00:25,015 [INFO] ✅ Analytics engine ready (procurement_events).
+2026-07-18 13:00:25,015 [INFO] 🚀 Starting Advanced RAG API server on port 8001
+2026-07-18 13:00:25,015 [INFO] 💬 Chat endpoint: http://localhost:8001/chat
+2026-07-18 13:00:25,015 [INFO] ✨ Indexing endpoint: http://localhost:8001/index
+2026-07-18 13:00:25,015 [INFO] 📝 Updated session title to: Provide me all the vendor details
+2026-07-18 13:00:25,015 [INFO] 💾 Stored user message: b9cfaf37-6ed6-4f95-bc31-93ffe491692b
+2026-07-18 13:00:25,015 [INFO] 📖 Loaded 24 overviews for indexes ['0a6ce348']
+2026-07-18 13:00:25,015 [INFO] 🔍 ROUTING DEBUG: Starting triage for query: 'provide me all the vendor details...'
+2026-07-18 13:00:25,015 [INFO] 📖 ROUTING DEBUG: Attempting overview-based routing...
+2026-07-18 13:00:25,015 [INFO] 📖 ROUTING DEBUG: Found 24 document overviews, using LLM routing...
+2026-07-18 13:00:25,015 [INFO] 📖 ROUTING DEBUG: Overview LLM raw response: '{"category": "rag_query"}...'
+2026-07-18 13:00:25,015 [INFO] 📖 ROUTING DEBUG: Overview routing final decision: 'rag_query'
+2026-07-18 13:00:25,015 [INFO] ✅ ROUTING DEBUG: Overview routing decided: 'rag_query'
+2026-07-18 13:00:25,015 [INFO] 🎯 ROUTING DEBUG: Final triage decision: 'rag_query'
+2026-07-18 13:00:25,015 [INFO] Agent Triage Decision: 'rag_query'
+2026-07-18 13:00:25,015 [INFO] 🔍 Retrieval K set to: 20
+2026-07-18 13:00:25,015 [INFO] 🔍 Context window size set to: 1
+2026-07-18 13:00:25,015 [INFO] 🔍 Reranker top K set to: 10
+2026-07-18 13:00:25,015 [INFO] 🔍 Search type set to: hybrid
+2026-07-18 13:00:25,015 [INFO] 🔍 Dense search weight set to: 0.7
+2026-07-18 13:00:25,015 [INFO] Reusing cached QwenEmbedder weights for Qwen/Qwen3-Embedding-0.6B.
+2026-07-18 13:00:25,015 [INFO] Generating 1 embeddings with Qwen/Qwen3-Embedding-0.6B model...
+2026-07-18 13:00:25,015 [INFO] ✅ ROUTING DEBUG: Executing RAG_QUERY path (query_type='rag_query')
+2026-07-18 13:00:25,015 [INFO] --- Query Decomposition Enabled ---
+2026-07-18 13:00:25,015 [INFO] Query Decomposition Reasoning: Single information need: vendor details.
+2026-07-18 13:00:25,015 [INFO] Original query: 'provide me all the vendor details' (Contextual: 'provide me all the vendor details')
+2026-07-18 13:00:25,015 [INFO] Decomposed into 1 sub-queries: ['provide me all the vendor details']
+2026-07-18 13:00:25,015 [INFO] --- Only one sub-query after decomposition; using direct retrieval path ---
+2026-07-18 13:00:25,015 [INFO] LanceDB connection established at: ./lancedb
+2026-07-18 13:00:25,015 [INFO] --- Performing Retrieval for query: 'provide me all the vendor details' on table 'text_pages_0a6ce348-969d-4ca5-abc6-d19ac38f1684' ---
+2026-07-18 13:00:25,015 [INFO] Generating 1 embeddings with Qwen/Qwen3-Embedding-0.6B model...
+2026-07-18 13:00:25,015 [INFO] Retrieved 20 documents.
+2026-07-18 13:00:25,015 [INFO] ✅ MiniLM cross-encoder reranker ready (cross-encoder/ms-marco-MiniLM-L-6-v2, CPU)
+2026-07-18 13:00:25,015 [INFO] ✅ AI reranker initialized successfully.
+2026-07-18 13:00:25,015 [INFO] --- Reranking top 20 docs with AI model... ---
+2026-07-18 13:00:25,015 [INFO] ✅ Reranking completed in 0.49s. Refined to 10 docs.
+2026-07-18 13:00:25,015 [INFO] --- Expanding context for 10 top documents (window size: 1)... ---
+2026-07-18 13:00:25,015 [INFO] Expanded to 20 unique chunks for synthesis.
+2026-07-18 13:00:25,015 [INFO] --- Final Documents for Synthesis ---
+2026-07-18 13:00:25,015 [INFO] [1] Chunk ID: 254c48c6-6126-48c9-a679-6a9b080bf4c2_EVN 3691 Report for Transportation from Satara to FBD.xlsx_0
+2026-07-18 13:00:25,015 [INFO] Score: N/A
+2026-07-18 13:00:25,015 [INFO] Rerank Score: -10.3271
+2026-07-18 13:00:25,015 [INFO] Text: "# Report information (file: 254c48c6-6126-48c9-a679-6a9b080bf4c2_EVN 3691 Report for Transportation from Satara to FBD.xlsx, table: 254c48c6_6126_48c9_a679_6a9b080bf4c2_evn_3691_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3691 - Event Name: Online negotiation of Transportation of Machine from Satara, Pune to FBD - Event Timeline: 2026-04-01 11:00 to 2026-04-01 13:36 - No. of Participants: 5 - Color Legend: Rank 1 | Rank 2 | Rank 3"
+2026-07-18 13:00:25,015 [INFO] [2] Chunk ID: 5fe0100a-455e-4ad4-b2dd-e2a23efddcea_EVN 3648 Report for Transportation from FBD to Singrauli, MP.xlsx_0
+2026-07-18 13:00:25,015 [INFO] Score: N/A
+2026-07-18 13:00:25,015 [INFO] Rerank Score: -10.4723
+2026-07-18 13:00:25,015 [INFO] Text: "# Report information (file: 5fe0100a-455e-4ad4-b2dd-e2a23efddcea_EVN 3648 Report for Transportation from FBD to Singrauli, MP.xlsx, table: 5fe0100a_455e_4ad4_b2dd_e2a23efddcea_evn_3648_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3648 - Event Name: Online negotiation of Transportation of Material from FBD to Singrauli, MP - Event Timeline: 2026-03-26 11:00 to 2026-03-26 13:02 - No. of Participants: 4 - Color Legend: Rank 1 | Rank 2 | Rank 3"
+2026-07-18 13:00:25,015 [INFO] [3] Chunk ID: 73fab6d3-0323-42c3-909a-56002738a3c3_EVN 3886 Report for Transportation from Hyderabad depot to Bilaspur depot.xlsx_0
+2026-07-18 13:00:25,015 [INFO] Score: N/A
+2026-07-18 13:00:25,015 [INFO] Rerank Score: -10.4944
+2026-07-18 13:00:25,015 [INFO] Text: "# Report information (file: 73fab6d3-0323-42c3-909a-56002738a3c3_EVN 3886 Report for Transportation from Hyderabad depot to Bilaspur depot.xlsx, table: 73fab6d3_0323_42c3_909a_56002738a3c3_evn_3886_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3886 - Event Name: Online negotiation of Transportation of Tractor from Hyderabad depot to Bilaspur depot - Event Timeline: 2026-05-30 11:00 to 2026-05-30 14:00 - No. of Participants: 3 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: MOHAN LOGISTICS PRIVATE LIMITED | ATUL LOGISTICS | TOTAL TCM"
+2026-07-18 13:00:25,015 [INFO] [4] Chunk ID: 126fa940-5ebc-4d23-9adf-98787702f64c_EVN 3569 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx_0
+2026-07-18 13:00:25,015 [INFO] Score: N/A
+2026-07-18 13:00:25,015 [INFO] Rerank Score: -10.4984
+2026-07-18 13:00:25,015 [INFO] Text: "# Report information (file: 126fa940-5ebc-4d23-9adf-98787702f64c_EVN 3569 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx, table: 126fa940_5ebc_4d23_9adf_98787702f64c_evn_3569_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3569 - Event Name: Online negotiation of Transportation of Tractor from Ramachandrapuram, AP to Thiruvarur, TN - Event Timeline: 2026-03-18 11:00 to 2026-03-18 13:22 - No. of Participants: 2 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: Holisol Logistics Pvt. Ltd | URL Safe Express Private Limited"
+2026-07-18 13:00:25,015 [INFO] [5] Chunk ID: 3c4f6297-f097-4021-954b-c316b6872c8c_EVN 3517 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx_0
+2026-07-18 13:00:25,015 [INFO] Score: N/A
+2026-07-18 13:00:25,015 [INFO] Rerank Score: -10.5043
+2026-07-18 13:00:25,015 [INFO] Text: "# Report information (file: 3c4f6297-f097-4021-954b-c316b6872c8c_EVN 3517 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx, table: 3c4f6297_f097_4021_954b_c316b6872c8c_evn_3517_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3517 - Event Name: Online negotiation of Transportation of Tractor from Ramachandrapuram, AP to Thiruvarur, TN - Event Timeline: 2026-03-12 11:00 to 2026-03-12 18:20 - No. of Participants: 2 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: URL Safe Express Private Limited | Holisol Logistics Pvt. Ltd"
+2026-07-18 13:00:25,015 [INFO] [6] Chunk ID: 9fc1e722-9a64-4682-86cc-c7e5f9f99637_EVN 3855 Report for Transportation from Polivakkam to Visakhapatnam.xlsx_0
+2026-07-18 13:00:25,015 [INFO] Score: N/A
+2026-07-18 13:00:25,016 [INFO] Rerank Score: -10.5585
+2026-07-18 13:00:25,016 [INFO] Text: "# Report information (file: 9fc1e722-9a64-4682-86cc-c7e5f9f99637_EVN 3855 Report for Transportation from Polivakkam to Visakhapatnam.xlsx, table: 9fc1e722_9a64_4682_86cc_c7e5f9f99637_evn_3855_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3855 - Event Name: Online negotiation of Transportation of Material from Polivakkam to Visakhapatnam - Event Timeline: 2026-04-23 15:00 to 2026-04-23 17:18 - No. of Participants: 5 - Color Legend: Rank 1 | Rank 2 | Rank 3"
+2026-07-18 13:00:25,016 [INFO] [7] Chunk ID: fc01b30b-3416-4776-8f21-0af70668759c_EVN 3577 Report for Transportation from FBD to Mizoram.xlsx_0
+2026-07-18 13:00:25,016 [INFO] Score: N/A
+2026-07-18 13:00:25,016 [INFO] Rerank Score: -10.6767
+2026-07-18 13:00:25,016 [INFO] Text: "# Report information (file: fc01b30b-3416-4776-8f21-0af70668759c_EVN 3577 Report for Transportation from FBD to Mizoram.xlsx, table: fc01b30b_3416_4776_8f21_0af70668759c_evn_3577_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3577 - Event Name: Online negotiation of Transportation of Hydra 12 from FBD to Mizoram - Event Timeline: 2026-03-18 15:00 to 2026-03-18 17:22 - No. of Participants: 4 - Color Legend: Rank 1 | Rank 2 | Rank 3"
+2026-07-18 13:00:25,016 [INFO] [8] Chunk ID: da61e052-01f3-4ada-b53e-b35abbca4ce9_EVN 3634 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx_0
+2026-07-18 13:00:25,016 [INFO] Score: N/A
+2026-07-18 13:00:25,016 [INFO] Rerank Score: -10.7189
+2026-07-18 13:00:31,079 [INFO] Text: "# Report information (file: da61e052-01f3-4ada-b53e-b35abbca4ce9_EVN 3634 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx, table: da61e052_01f3_4ada_b53e_b35abbca4ce9_evn_3634_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3634 - Event Name: Online negotiation of Transportation of Tractor from Ramachandrapuram, AP to Thiruvarur, TN - Event Timeline: 2026-03-24 15:00 to 2026-03-24 16:00 - No. of Participants: 3 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: Holisol Logistics Pvt. Ltd | URL Safe Express Private Limited | Mohan Logistics Pvt. Ltd."2026-07-18 13:00:31,079 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for d36b6b49-6a63-411a-bae8-5e0f935a8685_EVN 3503 Report for Transportation from ETDC Bangalore to Hubli Depot.xlsx (stored in index_store/overviews/2d0592cb-ba2f-4b98-bf6a-cd247eff9c76.jsonl)
+2026-07-18 13:00:31,081 [INFO] 2026-07-18 13:00:31,079 | INFO     | rag_system.utils.batch_processor | Document Processing: 4/32 (12.5%) - 0.18 items/sec - ETA: 2.5min - Errors: 0
+2026-07-18 13:00:34,931 [INFO] 2026-07-18 13:00:34,931 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 33041f9b-680b-4122-928f-e39b3c5becf6_EVN 3517 Report for Transportation from FBD to Spiti, HP.xlsx (stored in index_store/overviews/2d0592cb-ba2f-4b98-bf6a-cd247eff9c76.jsonl)
+2026-07-18 13:00:38,970 [INFO] 2026-07-18 13:00:38,970 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for ff516164-bdb9-44ec-9197-1372f54e6323_EVN 3517 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx (stored in index_store/overviews/2d0592cb-ba2f-4b98-bf6a-cd247eff9c76.jsonl)
+2026-07-18 13:00:43,413 [INFO] 2026-07-18 13:00:43,413 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 2c24c2cc-6983-4aa4-8077-6df7d366159a_EVN 3536 Report for Transportation from Rapar, Kutch GJ to Ahmedabad GJ.xlsx (stored in index_store/overviews/2d0592cb-ba2f-4b98-bf6a-cd247eff9c76.jsonl)
+2026-07-18 13:00:43,415 [INFO] 2026-07-18 13:00:43,413 | INFO     | rag_system.utils.batch_processor | Document Processing: 7/32 (21.9%) - 0.21 items/sec - ETA: 2.0min - Errors: 0
+2026-07-18 13:00:49,637 [INFO] 2026-07-18 13:00:49,637 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 0b980cfd-8bc9-44a3-9be1-07d6383c7e2f_EVN 3569 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx (stored in index_store/overviews/2d0592cb-ba2f-4b98-bf6a-cd247eff9c76.jsonl)
+2026-07-18 13:00:52,991 [INFO] Demo component rendering...
+2026-07-18 13:00:53,023 [INFO] GET / 200 in 68ms
+2026-07-18 13:00:53,414 [INFO] ✓ Compiled /favicon.ico in 227ms (743 modules)
+2026-07-18 13:00:53,502 [INFO] GET /favicon.ico 200 in 320ms
+2026-07-18 13:00:54,516 [INFO] 2026-07-18 13:00:54,516 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 2fc8594a-d716-4393-9180-3a98f82cd675_EVN 3649 Report for Transportation of materials from Villupuram to Thiruvallur.xlsx (stored in index_store/overviews/2d0592cb-ba2f-4b98-bf6a-cd247eff9c76.jsonl)
+2026-07-18 13:00:54,517 [INFO] 2026-07-18 13:00:54,516 | INFO     | rag_system.utils.batch_processor | Document Processing: 9/32 (28.1%) - 0.20 items/sec - ETA: 1.9min - Errors: 0
+2026-07-18 13:01:00,673 [INFO] 2026-07-18 13:01:00,672 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 06fe456e-2d12-42bf-8214-d57d58f867b2_EVN 3648 Report for Transportation from FBD to Singrauli, MP.xlsx (stored in index_store/overviews/2d0592cb-ba2f-4b98-bf6a-cd247eff9c76.jsonl)
+2026-07-18 13:01:08,091 [INFO] 2026-07-18 13:01:08,091 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 0cca0180-c6ba-40fc-b3eb-2549c8be426e_EVN 3634 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx (stored in index_store/overviews/2d0592cb-ba2f-4b98-bf6a-cd247eff9c76.jsonl)
+2026-07-18 13:01:08,091 [INFO] 2026-07-18 13:01:08,091 | INFO     | rag_system.utils.batch_processor | Document Processing: 11/32 (34.4%) - 0.19 items/sec - ETA: 1.9min - Errors: 0
+2026-07-18 13:01:13,418 [INFO] 2026-07-18 13:01:13,418 | INFO     | rag_system.indexing.overview_builder | 📄 Overview generated for 9ed956ee-bfa6-45e4-abb6-01f353e82d3b_EVN 3610 Report for Transportation of Machines from Khordha to Pune.xlsx (stored in index_store/overviews/2d0592cb-ba2f-4b98-bf6a-cd247eff9c76.jsonl)
+2026-07-18 13:01:24,842 [INFO] 🚀 Starting RAG System Components...
+2026-07-18 13:01:24,842 [INFO] 🔍 Checking prerequisites...
+2026-07-18 13:01:25,031 [INFO] ✅ All prerequisites satisfied
+2026-07-18 13:01:25,033 [INFO] ✅ Ollama already running
+2026-07-18 13:01:25,033 [INFO] 📥 Checking required models...
+2026-07-18 13:01:25,048 [INFO] ✅ qwen3:8b already available
+2026-07-18 13:01:25,048 [INFO] ✅ qwen3:0.6b already available
+2026-07-18 13:01:25,053 [INFO] 🔄 Starting rag-api on port 8001...
+2026-07-18 13:01:28,059 [INFO] ✅ rag-api started successfully (PID: 8339)
+2026-07-18 13:01:28,060 [INFO] 🔄 Starting backend on port 8000...
+2026-07-18 13:01:28,094 [INFO] /Users/aasthachaudhary/Desktop/localGPT/backend/server.py:4: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+2026-07-18 13:01:28,094 [INFO] import cgi
+2026-07-18 13:01:30,067 [INFO] ✅ backend started successfully (PID: 8341)
+2026-07-18 13:01:30,067 [INFO] 🔄 Starting frontend on port 3000...
+2026-07-18 13:01:30,151 [INFO] > multimodal_rag@0.1.0 dev
+2026-07-18 13:01:30,152 [INFO] > next dev
+2026-07-18 13:01:30,852 [INFO] ▲ Next.js 15.3.3
+2026-07-18 13:01:30,852 [INFO] - Local:        http://localhost:3000
+2026-07-18 13:01:30,852 [INFO] - Network:      http://192.168.1.7:3000
+2026-07-18 13:01:30,852 [INFO] ✓ Starting...
+2026-07-18 13:01:31,914 [INFO] ✓ Ready in 1176ms
+2026-07-18 13:01:35,074 [INFO] ✅ frontend started successfully (PID: 8344)
+2026-07-18 13:01:35,074 [INFO] 
+2026-07-18 13:01:35,074 [INFO] 🎉 RAG System Started!
+2026-07-18 13:01:35,074 [INFO] 📊 Services Status:
+2026-07-18 13:01:35,076 [INFO]    • Ollama    : ✅ Running  http://localhost:11434
+2026-07-18 13:01:35,076 [INFO]    • Rag-api   : ✅ Running  http://localhost:8001
+2026-07-18 13:01:35,076 [INFO]    • Backend   : ✅ Running  http://localhost:8000
+2026-07-18 13:01:35,076 [INFO]    • Frontend  : ✅ Running  http://localhost:3000
+2026-07-18 13:01:35,076 [INFO] 
+2026-07-18 13:01:35,076 [INFO] 🌐 Access your RAG system at: http://localhost:3000
+2026-07-18 13:01:35,076 [INFO] 
+2026-07-18 13:01:35,076 [INFO] 📋 Useful commands:
+2026-07-18 13:01:35,076 [INFO]    • Stop system:  Ctrl+C
+2026-07-18 13:01:35,076 [INFO]    • Check logs:   tail -f logs/*.log
+2026-07-18 13:01:35,076 [INFO]    • Health check: python run_system.py --health
+2026-07-18 13:01:35,076 [INFO] 👁️  Monitoring services... (Press Ctrl+C to stop)
+2026-07-18 13:01:38,611 [INFO] ○ Compiling / ...
+2026-07-18 13:01:39,001 [INFO] ✓ Compiled / in 905ms (1373 modules)
+2026-07-18 13:01:39,167 [INFO] Demo component rendering...
+2026-07-18 13:01:39,194 [INFO] GET / 200 in 1111ms
+2026-07-18 13:01:52,238 [INFO] ✓ Compiled in 504ms (660 modules)
+2026-07-18 13:01:52,262 [INFO] GET / 200 in 21ms
+2026-07-18 13:01:52,351 [INFO] ✓ Compiled in 111ms (660 modules)
+2026-07-18 13:01:52,364 [INFO] GET / 200 in 10ms
+2026-07-18 13:02:38,104 [INFO] 127.0.0.1 - - [18/Jul/2026 13:02:38] "OPTIONS /chat/stream HTTP/1.1" 200 -
+2026-07-18 13:02:38,121 [INFO] 127.0.0.1 - - [18/Jul/2026 13:02:38] "POST /chat/stream HTTP/1.1" 200 -
+2026-07-18 13:02:38,320 [INFO] ✓ Compiled in 152ms (660 modules)
+2026-07-18 13:02:38,337 [INFO] GET / 200 in 13ms
+2026-07-18 13:02:54,170 [INFO] 2026-07-18 13:02:54,169 | INFO     | sentence_transformers.base.model | No modules.json found for cross-encoder/ms-marco-MiniLM-L-6-v2, initializing a new CrossEncoder model.
+2026-07-18 13:02:58,796 [INFO] ✓ Compiled in 159ms (660 modules)
+2026-07-18 13:02:58,879 [INFO] GET / 200 in 78ms
+2026-07-18 13:02:58,921 [INFO] ✓ Compiled in 122ms (660 modules)
+2026-07-18 13:02:58,933 [INFO] GET / 200 in 9ms
+2026-07-18 13:03:10,205 [INFO] ✓ Compiled in 157ms (660 modules)
+2026-07-18 13:03:10,224 [INFO] GET / 200 in 15ms
+2026-07-18 13:03:10,301 [INFO] ✓ Compiled in 92ms (660 modules)
+2026-07-18 13:03:10,310 [INFO] GET / 200 in 7ms
+2026-07-18 13:03:21,527 [INFO] ✓ Compiled in 163ms (660 modules)
+2026-07-18 13:03:21,543 [INFO] GET / 200 in 12ms
+2026-07-18 13:03:21,631 [INFO] ✓ Compiled in 102ms (660 modules)
+2026-07-18 13:03:21,643 [INFO] GET / 200 in 9ms
+2026-07-18 13:03:24,938 [INFO] ✓ Compiled in 157ms (660 modules)
+2026-07-18 13:03:24,959 [INFO] GET / 200 in 17ms
+2026-07-18 13:03:25,034 [INFO] ✓ Compiled in 93ms (660 modules)
+2026-07-18 13:03:25,047 [INFO] GET / 200 in 10ms
+2026-07-18 13:03:33,214 [INFO] ✓ Compiled in 157ms (660 modules)
+2026-07-18 13:03:33,229 [INFO] GET / 200 in 10ms
+2026-07-18 13:03:33,320 [INFO] ✓ Compiled in 103ms (660 modules)
+2026-07-18 13:03:33,330 [INFO] GET / 200 in 7ms
+2026-07-18 13:03:45,355 [INFO] 127.0.0.1 - - [18/Jul/2026 13:03:45] "OPTIONS /chat/stream HTTP/1.1" 200 -
+2026-07-18 13:03:45,371 [INFO] 127.0.0.1 - - [18/Jul/2026 13:03:45] "POST /chat/stream HTTP/1.1" 200 -
+2026-07-18 13:03:45,512 [INFO] ✓ Compiled in 140ms (660 modules)
+2026-07-18 13:03:45,524 [INFO] GET / 200 in 10ms
+2026-07-18 13:03:45,616 [INFO] ✓ Compiled in 103ms (660 modules)
+2026-07-18 13:03:45,626 [INFO] GET / 200 in 7ms
+2026-07-18 13:03:49,257 [INFO] ✓ Compiled in 131ms (660 modules)
+2026-07-18 13:03:49,272 [INFO] GET / 200 in 11ms
+2026-07-18 13:03:49,352 [INFO] ✓ Compiled in 91ms (660 modules)
+2026-07-18 13:03:49,426 [INFO] ✓ Compiled in 72ms (660 modules)
+2026-07-18 13:05:49,546 [INFO] 127.0.0.1 - - [18/Jul/2026 13:05:49] "OPTIONS /chat/stream HTTP/1.1" 200 -
+2026-07-18 13:05:49,559 [INFO] 127.0.0.1 - - [18/Jul/2026 13:05:49] "POST /chat/stream HTTP/1.1" 200 -
+2026-07-18 13:05:49,734 [INFO] ✓ Compiled in 175ms (660 modules)
+2026-07-18 13:05:49,821 [INFO] ✓ Compiled in 85ms (660 modules)
+2026-07-18 13:05:56,718 [INFO] 2026-07-18 13:05:56,717 | INFO     | rag-system | Top 20 results:
+2026-07-18 13:05:56,718 [INFO] 2026-07-18 13:05:56,717 | INFO     | rag-system | chunk_id       score   preview
+2026-07-18 13:05:56,718 [INFO] 2026-07-18 13:05:56,718 | INFO     | rag-system | ------------------------------
+2026-07-18 13:05:56,718 [INFO] 2026-07-18 13:05:56,718 | INFO     | rag-system | 126fa940-5eb 0.000   Context — Event EVN 3569 · Online negotiation of…
+2026-07-18 13:05:56,718 [INFO] 2026-07-18 13:05:56,718 | INFO     | rag-system | 3c4f6297-f09 0.000   Context — Event EVN 3517 · Online negotiation of…
+2026-07-18 13:05:56,718 [INFO] 2026-07-18 13:05:56,718 | INFO     | rag-system | 5d2a9bcf-162 0.000   Context — Event EVN 3517 · Online negotiation of…
+2026-07-18 13:05:56,718 [INFO] 2026-07-18 13:05:56,718 | INFO     | rag-system | 13ec1d9d-c8e 0.000   Context — Event EVN 3503 · Online negotiation of…
+2026-07-18 13:05:56,718 [INFO] 2026-07-18 13:05:56,718 | INFO     | rag-system | 8f2c15aa-d64 0.000   Context — Event EVN 3871 · Online negotiation of…
+2026-07-18 13:05:56,718 [INFO] 2026-07-18 13:05:56,718 | INFO     | rag-system | 254c48c6-612 0.000   ### Row 3 - Item description: Rates are collected on the…
+2026-07-18 13:05:56,719 [INFO] 2026-07-18 13:05:56,718 | INFO     | rag-system | fc01b30b-341 0.000   ### Row 3 - Item description: Rates are collected on the…
+2026-07-18 13:05:56,719 [INFO] 2026-07-18 13:05:56,718 | INFO     | rag-system | b270e9f1-38d 0.000   Context — Event EVN 3679 · Online negotiation of…
+2026-07-18 13:05:56,719 [INFO] 2026-07-18 13:05:56,719 | INFO     | rag-system | 28e79ed3-b40 0.000   Context — Event EVN 3649 · Online negotiation of…
+2026-07-18 13:05:56,719 [INFO] 2026-07-18 13:05:56,719 | INFO     | rag-system | dc5292b7-94e 0.000   Context — Event EVN 3610 · Online negotiation of…
+2026-07-18 13:05:56,719 [INFO] 2026-07-18 13:05:56,719 | INFO     | rag-system | faadc225-b4a 10598.096 # Report information (file: faadc225-b4af-41bd-…
+2026-07-18 13:05:56,719 [INFO] 2026-07-18 13:05:56,719 | INFO     | rag-system | da61e052-01f 10693.643 Total Cost NaN NaN NaN 55000.0 59500.0 64000.0 Rates are…
+2026-07-18 13:05:56,719 [INFO] 2026-07-18 13:05:56,719 | INFO     | rag-system | 31175e1d-c65 10801.516 Total basic value NaN NaN NaN 58500.0 59000.0 75000.0…
+2026-07-18 13:05:56,719 [INFO] 2026-07-18 13:05:56,719 | INFO     | rag-system | faadc225-b4a 10806.410 Total Cost NaN NaN NaN 29000.0 43000.0 45000.0 Rates are…
+2026-07-18 13:05:56,719 [INFO] 2026-07-18 13:05:56,719 | INFO     | rag-system | 254c48c6-612 11412.682 Context — Event EVN 3691 · Online negotiation of…
+2026-07-18 13:05:56,719 [INFO] 2026-07-18 13:05:56,719 | INFO     | rag-system | 41ecf3c0-e44 11415.092 Context — Event EVN 3356 · Online negotiation of…
+2026-07-18 13:05:56,719 [INFO] 2026-07-18 13:05:56,719 | INFO     | rag-system | 73fab6d3-032 11440.319 # Report information (file:…
+2026-07-18 13:05:56,719 [INFO] 2026-07-18 13:05:56,719 | INFO     | rag-system | ee0f1314-99d 11490.029 Total basic value NaN NaN NaN 29750.0 30250.0 40000.0 Rates…
+2026-07-18 13:05:56,719 [INFO] 2026-07-18 13:05:56,719 | INFO     | rag-system | da61e052-01f 11639.884 # Report information (file:…
+2026-07-18 13:05:56,720 [INFO] 2026-07-18 13:05:56,720 | INFO     | rag-system | c1f4f6bb-784 11882.790 Context — Event EVN 3610 · Online negotiation of…
+2026-07-18 13:05:56,808 [INFO] huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+2026-07-18 13:05:56,808 [INFO] To disable this warning, you can either:
+2026-07-18 13:05:56,808 [INFO] - Avoid using `tokenizers` before the fork if possible
+2026-07-18 13:05:56,808 [INFO] - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2026-07-18 13:05:57,407 [INFO] ✅ Database initialized successfully
+2026-07-18 13:05:57,407 [INFO] ✅ Database initialized successfully
+2026-07-18 13:05:57,407 [INFO] 🔧 Using Ollama backend
+2026-07-18 13:05:57,407 [INFO] Initialized Verifier with Ollama model 'qwen3:8b'.
+2026-07-18 13:05:57,407 [INFO] Agent initialized (GraphRAG disabled).
+2026-07-18 13:05:57,407 [INFO] docling DocumentConverter(s) initialized (OCR + no-OCR + general).
+2026-07-18 13:05:57,407 [INFO] 🔧 CHUNKING CONFIG: Size: 1500, Overlap: 200, Mode: docling
+2026-07-18 13:05:57,407 [INFO] 🪄 Using DoclingChunker for high-recall sentence packing.
+2026-07-18 13:05:57,407 [INFO] LanceDB connection established at: ./lancedb
+2026-07-18 13:05:57,408 [INFO] Initializing HF Embedder with model 'Qwen/Qwen3-Embedding-0.6B' on device 'mps'. (first load)
+2026-07-18 13:05:57,408 [INFO] QwenEmbedder weights loaded and cached for Qwen/Qwen3-Embedding-0.6B.
+2026-07-18 13:05:57,408 [INFO] 🧠 Initializing RAG Agent with MAXIMUM ACCURACY... (This may take a moment)
+2026-07-18 13:05:57,408 [INFO] ✅ RAG Agent initialized successfully with MAXIMUM ACCURACY.
+2026-07-18 13:05:57,408 [INFO] ✅ Drafting backend ready: {'configured_backend': 'local', 'cloud_available': False, 'note': 'Fully air-gapped: drafting uses the local model only.'}
+2026-07-18 13:05:57,408 [INFO] ✅ Analytics engine ready (procurement_events).
+2026-07-18 13:05:57,408 [INFO] 🚀 Starting Advanced RAG API server on port 8001
+2026-07-18 13:05:57,408 [INFO] 💬 Chat endpoint: http://localhost:8001/chat
+2026-07-18 13:05:57,408 [INFO] ✨ Indexing endpoint: http://localhost:8001/index
+2026-07-18 13:05:57,408 [INFO] 📝 Updated session title to: Provide me all the vendor details
+2026-07-18 13:05:57,408 [INFO] 💾 Stored user message: 6148a97a-0a7b-4ff7-b64d-31fd68c4d108
+2026-07-18 13:05:57,408 [INFO] ⚠️  No per-index overviews found for ['cecdf9c4-7603-4c14-bf66-175f5b10a81a']. Using global overview file.
+2026-07-18 13:05:57,408 [INFO] 🔍 ROUTING DEBUG: Starting triage for query: 'Provide me all the vendor details...'
+2026-07-18 13:05:57,408 [INFO] 📖 ROUTING DEBUG: Attempting overview-based routing...
+2026-07-18 13:05:57,408 [INFO] 📖 ROUTING DEBUG: No document overviews available, returning None
+2026-07-18 13:05:57,408 [INFO] ❌ ROUTING DEBUG: Overview routing returned None, falling back to LLM triage
+2026-07-18 13:05:57,408 [INFO] 🤖 ROUTING DEBUG: No history, using LLM fallback triage...
+2026-07-18 13:05:57,408 [INFO] 🤖 ROUTING DEBUG: LLM fallback triage decided: 'rag_query'
+2026-07-18 13:05:57,408 [INFO] 🎯 ROUTING DEBUG: Final triage decision: 'rag_query'
+2026-07-18 13:05:57,408 [INFO] Agent Triage Decision: 'rag_query'
+2026-07-18 13:05:57,408 [INFO] 🔍 Retrieval K set to: 20
+2026-07-18 13:05:57,408 [INFO] 🔍 Context window size set to: 1
+2026-07-18 13:05:57,408 [INFO] 🔍 Reranker top K set to: 10
+2026-07-18 13:05:57,408 [INFO] 🔍 Search type set to: hybrid
+2026-07-18 13:05:57,408 [INFO] 🔍 Dense search weight set to: 0.7
+2026-07-18 13:05:57,408 [INFO] Reusing cached QwenEmbedder weights for Qwen/Qwen3-Embedding-0.6B.
+2026-07-18 13:05:57,408 [INFO] Generating 1 embeddings with Qwen/Qwen3-Embedding-0.6B model...
+2026-07-18 13:05:57,408 [INFO] ✅ ROUTING DEBUG: Executing RAG_QUERY path (query_type='rag_query')
+2026-07-18 13:05:57,408 [INFO] --- Query Decomposition Enabled ---
+2026-07-18 13:05:57,408 [INFO] Query Decomposition Reasoning: Single information need; no pronouns or ambiguous references.
+2026-07-18 13:05:57,408 [INFO] Original query: 'Provide me all the vendor details' (Contextual: 'Provide me all the vendor details')
+2026-07-18 13:05:57,408 [INFO] Decomposed into 1 sub-queries: ['Provide me all the vendor details']
+2026-07-18 13:05:57,408 [INFO] --- Only one sub-query after decomposition; using direct retrieval path ---
+2026-07-18 13:05:57,408 [INFO] LanceDB connection established at: ./lancedb
+2026-07-18 13:05:57,408 [INFO] --- Performing Retrieval for query: 'Provide me all the vendor details' on table 'text_pages_cecdf9c4-7603-4c14-bf66-175f5b10a81a' ---
+2026-07-18 13:05:57,408 [INFO] Could not search table 'text_pages_cecdf9c4-7603-4c14-bf66-175f5b10a81a': Table 'text_pages_cecdf9c4-7603-4c14-bf66-175f5b10a81a' was not found
+2026-07-18 13:05:57,408 [INFO] ✅ MiniLM cross-encoder reranker ready (cross-encoder/ms-marco-MiniLM-L-6-v2, CPU)
+2026-07-18 13:05:57,408 [INFO] ✅ AI reranker initialized successfully.
+2026-07-18 13:05:57,408 [INFO] --- Final Documents for Synthesis ---
+2026-07-18 13:05:57,408 [INFO] No documents to synthesize.
+2026-07-18 13:05:57,408 [INFO] ------------------------------------
+2026-07-18 13:05:57,408 [INFO] 🚀 Skipping verification for speed or lack of sources
+2026-07-18 13:05:57,408 [INFO] 🚀 Total query processing time: 20.50s
+2026-07-18 13:05:57,408 [INFO] 💾 Stored AI response: 89255f0c-fabc-4815-b048-d59c301d2410
+2026-07-18 13:05:57,408 [INFO] 💾 Stored user message: 77d086db-964d-460f-80a8-eaf206bd8346
+2026-07-18 13:05:57,408 [INFO] 📖 Loaded 24 overviews for indexes ['0a6ce348']
+2026-07-18 13:05:57,408 [INFO] 🔍 ROUTING DEBUG: Starting triage for query: 'provide me with all the vendor details...'
+2026-07-18 13:05:57,408 [INFO] 📖 ROUTING DEBUG: Attempting overview-based routing...
+2026-07-18 13:05:57,408 [INFO] 📖 ROUTING DEBUG: Found 24 document overviews, using LLM routing...
+2026-07-18 13:05:57,408 [INFO] 📖 ROUTING DEBUG: Overview LLM raw response: '{"category": "rag_query"}...'
+2026-07-18 13:05:57,408 [INFO] 📖 ROUTING DEBUG: Overview routing final decision: 'rag_query'
+2026-07-18 13:05:57,408 [INFO] ✅ ROUTING DEBUG: Overview routing decided: 'rag_query'
+2026-07-18 13:05:57,408 [INFO] 🎯 ROUTING DEBUG: Final triage decision: 'rag_query'
+2026-07-18 13:05:57,408 [INFO] Agent Triage Decision: 'rag_query'
+2026-07-18 13:05:57,408 [INFO] 🔍 Retrieval K set to: 20
+2026-07-18 13:05:57,409 [INFO] 🔍 Context window size set to: 1
+2026-07-18 13:05:57,409 [INFO] 🔍 Reranker top K set to: 10
+2026-07-18 13:05:57,409 [INFO] 🔍 Search type set to: hybrid
+2026-07-18 13:05:57,409 [INFO] 🔍 Dense search weight set to: 0.7
+2026-07-18 13:05:57,409 [INFO] Generating 1 embeddings with Qwen/Qwen3-Embedding-0.6B model...
+2026-07-18 13:05:57,409 [INFO] 🚀 Semantic cache hit! Similarity: 0.992 with cached query 'Provide me all the vendor details'
+2026-07-18 13:05:57,409 [INFO] 💾 Stored AI response: 8c4556a8-fffd-4c0f-bade-ba5f039d5c09
+2026-07-18 13:05:57,409 [INFO] 💾 Stored user message: fad4ca6f-1640-4b02-ad07-40f77312ee39
+2026-07-18 13:05:57,409 [INFO] 📖 Loaded 24 overviews for indexes ['0a6ce348']
+2026-07-18 13:05:57,409 [INFO] 🔍 ROUTING DEBUG: Starting triage for query: 'what are best rates for Patna or lucknow...'
+2026-07-18 13:05:57,409 [INFO] 📖 ROUTING DEBUG: Attempting overview-based routing...
+2026-07-18 13:05:57,409 [INFO] 📖 ROUTING DEBUG: Found 24 document overviews, using LLM routing...
+2026-07-18 13:05:57,409 [INFO] 📖 ROUTING DEBUG: Overview LLM raw response: '{"category": "rag_query"}...'
+2026-07-18 13:05:57,409 [INFO] 📖 ROUTING DEBUG: Overview routing final decision: 'rag_query'
+2026-07-18 13:05:57,409 [INFO] ✅ ROUTING DEBUG: Overview routing decided: 'rag_query'
+2026-07-18 13:05:57,409 [INFO] 🎯 ROUTING DEBUG: Final triage decision: 'rag_query'
+2026-07-18 13:05:57,409 [INFO] Agent Triage Decision: 'rag_query'
+2026-07-18 13:05:57,409 [INFO] 🔍 Retrieval K set to: 20
+2026-07-18 13:05:57,409 [INFO] 🔍 Context window size set to: 1
+2026-07-18 13:05:57,409 [INFO] 🔍 Reranker top K set to: 10
+2026-07-18 13:05:57,409 [INFO] 🔍 Search type set to: hybrid
+2026-07-18 13:05:57,409 [INFO] 🔍 Dense search weight set to: 0.7
+2026-07-18 13:05:57,409 [INFO] Generating 1 embeddings with Qwen/Qwen3-Embedding-0.6B model...
+2026-07-18 13:05:57,409 [INFO] ✅ ROUTING DEBUG: Executing RAG_QUERY path (query_type='rag_query')
+2026-07-18 13:05:57,409 [INFO] --- Query Decomposition Enabled ---
+2026-07-18 13:05:57,409 [INFO] Failed to decode JSON from query decomposer: {"requires_decomposition":true,"reasoning":"Multiple destinations require separate rate checks.","resolved_query":"what are best rates for Patna or lucknow","sub_queries":["what are best rates for Patna","what are best rates for lucknow"]
+2026-07-18 13:05:57,409 [INFO] Original query: 'what are best rates for Patna or lucknow' (Contextual: 'what are best rates for Patna or lucknow')
+2026-07-18 13:05:57,409 [INFO] Decomposed into 1 sub-queries: ['what are best rates for Patna or lucknow']
+2026-07-18 13:05:57,409 [INFO] --- Only one sub-query after decomposition; using direct retrieval path ---
+2026-07-18 13:05:57,409 [INFO] --- Performing Retrieval for query: 'what are best rates for Patna or lucknow' on table 'text_pages_0a6ce348-969d-4ca5-abc6-d19ac38f1684' ---
+2026-07-18 13:05:57,409 [INFO] Generating 1 embeddings with Qwen/Qwen3-Embedding-0.6B model...
+2026-07-18 13:05:57,409 [INFO] Retrieved 20 documents.
+2026-07-18 13:05:57,409 [INFO] --- Reranking top 20 docs with AI model... ---
+2026-07-18 13:05:57,409 [INFO] ✅ Reranking completed in 0.66s. Refined to 10 docs.
+2026-07-18 13:05:57,409 [INFO] --- Expanding context for 10 top documents (window size: 1)... ---
+2026-07-18 13:05:57,409 [INFO] Expanded to 20 unique chunks for synthesis.
+2026-07-18 13:05:57,409 [INFO] --- Final Documents for Synthesis ---
+2026-07-18 13:05:57,409 [INFO] [1] Chunk ID: b270e9f1-38d9-4c6d-a5de-839584f9cad1_EVN 3679 Report for Transportation of tractor from FBD to Jammu.xlsx_0
+2026-07-18 13:05:57,409 [INFO] Score: N/A
+2026-07-18 13:05:57,409 [INFO] Rerank Score: -9.6267
+2026-07-18 13:05:57,409 [INFO] Text: "# Report information (file: b270e9f1-38d9-4c6d-a5de-839584f9cad1_EVN 3679 Report for Transportation of tractor from FBD to Jammu.xlsx, table: b270e9f1_38d9_4c6d_a5de_839584f9cad1_evn_3679_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3679 - Event Name: Online negotiation of Transportation of tractor from FBD to Jammu - Event Timeline: 2026-03-26 11:00 to 2026-03-27 17:52 - No. of Participants: 2 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: PMTC | BIMAL TRANSPORT | MOHAN LOGISTICS PRIVATE LIMITED"
+2026-07-18 13:05:57,409 [INFO] [2] Chunk ID: 41ecf3c0-e44d-41d6-8232-eb6e77f3c1bb_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx_0
+2026-07-18 13:05:57,409 [INFO] Score: N/A
+2026-07-18 13:05:57,409 [INFO] Rerank Score: -9.9445
+2026-07-18 13:07:10,792 [INFO] Text: "Context — Event EVN 3356 · Online negotiation of Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124 · 57 participants (This record is part of event EVN 3356 from file 41ecf3c0-e44d-41d6-8232-eb6e77f3c1bb_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-1 of data table '41ecf3c0_e44d_41d6_8232_eb6e77f3c1bb_evn_3356_report_for_tra' (file: 41ecf3c0-e44d-41d6-8232-eb6e77f3c1bb_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx) ### Row 1 - Item description: Freight Charge for 2 Nos. 40 ft Trailor Semi for Transportation of 2 Nos. F23 from ECE Plot No. 219, Sec.- 58, Ballabhgarh, Faridabad-121004 to SHIVHARE ROAD LINES CAMP OFFICE NEAR BHARAT PETROLEUM CORPORATION LTD REFINERY COMPLEX BINA MADHYA PRADESH SAGAR 470124. Material Weight: 21600KG. - Vehicle Qty: 1 - L1 Rate: 85000 - L1 Transporter: ATUL LOGISTICS - Final Price: 85000 - Final Price_1: 92000 - Final Price_2: 94000"2026-07-18 13:07:10,792 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-07-18 13:07:11,045 [INFO] ✓ Compiled in 236ms (660 modules)
+2026-07-18 13:07:11,153 [INFO] ✓ Compiled in 103ms (660 modules)
+2026-07-18 13:07:47,062 [INFO] 127.0.0.1 - - [18/Jul/2026 13:07:47] "OPTIONS /chat/stream HTTP/1.1" 200 -
+2026-07-18 13:07:47,082 [INFO] 127.0.0.1 - - [18/Jul/2026 13:07:47] "POST /chat/stream HTTP/1.1" 200 -
+2026-07-18 13:07:47,267 [INFO] ✓ Compiled in 185ms (660 modules)
+2026-07-18 13:07:47,375 [INFO] ✓ Compiled in 105ms (660 modules)
+2026-07-18 13:07:55,911 [INFO] 2026-07-18 13:07:55,911 | INFO     | rag-system | Top 18 results:
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,911 | INFO     | rag-system | chunk_id       score   preview
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,911 | INFO     | rag-system | ------------------------------
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,911 | INFO     | rag-system | 61a51493-694 0.000   Context — Event EVN 3456 · Online negotiation of…
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,911 | INFO     | rag-system | dc5292b7-94e 0.000   Context — Event EVN 3610 · Online negotiation of…
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,912 | INFO     | rag-system | aa7c2999-009 0.000   # Report information (file:…
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,912 | INFO     | rag-system | c1f4f6bb-784 0.000   # Report information (file:…
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,912 | INFO     | rag-system | 41ecf3c0-e44 9948.514 Context — Event EVN 3356 · Online negotiation of…
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,912 | INFO     | rag-system | 8f2c15aa-d64 10069.245 # Report information (file:…
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,912 | INFO     | rag-system | faadc225-b4a 10212.132 # Report information (file: faadc225-b4af-41bd-…
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,912 | INFO     | rag-system | 28e79ed3-b40 10292.327 Context — Event EVN 3649 · Online negotiation of…
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,912 | INFO     | rag-system | 126fa940-5eb 10405.771 Context — Event EVN 3569 · Online negotiation of…
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,912 | INFO     | rag-system | 13ec1d9d-c8e 10753.396 # Report information (file:…
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,912 | INFO     | rag-system | b270e9f1-38d 10755.098 # Report information (file:…
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,912 | INFO     | rag-system | faadc225-b4a 10869.174 Total Cost NaN NaN NaN 29000.0 43000.0 45000.0 Rates are…
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,912 | INFO     | rag-system | da61e052-01f 10920.689 Total Cost NaN NaN NaN 55000.0 59500.0 64000.0 Rates are…
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,912 | INFO     | rag-system | 73fab6d3-032 11040.284 # Report information (file:…
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,912 | INFO     | rag-system | da61e052-01f 11185.742 # Report information (file:…
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,912 | INFO     | rag-system | 99bb4e95-448 11457.481 # Report information (file:…
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,912 | INFO     | rag-system | ee0f1314-99d 11567.634 Total basic value NaN NaN NaN 29750.0 30250.0 40000.0 Rates…
+2026-07-18 13:07:55,912 [INFO] 2026-07-18 13:07:55,912 | INFO     | rag-system | 3c4f6297-f09 11592.808 Context — Event EVN 3517 · Online negotiation of…
+2026-07-18 13:07:55,926 [INFO] 2026-07-18 13:07:55,926 | INFO     | rag-system | Top 20 results:
+2026-07-18 13:07:55,926 [INFO] 2026-07-18 13:07:55,926 | INFO     | rag-system | chunk_id       score   preview
+2026-07-18 13:07:55,926 [INFO] 2026-07-18 13:07:55,926 | INFO     | rag-system | ------------------------------
+2026-07-18 13:07:55,927 [INFO] 2026-07-18 13:07:55,926 | INFO     | rag-system | 126fa940-5eb 0.000   Context — Event EVN 3569 · Online negotiation of…
+2026-07-18 13:07:55,927 [INFO] 2026-07-18 13:07:55,927 | INFO     | rag-system | 3c4f6297-f09 0.000   Context — Event EVN 3517 · Online negotiation of…
+2026-07-18 13:07:55,928 [INFO] 2026-07-18 13:07:55,928 | INFO     | rag-system | Top 20 results:
+2026-07-18 13:07:55,928 [INFO] 2026-07-18 13:07:55,928 | INFO     | rag-system | 5d2a9bcf-162 0.000   Context — Event EVN 3517 · Online negotiation of…
+2026-07-18 13:07:55,928 [INFO] 2026-07-18 13:07:55,928 | INFO     | rag-system | chunk_id       score   preview
+2026-07-18 13:07:55,928 [INFO] 2026-07-18 13:07:55,928 | INFO     | rag-system | 13ec1d9d-c8e 0.000   Context — Event EVN 3503 · Online negotiation of…
+2026-07-18 13:07:55,929 [INFO] 2026-07-18 13:07:55,928 | INFO     | rag-system | ------------------------------
+2026-07-18 13:07:55,929 [INFO] 2026-07-18 13:07:55,928 | INFO     | rag-system | 8f2c15aa-d64 0.000   Context — Event EVN 3871 · Online negotiation of…
+2026-07-18 13:07:55,929 [INFO] 2026-07-18 13:07:55,929 | INFO     | rag-system | 61a51493-694 0.000   Context — Event EVN 3456 · Online negotiation of…
+2026-07-18 13:07:55,929 [INFO] 2026-07-18 13:07:55,929 | INFO     | rag-system | 254c48c6-612 0.000   ### Row 3 - Item description: Rates are collected on the…
+2026-07-18 13:07:55,929 [INFO] 2026-07-18 13:07:55,929 | INFO     | rag-system | fc01b30b-341 0.000   ### Row 3 - Item description: Rates are collected on the…
+2026-07-18 13:07:55,929 [INFO] 2026-07-18 13:07:55,929 | INFO     | rag-system | dc5292b7-94e 0.000   Context — Event EVN 3610 · Online negotiation of…
+2026-07-18 13:07:55,930 [INFO] 2026-07-18 13:07:55,929 | INFO     | rag-system | b270e9f1-38d 0.000   Context — Event EVN 3679 · Online negotiation of…
+2026-07-18 13:07:55,930 [INFO] 2026-07-18 13:07:55,930 | INFO     | rag-system | c1f4f6bb-784 0.000   Context — Event EVN 3610 · Online negotiation of…
+2026-07-18 13:07:55,930 [INFO] 2026-07-18 13:07:55,930 | INFO     | rag-system | 28e79ed3-b40 0.000   Context — Event EVN 3649 · Online negotiation of…
+2026-07-18 13:07:55,930 [INFO] 2026-07-18 13:07:55,930 | INFO     | rag-system | aa7c2999-009 0.000   Context — Event EVN 3610 · Online negotiation of…
+2026-07-18 13:07:55,931 [INFO] 2026-07-18 13:07:55,930 | INFO     | rag-system | dc5292b7-94e 0.000   Context — Event EVN 3610 · Online negotiation of…
+2026-07-18 13:07:55,931 [INFO] 2026-07-18 13:07:55,931 | INFO     | rag-system | 8f2c15aa-d64 0.000   Context — Event EVN 3871 · Online negotiation of…
+2026-07-18 13:07:55,931 [INFO] 2026-07-18 13:07:55,931 | INFO     | rag-system | faadc225-b4a 12271.179 # Report information (file: faadc225-b4af-41bd-…
+2026-07-18 13:07:55,932 [INFO] 2026-07-18 13:07:55,931 | INFO     | rag-system | 13ec1d9d-c8e 10432.681 Context — Event EVN 3503 · Online negotiation of…
+2026-07-18 13:07:55,932 [INFO] 2026-07-18 13:07:55,931 | INFO     | rag-system | da61e052-01f 12323.928 Total Cost NaN NaN NaN 55000.0 59500.0 64000.0 Rates are…
+2026-07-18 13:07:55,932 [INFO] 2026-07-18 13:07:55,932 | INFO     | rag-system | 28e79ed3-b40 11631.592 Context — Event EVN 3649 · Online negotiation of…
+2026-07-18 13:07:55,932 [INFO] 2026-07-18 13:07:55,932 | INFO     | rag-system | 31175e1d-c65 12385.405 Total basic value NaN NaN NaN 58500.0 59000.0 75000.0…
+2026-07-18 13:07:55,932 [INFO] 2026-07-18 13:07:55,932 | INFO     | rag-system | 31175e1d-c65 11829.620 Total basic value NaN NaN NaN 58500.0 59000.0 75000.0…
+2026-07-18 13:07:55,932 [INFO] 2026-07-18 13:07:55,932 | INFO     | rag-system | faadc225-b4a 12453.817 Total Cost NaN NaN NaN 29000.0 43000.0 45000.0 Rates are…
+2026-07-18 13:07:55,932 [INFO] 2026-07-18 13:07:55,932 | INFO     | rag-system | 3c4f6297-f09 11857.170 Context — Event EVN 3517 · Online negotiation of…
+2026-07-18 13:07:55,932 [INFO] 2026-07-18 13:07:55,932 | INFO     | rag-system | 254c48c6-612 13035.012 Context — Event EVN 3691 · Online negotiation of…
+2026-07-18 13:07:55,933 [INFO] 2026-07-18 13:07:55,932 | INFO     | rag-system | faadc225-b4a 11881.294 # Report information (file: faadc225-b4af-41bd-…
+2026-07-18 13:07:55,933 [INFO] 2026-07-18 13:07:55,932 | INFO     | rag-system | ee0f1314-99d 13121.402 Total basic value NaN NaN NaN 29750.0 30250.0 40000.0 Rates…
+2026-07-18 13:07:55,933 [INFO] 2026-07-18 13:07:55,933 | INFO     | rag-system | da61e052-01f 11997.634 Total Cost NaN NaN NaN 55000.0 59500.0 64000.0 Rates are…
+2026-07-18 13:07:55,933 [INFO] 2026-07-18 13:07:55,933 | INFO     | rag-system | 73fab6d3-032 13130.007 # Report information (file:…
+2026-07-18 13:07:55,933 [INFO] 2026-07-18 13:07:55,933 | INFO     | rag-system | 126fa940-5eb 12027.522 Context — Event EVN 3569 · Online negotiation of…
+2026-07-18 13:07:55,933 [INFO] 2026-07-18 13:07:55,933 | INFO     | rag-system | da61e052-01f 13273.428 # Report information (file:…
+2026-07-18 13:07:55,933 [INFO] 2026-07-18 13:07:55,933 | INFO     | rag-system | faadc225-b4a 12042.913 Total Cost NaN NaN NaN 29000.0 43000.0 45000.0 Rates are…
+2026-07-18 13:07:55,933 [INFO] 2026-07-18 13:07:55,933 | INFO     | rag-system | 41ecf3c0-e44 13297.468 Context — Event EVN 3356 · Online negotiation of…
+2026-07-18 13:07:55,934 [INFO] 2026-07-18 13:07:55,933 | INFO     | rag-system | b270e9f1-38d 12352.065 # Report information (file:…
+2026-07-18 13:07:55,934 [INFO] 2026-07-18 13:07:55,933 | INFO     | rag-system | 9fc1e722-9a6 13431.084 Other details shared over mail. 13.0 54300.0 United Cargo…
+2026-07-18 13:07:55,934 [INFO] 2026-07-18 13:07:55,934 | INFO     | rag-system | ee0f1314-99d 12720.959 Total basic value NaN NaN NaN 29750.0 30250.0 40000.0 Rates…
+2026-07-18 13:07:55,934 [INFO] 2026-07-18 13:07:55,934 | INFO     | rag-system | 9fc1e722-9a6 12721.384 Other details shared over mail. 13.0 54300.0 United Cargo…
+2026-07-18 13:07:55,935 [INFO] 2026-07-18 13:07:55,934 | INFO     | rag-system | 73fab6d3-032 12730.837 # Report information (file:…
+2026-07-18 13:07:55,935 [INFO] 2026-07-18 13:07:55,934 | INFO     | rag-system | 254c48c6-612 12850.240 Context — Event EVN 3691 · Online negotiation of…
+2026-07-18 13:07:55,935 [INFO] 2026-07-18 13:07:55,934 | INFO     | rag-system | da61e052-01f 12955.605 # Report information (file:…
+2026-07-18 13:07:55,935 [INFO] 2026-07-18 13:07:55,934 | INFO     | rag-system | 41ecf3c0-e44 12965.963 Context — Event EVN 3356 · Online negotiation of…
+2026-07-18 13:07:56,744 [INFO] [3] Chunk ID: 3c4f6297-f097-4021-954b-c316b6872c8c_EVN 3517 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx_0
+2026-07-18 13:07:56,745 [INFO] Score: N/A
+2026-07-18 13:07:56,745 [INFO] Rerank Score: -9.9772
+2026-07-18 13:07:56,745 [INFO] Text: "# Report information (file: 3c4f6297-f097-4021-954b-c316b6872c8c_EVN 3517 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx, table: 3c4f6297_f097_4021_954b_c316b6872c8c_evn_3517_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3517 - Event Name: Online negotiation of Transportation of Tractor from Ramachandrapuram, AP to Thiruvarur, TN - Event Timeline: 2026-03-12 11:00 to 2026-03-12 18:20 - No. of Participants: 2 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: URL Safe Express Private Limited | Holisol Logistics Pvt. Ltd"
+2026-07-18 13:07:56,745 [INFO] [4] Chunk ID: 126fa940-5ebc-4d23-9adf-98787702f64c_EVN 3569 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx_0
+2026-07-18 13:07:56,745 [INFO] Score: N/A
+2026-07-18 13:07:56,745 [INFO] Rerank Score: -10.1960
+2026-07-18 13:07:56,745 [INFO] Text: "# Report information (file: 126fa940-5ebc-4d23-9adf-98787702f64c_EVN 3569 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx, table: 126fa940_5ebc_4d23_9adf_98787702f64c_evn_3569_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3569 - Event Name: Online negotiation of Transportation of Tractor from Ramachandrapuram, AP to Thiruvarur, TN - Event Timeline: 2026-03-18 11:00 to 2026-03-18 13:22 - No. of Participants: 2 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: Holisol Logistics Pvt. Ltd | URL Safe Express Private Limited"
+2026-07-18 13:07:56,745 [INFO] [5] Chunk ID: faadc225-b4af-41bd-bf4e-393f23e6b91a_EVN 3536 Report for Transportation from Rapar, Kutch GJ to Ahmedabad GJ.xlsx_1
+2026-07-18 13:07:56,745 [INFO] Score: N/A
+2026-07-18 13:07:56,745 [INFO] Rerank Score: -10.2687
+2026-07-18 13:07:56,745 [INFO] Text: "Total Cost  NaN      NaN                   NaN      29000.0        43000.0        45000.0 Rates are collected on the shared Pickup Date of 13th March, 2026  NaN      NaN                   NaN          NaN            NaN            NaN Numeric summary (min / mean / max): Qty  L1 Rate  Final Price  Final Price_1  Final Price_2 min   1.0  29000.0      29000.0        43000.0        45000.0 mean  1.0  29000.0      29000.0        43000.0        45000.0 max   1.0  29000.0      29000.0        43000.0        45000.0"
+2026-07-18 13:07:56,745 [INFO] [6] Chunk ID: 254c48c6-6126-48c9-a679-6a9b080bf4c2_EVN 3691 Report for Transportation from Satara to FBD.xlsx_0
+2026-07-18 13:07:56,745 [INFO] Score: N/A
+2026-07-18 13:07:56,745 [INFO] Rerank Score: -10.3220
+2026-07-18 13:07:56,745 [INFO] Text: "Context — Event EVN 3691 · Online negotiation of Transportation of Machine from Satara, Pune to FBD · 5 participants (This record is part of event EVN 3691 from file 254c48c6-6126-48c9-a679-6a9b080bf4c2_EVN 3691 Report for Transportation from Satara to FBD.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-3 of data table '254c48c6_6126_48c9_a679_6a9b080bf4c2_evn_3691_report_for_tra' (file: 254c48c6-6126-48c9-a679-6a9b080bf4c2_EVN 3691 Report for Transportation from Satara to FBD.xlsx) ### Row 1 - Item description: Freight charge for 14ft Canter (Non ODC) for Transportation of Promax from Shelke Agro Satara, Plot No. A21 Pune-Bangalore Highway, MIDC, Satara, Maharashtra,Near By Suzuki Showroom 415004 To Escorts Kubota Limited, 15/5 Sector 27A Mathura Road, Faridabad - 121003, Material weight 2400 Kg, Pickup date : 6th April, 2026. Other details shared over mail. - Qty: 1 - L1 Rate: 49650 - L1 Vendor: PMTC - Final Price: 49650 - Final Price_1: 50150 - Final Price_2: 51150 - Final Price_3: 59500 - Final Price_4: 60000 ### Row 2 - Item description: Total Cost - Final Price: 49650 - Final Price_1: 50150 - Final Price_2: 51150 - Final Price_3: 59500 - Final Price_4: 60000 ### Row 3"
+2026-07-18 13:07:56,745 [INFO] [7] Chunk ID: 13ec1d9d-c8e8-4fd3-b163-bc7383c64e94_EVN 3503 Report for Transportation from ETDC Bangalore to Hubli Depot.xlsx_0
+2026-07-18 13:07:56,745 [INFO] Score: N/A
+2026-07-18 13:07:56,745 [INFO] Rerank Score: -10.3486
+2026-07-18 13:07:56,745 [INFO] Text: "# Report information (file: 13ec1d9d-c8e8-4fd3-b163-bc7383c64e94_EVN 3503 Report for Transportation from ETDC Bangalore to Hubli Depot.xlsx, table: 13ec1d9d_c8e8_4fd3_b163_bc7383c64e94_evn_3503_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3503 - Event Name: Online negotiation of Transportation of Tractor from ETDC Bangalore to Hubli Depot - Event Timeline: 2026-03-10 15:00 to 2026-03-10 17:06 - No. of Participants: 3 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: URL Safe Express Private Limited | Holisol Logistics Pvt. Ltd | Jhanu Logistics ltd."
+2026-07-18 13:07:56,745 [INFO] [8] Chunk ID: 28e79ed3-b406-441f-a498-94ea4a2c41f5_EVN 3649 Report for Transportation of materials from Villupuram to Thiruvallur.xlsx_0
+2026-07-18 13:07:56,745 [INFO] Score: N/A
+2026-07-18 13:07:56,745 [INFO] Rerank Score: -10.4270
+2026-07-18 13:07:56,745 [INFO] Text: "# Report information (file: 28e79ed3-b406-441f-a498-94ea4a2c41f5_EVN 3649 Report for Transportation of materials from Villupuram to Thiruvallur.xlsx, table: 28e79ed3_b406_441f_a498_94ea4a2c41f5_evn_3649_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3649 - Event Name: Online negotiation of Transportation of Material from Villupuram to Thiruvallur - Event Timeline: 2026-03-26 11:00 to 2026-03-27 17:52 - No. of Participants: 2 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: URL Safe Express Private Limited | Rapid fleet management services"
+2026-07-18 13:07:56,745 [INFO] [9] Chunk ID: c1f4f6bb-784d-44bf-b7bc-457b4c4fb500_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 24 ft.xlsx_0
+2026-07-18 13:07:56,745 [INFO] Score: N/A
+2026-07-18 13:07:56,745 [INFO] Rerank Score: -10.4473
+2026-07-18 13:07:56,745 [INFO] Text: "# Report information (file: c1f4f6bb-784d-44bf-b7bc-457b4c4fb500_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 24 ft.xlsx, table: c1f4f6bb_784d_44bf_b7bc_457b4c4fb500_evn_3610_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3610 - Event Name: Online negotiation of Transportation of Machines from Pollivakkam, TN to Chakan, Pune - Event Timeline: 2026-03-20 15:00 to 2026-03-20 16:16 - No. of Participants: 6 - Color Legend: Rank 1 | Rank 2 | Rank 3"
+2026-07-18 13:07:56,746 [INFO] [10] Chunk ID: da61e052-01f3-4ada-b53e-b35abbca4ce9_EVN 3634 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx_1
+2026-07-18 13:07:56,746 [INFO] Score: N/A
+2026-07-18 13:07:56,746 [INFO] Rerank Score: -10.5146
+2026-07-18 13:07:56,746 [INFO] Text: "Total Cost  NaN      NaN                        NaN      55000.0        59500.0        64000.0 Rates are collected on the shared Pickup Date of 24th March, 2026  NaN      NaN                        NaN          NaN            NaN            NaN Numeric summary (min / mean / max): Qty  L1 Rate  Final Price  Final Price_1  Final Price_2 min   1.0  55000.0      55000.0        59500.0        64000.0 mean  1.0  55000.0      55000.0        59500.0        64000.0 max   1.0  55000.0      55000.0        59500.0        64000.0"
+2026-07-18 13:07:56,746 [INFO] ------------------------------------
+2026-07-18 13:07:56,746 [INFO] === Context passed to LLM (post-pruning) ===
+2026-07-18 13:07:56,746 [INFO] # Report information (file: b270e9f1-38d9-4c6d-a5de-839584f9cad1_EVN 3679 Report for Transportation of tractor from FBD to Jammu.xlsx, table: b270e9f1_38d9_4c6d_a5de_839584f9cad1_evn_3679_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3679 - Event Name: Online negotiation of Transportation of tractor from FBD to Jammu - Event Timeline: 2026-03-26 11:00 to 2026-03-27 17:52 - No. of Participants: 2 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: PMTC | BIMAL TRANSPORT | MOHAN LOGISTICS PRIVATE LIMITED
+2026-07-18 13:07:56,746 [INFO] Context — Event EVN 3356 · Online negotiation of Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124 · 57 participants (This record is part of event EVN 3356 from file 41ecf3c0-e44d-41d6-8232-eb6e77f3c1bb_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-1 of data table '41ecf3c0_e44d_41d6_8232_eb6e77f3c1bb_evn_3356_report_for_tra' (file: 41ecf3c0-e44d-41d6-8232-eb6e77f3c1bb_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx) ### Row 1 - Item description: Freight Charge for 2 Nos. 40 ft Trailor Semi for Transportation of 2 Nos. F23 from ECE Plot No. 219, Sec.- 58, Ballabhgarh, Faridabad-121004 to SHIVHARE ROAD LINES CAMP OFFICE NEAR BHARAT PETROLEUM CORPORATION LTD REFINERY COMPLEX BINA MADHYA PRADESH SAGAR 470124. Material Weight: 21600KG. - Vehicle Qty: 1 - L1 Rate: 85000 - L1 Transporter: ATUL LOGISTICS - Final Price: 85000 - Final Price_1: 92000 - Final Price_2: 94000
+2026-07-18 13:07:56,746 [INFO] # Report information (file: 3c4f6297-f097-4021-954b-c316b6872c8c_EVN 3517 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx, table: 3c4f6297_f097_4021_954b_c316b6872c8c_evn_3517_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3517 - Event Name: Online negotiation of Transportation of Tractor from Ramachandrapuram, AP to Thiruvarur, TN - Event Timeline:…
+2026-07-18 13:07:56,835 [INFO] [truncated] (total 6652 chars)
+2026-07-18 13:07:56,836 [INFO] === End of context ===
+2026-07-18 13:07:56,836 [INFO] 🚀 Total query processing time: 81.23s
+2026-07-18 13:07:56,836 [INFO] 💾 Stored AI response: 52de8798-8b04-4b0d-ad30-e431db5e75d5
+2026-07-18 13:07:56,836 [INFO] 💾 Stored user message: c322393f-f3ef-4d4d-9b8b-afc87e9c0556
+2026-07-18 13:07:56,836 [INFO] 📖 Loaded 24 overviews for indexes ['0a6ce348']
+2026-07-18 13:07:56,836 [INFO] 🔍 ROUTING DEBUG: Starting triage for query: 'what is the best rate for Pune and who is the transporter?...'
+2026-07-18 13:07:56,836 [INFO] 📖 ROUTING DEBUG: Attempting overview-based routing...
+2026-07-18 13:07:56,836 [INFO] 📖 ROUTING DEBUG: Found 24 document overviews, using LLM routing...
+2026-07-18 13:07:56,836 [INFO] 📖 ROUTING DEBUG: Overview LLM raw response: '{"category": "rag_query"}...'
+2026-07-18 13:07:56,836 [INFO] 📖 ROUTING DEBUG: Overview routing final decision: 'rag_query'
+2026-07-18 13:07:56,836 [INFO] ✅ ROUTING DEBUG: Overview routing decided: 'rag_query'
+2026-07-18 13:07:56,836 [INFO] 🎯 ROUTING DEBUG: Final triage decision: 'rag_query'
+2026-07-18 13:07:56,836 [INFO] Agent Triage Decision: 'rag_query'
+2026-07-18 13:07:56,836 [INFO] 🔍 Retrieval K set to: 20
+2026-07-18 13:07:56,836 [INFO] 🔍 Context window size set to: 1
+2026-07-18 13:07:56,837 [INFO] 🔍 Reranker top K set to: 10
+2026-07-18 13:07:56,837 [INFO] 🔍 Search type set to: hybrid
+2026-07-18 13:07:56,837 [INFO] 🔍 Dense search weight set to: 0.7
+2026-07-18 13:07:56,837 [INFO] Generating 1 embeddings with Qwen/Qwen3-Embedding-0.6B model...
+2026-07-18 13:07:56,837 [INFO] ✅ ROUTING DEBUG: Executing RAG_QUERY path (query_type='rag_query')
+2026-07-18 13:07:56,838 [INFO] --- Query Decomposition Enabled ---
+2026-07-18 13:07:56,838 [INFO] Query Decomposition Reasoning: Multi-part question with two distinct entities (Pune and Patna/Lucknow) requiring separate rate and transporter information.
+2026-07-18 13:07:56,838 [INFO] Original query: 'what is the best rate for Pune and who is the transporter?' (Contextual: '
+2026-07-18 13:07:56,838 [INFO] Given the following conversation history, answer the user's latest query. The history provides context for resolving pronouns or follow-up questions.
+2026-07-18 13:07:56,838 [INFO] --- Conversation History ---
+2026-07-18 13:07:56,838 [INFO] User: what are best rates for Patna or lucknow
+2026-07-18 13:07:56,838 [INFO] Assistant: Answer:
+2026-07-18 13:07:56,838 [INFO] I could not find that information in the provided documents.
+2026-07-18 13:07:56,838 [INFO] The retrieved snippets detail transportation events and freight rates for specific routes, such as FBD to Jammu, ECE to BINA (Madhya Pradesh), Ramachandrapuram to Thiruvarur (Tamil Nadu), Satara to FBD, and others. However, **none of the documents mention Patna (Bihar)** or **Lucknow (Uttar Pradesh)** as destinations, origins, or related to freight rate negotiations. The closest reference is an event involving transportation to **Chakan, Pune** (Maharashtra), but this does not pertain to Patna or Lucknow.
+2026-07-18 13:07:56,838 [INFO] Since the context does not include data on transportation rates for Patna or Lucknow, a definitive answer cannot be provided based on the available information. [Confidence: 100%]
+2026-07-18 13:07:56,838 [INFO] ---
+2026-07-18 13:07:56,838 [INFO] Latest User Query: "what is the best rate for Pune and who is the transporter?"
+2026-07-18 13:07:56,838 [INFO] ')
+2026-07-18 13:07:56,838 [INFO] Decomposed into 4 sub-queries: ['What is the best rate for Pune?', 'Who is the transporter for Pune?', 'What is the best rate for Patna or Lucknow?', 'Who is the transporter for Patna or Lucknow?']
+2026-07-18 13:07:56,838 [INFO] --- Processing 4 sub-queries in parallel ---
+2026-07-18 13:07:56,838 [INFO] --- Performing Retrieval for query: 'What is the best rate for Pune?' on table 'text_pages_0a6ce348-969d-4ca5-abc6-d19ac38f1684' ---
+2026-07-18 13:07:56,838 [INFO] --- Performing Retrieval for query: 'Who is the transporter for Pune?' on table 'text_pages_0a6ce348-969d-4ca5-abc6-d19ac38f1684' ---
+2026-07-18 13:07:56,838 [INFO] --- Performing Retrieval for query: 'What is the best rate for Patna or Lucknow?' on table 'text_pages_0a6ce348-969d-4ca5-abc6-d19ac38f1684' ---
+2026-07-18 13:07:56,838 [INFO] Generating 1 embeddings with Qwen/Qwen3-Embedding-0.6B model...
+2026-07-18 13:07:56,839 [INFO] Generating 1 embeddings with Qwen/Qwen3-Embedding-0.6B model...
+2026-07-18 13:07:56,839 [INFO] Generating 1 embeddings with Qwen/Qwen3-Embedding-0.6B model...
+2026-07-18 13:07:56,839 [INFO] Retrieved 18 documents.
+2026-07-18 13:07:56,839 [INFO] --- Reranking top 18 docs with AI model... ---
+2026-07-18 13:07:56,839 [INFO] Retrieved 20 documents.
+2026-07-18 13:07:56,839 [INFO] Retrieved 20 documents.
+2026-07-18 13:07:56,839 [INFO] --- Reranking top 20 docs with AI model... ---
+2026-07-18 13:07:56,839 [INFO] --- Reranking top 20 docs with AI model... ---
+2026-07-18 13:07:56,839 [INFO] ✅ Reranking completed in 0.80s. Refined to 10 docs.
+2026-07-18 13:07:56,839 [INFO] --- Expanding context for 10 top documents (window size: 1)... ---
+2026-07-18 13:07:56,839 [INFO] Expanded to 13 unique chunks for synthesis.
+2026-07-18 13:07:56,839 [INFO] --- Final Documents for Synthesis ---
+2026-07-18 13:07:56,839 [INFO] [1] Chunk ID: aa7c2999-0099-4d5b-ab75-64dc78273505_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 40 ft.xlsx_0
+2026-07-18 13:07:56,839 [INFO] Score: N/A
+2026-07-18 13:07:56,839 [INFO] Rerank Score: 1.6517
+2026-07-18 13:07:56,839 [INFO] Text: "# Report information (file: aa7c2999-0099-4d5b-ab75-64dc78273505_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 40 ft.xlsx, table: aa7c2999_0099_4d5b_ab75_64dc78273505_evn_3610_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3610 - Event Name: Online negotiation of Transportation of Machines from Pollivakkam, TN to Chakan, Pune - Event Timeline: 2026-03-20 15:00 to 2026-03-20 16:16 - No. of Participants: 6 - Color Legend: Rank 1 | Rank 2 | Rank 3"
+2026-07-18 13:07:56,839 [INFO] [2] Chunk ID: 8f2c15aa-d64d-4d07-bfee-b6f150a3ea15_EVN 3871 Report for Transportation from Pune depot to Nagpur depot.xlsx_0
+2026-07-18 13:07:56,839 [INFO] Score: N/A
+2026-07-18 13:07:56,839 [INFO] Rerank Score: 1.2382
+2026-07-18 13:07:56,839 [INFO] Text: "# Report information (file: 8f2c15aa-d64d-4d07-bfee-b6f150a3ea15_EVN 3871 Report for Transportation from Pune depot to Nagpur depot.xlsx, table: 8f2c15aa_d64d_4d07_bfee_b6f150a3ea15_evn_3871_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3871 - Event Name: Online negotiation of Transportation of Tractors from Pune depot to Nagpur depot - Event Timeline: 2026-04-28 12:00 to 2026-04-28 13:05 - No. of Participants: 3 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: Total TCM | MOHAN LOGISTICS PRIVATE LIMITED | HOLISOL LOGISTICS PVT. LTD."
+2026-07-18 13:07:56,839 [INFO] [3] Chunk ID: c1f4f6bb-784d-44bf-b7bc-457b4c4fb500_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 24 ft.xlsx_0
+2026-07-18 13:07:56,839 [INFO] Score: N/A
+2026-07-18 13:07:56,839 [INFO] Rerank Score: 1.0024
+2026-07-18 13:07:56,840 [INFO] Text: "# Report information (file: c1f4f6bb-784d-44bf-b7bc-457b4c4fb500_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 24 ft.xlsx, table: c1f4f6bb_784d_44bf_b7bc_457b4c4fb500_evn_3610_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3610 - Event Name: Online negotiation of Transportation of Machines from Pollivakkam, TN to Chakan, Pune - Event Timeline: 2026-03-20 15:00 to 2026-03-20 16:16 - No. of Participants: 6 - Color Legend: Rank 1 | Rank 2 | Rank 3"
+2026-07-18 13:07:56,840 [INFO] [4] Chunk ID: 61a51493-694a-40c9-8a1e-1daf2b75adc4_EVN 3456 Report for Transportation of Tractors from Pune Chakan Depot to Karera, MP- 474001.xlsx_0
+2026-07-18 13:07:56,840 [INFO] Score: N/A
+2026-07-18 13:07:56,840 [INFO] Rerank Score: -0.1666
+2026-07-18 13:07:56,840 [INFO] Text: "Context — Event EVN 3456 · Online negotiation of Transportation of Tractors from Pune Chakan Depot to Karera, MP- 474001 · 57 participants (This record is part of event EVN 3456 from file 61a51493-694a-40c9-8a1e-1daf2b75adc4_EVN 3456 Report for Transportation of Tractors from Pune Chakan Depot to Karera, MP- 474001.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-1 of data table '61a51493_694a_40c9_8a1e_1daf2b75adc4_evn_3456_report_for_tra' (file: 61a51493-694a-40c9-8a1e-1daf2b75adc4_EVN 3456 Report for Transportation of Tractors from Pune Chakan Depot to Karera, MP- 474001.xlsx) ### Row 1 - Item description: Freight Charge for Car Carrier for Transportation of Tractors from Pune Chakan Depot to Karera, MP(PIN 474001). Material Weight -2200Kgs, Pickup Date -5-Mar-2026. Other Details shared over mail. - Vehicle Qty: 1 - L1 Rate: 80000 - L1 Transporter: MOHAN LOGISTICS PRIVATE LIMITED - Final Price: 80000 - Final Price_1: 108000 - Final Price_2: 149000"
+2026-07-18 13:07:56,840 [INFO] [5] Chunk ID: dc5292b7-94e8-4953-b247-ddbec1e5863e_EVN 3610 Report for Transportation of Machines from Khordha to Pune.xlsx_0
+2026-07-18 13:07:56,840 [INFO] Score: N/A
+2026-07-18 13:07:56,840 [INFO] Rerank Score: -0.4558
+2026-07-18 13:07:56,840 [INFO] Text: "Context — Event EVN 3610 · Online negotiation of Transportation of Machines from Khordha, Odisha to Pune · 4 participants (This record is part of event EVN 3610 from file dc5292b7-94e8-4953-b247-ddbec1e5863e_EVN 3610 Report for Transportation of Machines from Khordha to Pune.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-1 of data table 'dc5292b7_94e8_4953_b247_ddbec1e5863e_evn_3610_report_for_tra' (file: dc5292b7-94e8-4953-b247-ddbec1e5863e_EVN 3610 Report for Transportation of Machines from Khordha to Pune.xlsx) ### Row 1 - Item description: Total Freight Cost of 40 ft trailer (Non ODC) for Transportation of Machines from Giringaput, Khordha, Odisha - 752054 to Chakan, PUNE - 410501, MAHARASHTRA, Material Weight: 180 kg, Material dimensions: 7.33 x 5.4 x 3.75 Pick Up Date 23rd Mar 2026. - Vehicle Qty: 1 - L1 Rate: 95000 - L1 Transporter: United Cargo Logistic - Final Price: 95000 - Final Price_1: 123750 - Final Price_2: 135000 - Final Price_3: 135000"
+2026-07-18 13:07:56,840 [INFO] [6] Chunk ID: 99bb4e95-4483-46e2-b96d-4059aa6bce2c_EVN 3456 Report for Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations.xlsx_0
+2026-07-18 13:07:56,840 [INFO] Score: N/A
+2026-07-18 13:07:56,840 [INFO] Rerank Score: -10.0448
+2026-07-18 13:07:56,840 [INFO] Text: "# Report information (file: 99bb4e95-4483-46e2-b96d-4059aa6bce2c_EVN 3456 Report for Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations.xlsx, table: 99bb4e95_4483_46e2_b96d_4059aa6bce2c_evn_3456_report_for_tra) - Escorts Kubota Limited - Event ID: EVN 3456 - Event Name: Online negotiation of Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations - Event Timeline: 2026-03-02 15:00 to 2026-03-03 12:59 - No. of Participants: 57 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: TCI SUPPLY CHAIN SOLUTIONS"
+2026-07-18 13:07:56,840 [INFO] [7] Chunk ID: 13ec1d9d-c8e8-4fd3-b163-bc7383c64e94_EVN 3503 Report for Transportation from ETDC Bangalore to Hubli Depot.xlsx_0
+2026-07-18 13:07:56,840 [INFO] Score: N/A
+2026-07-18 13:07:56,840 [INFO] Rerank Score: -10.6572
+2026-07-18 13:07:56,840 [INFO] Text: "# Report information (file: 13ec1d9d-c8e8-4fd3-b163-bc7383c64e94_EVN 3503 Report for Transportation from ETDC Bangalore to Hubli Depot.xlsx, table: 13ec1d9d_c8e8_4fd3_b163_bc7383c64e94_evn_3503_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3503 - Event Name: Online negotiation of Transportation of Tractor from ETDC Bangalore to Hubli Depot - Event Timeline: 2026-03-10 15:00 to 2026-03-10 17:06 - No. of Participants: 3 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: URL Safe Express Private Limited | Holisol Logistics Pvt. Ltd | Jhanu Logistics ltd."
+2026-07-18 13:07:56,840 [INFO] [8] Chunk ID: da61e052-01f3-4ada-b53e-b35abbca4ce9_EVN 3634 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx_0
+2026-07-18 13:07:56,840 [INFO] Score: N/A
+2026-07-18 13:07:56,840 [INFO] Rerank Score: -10.6890
+2026-07-18 13:07:56,840 [INFO] Text: "# Report information (file: da61e052-01f3-4ada-b53e-b35abbca4ce9_EVN 3634 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx, table: da61e052_01f3_4ada_b53e_b35abbca4ce9_evn_3634_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3634 - Event Name: Online negotiation of Transportation of Tractor from Ramachandrapuram, AP to Thiruvarur, TN - Event Timeline: 2026-03-24 15:00 to 2026-03-24 16:00 - No. of Participants: 3 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: Holisol Logistics Pvt. Ltd | URL Safe Express Private Limited | Mohan Logistics Pvt. Ltd."
+2026-07-18 13:07:56,840 [INFO] [9] Chunk ID: 41ecf3c0-e44d-41d6-8232-eb6e77f3c1bb_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx_0
+2026-07-18 13:07:56,840 [INFO] Score: N/A
+2026-07-18 13:07:56,840 [INFO] Rerank Score: -10.7867
+2026-07-18 13:07:56,840 [INFO] Text: "Context — Event EVN 3356 · Online negotiation of Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124 · 57 participants (This record is part of event EVN 3356 from file 41ecf3c0-e44d-41d6-8232-eb6e77f3c1bb_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-1 of data table '41ecf3c0_e44d_41d6_8232_eb6e77f3c1bb_evn_3356_report_for_tra' (file: 41ecf3c0-e44d-41d6-8232-eb6e77f3c1bb_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx) ### Row 1 - Item description: Freight Charge for 2 Nos. 40 ft Trailor Semi for Transportation of 2 Nos. F23 from ECE Plot No. 219, Sec.- 58, Ballabhgarh, Faridabad-121004 to SHIVHARE ROAD LINES CAMP OFFICE NEAR BHARAT PETROLEUM CORPORATION LTD REFINERY COMPLEX BINA MADHYA PRADESH SAGAR 470124. Material Weight: 21600KG. - Vehicle Qty: 1 - L1 Rate: 85000 - L1 Transporter: ATUL LOGISTICS - Final Price: 85000 - Final Price_1: 92000 - Final Price_2: 94000"
+2026-07-18 13:07:56,840 [INFO] [10] Chunk ID: 73fab6d3-0323-42c3-909a-56002738a3c3_EVN 3886 Report for Transportation from Hyderabad depot to Bilaspur depot.xlsx_0
+2026-07-18 13:07:56,840 [INFO] Score: N/A
+2026-07-18 13:07:56,841 [INFO] Rerank Score: -10.8377
+2026-07-18 13:07:56,841 [INFO] Text: "# Report information (file: 73fab6d3-0323-42c3-909a-56002738a3c3_EVN 3886 Report for Transportation from Hyderabad depot to Bilaspur depot.xlsx, table: 73fab6d3_0323_42c3_909a_56002738a3c3_evn_3886_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3886 - Event Name: Online negotiation of Transportation of Tractor from Hyderabad depot to Bilaspur depot - Event Timeline: 2026-05-30 11:00 to 2026-05-30 14:00 - No. of Participants: 3 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: MOHAN LOGISTICS PRIVATE LIMITED | ATUL LOGISTICS | TOTAL TCM"
+2026-07-18 13:07:56,841 [INFO] ------------------------------------
+2026-07-18 13:07:56,841 [INFO] === Context passed to LLM (post-pruning) ===
+2026-07-18 13:07:56,841 [INFO] # Report information (file: aa7c2999-0099-4d5b-ab75-64dc78273505_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 40 ft.xlsx, table: aa7c2999_0099_4d5b_ab75_64dc78273505_evn_3610_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3610 - Event Name: Online negotiation of Transportation of Machines from Pollivakkam, TN to Chakan, Pune - Event Timeline: 2026-03-20 15:00 to 2026-03-20 16:16 - No. of Participants: 6 - Color Legend: Rank 1 | Rank 2 | Rank 3
+2026-07-18 13:07:56,841 [INFO] # Report information (file: 8f2c15aa-d64d-4d07-bfee-b6f150a3ea15_EVN 3871 Report for Transportation from Pune depot to Nagpur depot.xlsx, table: 8f2c15aa_d64d_4d07_bfee_b6f150a3ea15_evn_3871_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3871 - Event Name: Online negotiation of Transportation of Tractors from Pune depot to Nagpur depot - Event Timeline: 2026-04-28 12:00 to 2026-04-28 13:05 - No. of Participants: 3 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: Total TCM | MOHAN LOGISTICS PRIVATE LIMITED | HOLISOL LOGISTICS PVT. LTD.
+2026-07-18 13:07:56,841 [INFO] # Report information (file: c1f4f6bb-784d-44bf-b7bc-457b4c4fb500_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 24 ft.xlsx, table: c1f4f6bb_784d_44bf_b7bc_457b4c4fb500_evn_3610_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3610 - Event Name: Online negotiation of Transportation of Machines from Pollivakkam, TN to Chakan, Pune - Event Timeline: 2026-03-20 15:00 to 2026-03-20 16:16 - No. of Participants: 6 - Color Legend: Rank 1 | Rank 2 | Rank 3
+2026-07-18 13:07:56,841 [INFO] Context — Event EVN 3456 · Online negotiation of Transportation of Tractors from Pune Chakan Depot to Karera, MP- 474001 · 57 participants (This record is part of event EVN 3456 from file 61a51493-694a-40c9-8a1e-1daf2b75adc4_EVN 3456 Report for Transportation of Tractors from Pune Chakan Depot to Karera, MP- 474001.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-1 of data table '61a51493_694a_40c9_8a1e_1daf2b75adc4_evn_…
+2026-07-18 13:07:56,841 [INFO] [truncated] (total 6956 chars)
+2026-07-18 13:07:56,841 [INFO] === End of context ===
+2026-07-18 13:07:56,841 [INFO] ✅ Reranking completed in 0.88s. Refined to 10 docs.
+2026-07-18 13:07:56,841 [INFO] --- Expanding context for 10 top documents (window size: 1)... ---
+2026-07-18 13:07:56,841 [INFO] ✅ Reranking completed in 0.90s. Refined to 10 docs.
+2026-07-18 13:07:56,841 [INFO] --- Expanding context for 10 top documents (window size: 1)... ---
+2026-07-18 13:07:56,841 [INFO] Expanded to 20 unique chunks for synthesis.
+2026-07-18 13:07:56,841 [INFO] --- Final Documents for Synthesis ---
+2026-07-18 13:07:56,841 [INFO] [1] Chunk ID: b270e9f1-38d9-4c6d-a5de-839584f9cad1_EVN 3679 Report for Transportation of tractor from FBD to Jammu.xlsx_0
+2026-07-18 13:07:56,841 [INFO] Score: N/A
+2026-07-18 13:07:56,841 [INFO] Rerank Score: -9.8978
+2026-07-18 13:07:56,841 [INFO] Text: "# Report information (file: b270e9f1-38d9-4c6d-a5de-839584f9cad1_EVN 3679 Report for Transportation of tractor from FBD to Jammu.xlsx, table: b270e9f1_38d9_4c6d_a5de_839584f9cad1_evn_3679_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3679 - Event Name: Online negotiation of Transportation of tractor from FBD to Jammu - Event Timeline: 2026-03-26 11:00 to 2026-03-27 17:52 - No. of Participants: 2 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: PMTC | BIMAL TRANSPORT | MOHAN LOGISTICS PRIVATE LIMITED"
+2026-07-18 13:07:56,841 [INFO] [2] Chunk ID: 41ecf3c0-e44d-41d6-8232-eb6e77f3c1bb_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx_0
+2026-07-18 13:07:56,842 [INFO] Score: N/A
+2026-07-18 13:07:56,842 [INFO] Rerank Score: -10.2199
+2026-07-18 13:07:56,852 [INFO] Text: "Context — Event EVN 3356 · Online negotiation of Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124 · 57 participants (This record is part of event EVN 3356 from file 41ecf3c0-e44d-41d6-8232-eb6e77f3c1bb_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-1 of data table '41ecf3c0_e44d_41d6_8232_eb6e77f3c1bb_evn_3356_report_for_tra' (file: 41ecf3c0-e44d-41d6-8232-eb6e77f3c1bb_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx) ### Row 1 - Item description: Freight Charge for 2 Nos. 40 ft Trailor Semi for Transportation of 2 Nos. F23 from ECE Plot No. 219, Sec.- 58, Ballabhgarh, Faridabad-121004 to SHIVHARE ROAD LINES CAMP OFFICE NEAR BHARAT PETROLEUM CORPORATION LTD REFINERY COMPLEX BINA MADHYA PRADESH SAGAR 470124. Material Weight: 21600KG. - Vehicle Qty: 1 - L1 Rate: 85000 - L1 Transporter: ATUL LOGISTICS - Final Price: 85000 - Final Price_1: 92000 - Final Price_2: 94000"
+2026-07-18 13:07:56,852 [INFO] [3] Chunk ID: 3c4f6297-f097-4021-954b-c316b6872c8c_EVN 3517 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx_0
+2026-07-18 13:07:56,852 [INFO] Score: N/A
+2026-07-18 13:07:56,852 [INFO] Rerank Score: -10.3523
+2026-07-18 13:07:56,852 [INFO] Text: "# Report information (file: 3c4f6297-f097-4021-954b-c316b6872c8c_EVN 3517 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx, table: 3c4f6297_f097_4021_954b_c316b6872c8c_evn_3517_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3517 - Event Name: Online negotiation of Transportation of Tractor from Ramachandrapuram, AP to Thiruvarur, TN - Event Timeline: 2026-03-12 11:00 to 2026-03-12 18:20 - No. of Participants: 2 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: URL Safe Express Private Limited | Holisol Logistics Pvt. Ltd"
+2026-07-18 13:07:56,852 [INFO] [4] Chunk ID: 126fa940-5ebc-4d23-9adf-98787702f64c_EVN 3569 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx_0
+2026-07-18 13:07:56,852 [INFO] Score: N/A
+2026-07-18 13:07:56,852 [INFO] Rerank Score: -10.3720
+2026-07-18 13:07:56,853 [INFO] Text: "# Report information (file: 126fa940-5ebc-4d23-9adf-98787702f64c_EVN 3569 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx, table: 126fa940_5ebc_4d23_9adf_98787702f64c_evn_3569_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3569 - Event Name: Online negotiation of Transportation of Tractor from Ramachandrapuram, AP to Thiruvarur, TN - Event Timeline: 2026-03-18 11:00 to 2026-03-18 13:22 - No. of Participants: 2 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: Holisol Logistics Pvt. Ltd | URL Safe Express Private Limited"
+2026-07-18 13:07:56,853 [INFO] [5] Chunk ID: 254c48c6-6126-48c9-a679-6a9b080bf4c2_EVN 3691 Report for Transportation from Satara to FBD.xlsx_0
+2026-07-18 13:07:56,853 [INFO] Score: N/A
+2026-07-18 13:07:56,853 [INFO] Rerank Score: -10.4015
+2026-07-18 13:07:56,853 [INFO] Text: "Context — Event EVN 3691 · Online negotiation of Transportation of Machine from Satara, Pune to FBD · 5 participants (This record is part of event EVN 3691 from file 254c48c6-6126-48c9-a679-6a9b080bf4c2_EVN 3691 Report for Transportation from Satara to FBD.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-3 of data table '254c48c6_6126_48c9_a679_6a9b080bf4c2_evn_3691_report_for_tra' (file: 254c48c6-6126-48c9-a679-6a9b080bf4c2_EVN 3691 Report for Transportation from Satara to FBD.xlsx) ### Row 1 - Item description: Freight charge for 14ft Canter (Non ODC) for Transportation of Promax from Shelke Agro Satara, Plot No. A21 Pune-Bangalore Highway, MIDC, Satara, Maharashtra,Near By Suzuki Showroom 415004 To Escorts Kubota Limited, 15/5 Sector 27A Mathura Road, Faridabad - 121003, Material weight 2400 Kg, Pickup date : 6th April, 2026. Other details shared over mail. - Qty: 1 - L1 Rate: 49650 - L1 Vendor: PMTC - Final Price: 49650 - Final Price_1: 50150 - Final Price_2: 51150 - Final Price_3: 59500 - Final Price_4: 60000 ### Row 2 - Item description: Total Cost - Final Price: 49650 - Final Price_1: 50150 - Final Price_2: 51150 - Final Price_3: 59500 - Final Price_4: 60000 ### Row 3"
+2026-07-18 13:07:56,853 [INFO] [6] Chunk ID: faadc225-b4af-41bd-bf4e-393f23e6b91a_EVN 3536 Report for Transportation from Rapar, Kutch GJ to Ahmedabad GJ.xlsx_1
+2026-07-18 13:07:56,853 [INFO] Score: N/A
+2026-07-18 13:07:56,853 [INFO] Rerank Score: -10.4506
+2026-07-18 13:07:56,853 [INFO] Text: "Total Cost  NaN      NaN                   NaN      29000.0        43000.0        45000.0 Rates are collected on the shared Pickup Date of 13th March, 2026  NaN      NaN                   NaN          NaN            NaN            NaN Numeric summary (min / mean / max): Qty  L1 Rate  Final Price  Final Price_1  Final Price_2 min   1.0  29000.0      29000.0        43000.0        45000.0 mean  1.0  29000.0      29000.0        43000.0        45000.0 max   1.0  29000.0      29000.0        43000.0        45000.0"
+2026-07-18 13:07:56,853 [INFO] [7] Chunk ID: dc5292b7-94e8-4953-b247-ddbec1e5863e_EVN 3610 Report for Transportation of Machines from Khordha to Pune.xlsx_0
+2026-07-18 13:07:56,853 [INFO] Score: N/A
+2026-07-18 13:07:56,853 [INFO] Rerank Score: -10.5909
+2026-07-18 13:07:56,853 [INFO] Text: "# Report information (file: dc5292b7-94e8-4953-b247-ddbec1e5863e_EVN 3610 Report for Transportation of Machines from Khordha to Pune.xlsx, table: dc5292b7_94e8_4953_b247_ddbec1e5863e_evn_3610_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3610 - Event Name: Online negotiation of Transportation of Machines from Khordha, Odisha to Pune - Event Timeline: 2026-03-20 15:00 to 2026-03-20 16:16 - No. of Participants: 4 - Color Legend: Rank 1 | Rank 2 | Rank 3"
+2026-07-18 13:07:56,853 [INFO] [8] Chunk ID: 28e79ed3-b406-441f-a498-94ea4a2c41f5_EVN 3649 Report for Transportation of materials from Villupuram to Thiruvallur.xlsx_0
+2026-07-18 13:07:56,853 [INFO] Score: N/A
+2026-07-18 13:07:56,853 [INFO] Rerank Score: -10.6112
+2026-07-18 13:07:56,853 [INFO] Text: "# Report information (file: 28e79ed3-b406-441f-a498-94ea4a2c41f5_EVN 3649 Report for Transportation of materials from Villupuram to Thiruvallur.xlsx, table: 28e79ed3_b406_441f_a498_94ea4a2c41f5_evn_3649_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3649 - Event Name: Online negotiation of Transportation of Material from Villupuram to Thiruvallur - Event Timeline: 2026-03-26 11:00 to 2026-03-27 17:52 - No. of Participants: 2 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: URL Safe Express Private Limited | Rapid fleet management services"
+2026-07-18 13:07:56,853 [INFO] [9] Chunk ID: ee0f1314-99d5-4397-9ae5-998c8b02bebf_EVN 3846 Report for Transportation from Polivakkam to Bangalore.xlsx_1
+2026-07-18 13:07:56,853 [INFO] Score: N/A
+2026-07-18 13:07:56,853 [INFO] Rerank Score: -10.6154
+2026-07-18 13:07:56,853 [INFO] Text: "Total basic value  NaN      NaN                             NaN      29750.0        30250.0        40000.0 Rates are collected on the shared Pickup Date of 27th Apr, 2026  NaN      NaN                             NaN          NaN            NaN            NaN Numeric summary (min / mean / max): Qty  L1 Rate  Final Price  Final Price_1  Final Price_2 min   1.0  29750.0      29750.0        30250.0        40000.0 mean  1.0  29750.0      29750.0        30250.0        40000.0 max   1.0  29750.0      29750.0        30250.0        40000.0"
+2026-07-18 13:07:56,853 [INFO] [10] Chunk ID: da61e052-01f3-4ada-b53e-b35abbca4ce9_EVN 3634 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx_1
+2026-07-18 13:07:56,853 [INFO] Score: N/A
+2026-07-18 13:07:56,853 [INFO] Rerank Score: -10.6540
+2026-07-18 13:07:56,853 [INFO] Text: "Total Cost  NaN      NaN                        NaN      55000.0        59500.0        64000.0 Rates are collected on the shared Pickup Date of 24th March, 2026  NaN      NaN                        NaN          NaN            NaN            NaN Numeric summary (min / mean / max): Qty  L1 Rate  Final Price  Final Price_1  Final Price_2 min   1.0  55000.0      55000.0        59500.0        64000.0 mean  1.0  55000.0      55000.0        59500.0        64000.0 max   1.0  55000.0      55000.0        59500.0        64000.0"
+2026-07-18 13:07:56,853 [INFO] ------------------------------------
+2026-07-18 13:07:56,853 [INFO] === Context passed to LLM (post-pruning) ===
+2026-07-18 13:07:56,853 [INFO] # Report information (file: b270e9f1-38d9-4c6d-a5de-839584f9cad1_EVN 3679 Report for Transportation of tractor from FBD to Jammu.xlsx, table: b270e9f1_38d9_4c6d_a5de_839584f9cad1_evn_3679_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3679 - Event Name: Online negotiation of Transportation of tractor from FBD to Jammu - Event Timeline: 2026-03-26 11:00 to 2026-03-27 17:52 - No. of Participants: 2 - Color Legend: Rank 1 | Rank 2 | Rank 3 - Participant: PMTC | BIMAL TRANSPORT | MOHAN LOGISTICS PRIVATE LIMITED
+2026-07-18 13:07:56,853 [INFO] Context — Event EVN 3356 · Online negotiation of Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124 · 57 participants (This record is part of event EVN 3356 from file 41ecf3c0-e44d-41d6-8232-eb6e77f3c1bb_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-1 of data table '41ecf3c0_e44d_41d6_8232_eb6e77f3c1bb_evn_3356_report_for_tra' (file: 41ecf3c0-e44d-41d6-8232-eb6e77f3c1bb_EVN 3356 Report for Transportation of F23 from ECE to BINA, MADHYA PRADESH SAGAR- 470124.xlsx) ### Row 1 - Item description: Freight Charge for 2 Nos. 40 ft Trailor Semi for Transportation of 2 Nos. F23 from ECE Plot No. 219, Sec.- 58, Ballabhgarh, Faridabad-121004 to SHIVHARE ROAD LINES CAMP OFFICE NEAR BHARAT PETROLEUM CORPORATION LTD REFINERY COMPLEX BINA MADHYA PRADESH SAGAR 470124. Material Weight: 21600KG. - Vehicle Qty: 1 - L1 Rate: 85000 - L1 Transporter: ATUL LOGISTICS - Final Price: 85000 - Final Price_1: 92000 - Final Price_2: 94000
+2026-07-18 13:07:56,853 [INFO] # Report information (file: 3c4f6297-f097-4021-954b-c316b6872c8c_EVN 3517 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx, table: 3c4f6297_f097_4021_954b_c316b6872c8c_evn_3517_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3517 - Event Name: Online negotiation of Transportation of Tractor from Ramachandrapuram, AP to Thiruvarur, TN - Event Timeline:…
+2026-07-18 13:09:20,908 [INFO] [truncated] (total 6604 chars)2026-07-18 13:09:20,903 | INFO     | rag-system | Top 20 results:
+2026-07-18 13:09:20,917 [INFO] 2026-07-18 13:09:20,903 | INFO     | rag-system | chunk_id       score   preview
+2026-07-18 13:09:20,918 [INFO] 2026-07-18 13:09:20,903 | INFO     | rag-system | ------------------------------
+2026-07-18 13:09:20,918 [INFO] 2026-07-18 13:09:20,907 | INFO     | rag-system | f13129e9-f16 0.000   Context — Event EVN 3628 · Online negotiation of…
+2026-07-18 13:09:20,918 [INFO] 2026-07-18 13:09:20,907 | INFO     | rag-system | b270e9f1-38d 0.000   Context — Event EVN 3679 · Online negotiation of…
+2026-07-18 13:09:20,918 [INFO] 2026-07-18 13:09:20,908 | INFO     | rag-system | 7ea6d481-e11 0.000   Context — Event EVN3694 · Online Negotiation event for…
+2026-07-18 13:09:20,918 [INFO] 2026-07-18 13:09:20,908 | INFO     | rag-system | 61a51493-694 0.000   Context — Event EVN 3456 · Online negotiation of…
+2026-07-18 13:09:20,918 [INFO] 2026-07-18 13:09:20,908 | INFO     | rag-system | 41ecf3c0-e44 0.000   Context — Event EVN 3356 · Online negotiation of…
+2026-07-18 13:09:20,918 [INFO] 2026-07-18 13:09:20,908 | INFO     | rag-system | dc5292b7-94e 0.000   Context — Event EVN 3610 · Online negotiation of…
+2026-07-18 13:09:20,920 [INFO] 2026-07-18 13:09:20,908 | INFO     | rag-system | 28e79ed3-b40 0.000   Context — Event EVN 3649 · Online negotiation of…
+2026-07-18 13:09:20,920 [INFO] 2026-07-18 13:09:20,909 | INFO     | rag-system | 8f2c15aa-d64 10718.045 # Report information (file:…
+2026-07-18 13:09:20,920 [INFO] 2026-07-18 13:09:20,909 | INFO     | rag-system | faadc225-b4a 10890.692 # Report information (file: faadc225-b4af-41bd-…
+2026-07-18 13:09:20,920 [INFO] 2026-07-18 13:09:20,909 | INFO     | rag-system | 126fa940-5eb 11295.333 Context — Event EVN 3569 · Online negotiation of…
+2026-07-18 13:09:20,920 [INFO] 2026-07-18 13:09:20,909 | INFO     | rag-system | da61e052-01f 11439.455 Total Cost NaN NaN NaN 55000.0 59500.0 64000.0 Rates are…
+2026-07-18 13:09:20,921 [INFO] 2026-07-18 13:09:20,909 | INFO     | rag-system | 13ec1d9d-c8e 11494.870 # Report information (file:…
+2026-07-18 13:09:20,921 [INFO] 2026-07-18 13:09:20,909 | INFO     | rag-system | faadc225-b4a 11533.302 Total Cost NaN NaN NaN 29000.0 43000.0 45000.0 Rates are…
+2026-07-18 13:09:20,921 [INFO] 2026-07-18 13:09:20,909 | INFO     | rag-system | 73fab6d3-032 11773.164 # Report information (file:…
+2026-07-18 13:09:20,921 [INFO] 2026-07-18 13:09:20,909 | INFO     | rag-system | da61e052-01f 11864.163 # Report information (file:…
+2026-07-18 13:09:20,921 [INFO] 2026-07-18 13:09:20,910 | INFO     | rag-system | 99bb4e95-448 12048.115 Context — Event EVN 3456 · Online negotiation of…
+2026-07-18 13:09:20,921 [INFO] 2026-07-18 13:09:20,910 | INFO     | rag-system | ee0f1314-99d 12260.066 Total basic value NaN NaN NaN 29750.0 30250.0 40000.0 Rates…
+2026-07-18 13:09:20,921 [INFO] 2026-07-18 13:09:20,910 | INFO     | rag-system | c1f4f6bb-784 12583.887 Context — Event EVN 3610 · Online negotiation of…
+2026-07-18 13:09:20,921 [INFO] 2026-07-18 13:09:20,910 | INFO     | rag-system | 3c4f6297-f09 12796.352 Context — Event EVN 3517 · Online negotiation of…
+2026-07-18 13:09:20,921 [INFO] 2026-07-18 13:09:20,910 | INFO     | rag-system | ee0f1314-99d 13226.504 # Report information (file:…
+2026-07-18 13:09:21,677 [INFO] === End of context ===
+2026-07-18 13:09:21,677 [INFO] Expanded to 20 unique chunks for synthesis.
+2026-07-18 13:09:21,677 [INFO] --- Final Documents for Synthesis ---
+2026-07-18 13:09:21,677 [INFO] [1] Chunk ID: aa7c2999-0099-4d5b-ab75-64dc78273505_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 40 ft.xlsx_0
+2026-07-18 13:09:21,677 [INFO] Score: N/A
+2026-07-18 13:09:21,677 [INFO] Rerank Score: -1.7067
+2026-07-18 13:09:21,677 [INFO] Text: "Context — Event EVN 3610 · Online negotiation of Transportation of Machines from Pollivakkam, TN to Chakan, Pune · 6 participants (This record is part of event EVN 3610 from file aa7c2999-0099-4d5b-ab75-64dc78273505_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 40 ft.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-3 of data table 'aa7c2999_0099_4d5b_ab75_64dc78273505_evn_3610_report_for_tra' (file: aa7c2999-0099-4d5b-ab75-64dc78273505_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 40 ft.xlsx) ### Row 1 - Item description: Freight charge for 40 ft trailer non- ODC for Transportation of Machines from Building B-500Unit nos, A C, Pollivakkam Village, Tiruvallur District, TN - 602002 To Taluka Khed Chakan, PUNE - 410501, MAHARASHTRA. Material weight 850 Kg, Pickup date : 21 March, 2026. Other details shared over mail. - Qty: 2 - L1 Rate: 64400 - L1 Vendor: URL Safe Express Private Limited - Final Price: 64400 - Final Price_1: 65000 - Final Price_2: 66650 - Final Price_3: 71400 - Final Price_4: 85000 - Final Price_5: 110000 ### Row 2 - Item description: Total Cost - Final Price: 128800 - Final Price_1: 130000 - Final Price_2: 133300"
+2026-07-18 13:09:21,678 [INFO] [2] Chunk ID: dc5292b7-94e8-4953-b247-ddbec1e5863e_EVN 3610 Report for Transportation of Machines from Khordha to Pune.xlsx_0
+2026-07-18 13:09:21,678 [INFO] Score: N/A
+2026-07-18 13:09:21,678 [INFO] Rerank Score: -1.7694
+2026-07-18 13:09:21,678 [INFO] Text: "Context — Event EVN 3610 · Online negotiation of Transportation of Machines from Khordha, Odisha to Pune · 4 participants (This record is part of event EVN 3610 from file dc5292b7-94e8-4953-b247-ddbec1e5863e_EVN 3610 Report for Transportation of Machines from Khordha to Pune.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-1 of data table 'dc5292b7_94e8_4953_b247_ddbec1e5863e_evn_3610_report_for_tra' (file: dc5292b7-94e8-4953-b247-ddbec1e5863e_EVN 3610 Report for Transportation of Machines from Khordha to Pune.xlsx) ### Row 1 - Item description: Total Freight Cost of 40 ft trailer (Non ODC) for Transportation of Machines from Giringaput, Khordha, Odisha - 752054 to Chakan, PUNE - 410501, MAHARASHTRA, Material Weight: 180 kg, Material dimensions: 7.33 x 5.4 x 3.75 Pick Up Date 23rd Mar 2026. - Vehicle Qty: 1 - L1 Rate: 95000 - L1 Transporter: United Cargo Logistic - Final Price: 95000 - Final Price_1: 123750 - Final Price_2: 135000 - Final Price_3: 135000"
+2026-07-18 13:09:21,678 [INFO] [3] Chunk ID: 8f2c15aa-d64d-4d07-bfee-b6f150a3ea15_EVN 3871 Report for Transportation from Pune depot to Nagpur depot.xlsx_0
+2026-07-18 13:09:21,678 [INFO] Score: N/A
+2026-07-18 13:09:21,678 [INFO] Rerank Score: -2.0015
+2026-07-18 13:09:21,678 [INFO] Text: "Context — Event EVN 3871 · Online negotiation of Transportation of Tractors from Pune depot to Nagpur depot · 3 participants (This record is part of event EVN 3871 from file 8f2c15aa-d64d-4d07-bfee-b6f150a3ea15_EVN 3871 Report for Transportation from Pune depot to Nagpur depot.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-3 of data table '8f2c15aa_d64d_4d07_bfee_b6f150a3ea15_evn_3871_report_for_tra' (file: 8f2c15aa-d64d-4d07-bfee-b6f150a3ea15_EVN 3871 Report for Transportation from Pune depot to Nagpur depot.xlsx) ### Row 1 - Item description: Freight charge for 32FT Flatbed ODC for Transportation of Tractors fromPune depot, Chakan To Nagpur depot. Pickup date : 28th April, 2026. Other details shared over mail. - Qty: 1 - L1 Rate: 54950 - L1 Vendor: Total TCM - Final Price: 54950 - Final Price_1: 55000 - Final Price_2: 82500 ### Row 2 - Item description: Total basic value - Final Price: 54950 - Final Price_1: 55000 - Final Price_2: 82500 ### Row 3 - Item description: Rates are collected on the shared Pickup Date of 28th Apr, 2026"
+2026-07-18 13:09:21,678 [INFO] [4] Chunk ID: 254c48c6-6126-48c9-a679-6a9b080bf4c2_EVN 3691 Report for Transportation from Satara to FBD.xlsx_0
+2026-07-18 13:09:21,678 [INFO] Score: N/A
+2026-07-18 13:09:21,678 [INFO] Rerank Score: -2.1270
+2026-07-18 13:09:21,678 [INFO] Text: "Context — Event EVN 3691 · Online negotiation of Transportation of Machine from Satara, Pune to FBD · 5 participants (This record is part of event EVN 3691 from file 254c48c6-6126-48c9-a679-6a9b080bf4c2_EVN 3691 Report for Transportation from Satara to FBD.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-3 of data table '254c48c6_6126_48c9_a679_6a9b080bf4c2_evn_3691_report_for_tra' (file: 254c48c6-6126-48c9-a679-6a9b080bf4c2_EVN 3691 Report for Transportation from Satara to FBD.xlsx) ### Row 1 - Item description: Freight charge for 14ft Canter (Non ODC) for Transportation of Promax from Shelke Agro Satara, Plot No. A21 Pune-Bangalore Highway, MIDC, Satara, Maharashtra,Near By Suzuki Showroom 415004 To Escorts Kubota Limited, 15/5 Sector 27A Mathura Road, Faridabad - 121003, Material weight 2400 Kg, Pickup date : 6th April, 2026. Other details shared over mail. - Qty: 1 - L1 Rate: 49650 - L1 Vendor: PMTC - Final Price: 49650 - Final Price_1: 50150 - Final Price_2: 51150 - Final Price_3: 59500 - Final Price_4: 60000 ### Row 2 - Item description: Total Cost - Final Price: 49650 - Final Price_1: 50150 - Final Price_2: 51150 - Final Price_3: 59500 - Final Price_4: 60000 ### Row 3"
+2026-07-18 13:09:21,678 [INFO] [5] Chunk ID: 61a51493-694a-40c9-8a1e-1daf2b75adc4_EVN 3456 Report for Transportation of Tractors from Pune Chakan Depot to Karera, MP- 474001.xlsx_0
+2026-07-18 13:09:21,678 [INFO] Score: N/A
+2026-07-18 13:09:21,678 [INFO] Rerank Score: -2.3410
+2026-07-18 13:09:21,678 [INFO] Text: "Context — Event EVN 3456 · Online negotiation of Transportation of Tractors from Pune Chakan Depot to Karera, MP- 474001 · 57 participants (This record is part of event EVN 3456 from file 61a51493-694a-40c9-8a1e-1daf2b75adc4_EVN 3456 Report for Transportation of Tractors from Pune Chakan Depot to Karera, MP- 474001.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-1 of data table '61a51493_694a_40c9_8a1e_1daf2b75adc4_evn_3456_report_for_tra' (file: 61a51493-694a-40c9-8a1e-1daf2b75adc4_EVN 3456 Report for Transportation of Tractors from Pune Chakan Depot to Karera, MP- 474001.xlsx) ### Row 1 - Item description: Freight Charge for Car Carrier for Transportation of Tractors from Pune Chakan Depot to Karera, MP(PIN 474001). Material Weight -2200Kgs, Pickup Date -5-Mar-2026. Other Details shared over mail. - Vehicle Qty: 1 - L1 Rate: 80000 - L1 Transporter: MOHAN LOGISTICS PRIVATE LIMITED - Final Price: 80000 - Final Price_1: 108000 - Final Price_2: 149000"
+2026-07-18 13:09:21,679 [INFO] [6] Chunk ID: c1f4f6bb-784d-44bf-b7bc-457b4c4fb500_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 24 ft.xlsx_0
+2026-07-18 13:09:21,679 [INFO] Score: N/A
+2026-07-18 13:09:21,679 [INFO] Rerank Score: -3.0147
+2026-07-18 13:09:21,679 [INFO] Text: "# Report information (file: c1f4f6bb-784d-44bf-b7bc-457b4c4fb500_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 24 ft.xlsx, table: c1f4f6bb_784d_44bf_b7bc_457b4c4fb500_evn_3610_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN 3610 - Event Name: Online negotiation of Transportation of Machines from Pollivakkam, TN to Chakan, Pune - Event Timeline: 2026-03-20 15:00 to 2026-03-20 16:16 - No. of Participants: 6 - Color Legend: Rank 1 | Rank 2 | Rank 3"
+2026-07-18 13:09:21,679 [INFO] [7] Chunk ID: faadc225-b4af-41bd-bf4e-393f23e6b91a_EVN 3536 Report for Transportation from Rapar, Kutch GJ to Ahmedabad GJ.xlsx_1
+2026-07-18 13:09:21,679 [INFO] Score: N/A
+2026-07-18 13:09:21,679 [INFO] Rerank Score: -9.8843
+2026-07-18 13:09:21,679 [INFO] Text: "Total Cost  NaN      NaN                   NaN      29000.0        43000.0        45000.0 Rates are collected on the shared Pickup Date of 13th March, 2026  NaN      NaN                   NaN          NaN            NaN            NaN Numeric summary (min / mean / max): Qty  L1 Rate  Final Price  Final Price_1  Final Price_2 min   1.0  29000.0      29000.0        43000.0        45000.0 mean  1.0  29000.0      29000.0        43000.0        45000.0 max   1.0  29000.0      29000.0        43000.0        45000.0"
+2026-07-18 13:09:21,679 [INFO] [8] Chunk ID: da61e052-01f3-4ada-b53e-b35abbca4ce9_EVN 3634 Report for Transportation from Ramachandrapuram, AP to Thiruvarur, TN.xlsx_1
+2026-07-18 13:09:21,679 [INFO] Score: N/A
+2026-07-18 13:09:21,679 [INFO] Rerank Score: -10.1777
+2026-07-18 13:09:21,679 [INFO] Text: "Total Cost  NaN      NaN                        NaN      55000.0        59500.0        64000.0 Rates are collected on the shared Pickup Date of 24th March, 2026  NaN      NaN                        NaN          NaN            NaN            NaN Numeric summary (min / mean / max): Qty  L1 Rate  Final Price  Final Price_1  Final Price_2 min   1.0  55000.0      55000.0        59500.0        64000.0 mean  1.0  55000.0      55000.0        59500.0        64000.0 max   1.0  55000.0      55000.0        59500.0        64000.0"
+2026-07-18 13:09:21,679 [INFO] [9] Chunk ID: ee0f1314-99d5-4397-9ae5-998c8b02bebf_EVN 3846 Report for Transportation from Polivakkam to Bangalore.xlsx_1
+2026-07-18 13:09:21,679 [INFO] Score: N/A
+2026-07-18 13:09:21,679 [INFO] Rerank Score: -10.2870
+2026-07-18 13:09:21,679 [INFO] Text: "Total basic value  NaN      NaN                             NaN      29750.0        30250.0        40000.0 Rates are collected on the shared Pickup Date of 27th Apr, 2026  NaN      NaN                             NaN          NaN            NaN            NaN Numeric summary (min / mean / max): Qty  L1 Rate  Final Price  Final Price_1  Final Price_2 min   1.0  29750.0      29750.0        30250.0        40000.0 mean  1.0  29750.0      29750.0        30250.0        40000.0 max   1.0  29750.0      29750.0        30250.0        40000.0"
+2026-07-18 13:09:21,680 [INFO] [10] Chunk ID: 31175e1d-c65c-44ea-91b1-d0c5782f40a5_EVN 3886 Report for Transportation from Indore depot to Bharatpur,RJ.xlsx_1
+2026-07-18 13:09:21,680 [INFO] Score: N/A
+2026-07-18 13:09:21,680 [INFO] Rerank Score: -10.6021
+2026-07-18 13:09:21,680 [INFO] Text: "Total basic value  NaN      NaN       NaN      58500.0        59000.0        75000.0       105000.0 Rates are collected on the shared Pickup Date of 29th Apr, 2026  NaN      NaN       NaN          NaN            NaN            NaN            NaN Numeric summary (min / mean / max): Qty  L1 Rate  Final Price  Final Price_1  Final Price_2  Final Price_3 min   1.0  58500.0      58500.0        59000.0        75000.0       105000.0 mean  1.0  58500.0      58500.0        59000.0        75000.0       105000.0 max   1.0  58500.0      58500.0        59000.0        75000.0       105000.0"
+2026-07-18 13:09:21,680 [INFO] ------------------------------------
+2026-07-18 13:09:21,680 [INFO] === Context passed to LLM (post-pruning) ===
+2026-07-18 13:09:21,680 [INFO] Context — Event EVN 3610 · Online negotiation of Transportation of Machines from Pollivakkam, TN to Chakan, Pune · 6 participants (This record is part of event EVN 3610 from file aa7c2999-0099-4d5b-ab75-64dc78273505_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 40 ft.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-3 of data table 'aa7c2999_0099_4d5b_ab75_64dc78273505_evn_3610_report_for_tra' (file: aa7c2999-0099-4d5b-ab75-64dc78273505_EVN 3610 Report for Transportation from Pollivakkam, TN to Pune, MH- 40 ft.xlsx) ### Row 1 - Item description: Freight charge for 40 ft trailer non- ODC for Transportation of Machines from Building B-500Unit nos, A C, Pollivakkam Village, Tiruvallur District, TN - 602002 To Taluka Khed Chakan, PUNE - 410501, MAHARASHTRA. Material weight 850 Kg, Pickup date : 21 March, 2026. Other details shared over mail. - Qty: 2 - L1 Rate: 64400 - L1 Vendor: URL Safe Express Private Limited - Final Price: 64400 - Final Price_1: 65000 - Final Price_2: 66650 - Final Price_3: 71400 - Final Price_4: 85000 - Final Price_5: 110000 ### Row 2 - Item description: Total Cost - Final Price: 128800 - Final Price_1: 130000 - Final Price_2: 133300
+2026-07-18 13:09:21,680 [INFO] Context — Event EVN 3610 · Online negotiation of Transportation of Machines from Khordha, Odisha to Pune · 4 participants (This record is part of event EVN 3610 from file dc5292b7-94e8-4953-b247-ddbec1e5863e_EVN 3610 Report for Transportation of Machines from Khordha to Pune.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-1 of data table 'dc5292b7_94e8_4953_b247_ddbec1e5863e_evn_3610_report_for_tra' (file: dc5292b7-94e8-4953-b247-ddbec1e5863e_EVN 3610 Report for Transportation of Machines from Khordha to Pune.xlsx) ### Row 1 - Item description: Total Freight Cost of 40 ft trailer (Non ODC) for Transportation of Machines from Giringaput, Khordha, Odisha - 752054 to Chakan, PUNE …
+2026-07-18 13:09:21,680 [INFO] [truncated] (total 8314 chars)
+2026-07-18 13:09:21,680 [INFO] === End of context ===
+2026-07-18 13:09:21,680 [INFO] ✅ Sub-Query 2 completed: 'Who is the transporter for Pune?'
+2026-07-18 13:09:21,680 [INFO] --- Performing Retrieval for query: 'Who is the transporter for Patna or Lucknow?' on table 'text_pages_0a6ce348-969d-4ca5-abc6-d19ac38f1684' ---
+2026-07-18 13:09:21,680 [INFO] Generating 1 embeddings with Qwen/Qwen3-Embedding-0.6B model...
+2026-07-18 13:09:21,680 [INFO] Retrieved 20 documents.
+2026-07-18 13:09:21,680 [INFO] --- Reranking top 20 docs with AI model... ---
+2026-07-18 13:09:21,680 [INFO] ✅ Reranking completed in 0.74s. Refined to 10 docs.
+2026-07-18 13:09:21,680 [INFO] --- Expanding context for 10 top documents (window size: 1)... ---
+2026-07-18 13:09:21,681 [INFO] Expanded to 16 unique chunks for synthesis.
+2026-07-18 13:09:21,681 [INFO] --- Final Documents for Synthesis ---
+2026-07-18 13:09:21,681 [INFO] [1] Chunk ID: 99bb4e95-4483-46e2-b96d-4059aa6bce2c_EVN 3456 Report for Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations.xlsx_0
+2026-07-18 13:09:21,681 [INFO] Score: N/A
+2026-07-18 13:09:21,681 [INFO] Rerank Score: -7.5444
+2026-07-18 13:09:21,681 [INFO] Text: "Context — Event EVN 3456 · Online negotiation of Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations · 57 participants (This record is part of event EVN 3456 from file 99bb4e95-4483-46e2-b96d-4059aa6bce2c_EVN 3456 Report for Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-1 of data table '99bb4e95_4483_46e2_b96d_4059aa6bce2c_evn_3456_report_for_tra' (file: 99bb4e95-4483-46e2-b96d-4059aa6bce2c_EVN 3456 Report for Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations.xlsx) ### Row 1 - Item description: Unit Freight Charge for 19FT of higher length truck(Quantity : 2) for Transportation of Tractor + Loader from KMC Faridabad to Local Haryana Locations. Remarks : On 8th Mar trucks will be loaded from KMC Faridabad, will move in rural locations and will return back to KMC Faridabad on 14th/15th Mar by covering approx 600 to 700 KMs in the 7 days. Pickup Date : 8-Mar-2026. - Vehicle Qty: 2 - L1 Rate: 122500 - L1 Transporter: TCI SUPPLY CHAIN SOLUTIONS - Final Price: 122500"
+2026-07-18 13:09:21,681 [INFO] [2] Chunk ID: 7ea6d481-e11c-4194-9d6b-0bd786425477_EVN 3694 Report for Transportation of F23 from ECE Faridabad - 121004 to LOWER DIBANG VALLEY ARUNACHAL PRADESH 792110.xlsx_0
+2026-07-18 13:09:21,681 [INFO] Score: N/A
+2026-07-18 13:09:21,681 [INFO] Rerank Score: -8.4755
+2026-07-18 13:09:21,681 [INFO] Text: "# Report information (file: 7ea6d481-e11c-4194-9d6b-0bd786425477_EVN 3694 Report for Transportation of F23 from ECE Faridabad - 121004 to LOWER DIBANG VALLEY ARUNACHAL PRADESH 792110.xlsx, table: 7ea6d481_e11c_4194_9d6b_0bd786425477_evn_3694_report_for_tra) - Escorts Kubota Ltd. - Event ID: EVN3694 - Event Name: Online Negotiation event for Transportation of F23 from ECE Faridabad - 121004 to LOWER DIBANG VALLEY ARUNACHAL PRADESH 792110 - Event Timeline: 2026-04-01 15:00 to 2026-04-02 13:56 - No. of Participants: 2 - Color Legend: Rank 1 | Rank 2 - Participant: ATUL LOGISTICS | MOHAN LOGISTICS PRIVATE LIMITED"
+2026-07-18 13:09:21,681 [INFO] [3] Chunk ID: b270e9f1-38d9-4c6d-a5de-839584f9cad1_EVN 3679 Report for Transportation of tractor from FBD to Jammu.xlsx_0
+2026-07-18 13:09:21,681 [INFO] Score: N/A
+2026-07-18 13:09:21,681 [INFO] Rerank Score: -9.6547
+2026-07-18 13:15:43,870 [INFO] ✓ Compiled in 433ms (660 modules)
+2026-07-18 13:15:44,186 [INFO] ✓ Compiled in 309ms (660 modules)
+2026-07-18 13:17:11,104 [INFO] Text: "Context — Event EVN 3679 · Online negotiation of Transportation of tractor from FBD to Jammu · 2 participants (This record is part of event EVN 3679 from file b270e9f1-38d9-4c6d-a5de-839584f9cad1_EVN 3679 Report for Transportation of tractor from FBD to Jammu.xlsx. Figures below such as L1 Rate are the L1 price / lowest quoted freight cost for this event.) ## Rows 1-1 of data table 'b270e9f1_38d9_4c6d_a5de_839584f9cad1_evn_3679_report_for_tra' (file: b270e9f1-38d9-4c6d-a5de-839584f9cad1_EVN 3679 Report for Transportation of tractor from FBD to Jammu.xlsx) ### Row 1 - Item description: Freight Charge for 14 FT truck for Transportation of tractor from EDC Depot, Malerna, Faridabad to M/s SEED MULTLIPLICATION FARM CHAKROHI TRACTORS FARM MANAGER, RS PURA, Jammu, 181102 Material Weight: 1800KG. Pickup date: 1st Apr 2026. Other details as per the attachment. - Vehicle Qty: 1 - L1 Rate: 25940 - L1 Transporter: PMTC - Final Price: 25940 - Final Price_1: 26440 - Final Price_2: 34000"2026-07-18 13:17:11,103 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2026-07-18 13:17:11,397 [INFO] ✓ Compiled in 272ms (660 modules)

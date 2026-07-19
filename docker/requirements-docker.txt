@@ -1,0 +1,14 @@
+pandas
+openpyxl
+duckdb
+pyarrow
+lancedb
+reportlab
+sentence-transformers
+rdflib
+requests
+numpy
+python-multipart
+docling
+rank-bm25
+matplotlib

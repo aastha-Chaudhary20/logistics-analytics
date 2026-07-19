@@ -1149,3 +1149,210 @@
 2026-07-11 17:58:25,348 ✓ Compiled / in 1082ms (1387 modules)
 2026-07-11 17:58:25,504 Demo component rendering...
 2026-07-11 17:58:25,522 GET / 200 in 1265ms
+2026-07-15 18:36:27,883 > multimodal_rag@0.1.0 dev
+2026-07-15 18:36:27,884 > next dev
+2026-07-15 18:36:28,619 ▲ Next.js 15.3.3
+2026-07-15 18:36:28,619 - Local:        http://localhost:3000
+2026-07-15 18:36:28,619 - Network:      http://192.168.1.7:3000
+2026-07-15 18:36:28,619 ✓ Starting...
+2026-07-15 18:36:29,578 ✓ Ready in 1069ms
+2026-07-15 18:37:36,384 ○ Compiling / ...
+2026-07-15 18:37:37,230 ✓ Compiled / in 1345ms (1387 modules)
+2026-07-15 18:37:37,381 Demo component rendering...
+2026-07-15 18:37:37,397 GET / 200 in 1523ms
+2026-07-15 18:37:37,732 ✓ Compiled /favicon.ico in 174ms (743 modules)
+2026-07-15 18:37:37,778 GET /favicon.ico 200 in 224ms
+2026-07-15 18:37:53,000 ✓ Compiled in 165ms (660 modules)
+2026-07-15 18:37:53,031 GET / 200 in 28ms
+2026-07-15 18:37:53,105 ✓ Compiled in 103ms (660 modules)
+2026-07-15 18:37:53,110 GET /favicon.ico 200 in 6ms
+2026-07-15 18:37:53,118 GET / 200 in 10ms
+2026-07-15 18:37:53,132 GET /favicon.ico 200 in 5ms
+2026-07-15 18:38:04,955 ✓ Compiled in 138ms (660 modules)
+2026-07-15 18:38:04,970 GET / 200 in 10ms
+2026-07-15 18:38:19,825 ✓ Compiled in 133ms (660 modules)
+2026-07-15 18:38:19,844 GET / 200 in 12ms
+2026-07-15 18:38:25,884 ✓ Compiled in 139ms (660 modules)
+2026-07-15 18:38:25,899 GET / 200 in 10ms
+2026-07-15 18:38:25,980 ✓ Compiled in 93ms (660 modules)
+2026-07-15 18:38:25,991 GET / 200 in 8ms
+2026-07-15 18:38:26,058 ✓ Compiled in 76ms (660 modules)
+2026-07-15 18:38:26,072 GET / 200 in 12ms
+2026-07-15 18:38:40,997 ✓ Compiled in 150ms (660 modules)
+2026-07-15 18:38:41,011 GET / 200 in 10ms
+2026-07-15 18:38:43,726 ✓ Compiled in 139ms (660 modules)
+2026-07-15 18:38:43,786 GET / 200 in 55ms
+2026-07-15 18:38:43,818 ✓ Compiled in 90ms (660 modules)
+2026-07-15 18:38:43,830 GET / 200 in 10ms
+2026-07-15 18:38:43,897 ✓ Compiled in 77ms (660 modules)
+2026-07-15 18:38:43,906 GET / 200 in 7ms
+2026-07-15 18:40:12,927 ✓ Compiled in 189ms (660 modules)
+2026-07-15 18:40:12,940 GET / 200 in 10ms
+2026-07-15 18:40:13,017 ✓ Compiled in 87ms (660 modules)
+2026-07-15 18:40:13,025 GET / 200 in 6ms
+2026-07-15 18:43:12,620 ✓ Compiled in 176ms (660 modules)
+2026-07-15 18:43:12,630 GET / 200 in 7ms
+2026-07-15 18:43:12,697 ✓ Compiled in 75ms (660 modules)
+2026-07-15 18:43:12,706 GET / 200 in 8ms
+2026-07-15 18:43:17,663 ✓ Compiled in 186ms (660 modules)
+2026-07-15 18:43:17,684 GET / 200 in 11ms
+2026-07-15 18:43:46,807 ✓ Compiled in 207ms (660 modules)
+2026-07-15 18:43:46,832 GET / 200 in 21ms
+2026-07-15 18:44:09,633 ✓ Compiled in 189ms (660 modules)
+2026-07-15 18:44:09,645 GET / 200 in 9ms
+2026-07-15 18:44:09,725 ✓ Compiled in 90ms (660 modules)
+2026-07-15 18:44:09,734 GET / 200 in 8ms
+2026-07-15 18:44:27,321 ✓ Compiled in 134ms (660 modules)
+2026-07-15 18:44:27,387 GET / 200 in 60ms
+2026-07-15 18:44:27,407 ✓ Compiled in 84ms (660 modules)
+2026-07-15 18:44:27,417 GET / 200 in 8ms
+2026-07-15 18:45:17,456 ✓ Compiled in 166ms (660 modules)
+2026-07-15 18:45:17,521 GET / 200 in 59ms
+2026-07-15 18:45:17,560 ✓ Compiled in 101ms (660 modules)
+2026-07-15 18:45:17,572 GET / 200 in 10ms
+2026-07-15 21:27:48,009 > multimodal_rag@0.1.0 dev
+2026-07-15 21:27:48,009 > next dev
+2026-07-15 21:27:48,740 ▲ Next.js 15.3.3
+2026-07-15 21:27:48,740 - Local:        http://localhost:3000
+2026-07-15 21:27:48,740 - Network:      http://192.168.1.7:3000
+2026-07-15 21:27:48,740 ✓ Starting...
+2026-07-15 21:27:49,819 ✓ Ready in 1216ms
+2026-07-15 21:28:02,153 ○ Compiling / ...
+2026-07-15 21:28:02,556 ✓ Compiled / in 907ms (1373 modules)
+2026-07-15 21:28:02,724 Demo component rendering...
+2026-07-15 21:28:02,739 GET / 200 in 1102ms
+2026-07-15 21:29:53,765 ✓ Compiled in 512ms (660 modules)
+2026-07-15 21:29:53,789 GET / 200 in 20ms
+2026-07-15 21:29:53,876 ✓ Compiled in 108ms (660 modules)
+2026-07-15 21:29:53,889 GET / 200 in 11ms
+2026-07-15 21:33:52,404 ✓ Compiled in 602ms (660 modules)
+2026-07-15 21:33:52,491 GET / 200 in 72ms
+2026-07-15 21:33:52,519 ✓ Compiled in 111ms (660 modules)
+2026-07-15 21:33:52,531 GET / 200 in 8ms
+2026-07-15 21:34:26,817 ✓ Compiled in 221ms (660 modules)
+2026-07-15 21:34:26,831 GET / 200 in 10ms
+2026-07-15 21:37:21,875 ✓ Compiled in 222ms (660 modules)
+2026-07-15 21:37:21,894 GET / 200 in 14ms
+2026-07-15 21:37:21,983 ✓ Compiled in 104ms (660 modules)
+2026-07-15 21:37:22,002 GET / 200 in 14ms
+2026-07-15 21:37:22,093 ✓ Compiled in 108ms (660 modules)
+2026-07-15 21:37:22,108 GET / 200 in 9ms
+2026-07-15 21:40:10,080 ✓ Compiled in 209ms (660 modules)
+2026-07-15 21:40:10,161 GET / 200 in 75ms
+2026-07-15 21:40:10,214 ✓ Compiled in 130ms (660 modules)
+2026-07-15 21:40:10,230 GET / 200 in 12ms
+2026-07-15 21:40:10,319 ✓ Compiled in 102ms (660 modules)
+2026-07-15 21:40:10,331 GET / 200 in 9ms
+2026-07-18 12:39:32,639 > multimodal_rag@0.1.0 dev
+2026-07-18 12:39:32,639 > next dev
+2026-07-18 12:39:34,119 ▲ Next.js 15.3.3
+2026-07-18 12:39:34,119 - Local:        http://localhost:3000
+2026-07-18 12:39:34,119 - Network:      http://192.168.1.7:3000
+2026-07-18 12:39:34,119 ✓ Starting...
+2026-07-18 12:39:35,179 ✓ Ready in 1175ms
+2026-07-18 12:39:43,971 ○ Compiling / ...
+2026-07-18 12:39:44,682 ✓ Compiled / in 1212ms (1387 modules)
+2026-07-18 12:39:44,832 Demo component rendering...
+2026-07-18 12:39:44,845 GET / 200 in 1385ms
+2026-07-18 12:39:49,569 ✓ Compiled in 158ms (660 modules)
+2026-07-18 12:39:49,586 GET / 200 in 13ms
+2026-07-18 12:39:49,663 ✓ Compiled in 92ms (660 modules)
+2026-07-18 12:39:49,671 GET / 200 in 6ms
+2026-07-18 12:40:02,625 ✓ Compiled in 155ms (660 modules)
+2026-07-18 12:40:02,639 GET / 200 in 11ms
+2026-07-18 12:40:02,726 ✓ Compiled in 99ms (660 modules)
+2026-07-18 12:40:02,737 GET / 200 in 8ms
+2026-07-18 12:42:09,016 ✓ Compiled in 292ms (660 modules)
+2026-07-18 12:42:09,098 GET / 200 in 76ms
+2026-07-18 12:42:09,138 ✓ Compiled in 120ms (660 modules)
+2026-07-18 12:42:09,218 GET / 200 in 76ms
+2026-07-18 12:42:09,249 ✓ Compiled in 109ms (660 modules)
+2026-07-18 12:42:09,261 GET / 200 in 8ms
+2026-07-18 12:43:51,321 ✓ Compiled in 236ms (660 modules)
+2026-07-18 12:43:51,343 GET / 200 in 13ms
+2026-07-18 12:43:52,258 ✓ Compiled in 112ms (660 modules)
+2026-07-18 12:43:52,270 GET / 200 in 10ms
+2026-07-18 12:43:52,340 ✓ Compiled in 81ms (660 modules)
+2026-07-18 12:43:52,348 GET / 200 in 7ms
+2026-07-18 12:47:42,783 ✓ Compiled in 278ms (660 modules)
+2026-07-18 12:47:42,902 GET / 200 in 107ms
+2026-07-18 12:47:42,928 ✓ Compiled in 144ms (660 modules)
+2026-07-18 12:47:42,939 GET / 200 in 7ms
+2026-07-18 12:47:52,736 ✓ Compiled in 120ms (660 modules)
+2026-07-18 12:47:52,749 GET / 200 in 8ms
+2026-07-18 12:52:18,555 ✓ Compiled in 148ms (660 modules)
+2026-07-18 12:52:18,567 GET / 200 in 10ms
+2026-07-18 12:52:18,639 ✓ Compiled in 82ms (660 modules)
+2026-07-18 12:52:18,649 GET / 200 in 6ms
+2026-07-18 12:52:21,290 ✓ Compiled in 133ms (660 modules)
+2026-07-18 12:52:21,301 GET / 200 in 9ms
+2026-07-18 12:52:21,373 ✓ Compiled in 81ms (660 modules)
+2026-07-18 12:52:21,381 GET / 200 in 6ms
+2026-07-18 12:52:23,572 ✓ Compiled in 156ms (660 modules)
+2026-07-18 12:52:23,587 GET / 200 in 11ms
+2026-07-18 12:52:23,656 ✓ Compiled in 80ms (660 modules)
+2026-07-18 12:52:23,665 GET / 200 in 6ms
+2026-07-18 12:54:53,978 ✓ Compiled in 163ms (660 modules)
+2026-07-18 12:54:53,997 GET / 200 in 16ms
+2026-07-18 13:00:05,978 ✓ Compiled in 211ms (660 modules)
+2026-07-18 13:00:06,040 GET / 200 in 57ms
+2026-07-18 13:00:06,077 ✓ Compiled in 96ms (660 modules)
+2026-07-18 13:00:06,087 GET / 200 in 7ms
+2026-07-18 13:00:52,991 Demo component rendering...
+2026-07-18 13:00:53,023 GET / 200 in 68ms
+2026-07-18 13:00:53,414 ✓ Compiled /favicon.ico in 227ms (743 modules)
+2026-07-18 13:00:53,502 GET /favicon.ico 200 in 320ms
+2026-07-18 13:01:30,151 > multimodal_rag@0.1.0 dev
+2026-07-18 13:01:30,152 > next dev
+2026-07-18 13:01:30,852 ▲ Next.js 15.3.3
+2026-07-18 13:01:30,852 - Local:        http://localhost:3000
+2026-07-18 13:01:30,852 - Network:      http://192.168.1.7:3000
+2026-07-18 13:01:30,852 ✓ Starting...
+2026-07-18 13:01:31,914 ✓ Ready in 1176ms
+2026-07-18 13:01:38,611 ○ Compiling / ...
+2026-07-18 13:01:39,001 ✓ Compiled / in 905ms (1373 modules)
+2026-07-18 13:01:39,167 Demo component rendering...
+2026-07-18 13:01:39,194 GET / 200 in 1111ms
+2026-07-18 13:01:52,238 ✓ Compiled in 504ms (660 modules)
+2026-07-18 13:01:52,262 GET / 200 in 21ms
+2026-07-18 13:01:52,351 ✓ Compiled in 111ms (660 modules)
+2026-07-18 13:01:52,364 GET / 200 in 10ms
+2026-07-18 13:02:38,320 ✓ Compiled in 152ms (660 modules)
+2026-07-18 13:02:38,337 GET / 200 in 13ms
+2026-07-18 13:02:58,796 ✓ Compiled in 159ms (660 modules)
+2026-07-18 13:02:58,879 GET / 200 in 78ms
+2026-07-18 13:02:58,921 ✓ Compiled in 122ms (660 modules)
+2026-07-18 13:02:58,933 GET / 200 in 9ms
+2026-07-18 13:03:10,205 ✓ Compiled in 157ms (660 modules)
+2026-07-18 13:03:10,224 GET / 200 in 15ms
+2026-07-18 13:03:10,301 ✓ Compiled in 92ms (660 modules)
+2026-07-18 13:03:10,310 GET / 200 in 7ms
+2026-07-18 13:03:21,527 ✓ Compiled in 163ms (660 modules)
+2026-07-18 13:03:21,543 GET / 200 in 12ms
+2026-07-18 13:03:21,631 ✓ Compiled in 102ms (660 modules)
+2026-07-18 13:03:21,643 GET / 200 in 9ms
+2026-07-18 13:03:24,938 ✓ Compiled in 157ms (660 modules)
+2026-07-18 13:03:24,959 GET / 200 in 17ms
+2026-07-18 13:03:25,034 ✓ Compiled in 93ms (660 modules)
+2026-07-18 13:03:25,047 GET / 200 in 10ms
+2026-07-18 13:03:33,214 ✓ Compiled in 157ms (660 modules)
+2026-07-18 13:03:33,229 GET / 200 in 10ms
+2026-07-18 13:03:33,320 ✓ Compiled in 103ms (660 modules)
+2026-07-18 13:03:33,330 GET / 200 in 7ms
+2026-07-18 13:03:45,512 ✓ Compiled in 140ms (660 modules)
+2026-07-18 13:03:45,524 GET / 200 in 10ms
+2026-07-18 13:03:45,616 ✓ Compiled in 103ms (660 modules)
+2026-07-18 13:03:45,626 GET / 200 in 7ms
+2026-07-18 13:03:49,257 ✓ Compiled in 131ms (660 modules)
+2026-07-18 13:03:49,272 GET / 200 in 11ms
+2026-07-18 13:03:49,352 ✓ Compiled in 91ms (660 modules)
+2026-07-18 13:03:49,426 ✓ Compiled in 72ms (660 modules)
+2026-07-18 13:05:49,734 ✓ Compiled in 175ms (660 modules)
+2026-07-18 13:05:49,821 ✓ Compiled in 85ms (660 modules)
+2026-07-18 13:07:11,045 ✓ Compiled in 236ms (660 modules)
+2026-07-18 13:07:11,153 ✓ Compiled in 103ms (660 modules)
+2026-07-18 13:07:47,267 ✓ Compiled in 185ms (660 modules)
+2026-07-18 13:07:47,375 ✓ Compiled in 105ms (660 modules)
+2026-07-18 13:15:43,870 ✓ Compiled in 433ms (660 modules)
+2026-07-18 13:15:44,186 ✓ Compiled in 309ms (660 modules)
+2026-07-18 13:17:11,397 ✓ Compiled in 272ms (660 modules)

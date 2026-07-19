@@ -348,3 +348,48 @@
 🔧 Embedding model from metadata: Qwen/Qwen3-Embedding-0.6B
 🔧 Current embedding model: Qwen/Qwen3-Embedding-0.6B
 🔧 Updated embedding model to: Qwen/Qwen3-Embedding-0.6B
+🔧 _apply_index_embedding_model called with idx_ids: ['cecdf9c4-7603-4c14-bf66-175f5b10a81a']
+🔧 Retrieved index: cecdf9c4-7603-4c14-bf66-175f5b10a81a with metadata: {'status': 'created', 'metadata_source': 'rag_system_config', 'created_at': '2026-06-28T13:16:56.495032', 'chunk_size': 512, 'chunk_overlap': 64, 'retrieval_mode': 'hybrid', 'window_size': 5, 'embedding_model': 'Qwen/Qwen3-Embedding-0.6B', 'enrich_model': 'qwen3:0.6b', 'overview_model': 'qwen3:0.6b', 'enable_enrich': True, 'latechunk': False, 'docling_chunk': True, 'note': 'Default configuration from RAG system'}
+🔧 Embedding model from metadata: Qwen/Qwen3-Embedding-0.6B
+🔧 Current embedding model: Qwen/Qwen3-Embedding-0.6B
+🔧 Updated embedding model to: Qwen/Qwen3-Embedding-0.6B
+🔧 _apply_index_embedding_model called with idx_ids: ['cecdf9c4-7603-4c14-bf66-175f5b10a81a']
+🔧 Retrieved index: cecdf9c4-7603-4c14-bf66-175f5b10a81a with metadata: {'status': 'created', 'metadata_source': 'rag_system_config', 'created_at': '2026-06-28T13:16:56.495032', 'chunk_size': 512, 'chunk_overlap': 64, 'retrieval_mode': 'hybrid', 'window_size': 5, 'embedding_model': 'Qwen/Qwen3-Embedding-0.6B', 'enrich_model': 'qwen3:0.6b', 'overview_model': 'qwen3:0.6b', 'enable_enrich': True, 'latechunk': False, 'docling_chunk': True, 'note': 'Default configuration from RAG system'}
+🔧 Embedding model from metadata: Qwen/Qwen3-Embedding-0.6B
+🔧 Current embedding model: Qwen/Qwen3-Embedding-0.6B
+🔧 Updated embedding model to: Qwen/Qwen3-Embedding-0.6B
+🔧 _apply_index_embedding_model called with idx_ids: ['2010e86c-4e99-487a-9e82-086ee41a92a8']
+🔧 Retrieved index: 2010e86c-4e99-487a-9e82-086ee41a92a8 with metadata: {'status': 'created', 'metadata_source': 'rag_system_config', 'created_at': '2026-07-15T18:43:12.427223', 'chunk_size': 512, 'chunk_overlap': 64, 'retrieval_mode': 'hybrid', 'window_size': 5, 'embedding_model': 'Qwen/Qwen3-Embedding-0.6B', 'enrich_model': 'qwen3:0.6b', 'overview_model': 'qwen3:0.6b', 'enable_enrich': False, 'latechunk': False, 'docling_chunk': True, 'note': 'Default configuration from RAG system'}
+🔧 Embedding model from metadata: Qwen/Qwen3-Embedding-0.6B
+🔧 Current embedding model: Qwen/Qwen3-Embedding-0.6B
+🔧 Updated embedding model to: Qwen/Qwen3-Embedding-0.6B
+🔧 _apply_index_embedding_model called with idx_ids: ['0a6ce348-969d-4ca5-abc6-d19ac38f1684']
+🔧 Retrieved index: 0a6ce348-969d-4ca5-abc6-d19ac38f1684 with metadata: {'status': 'created', 'metadata_source': 'rag_system_config', 'created_at': '2026-07-15T21:29:53.239024', 'chunk_size': 512, 'chunk_overlap': 64, 'retrieval_mode': 'hybrid', 'window_size': 5, 'embedding_model': 'Qwen/Qwen3-Embedding-0.6B', 'enrich_model': 'qwen3:0.6b', 'overview_model': 'qwen3:0.6b', 'enable_enrich': False, 'latechunk': False, 'docling_chunk': True, 'note': 'Default configuration from RAG system'}
+🔧 Embedding model from metadata: Qwen/Qwen3-Embedding-0.6B
+🔧 Current embedding model: Qwen/Qwen3-Embedding-0.6B
+🔧 Updated embedding model to: Qwen/Qwen3-Embedding-0.6B
+🔧 _apply_index_embedding_model called with idx_ids: ['0a6ce348-969d-4ca5-abc6-d19ac38f1684']
+🔧 Retrieved index: 0a6ce348-969d-4ca5-abc6-d19ac38f1684 with metadata: {'status': 'created', 'metadata_source': 'rag_system_config', 'created_at': '2026-07-15T21:29:53.239024', 'chunk_size': 512, 'chunk_overlap': 64, 'retrieval_mode': 'hybrid', 'window_size': 5, 'embedding_model': 'Qwen/Qwen3-Embedding-0.6B', 'enrich_model': 'qwen3:0.6b', 'overview_model': 'qwen3:0.6b', 'enable_enrich': False, 'latechunk': False, 'docling_chunk': True, 'note': 'Default configuration from RAG system'}
+🔧 Embedding model from metadata: Qwen/Qwen3-Embedding-0.6B
+🔧 Current embedding model: Qwen/Qwen3-Embedding-0.6B
+🔧 Updated embedding model to: Qwen/Qwen3-Embedding-0.6B
+🔧 _apply_index_embedding_model called with idx_ids: ['cecdf9c4-7603-4c14-bf66-175f5b10a81a']
+🔧 Retrieved index: cecdf9c4-7603-4c14-bf66-175f5b10a81a with metadata: {'status': 'created', 'metadata_source': 'rag_system_config', 'created_at': '2026-06-28T13:16:56.495032', 'chunk_size': 512, 'chunk_overlap': 64, 'retrieval_mode': 'hybrid', 'window_size': 5, 'embedding_model': 'Qwen/Qwen3-Embedding-0.6B', 'enrich_model': 'qwen3:0.6b', 'overview_model': 'qwen3:0.6b', 'enable_enrich': True, 'latechunk': False, 'docling_chunk': True, 'note': 'Default configuration from RAG system'}
+🔧 Embedding model from metadata: Qwen/Qwen3-Embedding-0.6B
+🔧 Current embedding model: Qwen/Qwen3-Embedding-0.6B
+🔧 Updated embedding model to: Qwen/Qwen3-Embedding-0.6B
+🔧 _apply_index_embedding_model called with idx_ids: ['0a6ce348-969d-4ca5-abc6-d19ac38f1684']
+🔧 Retrieved index: 0a6ce348-969d-4ca5-abc6-d19ac38f1684 with metadata: {'status': 'created', 'metadata_source': 'rag_system_config', 'created_at': '2026-07-15T21:29:53.239024', 'chunk_size': 512, 'chunk_overlap': 64, 'retrieval_mode': 'hybrid', 'window_size': 5, 'embedding_model': 'Qwen/Qwen3-Embedding-0.6B', 'enrich_model': 'qwen3:0.6b', 'overview_model': 'qwen3:0.6b', 'enable_enrich': False, 'latechunk': False, 'docling_chunk': True, 'note': 'Default configuration from RAG system'}
+🔧 Embedding model from metadata: Qwen/Qwen3-Embedding-0.6B
+🔧 Current embedding model: Qwen/Qwen3-Embedding-0.6B
+🔧 Updated embedding model to: Qwen/Qwen3-Embedding-0.6B
+🔧 _apply_index_embedding_model called with idx_ids: ['0a6ce348-969d-4ca5-abc6-d19ac38f1684']
+🔧 Retrieved index: 0a6ce348-969d-4ca5-abc6-d19ac38f1684 with metadata: {'status': 'created', 'metadata_source': 'rag_system_config', 'created_at': '2026-07-15T21:29:53.239024', 'chunk_size': 512, 'chunk_overlap': 64, 'retrieval_mode': 'hybrid', 'window_size': 5, 'embedding_model': 'Qwen/Qwen3-Embedding-0.6B', 'enrich_model': 'qwen3:0.6b', 'overview_model': 'qwen3:0.6b', 'enable_enrich': False, 'latechunk': False, 'docling_chunk': True, 'note': 'Default configuration from RAG system'}
+🔧 Embedding model from metadata: Qwen/Qwen3-Embedding-0.6B
+🔧 Current embedding model: Qwen/Qwen3-Embedding-0.6B
+🔧 Updated embedding model to: Qwen/Qwen3-Embedding-0.6B
+🔧 _apply_index_embedding_model called with idx_ids: ['0a6ce348-969d-4ca5-abc6-d19ac38f1684']
+🔧 Retrieved index: 0a6ce348-969d-4ca5-abc6-d19ac38f1684 with metadata: {'status': 'created', 'metadata_source': 'rag_system_config', 'created_at': '2026-07-15T21:29:53.239024', 'chunk_size': 512, 'chunk_overlap': 64, 'retrieval_mode': 'hybrid', 'window_size': 5, 'embedding_model': 'Qwen/Qwen3-Embedding-0.6B', 'enrich_model': 'qwen3:0.6b', 'overview_model': 'qwen3:0.6b', 'enable_enrich': False, 'latechunk': False, 'docling_chunk': True, 'note': 'Default configuration from RAG system'}
+🔧 Embedding model from metadata: Qwen/Qwen3-Embedding-0.6B
+🔧 Current embedding model: Qwen/Qwen3-Embedding-0.6B
+🔧 Updated embedding model to: Qwen/Qwen3-Embedding-0.6B
